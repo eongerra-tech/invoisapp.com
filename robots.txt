@@ -1,0 +1,5 @@
+# invoisapp.com — everything here is public, nothing to hide from crawlers.
+User-agent: *
+Allow: /
+
+Sitemap: https://invoisapp.com/sitemap.xml

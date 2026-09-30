@@ -32,7 +32,7 @@ jobs:
         # 少一个就是提交被拒，而那要等到审核才发现 —— 在这里变成红灯便宜得多。
         run: |
           set -euo pipefail
-          for f in index.html privacy/index.html terms/index.html delete-account/index.html CNAME; do
+          for f in index.html privacy/index.html terms/index.html delete-account/index.html CNAME robots.txt sitemap.xml assets/og.png; do
             [ -f "$f" ] || { echo "::error::缺少 $f"; exit 1; }
           done
           # CNAME 写错 = 站点上线后域名解析不过来，症状是 404 而不是报错，很难联想到这里

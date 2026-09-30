@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hand-written. Four pages; add a <url> when you add a page. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://invoisapp.com/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://invoisapp.com/privacy/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://invoisapp.com/terms/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://invoisapp.com/delete-account/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <priority>0.5</priority>
+  </url>
+</urlset>
