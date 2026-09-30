@@ -1,0 +1,47 @@
+# invoisapp.com → GitHub Pages。
+#
+# 站点内容就在 repo 根目录（跟 eongerra.com 一样的结构）。零构建：纯 HTML + 一个 CSS，
+# 没有依赖会过期、没有 node_modules 要装，五年后 checkout 出来照样能发。
+name: deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false # 发到一半被砍会留下半截站点
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 检查必需页面都在
+        # Google Play 有两条硬要求：一个公开的隐私政策 URL，和一个网页删除账号入口。
+        # 少一个就是提交被拒，而那要等到审核才发现 —— 在这里变成红灯便宜得多。
+        run: |
+          set -euo pipefail
+          for f in index.html privacy/index.html terms/index.html delete-account/index.html CNAME; do
+            [ -f "$f" ] || { echo "::error::缺少 $f"; exit 1; }
+          done
+          # CNAME 写错 = 站点上线后域名解析不过来，症状是 404 而不是报错，很难联想到这里
+          grep -qx 'invoisapp.com' CNAME || { echo "::error::CNAME 内容应为 invoisapp.com"; exit 1; }
+          echo "✓ 页面齐全"
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deploy
+        uses: actions/deploy-pages@v4
