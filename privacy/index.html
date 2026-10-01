@@ -100,6 +100,7 @@
     <li><b>Voice recordings</b> are sent for transcription and not stored by us afterwards.</li>
     <li><b>Verification codes</b> expire within minutes.</li>
     <li><b>After you delete your account</b> — everything is kept for 30 days so you can change your mind, then permanently erased. See below.</li>
+    <li><b>Backups</b> — routine backups are kept for up to 90 days, so a copy can outlive the erasure by up to that long. See below.</li>
   </ul>
 
   <h2>Deleting your account</h2>
@@ -112,6 +113,14 @@
   <p>
     If you have already uninstalled the app, use the
     <a href="/delete-account/">account deletion page</a>.
+  </p>
+  <p>
+    <b>Backups are the one exception.</b> We take routine backups of our database and
+    file storage so that a fault on our side cannot lose your invoices. Those backups
+    are kept for up to 90 days and then expire automatically, so a copy of your data
+    can survive in a backup for up to 90 days after it is erased from the live system.
+    Backups are encrypted at rest, are never used to serve the app, and are only ever
+    restored to recover from an incident.
   </p>
 
   <div class="note warn">
