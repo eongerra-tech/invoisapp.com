@@ -40,7 +40,7 @@ img, svg { display: block; }
 .brand:hover { color: var(--ink); }
 .brand span { font-family: var(--display); font-weight: 800; font-size: 22px; letter-spacing: -0.02em; }
 .nav-links { display: flex; gap: 40px; font-weight: 500; }
-.nav-links a { color: var(--ink-soft); }
+.nav-links a { color: var(--ink-soft); white-space: nowrap; }
 .nav-links a:hover { color: var(--ink); }
 .pill-btn { display: inline-flex; align-items: center; height: 48px; padding: 0 22px; border-radius: 999px; background: var(--ink); color: #fff; font-weight: 600; font-size: 15px; }
 .pill-btn:hover { color: #fff; background: #2d3d5c; }
@@ -290,8 +290,10 @@ img, svg { display: block; }
   .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 56px; }
   .gallery li:nth-child(even) { margin-top: 0; }
 }
+/* six section links (BM labels are the longest) need ~1030px at a 20px gap; below that they hide */
+@media (max-width: 1180px) { .nav-links { gap: 20px; } }
+@media (max-width: 1040px) { .nav-links { display: none; } }
 @media (max-width: 960px) {
-  .nav-links { display: none; }
   .sec-head { flex-direction: column; align-items: flex-start; gap: 18px; }
   .steps { grid-template-columns: minmax(0, 1fr); }
   .bento { grid-template-columns: minmax(0, 1fr); }

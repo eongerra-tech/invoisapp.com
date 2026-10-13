@@ -48,6 +48,28 @@
     <loc>https://invoisapp.com/guides/</loc>
     <lastmod>2026-10-13</lastmod>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/"/>
+  </url>
+  <url>
+    <loc>https://invoisapp.com/ms/guides/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/"/>
+  </url>
+  <url>
+    <loc>https://invoisapp.com/zh/guides/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/"/>
   </url>
   <url>
     <loc>https://invoisapp.com/guides/how-to-write-a-quotation/</loc>
