@@ -98,4 +98,31 @@
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/how-to-write-a-quotation/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/how-to-write-a-quotation/"/>
   </url>
+  <url>
+    <loc>https://invoisapp.com/guides/quotation-vs-invoice-vs-receipt/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/quotation-vs-invoice-vs-receipt/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/beza-invois-dan-resit/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/invoice-vs-receipt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/quotation-vs-invoice-vs-receipt/"/>
+  </url>
+  <url>
+    <loc>https://invoisapp.com/ms/guides/beza-invois-dan-resit/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/quotation-vs-invoice-vs-receipt/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/beza-invois-dan-resit/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/invoice-vs-receipt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/quotation-vs-invoice-vs-receipt/"/>
+  </url>
+  <url>
+    <loc>https://invoisapp.com/zh/guides/invoice-vs-receipt/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/quotation-vs-invoice-vs-receipt/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/beza-invois-dan-resit/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/invoice-vs-receipt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/quotation-vs-invoice-vs-receipt/"/>
+  </url>
 </urlset>
