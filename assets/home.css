@@ -292,7 +292,10 @@ img, svg { display: block; }
 }
 /* six section links (BM labels are the longest) need ~1030px at a 20px gap; below that they hide */
 @media (max-width: 1180px) { .nav-links { gap: 20px; } }
-@media (max-width: 1040px) { .nav-links { display: none; } }
+/* phones/tablets: the section links hide, so the guides link moves beside the language switcher */
+.nav-guides { display: none; align-items: center; min-height: 40px; padding: 0 4px; font-size: 13px; font-weight: 600; color: var(--ink-soft); white-space: nowrap; }
+.nav-guides:hover { color: var(--ink); }
+@media (max-width: 1040px) { .nav-links { display: none; } .nav-guides { display: inline-flex; } }
 @media (max-width: 960px) {
   .sec-head { flex-direction: column; align-items: flex-start; gap: 18px; }
   .steps { grid-template-columns: minmax(0, 1fr); }
@@ -328,10 +331,9 @@ img, svg { display: block; }
 /* ── language switcher (EN / BM / 中文) ── */
 .nav-end { display: flex; align-items: center; gap: 16px; }
 .lang-switch { display: flex; padding: 3px; border-radius: 999px; background: var(--white); border: 1px solid var(--line); font-size: 13px; font-weight: 600; line-height: 1; }
-.lang-switch a { padding: 9px 11px; border-radius: 999px; color: var(--ink-soft); }
+.lang-switch a { padding: 9px 11px; border-radius: 999px; color: var(--ink-soft); white-space: nowrap; }
 .lang-switch a:hover { color: var(--ink); }
 .lang-switch a[aria-current] { background: var(--brand-wash); color: var(--brand-deep); }
-.foot-lang { display: flex; gap: 6px; align-items: center; }
 /* localized Play badges (ms / zh) are 646×250, narrower than the en art: keep the height, let the width follow */
 .badge img.gp-local { width: auto; }
 @media (max-width: 520px) {
@@ -339,8 +341,12 @@ img, svg { display: block; }
   .nav-end { gap: 10px; }
   .pill-btn { height: 40px; padding: 0 14px; font-size: 14px; }
 }
-/* no room for brand + switcher + pill on a phone; the hero badge sits right below */
-@media (max-width: 420px) { .pill-btn { display: none; } }
+/* no room for brand + guides link + switcher + pill on a phone (BM fits only from ~460px); the hero badge sits right below */
+@media (max-width: 479px) { .pill-btn { display: none; } }
+/* small phones: tighten the header so brand + guides link + switcher stay on one line */
+@media (max-width: 380px) { .nav-end { gap: 4px; } .lang-switch a { padding: 9px 8px; } }
+/* <360px: the logo alone stands for the brand so the guides link still fits */
+@media (max-width: 359px) { .nav .brand span { display: none; } }
 
 /* Chinese page: the web fonts have no CJK glyphs, so name the system CJK fonts and drop the tight Latin tracking */
 html:lang(zh-Hans) {
