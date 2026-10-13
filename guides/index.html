@@ -90,28 +90,26 @@
 </head>
 <body>
 
-<header class="container nav">
-  <a class="brand" href="/" aria-label="Invois home">
+<header class="site-head">
+<div class="nav">
+  <div class="brand-group">
+    <a class="brand" href="/" aria-label="Invois home">
     <img src="/assets/logo.svg" alt="" width="34" height="34">
     <span>Invois</span>
   </a>
-  <nav class="nav-links" aria-label="Sections">
-    <a href="/#how">How it works</a>
-    <a href="/#features">Features</a>
-    <a href="/#tour">App tour</a>
-    <a href="/#pricing">Pricing</a>
-    <a href="/#faq">FAQ</a>
-    <a href="/guides/">Guides</a>
-  </nav>
+    <span class="brand-sep" aria-hidden="true"></span>
+    <a class="brand-sub" href="/guides/" aria-current="page">Guides</a>
+  </div>
   <div class="nav-end">
-    <a class="nav-guides" href="/guides/">Guides</a>
+    <a class="nav-about" href="/">About the app</a>
     <nav class="lang-switch" aria-label="Language">
       <a href="/guides/" hreflang="en" lang="en" aria-current="true">EN</a>
       <a href="/ms/guides/" hreflang="ms" lang="ms">BM</a>
       <a href="/zh/guides/" hreflang="zh-Hans" lang="zh-Hans">中文</a>
     </nav>
-    <a class="pill-btn" href="https://play.google.com/store/apps/details?id=com.invoisapp&amp;referrer=utm_source%3Dinvoisapp.com%26utm_medium%3Dwebsite%26utm_campaign%3Dguide_header">Get the app</a>
+    <a class="pill-btn" href="https://play.google.com/store/apps/details?id=com.invoisapp&amp;referrer=utm_source%3Dinvoisapp.com%26utm_medium%3Dwebsite%26utm_campaign%3Dguide_header_en">Get the app</a>
   </div>
+</div>
 </header>
 
 <main class="wrap">
@@ -121,7 +119,7 @@
   <ul class="guide-list">
     <li>
       <h2><a href="/guides/how-to-write-a-quotation/">How to write a quotation in Malaysia (with examples)</a></h2>
-      <p>What must be on a quotation (SSM no., SST, validity, payment terms), and three worked examples from different trades.</p>
+      <p>What must be on a quotation (SSM no., SST, validity, payment terms), and 3 worked examples from different trades.</p>
     </li>
     <li>
       <h2><a href="/guides/quotation-vs-invoice-vs-receipt/">Quotation vs invoice vs receipt: what's the difference in Malaysia?</a></h2>
@@ -130,7 +128,30 @@
   </ul>
 </main>
 
-<footer><div class="wrap"><a class="f-brand" href="/"><img src="/assets/logo.svg" alt="" width="26" height="26"><b>Invois</b></a><nav aria-label="Footer"><a href="/guides/">Guides</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/delete-account/">Delete account</a></nav><span class="sp">© 2026 Eongerra Tech</span></div></footer>
+<footer class="site-foot">
+  <div class="foot-top">
+    <div class="foot-brand">
+      <a class="brand" href="/"><img src="/assets/logo.svg" alt="" width="26" height="26"><span>Invois</span></a>
+      <p>Describe the job out loud and get an itemised quotation, then turn it into an invoice and receipt.</p>
+    </div>
+    <nav class="foot-col" aria-label="Product">
+      <p class="foot-h">Product</p>
+      <a href="/#features">Features</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/guides/">Guides</a>
+    </nav>
+    <nav class="foot-col" aria-label="Legal">
+      <p class="foot-h">Legal</p>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/delete-account/">Delete account</a>
+    </nav>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Eongerra Tech</span>
+    <nav class="foot-lang" aria-label="Language (footer)"><a href="/guides/" hreflang="en" lang="en" aria-current="true">English</a><a href="/ms/guides/" hreflang="ms" lang="ms">Bahasa Melayu</a><a href="/zh/guides/" hreflang="zh-Hans" lang="zh-Hans">中文</a></nav>
+  </div>
+</footer>
 
 </body>
 </html>

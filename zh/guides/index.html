@@ -90,21 +90,18 @@
 </head>
 <body>
 
-<header class="container nav">
-  <a class="brand" href="/zh/" aria-label="Invois 首页">
+<header class="site-head">
+<div class="nav">
+  <div class="brand-group">
+    <a class="brand" href="/zh/" aria-label="Invois 首页">
     <img src="/assets/logo.svg" alt="" width="34" height="34">
     <span>Invois</span>
   </a>
-  <nav class="nav-links" aria-label="页面区块">
-    <a href="/zh/#how">运作方式</a>
-    <a href="/zh/#features">功能</a>
-    <a href="/zh/#tour">App 导览</a>
-    <a href="/zh/#pricing">价钱</a>
-    <a href="/zh/#faq">常见问题</a>
-    <a href="/zh/guides/">指南</a>
-  </nav>
+    <span class="brand-sep" aria-hidden="true"></span>
+    <a class="brand-sub" href="/zh/guides/" aria-current="page">指南</a>
+  </div>
   <div class="nav-end">
-    <a class="nav-guides" href="/zh/guides/">指南</a>
+    <a class="nav-about" href="/zh/">关于 App</a>
     <nav class="lang-switch" aria-label="语言">
       <a href="/guides/" hreflang="en" lang="en">EN</a>
       <a href="/ms/guides/" hreflang="ms" lang="ms">BM</a>
@@ -112,6 +109,7 @@
     </nav>
     <a class="pill-btn" href="https://play.google.com/store/apps/details?id=com.invoisapp&amp;referrer=utm_source%3Dinvoisapp.com%26utm_medium%3Dwebsite%26utm_campaign%3Dguide_header_zh">下载 App</a>
   </div>
+</div>
 </header>
 
 <main class="wrap">
@@ -121,7 +119,7 @@
   <ul class="guide-list">
     <li>
       <h2><a href="/zh/guides/how-to-write-a-quotation/">报价单怎么写？马来西亚 quotation 格式与例子</a></h2>
-      <p>报价单上必须有什么（SSM 号码、SST、有效期、付款条件），还有三个不同行业的完整例子。</p>
+      <p>报价单上必须有什么（SSM 号码、SST、有效期、付款条件），还有 3 个不同行业的完整例子。</p>
     </li>
     <li>
       <h2><a href="/zh/guides/invoice-vs-receipt/">Invoice 和 receipt 有什么分别？订金、尾款、收据一次讲清楚</a></h2>
@@ -130,7 +128,30 @@
   </ul>
 </main>
 
-<footer><div class="wrap"><a class="f-brand" href="/zh/"><img src="/assets/logo.svg" alt="" width="26" height="26"><b>Invois</b></a><nav aria-label="Footer"><a href="/zh/guides/">指南</a><a href="/privacy/" hreflang="en">隐私政策</a><a href="/terms/" hreflang="en">条款</a><a href="/delete-account/" hreflang="en">删除账号</a></nav><span class="sp">© 2026 Eongerra Tech</span></div></footer>
+<footer class="site-foot">
+  <div class="foot-top">
+    <div class="foot-brand">
+      <a class="brand" href="/zh/"><img src="/assets/logo.svg" alt="" width="26" height="26"><span>Invois</span></a>
+      <p>把工作内容说出来，就能生成分项报价单，之后再转成发票和收据。</p>
+    </div>
+    <nav class="foot-col" aria-label="产品">
+      <p class="foot-h">产品</p>
+      <a href="/zh/#features">功能</a>
+      <a href="/zh/#pricing">价钱</a>
+      <a href="/zh/guides/">指南</a>
+    </nav>
+    <nav class="foot-col" aria-label="法律条款">
+      <p class="foot-h">法律条款</p>
+      <a href="/privacy/" hreflang="en">隐私政策</a>
+      <a href="/terms/" hreflang="en">条款</a>
+      <a href="/delete-account/" hreflang="en">删除账号</a>
+    </nav>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Eongerra Tech</span>
+    <nav class="foot-lang" aria-label="语言 (页脚)"><a href="/guides/" hreflang="en" lang="en">English</a><a href="/ms/guides/" hreflang="ms" lang="ms">Bahasa Melayu</a><a href="/zh/guides/" hreflang="zh-Hans" lang="zh-Hans" aria-current="true">中文</a></nav>
+  </div>
+</footer>
 
 </body>
 </html>

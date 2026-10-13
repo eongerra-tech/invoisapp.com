@@ -90,21 +90,18 @@
 </head>
 <body>
 
-<header class="container nav">
-  <a class="brand" href="/ms/" aria-label="Laman utama Invois">
+<header class="site-head">
+<div class="nav">
+  <div class="brand-group">
+    <a class="brand" href="/ms/" aria-label="Laman utama Invois">
     <img src="/assets/logo.svg" alt="" width="34" height="34">
     <span>Invois</span>
   </a>
-  <nav class="nav-links" aria-label="Bahagian">
-    <a href="/ms/#how">Cara guna</a>
-    <a href="/ms/#features">Ciri</a>
-    <a href="/ms/#tour">Lawatan aplikasi</a>
-    <a href="/ms/#pricing">Harga</a>
-    <a href="/ms/#faq">Soalan lazim</a>
-    <a href="/ms/guides/">Panduan</a>
-  </nav>
+    <span class="brand-sep" aria-hidden="true"></span>
+    <a class="brand-sub" href="/ms/guides/" aria-current="page">Panduan</a>
+  </div>
   <div class="nav-end">
-    <a class="nav-guides" href="/ms/guides/">Panduan</a>
+    <a class="nav-about" href="/ms/">Tentang aplikasi</a>
     <nav class="lang-switch" aria-label="Bahasa">
       <a href="/guides/" hreflang="en" lang="en">EN</a>
       <a href="/ms/guides/" hreflang="ms" lang="ms" aria-current="true">BM</a>
@@ -112,6 +109,7 @@
     </nav>
     <a class="pill-btn" href="https://play.google.com/store/apps/details?id=com.invoisapp&amp;referrer=utm_source%3Dinvoisapp.com%26utm_medium%3Dwebsite%26utm_campaign%3Dguide_header_ms">Dapatkan aplikasi</a>
   </div>
+</div>
 </header>
 
 <main class="wrap">
@@ -121,7 +119,7 @@
   <ul class="guide-list">
     <li>
       <h2><a href="/ms/guides/cara-buat-sebut-harga/">Cara buat sebut harga (quotation): contoh dan format</a></h2>
-      <p>Apa wajib ada dalam sebut harga (no. SSM, SST, tempoh sah, terma bayaran), serta tiga contoh lengkap daripada jenis kerja berbeza.</p>
+      <p>Apa wajib ada dalam sebut harga (no. SSM, SST, tempoh sah, terma bayaran), serta 3 contoh lengkap daripada jenis kerja berbeza.</p>
     </li>
     <li>
       <h2><a href="/ms/guides/beza-invois-dan-resit/">Beza invois dan resit (dan bila perlu keluarkan resit)</a></h2>
@@ -130,7 +128,30 @@
   </ul>
 </main>
 
-<footer><div class="wrap"><a class="f-brand" href="/ms/"><img src="/assets/logo.svg" alt="" width="26" height="26"><b>Invois</b></a><nav aria-label="Footer"><a href="/ms/guides/">Panduan</a><a href="/privacy/" hreflang="en">Privasi</a><a href="/terms/" hreflang="en">Terma</a><a href="/delete-account/" hreflang="en">Padam akaun</a></nav><span class="sp">© 2026 Eongerra Tech</span></div></footer>
+<footer class="site-foot">
+  <div class="foot-top">
+    <div class="foot-brand">
+      <a class="brand" href="/ms/"><img src="/assets/logo.svg" alt="" width="26" height="26"><span>Invois</span></a>
+      <p>Ceritakan kerja dengan suara dan dapatkan sebut harga terperinci, kemudian tukar kepada invois dan resit.</p>
+    </div>
+    <nav class="foot-col" aria-label="Produk">
+      <p class="foot-h">Produk</p>
+      <a href="/ms/#features">Ciri</a>
+      <a href="/ms/#pricing">Harga</a>
+      <a href="/ms/guides/">Panduan</a>
+    </nav>
+    <nav class="foot-col" aria-label="Undang-undang">
+      <p class="foot-h">Undang-undang</p>
+      <a href="/privacy/" hreflang="en">Privasi</a>
+      <a href="/terms/" hreflang="en">Terma</a>
+      <a href="/delete-account/" hreflang="en">Padam akaun</a>
+    </nav>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Eongerra Tech</span>
+    <nav class="foot-lang" aria-label="Bahasa (pengaki)"><a href="/guides/" hreflang="en" lang="en">English</a><a href="/ms/guides/" hreflang="ms" lang="ms" aria-current="true">Bahasa Melayu</a><a href="/zh/guides/" hreflang="zh-Hans" lang="zh-Hans">中文</a></nav>
+  </div>
+</footer>
 
 </body>
 </html>
