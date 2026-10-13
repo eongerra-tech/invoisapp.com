@@ -51,8 +51,11 @@ body > main { flex: 1 0 auto; width: 100%; }
 
 /* footer matches the homepage footer: logo + wordmark, ink-soft links */
 footer { padding: 40px 0 48px; font-size: 15px; }
-footer .wrap { gap: 12px 32px; }
-footer nav { display: flex; flex-wrap: wrap; gap: 12px 32px; }
+footer .wrap { gap: 12px 24px; }
+footer nav { display: flex; flex-wrap: wrap; gap: 12px 24px; }
+footer a, footer .sp { white-space: nowrap; }
+/* ≥960px: brand, links and © share one row; below that © takes its own right-aligned row */
+@media (max-width: 959px) { footer .sp { margin-left: 0; width: 100%; text-align: right; } }
 footer nav a { color: var(--ink-soft); }
 .f-brand { display: flex; align-items: center; gap: 10px; color: var(--ink); }
 .f-brand:hover { text-decoration: none; }
