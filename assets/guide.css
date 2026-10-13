@@ -1,13 +1,6 @@
 /* Guides (/guides/, /ms/guides/, /zh/guides/). Loaded after site.css, which supplies the tokens and long-form type. */
 
-/* header: brand left, language switcher right */
-header .wrap { justify-content: space-between; }
-.g-brand { display: flex; align-items: center; gap: 10px; color: inherit; }
-.g-brand:hover { text-decoration: none; }
-.lang { display: flex; gap: 2px; font-size: 14px; font-weight: 600; }
-.lang a { color: var(--ink-soft); padding: 6px 9px; border-radius: 8px; }
-.lang a:hover { background: var(--paper); text-decoration: none; }
-.lang a[aria-current] { color: var(--brand); background: var(--paper); }
+/* the header comes from nav.css, shared with the homepages */
 
 .crumbs { font-size: 14px; color: var(--muted); margin-bottom: 14px; }
 .crumbs a { color: var(--ink-soft); }
@@ -68,6 +61,6 @@ html:lang(zh-Hans) body { line-height: 1.8; }
 html:lang(zh-Hans) h1 { letter-spacing: 0; line-height: 1.25; }
 
 /* contrast: brand links on the paper wash and the muted grey on white fall just under 4.5:1 */
-.lang a[aria-current], .cta a { color: var(--brand-dark); }
+.cta a { color: var(--brand-dark); }
 .prose .meta, .crumbs, footer, footer .sp { color: var(--ink-soft); }
 .table-wrap tbody th { font-weight: 600; white-space: normal; }

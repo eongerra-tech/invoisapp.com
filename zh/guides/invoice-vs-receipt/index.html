@@ -22,6 +22,7 @@
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=Figtree:wght@400;500;600;700&amp;display=swap"></noscript>
 <link rel="stylesheet" href="/assets/site.css">
 <link rel="stylesheet" href="/assets/guide.css">
+<link rel="stylesheet" href="/assets/nav.css">
 <meta property="og:site_name" content="Invois">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:type" content="article">
@@ -152,10 +153,29 @@
 </head>
 <body>
 
-<header><div class="wrap">
-  <a class="g-brand" href="/zh/"><img src="/assets/logo.svg" alt="" width="30" height="30"><b>Invois</b></a>
-  <nav class="lang" aria-label="语言"><a href="/guides/quotation-vs-invoice-vs-receipt/" hreflang="en" lang="en">EN</a><a href="/ms/guides/beza-invois-dan-resit/" hreflang="ms" lang="ms">BM</a><a href="/zh/guides/invoice-vs-receipt/" hreflang="zh-Hans" lang="zh-Hans" aria-current="true">中文</a></nav>
-</div></header>
+<header class="container nav">
+  <a class="brand" href="/zh/" aria-label="Invois 首页">
+    <img src="/assets/logo.svg" alt="" width="34" height="34">
+    <span>Invois</span>
+  </a>
+  <nav class="nav-links" aria-label="页面区块">
+    <a href="/zh/#how">运作方式</a>
+    <a href="/zh/#features">功能</a>
+    <a href="/zh/#tour">App 导览</a>
+    <a href="/zh/#pricing">价钱</a>
+    <a href="/zh/#faq">常见问题</a>
+    <a href="/zh/guides/">指南</a>
+  </nav>
+  <div class="nav-end">
+    <a class="nav-guides" href="/zh/guides/">指南</a>
+    <nav class="lang-switch" aria-label="语言">
+      <a href="/guides/quotation-vs-invoice-vs-receipt/" hreflang="en" lang="en">EN</a>
+      <a href="/ms/guides/beza-invois-dan-resit/" hreflang="ms" lang="ms">BM</a>
+      <a href="/zh/guides/invoice-vs-receipt/" hreflang="zh-Hans" lang="zh-Hans" aria-current="true">中文</a>
+    </nav>
+    <a class="pill-btn" href="https://play.google.com/store/apps/details?id=com.invoisapp&amp;referrer=utm_source%3Dinvoisapp.com%26utm_medium%3Dwebsite%26utm_campaign%3Dguide_header_zh">下载 App</a>
+  </div>
+</header>
 
 <main class="wrap">
 <article class="prose">

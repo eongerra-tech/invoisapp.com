@@ -1,4 +1,4 @@
-/* invoisapp.com landing page. Only index.html loads this; privacy / terms / delete-account keep using site.css. */
+/* invoisapp.com landing pages (en / zh / ms). The header lives in nav.css, shared with the guides. */
 :root {
   --brand: #635bff;
   --brand-dark: #4b45e0;
@@ -34,16 +34,6 @@ img, svg { display: block; }
 .h2 { font-size: clamp(36px, 5vw, 56px); }
 .lede { font-size: 18px; line-height: 1.55; color: var(--ink-soft); }
 
-/* ── nav ── */
-.nav { height: 96px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-.brand { display: flex; align-items: center; gap: 10px; color: var(--ink); }
-.brand:hover { color: var(--ink); }
-.brand span { font-family: var(--display); font-weight: 800; font-size: 22px; letter-spacing: -0.02em; }
-.nav-links { display: flex; gap: 40px; font-weight: 500; }
-.nav-links a { color: var(--ink-soft); white-space: nowrap; }
-.nav-links a:hover { color: var(--ink); }
-.pill-btn { display: inline-flex; align-items: center; height: 48px; padding: 0 22px; border-radius: 999px; background: var(--ink); color: #fff; font-weight: 600; font-size: 15px; }
-.pill-btn:hover { color: #fff; background: #2d3d5c; }
 
 /* ── store badges ── */
 .badges { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
@@ -293,12 +283,6 @@ img, svg { display: block; }
   .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 56px; }
   .gallery li:nth-child(even) { margin-top: 0; }
 }
-/* six section links (BM labels are the longest) need ~1030px at a 20px gap; below that they hide */
-@media (max-width: 1180px) { .nav-links { gap: 20px; } }
-/* phones/tablets: the section links hide, so the guides link moves beside the language switcher */
-.nav-guides { display: none; align-items: center; min-height: 40px; padding: 0 4px; font-size: 13px; font-weight: 600; color: var(--ink-soft); white-space: nowrap; }
-.nav-guides:hover { color: var(--ink); }
-@media (max-width: 1040px) { .nav-links { display: none; } .nav-guides { display: inline-flex; } }
 @media (max-width: 960px) {
   .sec-head { flex-direction: column; align-items: flex-start; gap: 18px; }
   .steps { grid-template-columns: minmax(0, 1fr); }
@@ -330,25 +314,8 @@ img, svg { display: block; }
   .stage { zoom: 0.5; }
 }
 
-/* ── language switcher (EN / BM / 中文) ── */
-.nav-end { display: flex; align-items: center; gap: 16px; }
-.lang-switch { display: flex; padding: 3px; border-radius: 999px; background: var(--white); border: 1px solid var(--line); font-size: 13px; font-weight: 600; line-height: 1; }
-.lang-switch a { padding: 9px 11px; border-radius: 999px; color: var(--ink-soft); white-space: nowrap; }
-.lang-switch a:hover { color: var(--ink); }
-.lang-switch a[aria-current] { background: var(--brand-wash); color: var(--brand-deep); }
 /* localized Play badges (ms / zh) are 646×250, narrower than the en art: keep the height, let the width follow */
 .badge img.gp-local { width: auto; }
-@media (max-width: 520px) {
-  .nav { gap: 12px; }
-  .nav-end { gap: 10px; }
-  .pill-btn { height: 40px; padding: 0 14px; font-size: 14px; }
-}
-/* no room for brand + guides link + switcher + pill on a phone (BM fits only from ~460px); the hero badge sits right below */
-@media (max-width: 479px) { .pill-btn { display: none; } }
-/* small phones: tighten the header so brand + guides link + switcher stay on one line */
-@media (max-width: 380px) { .nav-end { gap: 4px; } .lang-switch a { padding: 9px 8px; } }
-/* <360px: the logo alone stands for the brand so the guides link still fits */
-@media (max-width: 359px) { .nav .brand span { display: none; } }
 
 /* Chinese page: the web fonts have no CJK glyphs, so name the system CJK fonts and drop the tight Latin tracking */
 html:lang(zh-Hans) {
