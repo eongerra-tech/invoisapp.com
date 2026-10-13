@@ -1,9 +1,11 @@
 /* Guides (/guides/, /ms/guides/, /zh/guides/). Loaded after site.css, which supplies the tokens and long-form type. */
 
-/* the header comes from nav.css, shared with the homepages */
+/* the header and footer come from nav.css, shared with the homepages */
 
 .crumbs { font-size: 14px; color: var(--muted); margin-bottom: 14px; }
 .crumbs a { color: var(--ink-soft); }
+.prose .crumbs a { text-decoration: none; }
+.prose .crumbs a:hover { text-decoration: underline; }
 .crumbs span { margin: 0 6px; }
 
 /* article body */
@@ -17,36 +19,24 @@
 /* tables scroll inside their own box so a 390 px screen never scrolls sideways */
 .table-wrap { overflow-x: auto; margin-top: 16px; border: 1px solid var(--line); border-radius: 12px; -webkit-overflow-scrolling: touch; }
 .table-wrap table { display: table; margin: 0; font-size: 14px; font-variant-numeric: tabular-nums; min-width: 100%; }
+/* on phones a table keeps a readable width and scrolls inside its box, instead of squeezing every cell into a 3-character column */
+@media (max-width: 640px) { .table-wrap table { min-width: 600px; } }
 .table-wrap th, .table-wrap td { padding: 9px 12px; }
 .table-wrap thead th { background: var(--paper); }
 .table-wrap tr:last-child td { border-bottom: 0; }
+/* the note under a table needs the same breathing room as a paragraph */
+.table-wrap + p { margin-top: 12px; }
 
 /* Play CTA */
-.cta { margin-top: 26px; padding: 22px; border-radius: 16px; background: var(--paper); display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.cta { margin-top: 24px; }
+.cta + p { margin-top: 20px; }
 .cta .badge img { display: block; height: 56px; width: auto; }
-.cta p { margin: 0; font-size: 15px; }
 
 /* guide hub */
 .guide-list { list-style: none; margin: 24px 0 0; }
 .guide-list li { border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; margin-bottom: 14px; }
 .guide-list h2 { margin: 0 0 6px; font-size: 19px; }
 .guide-list h2 a { color: var(--ink); }
-
-/* short pages (the hubs) keep the footer at the viewport bottom instead of leaving a blank band under it */
-body { min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; }
-body > main { flex: 1 0 auto; width: 100%; }
-
-/* footer matches the homepage footer: logo + wordmark, ink-soft links */
-footer { padding: 40px 0 48px; font-size: 15px; }
-footer .wrap { gap: 12px 24px; }
-footer nav { display: flex; flex-wrap: wrap; gap: 12px 24px; }
-footer a, footer .sp { white-space: nowrap; }
-/* ≥960px: brand, links and © share one row; below that © takes its own right-aligned row */
-@media (max-width: 959px) { footer .sp { margin-left: 0; width: 100%; text-align: right; } }
-footer nav a { color: var(--ink-soft); }
-.f-brand { display: flex; align-items: center; gap: 10px; color: var(--ink); }
-.f-brand:hover { text-decoration: none; }
-.f-brand b { font-family: "Bricolage Grotesque", "Figtree", system-ui, sans-serif; font-size: 18px; font-weight: 800; letter-spacing: -0.02em; }
 
 /* Chinese pages: the Latin web fonts have no CJK glyphs; name the system CJK fonts so headings and body match */
 html:lang(zh-Hans) body,
@@ -56,5 +46,5 @@ html:lang(zh-Hans) h1 { letter-spacing: 0; line-height: 1.25; }
 
 /* contrast: brand links on the paper wash and the muted grey on white fall just under 4.5:1 */
 .cta a { color: var(--brand-dark); }
-.prose .meta, .crumbs, footer, footer .sp { color: var(--ink-soft); }
-.table-wrap tbody th { font-weight: 600; white-space: normal; }
+.prose .meta, .crumbs { color: var(--ink-soft); }
+.table-wrap tbody th { font-weight: 600; white-space: normal; min-width: 7em; }

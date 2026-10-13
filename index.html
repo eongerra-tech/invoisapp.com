@@ -101,7 +101,8 @@
 </head>
 <body>
 
-<header class="container nav">
+<header class="site-head">
+<div class="nav">
   <a class="brand" href="/" aria-label="Invois home">
     <img src="/assets/logo.svg" alt="" width="34" height="34">
     <span>Invois</span>
@@ -123,6 +124,7 @@
     </nav>
     <a class="pill-btn" href="#download">Get the app</a>
   </div>
+</div>
 </header>
 
 <main>
@@ -432,11 +434,6 @@
       </ul>
     </article>
   </div>
-  <div class="plans-cta">
-    <a class="badge" href="https://play.google.com/store/apps/details?id=com.invoisapp&referrer=utm_source%3Dinvoisapp.com%26utm_medium%3Dwebsite%26utm_campaign%3Dpricing">
-      <img src="/assets/badge-googleplay.png" alt="Get it on Google Play" width="186" height="62" loading="lazy">
-    </a>
-  </div>
   <p class="plans-note">AI features have a monthly allowance, because each use costs real money to run.</p>
 </section>
 
@@ -512,14 +509,28 @@
 
 </main>
 
-<footer class="foot">
-  <div class="container">
-    <a class="brand" href="/"><img src="/assets/logo.svg" alt="" width="26" height="26"><span>Invois</span></a>
-    <a href="/guides/">Guides</a>
-    <a href="/privacy/">Privacy</a>
-    <a href="/terms/">Terms</a>
-    <a href="/delete-account/">Delete account</a>
-    <span class="sp">© 2026 Eongerra Tech</span>
+<footer class="site-foot">
+  <div class="foot-top">
+    <div class="foot-brand">
+      <a class="brand" href="/"><img src="/assets/logo.svg" alt="" width="26" height="26"><span>Invois</span></a>
+      <p>Describe the job out loud and get an itemised quotation, then turn it into an invoice and receipt.</p>
+    </div>
+    <nav class="foot-col" aria-label="Product">
+      <p class="foot-h">Product</p>
+      <a href="/#features">Features</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/guides/">Guides</a>
+    </nav>
+    <nav class="foot-col" aria-label="Legal">
+      <p class="foot-h">Legal</p>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/delete-account/">Delete account</a>
+    </nav>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Eongerra Tech</span>
+    <nav class="foot-lang" aria-label="Language (footer)"><a href="/" hreflang="en" lang="en" aria-current="true">English</a><a href="/ms/" hreflang="ms" lang="ms">Bahasa Melayu</a><a href="/zh/" hreflang="zh-Hans" lang="zh-Hans">中文</a></nav>
   </div>
 </footer>
 

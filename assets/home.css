@@ -1,4 +1,4 @@
-/* invoisapp.com landing pages (en / zh / ms). The header lives in nav.css, shared with the guides. */
+/* invoisapp.com landing pages (en / zh / ms). The header and footer live in nav.css, shared with the guides. */
 :root {
   --brand: #635bff;
   --brand-dark: #4b45e0;
@@ -114,8 +114,8 @@ img, svg { display: block; }
 }
 
 /* ── sections ── */
-.section { padding-top: 128px; }
-.sec-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-bottom: 56px; }
+.section { padding-top: 96px; }
+.sec-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-bottom: 44px; }
 .sec-head > div { display: flex; flex-direction: column; gap: 14px; }
 .sec-head .h2 { max-width: 640px; }
 .sec-head p { max-width: 420px; }
@@ -195,7 +195,7 @@ img, svg { display: block; }
 .boxes li { padding: 8px 14px; border-radius: 10px; border: 1px solid var(--line); font-size: 14px; font-weight: 600; }
 
 /* app tour */
-.tour { margin-top: 128px; padding: 112px 0 120px; background: var(--night); color: #fff; }
+.tour { margin-top: 96px; padding: 96px 0 104px; background: var(--night); color: #fff; }
 .tour .eyebrow { color: #a9a4ff; }
 .tour .sec-head p { color: #c3c7e3; }
 .gallery { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; list-style: none; }
@@ -212,7 +212,7 @@ img, svg { display: block; }
 .caption span { display: block; font-size: 14px; color: #a9aed0; }
 
 /* closing cta */
-.cta-band { position: relative; overflow: hidden; margin-top: 120px; border-radius: 36px; background: var(--brand); padding: 72px 80px; display: flex; justify-content: space-between; align-items: center; gap: 48px; color: #fff; }
+.cta-band { position: relative; overflow: hidden; margin-top: 96px; border-radius: 36px; background: var(--brand); padding: 72px 80px; display: flex; justify-content: space-between; align-items: center; gap: 48px; color: #fff; }
 .cta-band::before, .cta-band::after { content: ""; position: absolute; border-radius: 50%; border: 1.5px solid rgba(255, 255, 255, 0.28); pointer-events: none; }
 .cta-band::before { right: -120px; top: -160px; width: 460px; height: 460px; }
 .cta-band::after { right: -40px; top: -80px; width: 300px; height: 300px; }
@@ -224,15 +224,9 @@ img, svg { display: block; }
 .cta-band .badge img { width: 204px; height: 68px; }
 .cta-band .badge.soon img { opacity: 0.6; }
 
-/* footer */
-.foot { margin-top: 96px; border-top: 1px solid var(--line); }
-.foot .container { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 32px; padding-top: 40px; padding-bottom: 48px; font-size: 15px; color: var(--muted); }
-.foot .brand span { font-size: 18px; }
-.foot a:not(.brand) { color: var(--ink-soft); }
-.foot .sp { margin-left: auto; white-space: nowrap; }
-.foot a { white-space: nowrap; }
-/* below 960px the © line takes its own right-aligned row instead of wrapping wherever it falls */
-@media (max-width: 959px) { .foot .sp { width: 100%; text-align: right; } }
+/* footer lives in nav.css (loaded after this file, where it resets margin), so this needs the extra specificity */
+body .site-foot { margin-top: 96px; }
+@media (max-width: 680px) { body .site-foot { margin-top: 64px; } }
 
 /* pricing */
 .plans { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; max-width: 960px; margin: 0 auto; }
@@ -248,7 +242,6 @@ img, svg { display: block; }
 .ticks { list-style: none; display: flex; flex-direction: column; gap: 14px; flex-grow: 1; }
 .ticks li { position: relative; padding-left: 34px; font-size: 16px; line-height: 1.5; color: var(--ink-soft); }
 .ticks li::before { content: ""; position: absolute; left: 0; top: 1px; width: 22px; height: 22px; border-radius: 50%; background: var(--ok) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center / 12px no-repeat; }
-.plans-cta { display: flex; justify-content: center; margin-top: 32px; }
 .plans-note { max-width: 960px; margin: 24px auto 0; text-align: center; font-size: 14px; color: var(--muted); }
 
 /* faq */
@@ -296,25 +289,25 @@ img, svg { display: block; }
   .plans { grid-template-columns: minmax(0, 1fr); max-width: 560px; }
 }
 @media (max-width: 680px) {
-  .section { padding-top: 88px; }
+  .section { padding-top: 64px; }
   .stage { zoom: 0.56; }
   .hero { padding-top: 24px; }
   .strip { flex-direction: column; align-items: stretch; gap: 16px; padding: 24px; }
   .tags li { font-size: 14px; }
-  .tour { margin-top: 88px; padding: 80px 0; }
+  .tour { margin-top: 64px; padding: 64px 0; }
   .gallery { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 20px; margin: 0 -24px; padding: 0 24px 8px; }
   .gallery li { scroll-snap-align: center; flex-shrink: 0; }
   .card.voice, .card, .step, .plan { padding: 24px; border-radius: 24px; }
   .price b { font-size: 40px; }
   .step-art { padding: 16px; }
-  .cta-band { margin-top: 88px; padding: 44px 24px; border-radius: 28px; }
+  .cta-band { margin-top: 64px; padding: 44px 24px; border-radius: 28px; }
   .cta-band .badge img, .badge img { width: 168px; height: 56px; }
 }
 @media (max-width: 380px) {
   .stage { zoom: 0.5; }
 }
 
-/* localized Play badges (ms / zh) are 646×250, narrower than the en art: keep the height, let the width follow */
+/* localized Play badges (ms / zh) are 646×192 (padding trimmed), a different shape from the en art: keep the height, let the width follow */
 .badge img.gp-local { width: auto; }
 
 /* Chinese page: the web fonts have no CJK glyphs, so name the system CJK fonts and drop the tight Latin tracking */

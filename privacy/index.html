@@ -16,6 +16,7 @@
 <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=Figtree:wght@400;500;600;700&amp;display=swap"></noscript>
 <link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/nav.css">
 <link rel="canonical" href="https://invoisapp.com/privacy/">
 <meta property="og:site_name" content="Invois">
 <meta property="og:locale" content="en_MY">
@@ -34,7 +35,18 @@
 </head>
 <body>
 
-<header><div class="wrap"><a href="/" style="display:flex;align-items:center;gap:10px;color:inherit"><img src="/assets/logo.svg" alt=""><b>Invois</b></a></div></header>
+<header class="site-head">
+<div class="nav">
+  <a class="brand" href="/" aria-label="Invois home">
+    <img src="/assets/logo.svg" alt="" width="34" height="34">
+    <span>Invois</span>
+  </a>
+  <div class="nav-end">
+    <a class="nav-about" href="/guides/">Guides</a>
+    <a class="pill-btn" href="https://play.google.com/store/apps/details?id=com.invoisapp&amp;referrer=utm_source%3Dinvoisapp.com%26utm_medium%3Dwebsite%26utm_campaign%3Dprivacy_header">Get the app</a>
+  </div>
+</div>
+</header>
 
 <main class="wrap">
   <h1>Privacy Policy</h1>
@@ -161,12 +173,30 @@
   </p>
 </main>
 
-<footer><div class="wrap">
-  <a href="/">Home</a>
-  <a href="/terms/">Terms</a>
-  <a href="/delete-account/">Delete account</a>
-  <span class="sp">© 2026 Eongerra Tech</span>
-</div></footer>
+<footer class="site-foot">
+  <div class="foot-top">
+    <div class="foot-brand">
+      <a class="brand" href="/"><img src="/assets/logo.svg" alt="" width="26" height="26"><span>Invois</span></a>
+      <p>Describe the job out loud and get an itemised quotation, then turn it into an invoice and receipt.</p>
+    </div>
+    <nav class="foot-col" aria-label="Product">
+      <p class="foot-h">Product</p>
+      <a href="/#features">Features</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/guides/">Guides</a>
+    </nav>
+    <nav class="foot-col" aria-label="Legal">
+      <p class="foot-h">Legal</p>
+      <a href="/privacy/" aria-current="page">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/delete-account/">Delete account</a>
+    </nav>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Eongerra Tech</span>
+    <nav class="foot-lang" aria-label="Language (footer)"><a href="/" hreflang="en" lang="en" aria-current="true">English</a><a href="/ms/" hreflang="ms" lang="ms">Bahasa Melayu</a><a href="/zh/" hreflang="zh-Hans" lang="zh-Hans">中文</a></nav>
+  </div>
+</footer>
 
 </body>
 </html>
