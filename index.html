@@ -3,8 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Invois — Speak it, Send it, Get paid.</title>
-<meta name="description" content="Invois turns a voice note into a professional quotation or invoice. Built for self-employed contractors and freelancers in Malaysia.">
+<title>Invois: Voice Quotation &amp; Invoice App for Malaysia</title>
+<meta name="description" content="Describe the job by voice and Invois writes an itemised quotation you can WhatsApp in a minute. For self-employed people and small businesses in Malaysia.">
+<link rel="canonical" href="https://invoisapp.com/">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/assets/favicon-96.png" type="image/png" sizes="96x96">
@@ -12,12 +13,84 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=Figtree:wght@400;500;600;700&amp;display=swap"></noscript>
 <link rel="stylesheet" href="/assets/home.css">
-<meta property="og:title" content="Invois — Speak it, Send it, Get paid.">
-<meta property="og:description" content="Turn a voice note into a professional quotation or invoice.">
+<meta property="og:site_name" content="Invois">
+<meta property="og:locale" content="en_MY">
+<meta property="og:title" content="Invois: speak the job, send the quotation">
+<meta property="og:description" content="Turn a voice note into a professional quotation, then invoice and receipt. For anyone in Malaysia who quotes and bills their own jobs.">
 <meta property="og:url" content="https://invoisapp.com/">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://invoisapp.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Invois — speak it, send it, get paid. Malaysia's AI invoice and quotation app.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Invois: speak the job, send the quotation">
+<meta name="twitter:description" content="Turn a voice note into a professional quotation, then invoice and receipt. For anyone in Malaysia who quotes and bills their own jobs.">
+<meta name="twitter:image" content="https://invoisapp.com/assets/og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://invoisapp.com/#org",
+      "name": "Eongerra Tech",
+      "url": "https://invoisapp.com/",
+      "logo": "https://invoisapp.com/assets/favicon-192.png",
+      "email": "support@eongerra.com",
+      "address": { "@type": "PostalAddress", "addressLocality": "Subang Jaya", "addressRegion": "Selangor", "addressCountry": "MY" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://invoisapp.com/#website",
+      "url": "https://invoisapp.com/",
+      "name": "Invois",
+      "alternateName": ["invoisapp", "Invois app"],
+      "inLanguage": "en-MY",
+      "publisher": { "@id": "https://invoisapp.com/#org" }
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://invoisapp.com/#app",
+      "name": "Invois: AI Quotation & Invoice",
+      "alternateName": "Invois",
+      "description": "Describe a job by voice in Bahasa Melayu, English or Chinese and Invois writes an itemised quotation with your own prices. Turn it into an invoice and receipt in one tap and share the PDF on WhatsApp.",
+      "url": "https://invoisapp.com/",
+      "image": "https://invoisapp.com/assets/og.png",
+      "operatingSystem": "Android",
+      "applicationCategory": "BusinessApplication",
+      "countriesSupported": "MY",
+      "inLanguage": ["ms", "en", "zh-Hans"],
+      "installUrl": "https://play.google.com/store/apps/details?id=com.invoisapp&referrer=utm_source%3Dinvoisapp.com%26utm_medium%3Dwebsite%26utm_campaign%3Dhero",
+      "sameAs": ["https://play.google.com/store/apps/details?id=com.invoisapp"],
+      "featureList": [
+        "Voice to itemised quotation (Malay, English, Chinese, mixed)",
+        "Price list filled in automatically",
+        "Quotation to invoice to receipt in one tap",
+        "PDF sharing on WhatsApp",
+        "SST as its own line; SSM, TIN and SST numbers on the letterhead",
+        "Deposits, instalments and partial payments",
+        "AI-drafted terms and conditions"
+      ],
+      "publisher": { "@id": "https://invoisapp.com/#org" },
+      "offers": [
+        { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "MYR",
+          "description": "Unlimited quotations, invoices, customers and price list. 15 AI actions a month, 30 after phone verification." },
+        { "@type": "Offer", "name": "Invois Pro (monthly)", "price": "19.90", "priceCurrency": "MYR",
+          "priceSpecification": { "@type": "UnitPriceSpecification", "price": "19.90", "priceCurrency": "MYR", "billingDuration": "P1M" },
+          "description": "300 AI actions a month and no invoisapp.com footer on documents. Billed by Google Play." },
+        { "@type": "Offer", "name": "Invois Pro (yearly)", "price": "190", "priceCurrency": "MYR",
+          "priceSpecification": { "@type": "UnitPriceSpecification", "price": "190", "priceCurrency": "MYR", "billingDuration": "P1Y" },
+          "description": "300 AI actions a month and no invoisapp.com footer on documents. Billed by Google Play." }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -30,6 +103,7 @@
     <a href="#how">How it works</a>
     <a href="#features">Features</a>
     <a href="#tour">App tour</a>
+    <a href="#pricing">Pricing</a>
     <a href="#faq">FAQ</a>
   </nav>
   <a class="pill-btn" href="#download">Get the app</a>
@@ -308,6 +382,46 @@
   </div>
 </section>
 
+<!-- ───────── pricing ───────── -->
+<section class="container section" id="pricing">
+  <div class="sec-head center">
+    <span class="eyebrow">Pricing</span>
+    <h2 class="display h2">Free to start. Pro when you need more AI.</h2>
+  </div>
+  <div class="plans">
+    <article class="plan">
+      <div class="plan-head">
+        <h3>Free</h3>
+        <p class="price"><b>RM 0</b></p>
+        <p class="price-note">No card needed</p>
+      </div>
+      <ul class="ticks">
+        <li>Unlimited quotations and invoices</li>
+        <li>Unlimited customers and price list</li>
+        <li>15 AI actions a month, 30 after you verify your phone</li>
+        <li>A small “Made with invoisapp.com” line on your documents</li>
+      </ul>
+      <a class="badge" href="https://play.google.com/store/apps/details?id=com.invoisapp&referrer=utm_source%3Dinvoisapp.com%26utm_medium%3Dwebsite%26utm_campaign%3Dpricing">
+        <img src="/assets/badge-googleplay.png" alt="Get it on Google Play" width="186" height="62" loading="lazy">
+      </a>
+    </article>
+    <article class="plan pro">
+      <div class="plan-head">
+        <h3>Invois Pro</h3>
+        <p class="price"><b>RM 19.90</b><span>/ month</span></p>
+        <p class="price-note">or RM 190 a year</p>
+      </div>
+      <ul class="ticks">
+        <li>Everything in Free</li>
+        <li>300 AI actions a month</li>
+        <li>No invoisapp.com line on your documents</li>
+        <li>Billed by Google Play. Cancel any time in the Play Store.</li>
+      </ul>
+    </article>
+  </div>
+  <p class="plans-note">AI features have a monthly allowance, because each use costs real money to run.</p>
+</section>
+
 <!-- ───────── faq ───────── -->
 <section class="container section faq" id="faq">
   <div class="faq-head">
@@ -318,7 +432,7 @@
   <div class="faq-list">
       <details>
         <summary>Is Invois free?</summary>
-        <p>You can start free — no card needed. Documents made on the free plan carry a small “Made with invoisapp.com” line. Invois Pro is a subscription billed through Google Play; the price is shown in the app before you buy.</p>
+        <p>Yes, you can start free — no card needed. Quotations, invoices, customers and your price list are unlimited, with 15 AI actions a month, or 30 after you verify your phone. Documents made on the free plan carry a small “Made with invoisapp.com” line. Invois Pro is RM 19.90 a month or RM 190 a year, billed through Google Play: 300 AI actions a month and no footer line. Cancel any time in the Play Store.</p>
       </details>
       <details>
         <summary>Which languages can I speak in?</summary>
