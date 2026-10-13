@@ -52,3 +52,8 @@ html:lang(zh-Hans) body,
 html:lang(zh-Hans) h1, html:lang(zh-Hans) h2 { font-family: "Figtree", system-ui, -apple-system, "PingFang SC", "Noto Sans SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; }
 html:lang(zh-Hans) body { line-height: 1.8; }
 html:lang(zh-Hans) h1 { letter-spacing: 0; line-height: 1.25; }
+
+/* contrast: brand links on the paper wash and the muted grey on white fall just under 4.5:1 */
+.lang a[aria-current], .cta a { color: var(--brand-dark); }
+.prose .meta, .crumbs, footer, footer .sp { color: var(--ink-soft); }
+.table-wrap tbody th { font-weight: 600; white-space: normal; }
