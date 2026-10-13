@@ -6,16 +6,28 @@
     <loc>https://invoisapp.com/</loc>
     <lastmod>2026-10-13</lastmod>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/"/>
   </url>
   <url>
     <loc>https://invoisapp.com/ms/</loc>
     <lastmod>2026-10-13</lastmod>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/"/>
   </url>
   <url>
     <loc>https://invoisapp.com/zh/</loc>
     <lastmod>2026-10-13</lastmod>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/"/>
   </url>
   <url>
     <loc>https://invoisapp.com/privacy/</loc>
