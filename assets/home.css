@@ -32,6 +32,9 @@ img, svg { display: block; }
 .display { font-family: var(--display); font-weight: 800; letter-spacing: -0.03em; line-height: 1.02; }
 .eyebrow { font-size: 14px; font-weight: 700; color: var(--brand-dark); letter-spacing: 0.08em; text-transform: uppercase; }
 .h2 { font-size: clamp(36px, 5vw, 56px); }
+/* even line lengths for headings (no one-word or one-character last line, which CJK headings hit often), no orphan word in paragraphs */
+h1, h2, h3, .display { text-wrap: balance; }
+p, li { text-wrap: pretty; }
 .lede { font-size: 18px; line-height: 1.55; color: var(--ink-soft); }
 
 
@@ -44,7 +47,8 @@ img, svg { display: block; }
 .badge.soon { cursor: default; }
 
 /* ── hero ── */
-.hero { display: grid; grid-template-columns: 560px 1fr; gap: 48px; align-items: center; padding: 40px 0 96px; min-height: 700px; }
+/* top/bottom only: a padding shorthand here would wipe the 24px side gutter .container gives the hero on phones */
+.hero { display: grid; grid-template-columns: 560px 1fr; gap: 48px; align-items: center; padding-top: 40px; padding-bottom: 96px; min-height: 700px; }
 .hero-copy { display: flex; flex-direction: column; gap: 28px; position: relative; z-index: 2; }
 .chip { align-self: flex-start; display: flex; align-items: center; gap: 8px; padding: 8px 14px 8px 10px; border-radius: 999px; background: var(--white); border: 1px solid var(--line); font-size: 14px; font-weight: 600; color: var(--ink-soft); }
 .chip i { width: 8px; height: 8px; border-radius: 50%; background: var(--brand); }
@@ -302,6 +306,12 @@ body .site-foot { margin-top: 96px; }
   .step-art { padding: 16px; }
   .cta-band { margin-top: 64px; padding: 44px 24px; border-radius: 28px; }
   .cta-band .badge img, .badge img { width: 168px; height: 56px; }
+}
+/* the two store badges stay side by side inside a 390px screen's 24px gutters */
+@media (max-width: 420px) {
+  .badges { gap: 10px; }
+  .badge img { width: 150px; height: 50px; }
+  .badge .tag { top: -15px; padding: 2px 7px; font-size: 10px; }
 }
 @media (max-width: 380px) {
   .stage { zoom: 0.5; }

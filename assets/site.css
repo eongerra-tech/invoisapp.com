@@ -70,3 +70,7 @@ td { color: var(--ink-soft); }
 /* header and footer live in nav.css. Short pages keep the footer at the viewport bottom. */
 body { min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; }
 body > main { flex: 1 0 auto; width: 100%; }
+
+/* even line lengths for headings, no orphan word at the end of a paragraph */
+h1, h2, h3 { text-wrap: balance; }
+p, li { text-wrap: pretty; }
