@@ -7,7 +7,7 @@
   --brand-wash: #ecebff; --brand-deep: #3a33c9; --brand-dark: #4b45e0;
   font-family: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif; line-height: 1.5; color: var(--ink);
 }
-html:lang(zh-Hans) .site-head, html:lang(zh-Hans) .site-foot { font-family: "Figtree", system-ui, -apple-system, "PingFang SC", "Noto Sans SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; }
+html:lang(zh-Hans) .site-head, html:lang(zh-Hans) .site-foot { font-family: "Figtree", "Noto Sans SC", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", system-ui, sans-serif; }
 .site-head a:hover, .site-foot a:hover { text-decoration: none; }
 .site-head img, .site-foot img { display: block; }
 
