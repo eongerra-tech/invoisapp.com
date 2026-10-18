@@ -1,0 +1,86 @@
+/* Phones only (≤640px): the same page, with less on it and a calmer layout. Desktop and tablet are untouched.
+   Shared by the en / zh / ms landing pages: CSS only, so no copy is duplicated per language. */
+
+@media (max-width: 640px) {
+
+  /* one alignment for every section heading: left, like the text under it */
+  .head.center { margin-left: 0; margin-right: 0; align-items: flex-start; text-align: left; }
+  /* type scales with the screen width (vw), between a floor for small phones and a cap for large ones */
+  .h2 { font-size: clamp(26px, 8vw, 32px); }
+
+  /* hero: tighter headline and lede */
+  .hero h1 { font-size: clamp(36px, 11.3vw, 46px); line-height: 1.02; }
+  /* zh: each phrase stays on one line (.ph), so the longest one (8 characters) must fit a 320px phone */
+  html:lang(zh-Hans) .hero h1 { font-size: clamp(30px, 10vw, 46px); }
+  .hero .lede { font-size: clamp(16px, 4.6vw, 18px); line-height: 1.55; }
+  /* the copy fills the first screen on its own (below the 64px header), centred in it, with a small
+     bouncing arrow button at the bottom that scrolls to the demo, so the purple box starts on the next screen instead of
+     peeking in as a cut-off strip. The arrow has no words, so it works for en / zh / ms alike. */
+  .hero { padding-top: 0; }
+  .hero .wrap { gap: 8px; }
+  .hero-copy { position: relative; gap: 22px; min-height: calc(100vh - 64px); min-height: calc(100svh - 64px); justify-content: center; padding: 24px 0 84px; }
+  .hero-next { display: block; position: absolute; left: 50%; bottom: 20px; margin-left: -22px; width: 44px; height: 44px; border-radius: 50%; background: var(--brand-wash) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234b45e0' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center / 20px no-repeat; cursor: pointer; animation: hint 1.8s ease-in-out infinite; }
+  #demo { scroll-margin-top: 16px; }
+  @keyframes hint { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+
+  /* why: the two readings become two tabs above the quotation ("Your customer…" / "You…", the desktop column
+     headings), and only one side's notes show at a time, full width and in body size. Half the text on screen,
+     no repeated CUSTOMER / YOU labels, and the same tap-to-compare idea as the hero. Tabs are wired by a few
+     lines of JS in the page; without JS both sides simply show. */
+  .readers { display: grid; grid-template-columns: 1fr 1fr; column-gap: 0; }
+  .readers > .rd-row { grid-column: 1 / -1; }
+  .readers > .rd-label.them, .readers > .rd-label.you { display: flex; align-items: center; justify-content: center; min-height: 48px; margin-bottom: 14px; padding: 8px 2px 10px; border-bottom: 2px solid var(--line); font-size: clamp(12.5px, 3.7vw, 15px); font-weight: 600; letter-spacing: 0; text-transform: none; line-height: 1.25; white-space: nowrap; color: var(--muted); text-align: center; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  .readers > .rd-label i { display: none; }
+  .readers[data-view="them"] > .rd-label.them { color: #c2410c; border-bottom-color: #f28a4b; }
+  .readers[data-view="you"] > .rd-label.you { color: var(--brand-dark); border-bottom-color: var(--brand); }
+
+  .rd-note .who { display: none; }
+  .rd-note, .rd-note.them, .rd-note.you, .rd-note.foot { position: relative; grid-column: 1 / -1; padding: 2px 18px 22px 35px; font-size: 15.5px; line-height: 1.5; color: var(--ink); background: var(--white); border-left: 1px solid var(--line); border-right: 1px solid var(--line); border-bottom: 0; border-radius: 0; }
+  /* each note hangs off a thin coloured bar (orange = customer, purple = you); no quotes. */
+  .rd-note.them { background: linear-gradient(#f28a4b, #f28a4b) 19px 4px / 3px calc(100% - 26px) no-repeat, var(--white); }
+  .rd-note.you { background: linear-gradient(var(--brand), var(--brand)) 19px 4px / 3px calc(100% - 26px) no-repeat, var(--white); }
+  .rd-note.foot { background-position: 19px 6px; background-size: 3px calc(100% - 30px); }
+  .readers[data-view="them"] .rd-note.you, .readers[data-view="you"] .rd-note.them { display: none; }
+  /* more air between items than inside one, so each item and its note read as one group */
+  .rd-line { padding-top: 18px; padding-bottom: 10px; }
+  .rd-line small { margin-top: 2px; }
+  .rd-note.foot strong { display: inline; font-size: 16px; }
+  .rd-note:not(.foot) { border-bottom: 1px solid var(--rule); }
+  .rd-note.foot { padding-top: 6px; padding-bottom: 24px; border-bottom: 1px solid var(--line); border-radius: 0 0 18px 18px; }
+
+  /* how it works and the PDF: skipped on phones. The hero demo and "Why Invois" already show an itemised
+     quotation, and the AI panel covers how it gets built; WhatsApp / invoice / receipt is in the FAQ */
+  #how, .band.night { display: none; }
+
+  /* features: one calm list instead of a purple box stacked on a white box. The section heading already says AI,
+     so the "AI helpers" tag goes; each AI item gets a solid purple icon tile so it still reads as the headline
+     features. The plain three become small pills underneath, so they don't look like tappable menu rows. */
+  .ai { margin-bottom: 0; padding: 0; border-radius: 0; background: none; color: var(--ink); }
+  .ai-tag { display: none; }
+  .ai-grid { margin-top: 0; }
+  .ai-item, .ai-item:first-child { display: grid; grid-template-columns: 44px minmax(0, 1fr); column-gap: 14px; row-gap: 3px; padding: 18px 0; border-left: 0; border-top: 1px solid var(--line); }
+  .ai-item:first-child { border-top: 0; padding-top: 4px; }
+  .ai-item i { grid-row: 1 / 3; width: 44px; height: 44px; margin: 0; border-radius: 13px; background: var(--brand); display: grid; place-items: center; }
+  .ai-item i svg { width: 22px; height: 22px; }
+  .ai-item h3 { font-size: 18px; }
+  .ai-item p { color: var(--ink-soft); font-size: 15px; font-weight: 400; }
+  .ai-note { margin-top: 0; padding: 14px 0 0; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
+  .feats { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; border: 0; border-radius: 0; background: none; overflow: visible; }
+  .feat { align-items: center; gap: 7px; margin: 0; padding: 8px 14px 8px 11px; border: 0; border-radius: 999px; background: var(--white); box-shadow: inset 0 0 0 1px var(--line); }
+  .feat i { margin: 0; }
+  .feat i svg { width: 18px; height: 18px; }
+  .feat h3 { font-size: 14px; font-weight: 600; }
+  .feat p { display: none; }
+
+  /* closing call to action: a little less padding */
+  .cta { padding: 32px 22px; }
+
+
+  /* store badges (hero and closing): always side by side, each taking half the row and shrinking with the screen,
+     so they never wrap onto two lines on narrower phones (375px, 360px) */
+  .badges { flex-wrap: nowrap; gap: 10px; }
+  .badge { flex: 1 1 0; min-width: 0; max-width: 180px; }
+  .badge img, .badge img.gp-local { width: 100%; height: auto; }
+
+}
+@media (max-width: 640px) and (prefers-reduced-motion: reduce) { .hero-next { animation: none; } }

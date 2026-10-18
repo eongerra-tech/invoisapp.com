@@ -22,6 +22,7 @@
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=Figtree:wght@400;500;600;700&amp;display=swap"></noscript>
 <link rel="stylesheet" href="/assets/nav.css">
 <link rel="stylesheet" href="/assets/landing.css">
+<link rel="stylesheet" href="/assets/landing-mobile.css">
 <meta property="og:site_name" content="Invois">
 <meta property="og:locale" content="ms_MY">
 <meta property="og:locale:alternate" content="en_MY">
@@ -145,6 +146,7 @@
         </span>
       </div>
       <p class="meta">Percuma untuk bermula · Android kini tersedia, iOS akan datang</p>
+      <a class="hero-next" href="#demo" aria-label="Lihat contoh"></a>
     </div>
 
     <div class="demo" data-state="itemised" id="demo">
@@ -490,7 +492,7 @@
   <div class="wrap">
     <div class="cta">
       <div>
-        <h2 class="h2">Sebut harga seterusnya, sekali tengok terus faham.</h2>
+        <h2 class="h2">Sebut harga seterusnya, sekali&nbsp;tengok terus&nbsp;faham.</h2>
         <p>Ada soalan? E-mel <a href="mailto:support@eongerra.com">support@eongerra.com</a>, kami baca setiap e-mel.</p>
       </div>
       <div class="badges">
@@ -587,6 +589,37 @@
     var io = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { io.disconnect(); setTimeout(play, 300); } }, { threshold: 0.4 });
     io.observe(demo);
   } else play();
+})();
+</script>
+<script>
+/* "Why Invois" on phones: the two column headings become tabs that switch which side's notes show (see landing-mobile.css). */
+(function () {
+  var r = document.querySelector('.readers');
+  if (!r || !window.matchMedia) return;
+  var t = r.querySelector('.rd-label.them'), y = r.querySelector('.rd-label.you');
+  if (!t || !y) return;
+  var mq = window.matchMedia('(max-width: 640px)');
+  function set(v) {
+    r.setAttribute('data-view', v);
+    t.setAttribute('aria-selected', v === 'them' ? 'true' : 'false');
+    y.setAttribute('aria-selected', v === 'you' ? 'true' : 'false');
+  }
+  [t, y].forEach(function (el) {
+    el.addEventListener('click', function () { if (mq.matches) set(el === t ? 'them' : 'you'); });
+    el.addEventListener('keydown', function (e) { if (mq.matches && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); el.click(); } });
+  });
+  function apply() {
+    if (mq.matches) {
+      r.setAttribute('role', 'tablist');
+      [t, y].forEach(function (el) { el.setAttribute('role', 'tab'); el.tabIndex = 0; });
+      if (!r.hasAttribute('data-view')) set('them');
+    } else {
+      r.removeAttribute('data-view'); r.removeAttribute('role');
+      [t, y].forEach(function (el) { el.removeAttribute('role'); el.removeAttribute('tabindex'); el.removeAttribute('aria-selected'); });
+    }
+  }
+  apply();
+  if (mq.addEventListener) mq.addEventListener('change', apply); else mq.addListener(apply);
 })();
 </script>
 </body>

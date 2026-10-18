@@ -65,6 +65,8 @@ p, li { text-wrap: pretty; }
 .badge.soon { cursor: default; }
 .badge.soon img { opacity: 0.55; }
 .badge .tag { position: absolute; top: -10px; right: -8px; padding: 3px 9px; border-radius: 999px; background: var(--sun); color: #3b2a05; font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+/* the arrow under the hero copy that scrolls to the demo: phones only (shown in landing-mobile.css) */
+.hero-next { display: none; }
 
 
 /* ───────────────── hero ───────────────── */
@@ -373,7 +375,7 @@ p, li { text-wrap: pretty; }
   .rd-note.foot strong { font-size: 15px; }
   .rd-note .who { display: block; margin-bottom: 4px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
   .rd-note.them .who { color: #c2410c; }
-  .rd-note.you .who { color: var(--ink); }
+  .rd-note.you .who { color: var(--brand-dark); }
   .rd-note.foot { border-bottom: 1px solid var(--line); }
   .rd-note.them.foot { border-radius: 0 0 0 18px; }
   .rd-note.you.foot { border-radius: 0 0 18px 0; }
