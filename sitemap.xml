@@ -125,4 +125,11 @@
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/invoice-vs-receipt/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/quotation-vs-invoice-vs-receipt/"/>
   </url>
+  <url>
+    <loc>https://invoisapp.com/guides/do-i-need-to-charge-sst/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/do-i-need-to-charge-sst/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/do-i-need-to-charge-sst/"/>
+  </url>
 </urlset>
