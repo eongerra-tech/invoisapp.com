@@ -3,6 +3,9 @@
 
 @media (max-width: 640px) {
 
+  /* header: no "Guides" link on phones; it stays in the footer's Product column */
+  .site-head .nav-guides { display: none; }
+
   /* one alignment for every section heading: left, like the text under it */
   .head.center { margin-left: 0; margin-right: 0; align-items: flex-start; text-align: left; }
   /* type scales with the screen width (vw), between a floor for small phones and a cap for large ones */
