@@ -114,16 +114,11 @@
     <a href="#features">功能</a>
     <a href="#pricing">价钱</a>
     <a href="#faq">常见问题</a>
-    <a href="/zh/guides/">指南</a>
   </nav>
   <div class="nav-end">
     <a class="nav-guides" href="/zh/guides/">指南</a>
-    <nav class="lang-switch" aria-label="语言">
-      <a href="/" hreflang="en" lang="en">EN</a>
-      <a href="/ms/" hreflang="ms" lang="ms">BM</a>
-      <a href="/zh/" hreflang="zh-Hans" lang="zh-Hans" aria-current="true">中文</a>
-    </nav>
-    <a class="pill-btn" href="#download">下载 App</a>
+    <nav class="lang" aria-label="语言"><a href="/" hreflang="en" lang="en">EN</a><span class="sep" aria-hidden="true">/</span><a href="/ms/" hreflang="ms" lang="ms">BM</a><span class="sep" aria-hidden="true">/</span><a href="/zh/" hreflang="zh-Hans" lang="zh-Hans" aria-current="true">中文</a></nav>
+    <a class="pill-btn" href="https://play.google.com/store/apps/details?id=com.invoisapp&amp;referrer=utm_source%3Dinvoisapp.com%26utm_medium%3Dwebsite%26utm_campaign%3Dheader_zh">下载 App</a>
   </div>
 </div>
 </header>
@@ -619,6 +614,15 @@
   }
   apply();
   if (mq.addEventListener) mq.addEventListener('change', apply); else mq.addListener(apply);
+})();
+</script>
+<script>
+/* header "Get the app": straight to Google Play, except on iPhone / iPad (no iOS app yet), where it scrolls to the
+   store badges instead, so the "coming soon" App Store badge is what they see */
+(function () {
+  var a = document.querySelector('.site-head .pill-btn');
+  var ios = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  if (a && ios) a.setAttribute('href', '#download');
 })();
 </script>
 </body>

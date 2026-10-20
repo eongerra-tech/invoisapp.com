@@ -12,61 +12,56 @@ html:lang(zh-Hans) .site-head, html:lang(zh-Hans) .site-foot { font-family: "Fig
 .site-head img, .site-foot img { display: block; }
 
 /* ───── header ───── */
+/* A slim 64px bar: logo on the left; everything else grouped on the right — section links (homepages) and Guides,
+   then the language links (EN / BM / 中文), then Get the app — with thin dividers between the three groups. */
 .site-head { padding: 0; margin: 0; border: 0; border-bottom: 1px solid var(--line); background: var(--white); font-size: 16px; }
-.site-head .nav { max-width: 1248px; margin: 0 auto; padding: 0 24px; height: 80px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.site-head .nav { max-width: 1248px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; gap: 28px; }
 
-.brand { display: flex; align-items: center; gap: 10px; color: var(--ink); }
+.brand { display: flex; align-items: center; gap: 8px; margin-right: auto; color: var(--ink); }
 .brand:hover { color: var(--ink); }
-.site-head .brand img { width: 30px; height: 30px; }
-.brand span { font-family: "Bricolage Grotesque", "Figtree", system-ui, sans-serif; font-weight: 800; font-size: 21px; letter-spacing: -0.02em; }
+.site-head .brand img { width: 26px; height: 26px; }
+.brand span { font-family: "Bricolage Grotesque", "Figtree", system-ui, sans-serif; font-weight: 800; font-size: 19px; letter-spacing: -0.02em; }
 
 /* guides: "Invois | Guides" */
-.brand-group { display: flex; align-items: center; gap: 14px; min-width: 0; }
-.brand-sep { width: 1px; height: 22px; background: #d5d9e3; }
-.brand-sub { font-family: "Bricolage Grotesque", "Figtree", system-ui, sans-serif; font-weight: 700; font-size: 19px; letter-spacing: -0.01em; color: var(--ink); white-space: nowrap; }
+.brand-group { display: flex; align-items: center; gap: 12px; min-width: 0; margin-right: auto; }
+.brand-group .brand { margin-right: 0; }
+.brand-sep { width: 1px; height: 18px; background: #d5d9e3; }
+.brand-sub { font-family: "Bricolage Grotesque", "Figtree", system-ui, sans-serif; font-weight: 700; font-size: 17px; letter-spacing: -0.01em; color: var(--ink); white-space: nowrap; }
 .brand-sub:hover { color: var(--brand-deep); }
 html:lang(zh-Hans) .brand-sub { font-family: inherit; letter-spacing: 0; }
 
-/* homepages: section links */
-.nav-links { display: flex; gap: 32px; font-size: 15px; font-weight: 500; }
+/* homepages: in-page section links, then Guides (first in .nav-end) styled the same */
+.nav-links { display: flex; gap: 28px; font-size: 15px; font-weight: 500; }
 .nav-links a { color: var(--ink-soft); white-space: nowrap; }
 .nav-links a:hover { color: var(--ink); }
 
 .nav-end { display: flex; align-items: center; gap: 20px; }
-.nav-about { font-size: 15px; font-weight: 500; color: var(--ink-soft); white-space: nowrap; }
-.nav-about:hover { color: var(--ink); }
-.pill-btn { display: inline-flex; align-items: center; height: 44px; padding: 0 20px; border-radius: 999px; background: var(--ink); color: #fff; font-weight: 600; font-size: 15px; white-space: nowrap; }
+.nav-guides, .nav-about { display: inline-flex; align-items: center; min-height: 36px; font-size: 15px; font-weight: 500; color: var(--ink-soft); white-space: nowrap; }
+.nav-guides:hover, .nav-about:hover { color: var(--ink); }
+
+/* language: plain text links, the current one dark, separated by slashes; a thin divider on each side */
+.lang { display: flex; align-items: center; gap: 6px; padding: 0 20px; border-left: 1px solid var(--line); border-right: 1px solid var(--line); font-size: 14px; font-weight: 600; line-height: 1; }
+.lang a { padding: 6px 0; color: #9aa1b4; white-space: nowrap; }
+.lang a:hover { color: var(--ink); }
+.lang a[aria-current] { color: var(--ink); }
+.lang .sep { color: #c9cede; font-weight: 400; }
+.nav-end > .lang:first-child { padding-left: 0; border-left: 0; }
+
+.pill-btn { display: inline-flex; align-items: center; height: 40px; padding: 0 18px; border-radius: 10px; background: var(--ink); color: #fff; font-weight: 600; font-size: 15px; white-space: nowrap; }
 .pill-btn:hover { color: #fff; background: #2d3d5c; }
 
-/* language switcher (EN / BM / 中文) */
-.lang-switch { display: flex; padding: 3px; border-radius: 999px; background: var(--white); border: 1px solid #e3e5f0; font-size: 13px; font-weight: 600; line-height: 1; }
-.lang-switch a { padding: 9px 11px; border-radius: 999px; color: var(--ink-soft); white-space: nowrap; }
-.lang-switch a:hover { color: var(--ink); }
-.lang-switch a[aria-current] { background: var(--brand-wash); color: var(--brand-deep); }
-
-/* homepages on phones/tablets: the section links hide, so the guides link moves beside the switcher */
-.nav-guides { display: none; align-items: center; min-height: 40px; padding: 0 4px; font-size: 13px; font-weight: 600; color: var(--ink-soft); white-space: nowrap; }
-.nav-guides:hover { color: var(--ink); }
-
-/* six section links (BM labels are the longest) need ~1030px at a 20px gap; below that they hide */
-@media (max-width: 1180px) { .nav-links { gap: 20px; } }
-@media (max-width: 1040px) { .nav-links { display: none; } .nav-guides { display: inline-flex; } }
+/* five section links + Guides (BM labels are the longest) need ~1100px at a 20px gap; below that they hide */
+@media (max-width: 1180px) { .site-head .nav { gap: 20px; } .nav-links { gap: 20px; } .nav-end { gap: 16px; } .lang { padding: 0 16px; } }
+@media (max-width: 1100px) { .nav-links, .nav-guides { display: none; } .nav-end > .lang { padding-left: 0; border-left: 0; } }
 @media (max-width: 760px) { .nav-about { display: none; } }
 @media (max-width: 520px) {
-  .site-head .nav { height: 64px; padding: 0 20px; gap: 12px; }
-  .nav-end { gap: 10px; }
-  .pill-btn { height: 40px; padding: 0 14px; font-size: 14px; }
-  .site-head .brand img { width: 28px; height: 28px; }
-  .site-head .brand { gap: 8px; }
-  .brand span { font-size: 19px; }
-  .brand-group { gap: 10px; }
-  .brand-sep { height: 18px; }
-  .brand-sub { font-size: 17px; }
+  .site-head .nav { padding: 0 20px; gap: 12px; }
+  .lang { gap: 5px; padding: 0; border: 0; font-size: 14px; }
+  .brand-group { gap: 8px; }
+  .brand-sub { font-size: 16px; }
+  /* phones: no Get the app in the header; the hero and the bottom of each page have the store badges */
+  .pill-btn { display: none; }
 }
-/* no room for brand + switcher + pill on a phone; the BM pill "Dapatkan aplikasi" is the widest */
-@media (max-width: 499px) { .pill-btn { display: none; } }
-@media (max-width: 579px) { html:lang(ms) .pill-btn { display: none; } }
-@media (max-width: 380px) { .nav-end { gap: 4px; } .lang-switch a { padding: 9px 8px; } }
 @media (max-width: 359px) { .site-head .brand span { display: none; } }
 
 /* ───── footer ───── */
