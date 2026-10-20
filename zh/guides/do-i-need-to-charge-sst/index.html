@@ -20,7 +20,7 @@
 <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=Figtree:wght@400;500;600;700&amp;display=swap"></noscript>
 <link rel="stylesheet" href="/assets/site.css">
-<link rel="stylesheet" href="/assets/guide.css">
+<link rel="stylesheet" href="/assets/guide.css?v=2026-10-20">
 <link rel="stylesheet" href="/assets/nav.css">
 <style>
 .tl{margin:1.2em 0;padding:14px 14px 10px;border:1px solid var(--line);border-radius:12px}
@@ -181,11 +181,18 @@
 </div>
 </header>
 
-<main class="wrap">
-<article class="prose">
+<main class="wrap story-wrap">
+<article class="prose story">
   <nav class="crumbs" aria-label="导航路径"><a href="/zh/">Invois</a><span>›</span><a href="/zh/guides/">指南</a></nav>
   <h1>要不要收 SST？马来西亚自雇人士的 SST 指南</h1>
-  <p class="meta">最后更新：2026年10月20日 · 一般资料，不是税务意见 · Invois 团队，Eongerra Tech</p>
+  <p class="dek">大多数马来西亚自雇人士不用收 SST。什么时候必须注册（RM 500,000）、哪些服务收 8% 或 6%、注册后 invoice 要写什么。</p>
+  <div class="byline">
+    <img src="/assets/favicon-96.png" alt="" width="40" height="40">
+    <div>
+      <p class="who">Invois 团队，Eongerra Tech</p>
+      <p>阅读约 7 分钟 · 最后更新：2026年10月20日 · 一般资料，不是税务意见</p>
+    </div>
+  </div>
 
 <p>只有向马来西亚皇家关税局（JKDM）<strong>注册</strong>了，你才能收服务税；而只有当你的<strong>应税服务</strong>（taxable services）在 <strong>12 个月内超过 RM&nbsp;500,000</strong>（少数服务的门槛更高），你才必须注册。没超过这个数目，就不收 SST，invoice 上也不可以出现 SST。大多数 freelancer、师傅和小型工作室，都在这条线以下。</p>
 <p>这份指南讲我们的用户常问的服务、12 个月怎么算，以及注册后 invoice 要有什么改变。资料截至2026年10月20日，来自法令和关税局自己的指南（链接在文末）。</p>
@@ -281,7 +288,7 @@
 </tr>
 </tbody>
 </table></div>
-<p>IT、顾问、培训、event management 和修理服务属于同一组，所以要加起来算 RM&nbsp;500,000。一个 web developer 同时开收费的 coding 课，两样都要算进去。</p>
+<p class="plain">IT、顾问、培训、event management 和修理服务属于同一组，所以要加起来算 RM&nbsp;500,000。一个 web developer 同时开收费的 coding 课，两样都要算进去。</p>
 <h3>关税局没有讲清楚的情况</h3>
 <p>有几种常见的工作，关税局还没有给明确的答案：上门 service 住家冷气、不是注册补习中心的私人补习老师、为广告拍的照片或做的设计，还有化妆。如果你做这类工作，一年接近 RM&nbsp;500,000，先上 <a href="https://mysst.customs.gov.my/">MySST</a> 问关税局，再做决定。</p>
 <h2>RM&nbsp;500,000 怎么算</h2>
@@ -351,11 +358,14 @@
 <li><strong>记录：</strong>保存 7 年。</li>
 </ul>
 <p>每张 invoice 还需要哪些资料，请看 <a href="/zh/guides/invoice-vs-receipt/">invoice 和 receipt 有什么分别</a>。</p>
+<section class="promo" aria-label="关于 Invois">
 <h2>Invois 里的 SST</h2>
 <p>如果你已经注册，在 <a href="/zh/">Invois</a> 开报价单或 invoice 时，到“税费”加一行 SST，税率填 8% 或 6%；也可以在“单据设定”把它设成默认，之后每张新单都会自动带上。SST 在折扣之后计算，单独一行；在“公司资料”填上 SST 注册号，它会印在信头上；有 SST 的 invoice 标题会变成 TAX INVOICE。没有注册就不要加 SST，invoice 上就不会有税。</p>
 <p>免费版可以无限开 quotation、invoice 和 receipt，app 有 Bahasa Melayu、English 和中文。Invois 跟关税局和 LHDN 没有关系，也不会替你提交申报表。</p>
 <div class="cta"><a class="badge" href="https://play.google.com/store/apps/details?id=com.invoisapp&amp;referrer=utm_source%3Dinvoisapp.com%26utm_medium%3Dwebsite%26utm_campaign%3Dguide_sst_zh"><img src="/assets/badge-googleplay-zh.png" alt="在 Google Play 下载" width="188" height="56" loading="lazy"></a></div>
+</section>
 <p>更多给自己报价、自己收钱的人看的指南：<a href="/zh/guides/">全部指南</a>。</p>
+<hr class="dinkus">
 <h2>常见问题</h2>
 <h3>我一个月大约赚 RM&nbsp;5,000，需要注册吗？</h3>
 <p>不用。一年大约 RM&nbsp;60,000（12 × RM&nbsp;5,000.00），离 RM&nbsp;500,000 还很远，所以不用注册，invoice 上也不可以显示 SST。</p>

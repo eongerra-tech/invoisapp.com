@@ -32,12 +32,6 @@
 .cta + p { margin-top: 20px; }
 .cta .badge img { display: block; height: 56px; width: auto; }
 
-/* guide hub */
-.guide-list { list-style: none; margin: 24px 0 0; }
-.guide-list li { border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; margin-bottom: 14px; }
-.guide-list h2 { margin: 0 0 6px; font-size: 19px; }
-.guide-list h2 a { color: var(--ink); }
-
 /* Chinese pages: the Latin web fonts have no CJK glyphs; name the system CJK fonts so headings and body match */
 html:lang(zh-Hans) body,
 html:lang(zh-Hans) h1, html:lang(zh-Hans) h2 { font-family: "Figtree", system-ui, -apple-system, "PingFang SC", "Noto Sans SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; }
@@ -48,3 +42,190 @@ html:lang(zh-Hans) h1 { letter-spacing: 0; line-height: 1.25; }
 .cta a { color: var(--brand-dark); }
 .prose .meta, .crumbs { color: var(--ink-soft); }
 .table-wrap tbody th { font-weight: 600; white-space: normal; min-width: 7em; }
+
+/* ═══════ Medium-style reading layout ═══════
+   Articles: <main class="wrap story-wrap"><article class="prose story">. Hub: <main class="wrap story-wrap"><div class="story hub">.
+   Overrides type, rhythm and width only; the header/footer and tokens stay as they are. Markup checklist: README.md, "Writing a guide". */
+
+.story {
+  --story-ink: #242424;          /* body text: near-black, ~15:1 on white */
+  --story-soft: #6b6b6b;         /* dek, byline, captions: 5.3:1 */
+  --story-serif: "Source Serif 4", Charter, "Bitstream Charter", Georgia, Cambria, "Times New Roman", serif;
+  --story-sans: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* one narrow column: ~65–75 characters a line at 20px */
+main.wrap.story-wrap { max-width: calc(680px + 2 * var(--edge)); padding-top: 48px; padding-bottom: 112px; }
+
+/* ── body text ── */
+.story p, .story li {
+  font-family: var(--story-serif);
+  font-size: 20px; line-height: 1.6; letter-spacing: -0.003em;
+  color: var(--story-ink);
+}
+.story p + p { margin-top: 1.5em; }           /* real breathing room between paragraphs */
+.story strong { color: var(--story-ink); font-weight: 700; }
+.story em { font-style: italic; }
+.story a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.story a:hover { color: var(--brand-dark); }
+
+/* ── title block ── */
+.story .crumbs { font-family: var(--story-sans); font-size: 14px; margin-bottom: 20px; color: var(--story-soft); }
+.story .crumbs a { text-decoration: none; color: var(--story-soft); }
+.story .crumbs a:hover { color: var(--story-ink); text-decoration: underline; }
+.story h1 { font-size: clamp(32px, 6.4vw, 44px); line-height: 1.16; letter-spacing: -0.025em; color: var(--story-ink); }
+.story .dek {
+  font-family: var(--story-sans); font-size: 21px; line-height: 1.45; font-weight: 400;
+  color: var(--story-soft); margin-top: 14px;
+}
+.story .byline {
+  display: flex; align-items: center; gap: 12px;
+  margin: 32px 0 40px; padding: 14px 0;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  font-family: var(--story-sans);
+}
+.story .byline img { width: 40px; height: 40px; border-radius: 50%; background: var(--paper); flex: none; }
+.story .byline p { font-family: var(--story-sans); font-size: 14px; line-height: 1.45; margin: 0; color: var(--story-soft); }
+.story .byline .who { color: var(--story-ink); font-weight: 600; font-size: 15px; }
+.story .byline p + p { margin-top: 2px; }
+
+/* ── headings ── */
+.story h2 {
+  font-size: clamp(24px, 5vw, 28px); line-height: 1.25; letter-spacing: -0.015em;
+  color: var(--story-ink); margin: 2.1em 0 0;
+}
+.story h3 {
+  font-family: var(--story-sans); font-size: 20px; line-height: 1.35; font-weight: 700;
+  color: var(--story-ink); margin: 1.9em 0 0;
+}
+.story h2 + p, .story h3 + p, .story h2 + h3 { margin-top: 0.55em; }
+.story h2 + h3 { margin-top: 1em; }
+
+/* ── lists ── */
+.story ul, .story ol { margin: 1.2em 0 0; padding-left: 1.6em; }
+.story li { margin: 0; padding-left: 0.3em; }
+.story li + li { margin-top: 0.7em; }
+.story ol li::marker { font-family: var(--story-sans); font-weight: 700; color: var(--story-ink); }
+
+/* ── inline code (registration numbers, amounts) ── */
+.story code { font-size: 0.82em; background: #f2f2f2; color: var(--story-ink); padding: 2px 6px; border-radius: 4px; }
+
+/* ── example quotations: read like a document, numbers line up on the right ── */
+.story .table-wrap { margin-top: 20px; border-radius: 8px; }
+.story .table-wrap table { font-family: var(--story-sans); font-size: 15px; }
+.story .table-wrap th, .story .table-wrap td { padding: 11px 14px; color: var(--story-ink); }
+.story .table-wrap thead th { font-size: 13px; font-weight: 600; color: var(--story-soft); letter-spacing: 0.01em; }
+.story .table-wrap tbody th { color: var(--story-ink); }
+/* .doc = an example quotation/invoice (No. | Description | Qty | Unit price | Amount): numbers right, total row tinted */
+.story .table-wrap.doc th:nth-child(n+3), .story .table-wrap.doc td:nth-child(n+3) { text-align: right; white-space: nowrap; }
+.story .table-wrap.doc td:first-child, .story .table-wrap.doc th:first-child { color: var(--story-soft); width: 1%; }
+.story .table-wrap.doc tr:last-child td { background: var(--paper); }
+/* .money = a payment ledger (label | RM | RM | RM): amounts right */
+.story .table-wrap.money th:nth-child(n+2), .story .table-wrap.money td:nth-child(n+2) { text-align: right; white-space: nowrap; }
+.story .table-wrap + p:not(.plain) { margin-top: 14px; font-size: 17px; color: var(--story-soft); }
+.story .table-wrap + p.plain { margin-top: 1.2em; }
+
+/* ── section break (Medium's three dots) ── */
+.story hr.dinkus { border: 0; margin: 56px 0 0; height: auto; text-align: center; }
+.story hr.dinkus::before { content: "\00B7\00A0\00A0\00B7\00A0\00A0\00B7"; font-family: var(--story-serif); font-size: 32px; line-height: 1; letter-spacing: 0.4em; color: var(--story-ink); }
+.story hr.dinkus + h2 { margin-top: 40px; }
+
+/* ── the app section: set apart from the editorial so it never reads as part of the advice ── */
+.story .promo { margin-top: 56px; padding: 32px 32px 28px; background: var(--paper); border-radius: 16px; }
+.story .promo h2 { margin-top: 0; }
+.story .promo p, .story .promo li { font-size: 18px; }
+.story .promo .cta { margin-top: 24px; }
+
+/* ── phones ── */
+@media (max-width: 640px) {
+  main.wrap.story-wrap { padding-top: 28px; padding-bottom: 80px; }
+  .story p, .story li { font-size: 18px; line-height: 1.58; }
+  .story .dek { font-size: 18px; }
+  .story h3 { font-size: 18px; }
+  .story .byline { margin: 24px 0 28px; }
+  .story .table-wrap + p:not(.plain) { font-size: 16px; }
+  .story .promo { margin-left: calc(-1 * var(--edge)); margin-right: calc(-1 * var(--edge)); padding: 28px var(--edge) 24px; border-radius: 0; }
+  .story .promo p, .story .promo li { font-size: 17px; }
+}
+
+/* a paragraph after a list keeps the paragraph rhythm */
+.story ul + p, .story ol + p { margin-top: 1.5em; }
+
+/* the "all guides" line after the app card, and source lists */
+.story .promo + p { margin-top: 32px; }
+.story ul.sources li { font-family: var(--story-sans); font-size: 15px; line-height: 1.5; color: var(--story-soft); }
+.story ul.sources li + li { margin-top: 0.6em; }
+/* links stay dark so they read as links against the grey notes around them; a light underline keeps 14 links from turning into a wall of lines */
+.story ul.sources a { color: var(--story-ink); text-decoration-color: #c4c4c4; }
+.story ul.sources a:hover { color: var(--brand-dark); text-decoration-color: currentColor; }
+
+/* figures (e.g. the 12-month timeline in the zh SST guide) keep their own small UI type, not the 20px body */
+.story figure p { font-family: var(--story-sans); line-height: 1.5; letter-spacing: 0; color: var(--story-ink); }
+.story figure p + p { margin-top: 0; }
+.story .tl { margin: 1.6em 0 0; }
+.story .tl-cap { font-size: 13px; color: var(--story-soft); }
+.story .tl-lab, .story .tl-end { font-size: 14px; }
+.story .tl-note { font-size: 13px; }
+.story .tl + p { margin-top: 1.5em; }
+
+/* ── Chinese: no CJK serif web font (multi-MB), so body stays sans; bigger size and looser leading do the work ── */
+html:lang(zh-Hans) .story {
+  --story-serif: "Figtree", system-ui, -apple-system, "PingFang SC", "Noto Sans SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+  --story-sans: var(--story-serif);
+}
+html:lang(zh-Hans) .story p, html:lang(zh-Hans) .story li { font-size: 18px; line-height: 1.85; letter-spacing: 0.01em; }
+html:lang(zh-Hans) .story p + p { margin-top: 1.25em; }
+html:lang(zh-Hans) .story li + li { margin-top: 0.5em; }
+html:lang(zh-Hans) .story h1 { font-size: clamp(28px, 5.6vw, 36px); line-height: 1.35; letter-spacing: 0; font-weight: 700; text-wrap: wrap; }   /* balance splits Chinese words mid-way ("尾/款"), so fill lines instead. CJK glyphs fill the whole em box, so the same px reads ~20% bigger than Latin */
+html:lang(zh-Hans) .story h2 { font-size: clamp(22px, 4.6vw, 25px); letter-spacing: 0; line-height: 1.4; }
+html:lang(zh-Hans) .story h3 { line-height: 1.5; }
+html:lang(zh-Hans) .story .dek { font-size: 19px; line-height: 1.65; }
+html:lang(zh-Hans) .story em { font-style: normal; }          /* CJK has no italic; faux-slanted Chinese is hard to read */
+html:lang(zh-Hans) .story .promo p, html:lang(zh-Hans) .story .promo li { font-size: 17px; }
+html:lang(zh-Hans) .story .table-wrap + p:not(.plain) { font-size: 16px; }
+@media (max-width: 640px) {
+  html:lang(zh-Hans) .story p, html:lang(zh-Hans) .story li { font-size: 17px; line-height: 1.8; }
+  html:lang(zh-Hans) .story .dek { font-size: 17px; }
+  html:lang(zh-Hans) .story .promo p, html:lang(zh-Hans) .story .promo li { font-size: 16px; }
+  html:lang(zh-Hans) .story .table-wrap + p:not(.plain) { font-size: 15px; }
+}
+/* the zh body rule above outranks these smaller UI texts, so restate them for zh */
+html:lang(zh-Hans) .story .byline p { font-size: 14px; line-height: 1.5; letter-spacing: 0; }
+html:lang(zh-Hans) .story .byline .who { font-size: 15px; }
+html:lang(zh-Hans) .story .byline p + p { margin-top: 2px; }
+html:lang(zh-Hans) .story figure p { line-height: 1.5; letter-spacing: 0; }
+html:lang(zh-Hans) .story .tl-cap, html:lang(zh-Hans) .story .tl-note { font-size: 13px; }
+html:lang(zh-Hans) .story .tl-lab, html:lang(zh-Hans) .story .tl-end { font-size: 14px; }
+html:lang(zh-Hans) .story ul.sources li { font-size: 15px; line-height: 1.6; letter-spacing: 0; }
+
+/* ── guide hub (/guides/, /ms/guides/, /zh/guides/): a Medium-style story list, no cards ──
+   <main class="wrap story-wrap"><div class="story hub"> … <ul class="hub-list"><li><h2><a>…</a></h2><p class="hub-sum">…</p><p class="hub-meta">…</p></li> */
+.story.hub h1 { font-size: clamp(36px, 7vw, 48px); }
+.story.hub .dek { margin-top: 12px; }
+.story.hub .hub-list { list-style: none; margin: 40px 0 0; padding: 0; border-top: 1px solid var(--line); }
+.story.hub .hub-list li { position: relative; margin: 0; padding: 28px 0 26px; border-bottom: 1px solid var(--line); }
+.story.hub .hub-list h2 { margin: 0; font-size: 23px; line-height: 1.3; letter-spacing: -0.012em; }
+.story.hub .hub-list h2 a { color: var(--story-ink); text-decoration: none; }
+/* the whole row is the link; the title stays the accessible name */
+.story.hub .hub-list h2 a::after { content: ""; position: absolute; inset: 0; border-radius: 4px; }
+.story.hub .hub-list h2 a:focus-visible { outline: none; }
+.story.hub .hub-list h2 a:focus-visible::after { outline: 2px solid var(--brand); outline-offset: 4px; }
+.story.hub .hub-list li:hover h2 a { color: var(--brand-dark); }
+.story.hub .hub-sum {
+  margin-top: 8px; font-size: 17px; line-height: 1.55; color: var(--story-soft);
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; line-clamp: 3; overflow: hidden;
+}
+.story.hub .hub-meta { margin-top: 12px; font-family: var(--story-sans); font-size: 14px; line-height: 1.4; color: var(--story-soft); }
+@media (max-width: 640px) {
+  .story.hub .hub-list { margin-top: 28px; }
+  .story.hub .hub-list li { padding: 22px 0 20px; }
+  .story.hub .hub-list h2 { font-size: 20px; }
+  .story.hub .hub-sum { font-size: 16px; }
+}
+html:lang(zh-Hans) .story.hub h1 { font-size: clamp(32px, 6vw, 40px); }
+html:lang(zh-Hans) .story.hub .hub-list h2 { font-size: 21px; line-height: 1.45; letter-spacing: 0; }
+html:lang(zh-Hans) .story.hub .hub-sum { font-size: 16px; line-height: 1.7; letter-spacing: 0; }
+html:lang(zh-Hans) .story.hub .hub-meta { font-size: 13.5px; letter-spacing: 0; }
+@media (max-width: 640px) { html:lang(zh-Hans) .story.hub .hub-list h2 { font-size: 19px; } html:lang(zh-Hans) .story.hub .hub-sum { font-size: 15px; } }
+/* text-wrap: balance splits Chinese words ("马来西/亚"); zh headings fill lines instead (articles and hub) */
+html:lang(zh-Hans) .story h1, html:lang(zh-Hans) .story h2, html:lang(zh-Hans) .story h3 { text-wrap: wrap; }
