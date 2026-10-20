@@ -46,7 +46,7 @@ language and keep this markup; each piece fails quietly (falls back to plain sty
   <div class="byline">
     <img src="/assets/favicon-96.png" alt="" width="40" height="40">
     <div>
-      <p class="who">Invois team, Eongerra Tech</p>
+      <p class="who">Invois team, EONGERRA TECH</p>
       <p>7 min read · Last updated 13 October 2026</p>
     </div>
   </div>
@@ -71,7 +71,7 @@ language and keep this markup; each piece fails quietly (falls back to plain sty
 ```
 
 - **Read time:** en/ms ≈ words ÷ 230; zh ≈ Chinese characters ÷ 400 + Latin words ÷ 230. Round up.
-  en "7 min read", ms "7 min bacaan", zh "阅读约 7 分钟".
+  en "7 min read", ms "7 minit bacaan", zh "阅读约 7 分钟".
 - **Hub pages** (`/guides/`, `/ms/guides/`, `/zh/guides/`): add a `<li>` to `.hub-list` with
   `<h2><a href>Title</a></h2>`, `<p class="hub-sum">` and `<p class="hub-meta">7 min read · 13 Oct 2026</p>`
   (same read time and date as the article's byline).
