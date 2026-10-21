@@ -128,7 +128,7 @@
       "name": "报价单一定要写 SSM 号码吗？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "要，只要你的生意有在 SSM 注册，不管是公司（Sdn Bhd）、独资还是合伙。独资和合伙生意方面，1957年商业注册条例（Registration of Businesses Rules 1957）规定，印有商号名称的信头、invoice、账单和其他文件都要写上注册号码；公司则受 2016年公司法令（Companies Act 2016）规定，也一样要写。"
+        "text": "要，只要你的生意有在 SSM 注册，不管是公司（Sdn Bhd）、独资还是合伙。独资和合伙生意方面，1957年商业注册条例（Registration of Businesses Rules 1957）规定，印有商号名称的信头、invoice、账单和其他文件都要写上注册号码。公司则受 2016年公司法令（Companies Act 2016）规定，也一样要写。"
       }
     },
     {
@@ -144,7 +144,7 @@
       "name": "报价单和 e-Invoice 是一样的吗？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "不一样。报价单只是报价，不需要提交给 LHDN。e-Invoice 的规定针对 invoice 和相关单据，要看你的生意情况，请参考 LHDN 的指南。Invois 不会提交 e-Invoice。"
+        "text": "不一样。报价单只是报价，不需要提交给 LHDN。e-Invoice 的规定针对 invoice 和相关单据，要看你的生意情况，请参考 LHDN 的指南。"
       }
     }
   ]
@@ -188,7 +188,8 @@
 <p>报价单在开工前给，invoice 是向顾客要钱，receipt 证明钱收到了。三张单据的顾客资料和项目要一致。完整的对照，用一份工作从第一笔钱算到最后一张收据，请看《<a href="/zh/guides/invoice-vs-receipt/">invoice 和 receipt 有什么分别</a>》。</p>
 <h2>马来西亚的报价单要写什么</h2>
 <h3>1. 你的商家资料</h3>
-<p>商号名称、地址、电话和电邮。如果有在 SSM 注册，写上注册号码（新格式是 12 位数，例如 <code>202401012345</code>）。公司（Sdn Bhd），以及有在 SSM 注册的独资和合伙生意，都必须在商业文件上写上这个号码；很多公司顾客没有这个号码不会处理你的报价。</p>
+<p>商号名称、地址、电话和电邮。如果有在 SSM 注册，写上注册号码（新格式是 12 位数，例如 <code>202401012345</code>）。</p>
+<p>公司（Sdn Bhd），以及有在 SSM 注册的独资和合伙生意，都必须在商业文件上写上这个号码；很多公司顾客没有这个号码不会处理你的报价。</p>
 <h3>2. 顾客和工作地点</h3>
 <p>顾客名字（如果是替公司买，写公司名）、电话，以及工作地点（如果在顾客那边做）。公司顾客要加上负责人，例如“Attn: Mr Lee, Admin”。</p>
 <h3>3. 标题、号码和日期</h3>
@@ -197,7 +198,12 @@
 <p>一项一行：工作内容、数量、单位（个、sqft、尺、小时、配套）、单价和金额。顾客可能比价的，人工和材料分开写。送给顾客的项目，也要列出来，金额写 RM 0.00 并注明 <strong>FOC</strong>：顾客看得到你给的人情，而不是根本不知道。</p>
 <h3>5. 总数和 SST</h3>
 <p>小计（subtotal）、折扣（如有）和总数，用 RM 写到 2 位小数（<code>RM 1,234.50</code>）。</p>
-<p><strong>只有在关税局（JKDM）注册了销售税或服务税，才可以加 SST。</strong> 有注册的话，SST 要单独一行，写明适用的税率，并印上你的 SST 注册号码。没有注册就完全不要加 SST。一般来说，大部分商品和服务的应税销售额一年超过 RM 500,000 就必须注册（有些服务，例如建筑工程，门槛比较高），请到 <a href="https://mysst.customs.gov.my/">MySST 网站</a> 查清楚。</p>
+<p><strong>只有在关税局（JKDM）注册了销售税或服务税，才可以加 SST。</strong></p>
+<ul>
+<li>有注册：SST 要单独一行，写明适用的税率，并印上你的 SST 注册号码。</li>
+<li>没有注册：完全不要加 SST。</li>
+</ul>
+<p>一般来说，大部分商品和服务的应税销售额 12 个月内超过 RM&nbsp;500,000 就必须注册（有些服务，例如建筑工程，门槛比较高）。请到 <a href="https://mysst.customs.gov.my/">MySST 网站</a> 查清楚，或看《<a href="/zh/guides/do-i-need-to-charge-sst/">要不要收 SST？</a>》。</p>
 <h3>6. 付款条件</h3>
 <p>订金（deposit）收多少（百分比或金额）、余额什么时候付、工期长的可以分期，以及怎样付款（银行名称、户口名和户口号码，或 DuitNow QR）。例如：“开工前付 30% 订金，完工后付余额。”</p>
 <h3>7. 工作范围和条款</h3>
@@ -373,9 +379,14 @@
 <li><strong>点选项目开报价单</strong>，每一行都是你自己的价钱。</li>
 <li><strong>也可以用讲的</strong>，华语、英语、马来语都可以，一句话里掺着讲也没问题（“加 3 个 plug point，换 4 盏灯，transport FOC”），AI 从你的价目表挑出项目。行内话照你讲的写，不会被翻译掉。</li>
 <li>每个项目下面可以<strong>加一行备注</strong>，写明包括什么。报价单号码、有效期和英文金额（amount in words）会自动印上，SST 单独一行，SSM 和 SST 号码印在信头。</li>
-<li><strong>用 WhatsApp 发 PDF</strong>，顾客接受后一键转成 invoice，收钱后再一键出 receipt。订金、分期和部分付款都会记录。</li>
+<li><strong>用 WhatsApp 或任何 app 发 PDF</strong>，顾客接受后一键转成 invoice，收钱后再一键出 receipt。订金、分期和部分付款都会记录。</li>
 </ul>
-<p>单据的栏位名称是英文（Quotation、Invoice、Receipt），项目名称照你写的印出来；app 界面有中文、英文和马来文。免费版的报价单、invoice 和收据数量没有上限，AI 每月 15 次（验证手机号码后 30 次），免费单据底部有一小行“Made with invoisapp.com”。Invois Pro 每月 RM 19.90 或每年 RM 190，AI 提高到每月 300 次，并拿掉那一行。不用开账号，下载就能用。Invois 与 LHDN 没有关系，也不会向 MyInvois 提交 e-Invoice。</p>
+<p>单据的栏位名称是英文（Quotation、Invoice、Receipt），项目名称照你写的印出来；app 界面有中文、英文和马来文。</p>
+<ul>
+<li>免费版：报价单、invoice 和 receipt 数量没有上限，AI 每月 15 次（验证手机号码后 30 次）。免费版的单据底部有一小行“Made with invoisapp.com”。</li>
+<li>Invois Pro：每月 RM&nbsp;19.90 或每年 RM&nbsp;190，AI 提高到每月 300 次，并拿掉那一行。</li>
+</ul>
+<p>不用开账号，下载就能用。Invois 与 LHDN 没有关系，也不会向 MyInvois 提交 e-Invoice。</p>
 <div class="cta"><a class="badge" href="https://play.google.com/store/apps/details?id=com.invoisapp&amp;referrer=utm_source%3Dinvoisapp.com%26utm_medium%3Dwebsite%26utm_campaign%3Dguide_quotation_zh"><img src="/assets/badge-googleplay-zh.png" alt="在 Google Play 下载" width="188" height="56" loading="lazy"></a></div>
 </section>
 <hr class="dinkus">
@@ -387,11 +398,11 @@
 <h3>报价单要不要加 SST？</h3>
 <p>只有在关税局（JKDM）注册了销售税或服务税才加，并且要单独一行，附上 SST 注册号码。没有注册的话，不可以收 SST。</p>
 <h3>报价单一定要写 SSM 号码吗？</h3>
-<p>要，只要你的生意有在 SSM 注册，不管是公司（Sdn Bhd）、独资还是合伙。独资和合伙生意方面，1957年商业注册条例（Registration of Businesses Rules 1957）规定，印有商号名称的信头、invoice、账单和其他文件都要写上注册号码；公司则受 2016年公司法令（Companies Act 2016）规定，也一样要写。</p>
+<p>要，只要你的生意有在 SSM 注册，不管是公司（Sdn Bhd）、独资还是合伙。独资和合伙生意方面，1957年商业注册条例（Registration of Businesses Rules 1957）规定，印有商号名称的信头、invoice、账单和其他文件都要写上注册号码。公司则受 2016年公司法令（Companies Act 2016）规定，也一样要写。</p>
 <h3>可以用 WhatsApp 发报价单吗？</h3>
 <p>可以。最好发 PDF，不要只打字或拍照，这样项目、总数和条款都在一起。顾客回复的“OK”要留着，作为书面确认。</p>
 <h3>报价单和 e-Invoice 是一样的吗？</h3>
-<p>不一样。报价单只是报价，不需要提交给 LHDN。e-Invoice 的规定针对 invoice 和相关单据，要看你的生意情况，请参考 LHDN 的指南。Invois 不会提交 e-Invoice。</p>
+<p>不一样。报价单只是报价，不需要提交给 LHDN。e-Invoice 的规定针对 invoice 和相关单据，要看你的生意情况，请参考 LHDN 的指南。</p>
 </article>
 </main>
 
