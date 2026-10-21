@@ -64,7 +64,7 @@
   </url>
   <url>
     <loc>https://invoisapp.com/zh/guides/</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/"/>
     <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/"/>
@@ -73,7 +73,7 @@
   </url>
   <url>
     <loc>https://invoisapp.com/guides/how-to-write-a-quotation/</loc>
-    <lastmod>2026-10-21T15:05:23+08:00</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/how-to-write-a-quotation/"/>
     <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/cara-buat-sebut-harga/"/>
@@ -91,7 +91,7 @@
   </url>
   <url>
     <loc>https://invoisapp.com/zh/guides/how-to-write-a-quotation/</loc>
-    <lastmod>2026-10-13T15:05:23+08:00</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/how-to-write-a-quotation/"/>
     <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/cara-buat-sebut-harga/"/>
@@ -118,7 +118,7 @@
   </url>
   <url>
     <loc>https://invoisapp.com/zh/guides/invoice-vs-receipt/</loc>
-    <lastmod>2026-10-13T15:05:23+08:00</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/quotation-vs-invoice-vs-receipt/"/>
     <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/beza-invois-dan-resit/"/>
@@ -158,6 +158,7 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/quotation-terms-and-conditions/"/>
     <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/terma-dan-syarat-sebut-harga/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/quotation-terms-and-conditions/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/quotation-terms-and-conditions/"/>
   </url>
   <url>
@@ -166,6 +167,16 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/quotation-terms-and-conditions/"/>
     <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/terma-dan-syarat-sebut-harga/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/quotation-terms-and-conditions/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/quotation-terms-and-conditions/"/>
+  </url>
+  <url>
+    <loc>https://invoisapp.com/zh/guides/quotation-terms-and-conditions/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/quotation-terms-and-conditions/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/terma-dan-syarat-sebut-harga/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/quotation-terms-and-conditions/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/quotation-terms-and-conditions/"/>
   </url>
 </urlset>
