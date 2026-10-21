@@ -152,4 +152,11 @@
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/do-i-need-to-charge-sst/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/do-i-need-to-charge-sst/"/>
   </url>
+  <url>
+    <loc>https://invoisapp.com/ms/guides/terma-dan-syarat-sebut-harga/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/terma-dan-syarat-sebut-harga/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/ms/guides/terma-dan-syarat-sebut-harga/"/>
+  </url>
 </urlset>
