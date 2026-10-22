@@ -50,7 +50,14 @@
       "url": "https://invoisapp.com/",
       "logo": "https://invoisapp.com/assets/favicon-192.png",
       "email": "support@eongerra.com",
-      "address": { "@type": "PostalAddress", "addressLocality": "Subang Jaya", "addressRegion": "Selangor", "addressCountry": "MY" }
+      "address": { "@type": "PostalAddress", "addressLocality": "Subang Jaya", "addressRegion": "Selangor", "addressCountry": "MY" },
+      "brand": { "@type": "Brand", "name": "Invois" },
+      "sameAs": [
+        "https://play.google.com/store/apps/developer?id=EONGERRA+TECH",
+        "https://www.facebook.com/invoisapp.official",
+        "https://www.instagram.com/invoisapp/",
+        "https://www.threads.com/@invoisapp"
+      ]
     },
     {
       "@type": "WebSite",
@@ -96,6 +103,111 @@
           "priceSpecification": { "@type": "UnitPriceSpecification", "price": "190", "priceCurrency": "MYR", "billingDuration": "P1Y" },
           "description": "AI 每月 300 次，单据底部没有 invoisapp.com 那一行。由 Google Play 收费。" }
       ]
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "zh-Hans-MY",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Invois 免费吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "免费，也不需要信用卡。报价单、invoice、顾客和价目表都没有上限。AI 每月 15 次，验证手机号码后每月 30 次。免费版的单据底部有一小行“Made with invoisapp.com”。Invois Pro 每月 RM 19.90 或每年 RM 190，AI 每月 300 次，单据底部也没有那一行。由 Google Play 收费，随时可以取消。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "一定要开账号吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不用，打开就可以用。用 WhatsApp 验证手机号码是可选的，但换手机或手机不见时，要靠它才能把资料找回来。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "有 iPhone 版吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "还没有。Invois 现在只有 Android 版，iOS 稍后推出。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "支持哪些语言？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "整个 app 有中文、英文和马来文，第一次打开时选一个，之后随时可以在“更多 → 界面语言”更换。讲的时候三种语言都可以，一句话掺着讲也行，inverter、FOC、pre-wedding 这些词会照你讲的保留。发给顾客的单据，栏位名称是英文，项目名称照你写的印出来。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "一定要用讲的吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不用。每张报价单都可以从价目表点选项目，或者自己打一个新项目。打字慢的时候才用讲的，这会用到你的 AI 次数。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "顾客怎样收到报价单？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "一份 PDF，用 WhatsApp 或任何 app 发。顾客打开就能看，不用装 Invois。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "列明项目，价钱会不会看起来更贵？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "总数一样，只是顾客看得到它怎么来。像加 gas 这种大项目，一看就知道为什么贵。想省钱的话，顾客可以拿掉一项，其他照你的价钱。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "可以写明哪些是免费的吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。把它加成一个 RM 0.00 的项目，例如 transport 或第一次修改。报价单上会印 0.00，顾客看得到你免费包了哪些。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "可以处理 SST、订金和分期吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。加 SST、收订金、把余额分期，信头印上 SSM 和 TIN 号码。金额用 RM。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Invois 会向 LHDN 提交 e-Invoice 吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不会。Invois 开的是给顾客的报价单、invoice 和 receipt，不会代你向 LHDN 或任何机构提交资料。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "我的录音会怎样处理？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "录音会传给 OpenAI 转成文字。我们不会保留，也不会用来训练 AI 模型。你的资料存放在新加坡的服务器。详情请看我们的隐私政策（英文）。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "怎样删除账号？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "在 app 里：“更多 → 账号 → 删除账号”。所有资料会在 30 天后永久删除。已经卸载 app？请用账号删除页面（英文）。如果有订阅 Invois Pro，也要到 Google Play 取消。"
+      }
     }
   ]
 }
