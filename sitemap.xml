@@ -189,6 +189,13 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/how-to-make-a-price-list/"/>
   </url>
   <url>
+    <loc>https://invoisapp.com/guides/how-to-write-an-invoice/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/how-to-write-an-invoice/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/how-to-write-an-invoice/"/>
+  </url>
+  <url>
     <loc>https://invoisapp.com/ms/guides/terma-dan-syarat-sebut-harga/</loc>
     <lastmod>2026-10-21</lastmod>
     <priority>0.7</priority>
