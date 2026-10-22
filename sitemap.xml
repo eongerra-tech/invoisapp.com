@@ -55,7 +55,7 @@
   </url>
   <url>
     <loc>https://invoisapp.com/ms/guides/</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/"/>
     <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/"/>
@@ -82,7 +82,7 @@
   </url>
   <url>
     <loc>https://invoisapp.com/ms/guides/cara-buat-sebut-harga/</loc>
-    <lastmod>2026-10-13T15:05:23+08:00</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/how-to-write-a-quotation/"/>
     <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/cara-buat-sebut-harga/"/>
@@ -166,6 +166,15 @@
     <lastmod>2026-10-22</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/how-to-make-a-price-list/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/cara-buat-senarai-harga/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/how-to-make-a-price-list/"/>
+  </url>
+  <url>
+    <loc>https://invoisapp.com/ms/guides/cara-buat-senarai-harga/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/how-to-make-a-price-list/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/cara-buat-senarai-harga/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/how-to-make-a-price-list/"/>
   </url>
   <url>
