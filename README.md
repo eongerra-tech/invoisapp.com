@@ -34,7 +34,7 @@ language and keep this markup; each piece fails quietly (falls back to plain sty
 
 ```html
 <link rel="stylesheet" href="/assets/site.css">
-<link rel="stylesheet" href="/assets/guide.css?v=2026-10-20">  <!-- bump ?v= on every page whenever guide.css changes, or browsers keep the old file -->
+<link rel="stylesheet" href="/assets/guide.css?v=2026-10-23">  <!-- bump ?v= on every page whenever guide.css changes, or browsers keep the old file -->
 <link rel="stylesheet" href="/assets/nav.css">
 <!-- en / ms only: add Source Serif 4 to the Google Fonts URL (all 3 font links). zh pages use system CJK fonts -->
 
@@ -51,7 +51,14 @@ language and keep this markup; each piece fails quietly (falls back to plain sty
     </div>
   </div>
 
-  … body: <p>, <h2>, <h3>, <ul>/<ol> …
+  <section class="keypoints" aria-labelledby="kp-h">     <!-- "In short": 3–4 bullets that give the answers themselves -->
+    <div class="kp-h" id="kp-h">In short</div>           <!-- ms: Ringkasnya · zh: 重点 -->
+    <ul><li>…</li></ul>
+    <nav class="kp-jump" aria-label="On this page"><span class="kp-jump-label">Jump to:</span><span class="kp-jump-links"><a href="#what-to-put">What to include</a> <a href="#faq">FAQ</a></span></nav>
+  </section>                                              <!-- ms: Lompat ke: · zh: 目录：; short labels; no "·" in the HTML (CSS draws it) -->
+
+  … body: <p>, <h2 id="…">, <h3>, <ul>/<ol> …
+  <p class="app-note">One line on what Invois does here. More in <a href="#app">…</a>.</p>   <!-- after the main checklist -->
 
   <div class="table-wrap doc"><table>…</table></div>     <!-- example quotation/invoice: No. | Description | Qty | Unit price | Amount -->
   <div class="table-wrap money"><table>…</table></div>   <!-- payment ledger: label | RM | RM | RM -->
@@ -59,12 +66,17 @@ language and keep this markup; each piece fails quietly (falls back to plain sty
   <p>Note under a table renders small and grey.</p>
   <p class="plain">…unless it is real body text: add class="plain".</p>
 
-  <section class="promo" aria-label="About Invois">       <!-- ms: Tentang Invois · zh: 关于 Invois -->
+  <section class="promo" id="app" aria-label="About Invois">       <!-- ms: Tentang Invois · zh: 关于 Invois -->
     <h2>… in Invois</h2> … <div class="cta">…Play badge…</div>
   </section>
   <p>More guides …</p>
   <hr class="dinkus">
-  <h2>FAQ</h2> …
+  <section id="faq">                                      <!-- ms: Soalan lazim · zh: 常见问题 -->
+    <h2>FAQ</h2>
+    <div class="faq-list">
+      <details><summary><h3>Question?</h3></summary><p>Answer.</p></details>   <!-- FAQPage JSON-LD = this text -->
+    </div>
+  </section>
   <ul class="sources">…</ul>                              <!-- optional source list -->
 </article>
 </main>
