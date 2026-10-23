@@ -24,6 +24,58 @@
 <link rel="stylesheet" href="/assets/guide.css?v=2026-10-20">
 <link rel="stylesheet" href="/assets/nav.css">
 <style>
+.story p.refs { color: var(--ink-soft); font-size: .85em; }
+/* "In short", app note and collapsible FAQ (pilot 2026-10-23; move to guide.css when rolled out).
+   Editorial, not UI: hairline rules and type do the work; no cards, tinted boxes or round buttons. */
+
+/* In short: a summary set between two rules, like a standfirst */
+.story .keypoints { margin: 36px 0 0; padding: 22px 0 20px; border-top: 1px solid var(--story-ink); border-bottom: 1px solid #e5e5e5; }
+.story .keypoints .kp-h { font-family: var(--story-sans); font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--story-ink); }
+.story .keypoints ul { list-style: none; margin: 14px 0 0; padding: 0; }
+.story .keypoints li { position: relative; padding-left: 26px; font-family: var(--story-serif); font-size: 19px; line-height: 1.55; color: var(--story-ink); }
+.story .keypoints li::before { content: ""; position: absolute; left: 2px; top: .72em; width: 12px; height: 2px; background: var(--brand); }
+.story .keypoints li + li { margin-top: .7em; }
+.story .keypoints .kp-jump { margin-top: 18px; font-family: var(--story-sans); font-size: 14px; line-height: 1.8; color: var(--story-soft); }
+.story .keypoints .kp-jump a { color: var(--story-soft); text-decoration-color: #c9c9c9; white-space: nowrap; }
+.story .keypoints .kp-jump a:hover { color: var(--story-ink); text-decoration-color: currentColor; }
+.story .keypoints + p { margin-top: 1.8em; }
+
+.story p.app-note { padding: 14px 18px; background: var(--paper); border-radius: 10px; }
+.story p.app-note a { color: var(--brand-dark); }
+
+/* FAQ: questions as quiet rows; a thin chevron, the answer in body serif */
+.story .faq-list { margin-top: 1em; border-top: 1px solid #e5e5e5; }
+.story .faq-list details { border-bottom: 1px solid #e5e5e5; }
+.story .faq-list summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; padding: 20px 0; font-family: var(--story-sans); font-size: 19px; line-height: 1.4; font-weight: 600; color: var(--story-ink); }
+.story .faq-list summary::-webkit-details-marker { display: none; }
+.story .faq-list summary h3 { margin: 0; font: inherit; color: inherit; text-wrap: pretty; }
+.story .faq-list summary:hover h3 { color: var(--brand-dark); }
+.story .faq-list summary:focus-visible { outline: 2px solid var(--brand); outline-offset: 4px; border-radius: 4px; }
+.story .faq-list summary::after { content: ""; flex: none; width: 18px; height: 18px; margin-top: .2em; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%236b6b6b' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center / 18px no-repeat; transition: transform .25s ease; }
+.story .faq-list details[open] summary::after { transform: rotate(180deg); }
+.story .faq-list details p { margin: 0; padding: 0 38px 24px 0; font-size: 19px; line-height: 1.6; color: #3d3d3d; }
+/* browsers that can animate a <details> open/close get a short slide; others just open */
+.story .faq-list { interpolate-size: allow-keywords; }
+.story .faq-list details::details-content { block-size: 0; overflow: hidden; transition: block-size .25s ease, content-visibility .25s allow-discrete; }
+.story .faq-list details[open]::details-content { block-size: auto; }
+@media (max-width: 520px) {
+  .story .keypoints li, .story .faq-list details p { font-size: 18px; }
+  .story .faq-list summary { font-size: 17px; padding: 18px 0; gap: 14px; }
+  .story .faq-list details p { padding-right: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .story .faq-list summary::after, .story .faq-list details::details-content { transition: none; }
+}
+
+/* Jump to (owner, 2026-10-23): the label in its own column; links wrap in the right column, aligned with the first
+   link, separated by a dot that is clipped at line starts, so none hangs at a line end */
+.story .keypoints .kp-jump { display: grid; grid-template-columns: auto 1fr; column-gap: 8px; align-items: baseline; }
+.story .keypoints .kp-jump-links { display: flex; flex-wrap: wrap; column-gap: 16px; row-gap: 2px; overflow: hidden; }
+/* a dot before each link, in the gap; the one before the first link of each line falls outside the box and is clipped */
+.story .keypoints .kp-jump-links a { position: relative; }
+.story .keypoints .kp-jump-links a::before { content: "\00B7"; position: absolute; left: -8px; transform: translateX(-50%); color: var(--story-soft); text-decoration: none; pointer-events: none; }
+</style>
+<style>
 .tl{margin:1.2em 0;padding:14px 14px 10px;border:1px solid var(--line);border-radius:12px}
 .tl-cap{font-size:13px;color:var(--ink-soft);margin:0 0 10px}
 .tl-row{margin:0 0 12px}
@@ -64,7 +116,7 @@
       "description": "大多数马来西亚自雇人士不用收 SST。什么时候必须注册（RM 500,000）、哪些服务收 8% 或 6%、注册后 invoice 要写什么。",
       "inLanguage": "zh-Hans-MY",
       "datePublished": "2026-10-20",
-      "dateModified": "2026-10-20",
+      "dateModified": "2026-10-23",
       "author": {
         "@type": "Organization",
         "name": "Invois 团队，EONGERRA TECH",
@@ -187,21 +239,33 @@
     <img src="/assets/favicon-96.png" alt="" width="40" height="40">
     <div>
       <p class="who">Invois 团队，EONGERRA TECH</p>
-      <p>阅读约 7 分钟 · 最后更新：2026年10月20日 · 一般资料，不是税务意见</p>
+      <p>阅读约 8 分钟 · 最后更新：2026年10月23日 · 一般资料，不是税务意见</p>
     </div>
   </div>
 
+<section class="keypoints" aria-labelledby="kp-h">
+<div class="kp-h" id="kp-h">重点</div>
+<ul>
+<li>只有在关税局（JKDM）注册了，才可以收 SST。</li>
+<li>应税服务在 12 个月内超过 RM&nbsp;500,000 就必须注册；出租是 RM&nbsp;1,000,000，建筑工程是 RM&nbsp;1,500,000。</li>
+<li>住家的装修、电线工程和铺瓷砖，清洁住家，以及美发、美甲和 facial，都不收税。</li>
+<li>没有注册，就不可以在 invoice 上加 SST，这样做是犯法的。</li>
+</ul>
+<nav class="kp-jump" aria-label="本页内容"><span class="kp-jump-label">目录：</span><span class="kp-jump-links"><a href="#checks">先问 3 个问题</a> <a href="#services">要收税的服务</a> <a href="#counting">RM&nbsp;500,000 怎么算</a> <a href="#not-registered">没注册的话</a> <a href="#registered">已注册的话</a> <a href="#faq">常见问题</a></span></nav>
+</section>
+
 <p>只有向马来西亚皇家关税局（JKDM）<strong>注册</strong>了，你才能收服务税；而只有当你的<strong>应税服务</strong>（taxable services）在 <strong>12 个月内超过 RM&nbsp;500,000</strong>（少数服务的门槛更高），你才必须注册。</p>
 <p>没超过这个数目，就不收 SST，invoice 上也不可以出现 SST。大多数 freelancer、师傅和小型工作室，都在这条线以下。</p>
-<p>这份指南讲我们的用户常问的服务、12 个月怎么算，以及注册后 invoice 要有什么改变。资料截至2026年10月20日，来自法令和关税局自己的指南（链接在文末）。</p>
-<h2>先问自己 3 个问题</h2>
+<p>资料截至2026年10月20日，来自法令和关税局自己的指南（链接在文末）。</p>
+<h2 id="checks">先问自己 3 个问题</h2>
 <ol>
 <li><strong>你做的是不是应税服务？</strong> 只有 2018年服务税条例（Service Tax Regulations 2018）列出的服务才要收税。很多日常的工作不在名单上，或者做给住家时不收税。</li>
 <li><strong>你的应税服务过了门槛吗？</strong> 大多数服务是 12 个月 RM&nbsp;500,000；出租是 RM&nbsp;1,000,000；建筑工程是 RM&nbsp;1,500,000。</li>
 <li><strong>你注册了吗？</strong> 只有注册了的人才收服务税。没有注册，invoice 上就不可以有 SST。</li>
 </ol>
 <p>第 1 或第 2 题的答案是“不”，你就不用注册，也不收 SST。</p>
-<h2>哪些服务要收税</h2>
+<p class="app-note">在 Invois 加 SST，会单独列成一行；SST 注册号只需填一次，会印在信头上。更多请看下面的“<a href="#app">Invois 里的 SST</a>”。</p>
+<h2 id="services">哪些服务要收税</h2>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -296,7 +360,7 @@
 <li>化妆</li>
 </ul>
 <p>如果你做这类工作，一年接近 RM&nbsp;500,000，先上 <a href="https://mysst.customs.gov.my/">MySST</a> 问关税局，再做决定。</p>
-<h2>RM&nbsp;500,000 怎么算</h2>
+<h2 id="counting">RM&nbsp;500,000 怎么算</h2>
 <p>到了某个月的月底，只要下面任何一种情况成立（以先发生的为准），你就有义务注册：</p>
 <ul>
 <li><strong>往回看：</strong>这个月加上前 11 个月，总数超过 RM&nbsp;500,000。</li>
@@ -330,11 +394,11 @@
     <div class="tl-step go"><b>8月1日</b>注册生效，开始收 SST</div>
   </div>
 </figure>
-<h2>如果你没有注册</h2>
+<h2 id="not-registered">如果你没有注册</h2>
 <p>不要加 SST 那一行，也不要把任何数目写成服务税。根据 2018年服务税法令（Service Tax Act 2018）第 21 条，这样做构成罪行，可被罚款最高 RM&nbsp;30,000、监禁最长 2 年，或两者兼施（第 79 条）。政府也可以向你追讨你写成税的数目（第 28 条）。</p>
 <p>如果顾客要求 invoice 上有 SST，答案就是：你没有注册，所以 invoice 上没有 SST。你还是可以把 SSM 号码放上去。</p>
 <p>门槛以下也可以自愿注册（第 14 条），前提是你提供应税服务，并符合关税局定的条件。注册后，你就要像其他注册人士一样收 SST、交 SST-02 申报表，所以先跟 tax agent 谈一谈。</p>
-<h2>如果你已经注册</h2>
+<h2 id="registered">如果你已经注册</h2>
 <p>你的 invoice 必须列明（2018年服务税条例第 10 条）：</p>
 <ul>
 <li>编号和日期</li>
@@ -363,7 +427,7 @@
 <li><strong>记录：</strong>保存 7 年。</li>
 </ul>
 <p>每张 invoice 还需要哪些资料，请看 <a href="/zh/guides/invoice-vs-receipt/">invoice 和 receipt 有什么分别</a>。</p>
-<section class="promo" aria-label="关于 Invois">
+<section class="promo" id="app" aria-label="关于 Invois">
 <h2>Invois 里的 SST</h2>
 <p>如果你已经注册：</p>
 <ul>
@@ -378,17 +442,31 @@
 </section>
 <p>更多给自己报价、自己收钱的人看的指南：<a href="/zh/guides/">全部指南</a>。</p>
 <hr class="dinkus">
+<section id="faq">
 <h2>常见问题</h2>
-<h3>我一个月大约赚 RM&nbsp;5,000，需要注册吗？</h3>
+<div class="faq-list">
+<details>
+<summary><h3>我一个月大约赚 RM&nbsp;5,000，需要注册吗？</h3></summary>
 <p>不用。一年大约 RM&nbsp;60,000（12 × RM&nbsp;5,000.00），离 RM&nbsp;500,000 还很远，所以不用注册，invoice 上也不可以显示 SST。</p>
-<h3>顾客要求 invoice 上有 SST，怎么办？</h3>
+</details>
+<details>
+<summary><h3>顾客要求 invoice 上有 SST，怎么办？</h3></summary>
 <p>没有注册就不能加：没有注册却显示服务税构成罪行。照样发没有 SST 的 invoice，并告诉顾客你没有注册 SST。</p>
-<h3>美发和美容服务要收 SST 吗？</h3>
+</details>
+<details>
+<summary><h3>美发和美容服务要收 SST 吗？</h3></summary>
 <p>不用。原本2025年7月起向美容服务征税的计划，已在2025年6月取消，所以剪发、美甲和 facial 都不收税。按摩院属于另一个类别，要收税。</p>
-<h3>SST 和 e-Invoice 是一样的吗？</h3>
+</details>
+<details>
+<summary><h3>SST 和 e-Invoice 是一样的吗？</h3></summary>
 <p>不一样。SST 是关税局管的税；e-Invoice 是 LHDN 用来验证某些 invoice 的系统，要不要用看你的生意而定。两者不能互相取代。</p>
-<h3>住家装修要收 SST 吗？</h3>
+</details>
+<details>
+<summary><h3>住家装修要收 SST 吗？</h3></summary>
 <p>不用。住家的装修、电线工程和铺瓷砖不收税。店铺、办公室和工厂的建筑工程收 6%，但只有在承包商的建筑工程 12 个月超过 RM&nbsp;1,500,000 并注册之后才收。</p>
+</details>
+</div>
+</section>
 <p><em>这是一般资料，不是法律或税务意见。规则会改变；你自己的情况，请上 <a href="https://mysst.customs.gov.my/">MySST</a> 问关税局，或请教 tax agent。</em></p>
 <h2>资料来源</h2>
 <ul class="sources">

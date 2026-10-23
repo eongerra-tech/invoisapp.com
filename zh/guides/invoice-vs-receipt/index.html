@@ -23,6 +23,58 @@
 <link rel="stylesheet" href="/assets/site.css">
 <link rel="stylesheet" href="/assets/guide.css?v=2026-10-20">
 <link rel="stylesheet" href="/assets/nav.css">
+<style>
+.story p.refs { color: var(--ink-soft); font-size: .85em; }
+/* "In short", app note and collapsible FAQ (pilot 2026-10-23; move to guide.css when rolled out).
+   Editorial, not UI: hairline rules and type do the work; no cards, tinted boxes or round buttons. */
+
+/* In short: a summary set between two rules, like a standfirst */
+.story .keypoints { margin: 36px 0 0; padding: 22px 0 20px; border-top: 1px solid var(--story-ink); border-bottom: 1px solid #e5e5e5; }
+.story .keypoints .kp-h { font-family: var(--story-sans); font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--story-ink); }
+.story .keypoints ul { list-style: none; margin: 14px 0 0; padding: 0; }
+.story .keypoints li { position: relative; padding-left: 26px; font-family: var(--story-serif); font-size: 19px; line-height: 1.55; color: var(--story-ink); }
+.story .keypoints li::before { content: ""; position: absolute; left: 2px; top: .72em; width: 12px; height: 2px; background: var(--brand); }
+.story .keypoints li + li { margin-top: .7em; }
+.story .keypoints .kp-jump { margin-top: 18px; font-family: var(--story-sans); font-size: 14px; line-height: 1.8; color: var(--story-soft); }
+.story .keypoints .kp-jump a { color: var(--story-soft); text-decoration-color: #c9c9c9; white-space: nowrap; }
+.story .keypoints .kp-jump a:hover { color: var(--story-ink); text-decoration-color: currentColor; }
+.story .keypoints + p { margin-top: 1.8em; }
+
+.story p.app-note { padding: 14px 18px; background: var(--paper); border-radius: 10px; }
+.story p.app-note a { color: var(--brand-dark); }
+
+/* FAQ: questions as quiet rows; a thin chevron, the answer in body serif */
+.story .faq-list { margin-top: 1em; border-top: 1px solid #e5e5e5; }
+.story .faq-list details { border-bottom: 1px solid #e5e5e5; }
+.story .faq-list summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; padding: 20px 0; font-family: var(--story-sans); font-size: 19px; line-height: 1.4; font-weight: 600; color: var(--story-ink); }
+.story .faq-list summary::-webkit-details-marker { display: none; }
+.story .faq-list summary h3 { margin: 0; font: inherit; color: inherit; text-wrap: pretty; }
+.story .faq-list summary:hover h3 { color: var(--brand-dark); }
+.story .faq-list summary:focus-visible { outline: 2px solid var(--brand); outline-offset: 4px; border-radius: 4px; }
+.story .faq-list summary::after { content: ""; flex: none; width: 18px; height: 18px; margin-top: .2em; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%236b6b6b' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center / 18px no-repeat; transition: transform .25s ease; }
+.story .faq-list details[open] summary::after { transform: rotate(180deg); }
+.story .faq-list details p { margin: 0; padding: 0 38px 24px 0; font-size: 19px; line-height: 1.6; color: #3d3d3d; }
+/* browsers that can animate a <details> open/close get a short slide; others just open */
+.story .faq-list { interpolate-size: allow-keywords; }
+.story .faq-list details::details-content { block-size: 0; overflow: hidden; transition: block-size .25s ease, content-visibility .25s allow-discrete; }
+.story .faq-list details[open]::details-content { block-size: auto; }
+@media (max-width: 520px) {
+  .story .keypoints li, .story .faq-list details p { font-size: 18px; }
+  .story .faq-list summary { font-size: 17px; padding: 18px 0; gap: 14px; }
+  .story .faq-list details p { padding-right: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .story .faq-list summary::after, .story .faq-list details::details-content { transition: none; }
+}
+
+/* Jump to (owner, 2026-10-23): the label in its own column; links wrap in the right column, aligned with the first
+   link, separated by a dot that is clipped at line starts, so none hangs at a line end */
+.story .keypoints .kp-jump { display: grid; grid-template-columns: auto 1fr; column-gap: 8px; align-items: baseline; }
+.story .keypoints .kp-jump-links { display: flex; flex-wrap: wrap; column-gap: 16px; row-gap: 2px; overflow: hidden; }
+/* a dot before each link, in the gap; the one before the first link of each line falls outside the box and is clipped */
+.story .keypoints .kp-jump-links a { position: relative; }
+.story .keypoints .kp-jump-links a::before { content: "\00B7"; position: absolute; left: -8px; transform: translateX(-50%); color: var(--story-soft); text-decoration: none; pointer-events: none; }
+</style>
 <meta property="og:site_name" content="Invois">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:type" content="article">
@@ -48,7 +100,7 @@
       "description": "报价单、invoice、receipt 有什么分别？用一个活动策划的例子，从订金、尾款到 receipt 一步一步算给你看，附 invoice 和 receipt 必写项目清单。",
       "inLanguage": "zh-Hans-MY",
       "datePublished": "2026-10-13",
-      "dateModified": "2026-10-13",
+      "dateModified": "2026-10-23",
       "author": {
         "@type": "Organization",
         "name": "Invois 团队，EONGERRA TECH",
@@ -179,19 +231,30 @@
     <img src="/assets/favicon-96.png" alt="" width="40" height="40">
     <div>
       <p class="who">Invois 团队，EONGERRA TECH</p>
-      <p>阅读约 7 分钟 · 最后更新：2026年10月13日</p>
+      <p>阅读约 8 分钟 · 最后更新：2026年10月23日</p>
     </div>
   </div>
 
-<p><strong>Invoice（发票）</strong> 是向顾客要钱：“请在这个日期前付这笔钱”。<strong>Receipt（收据）</strong> 是证明钱收到了：“这笔钱我收到了”。在这两张之前，还有一张<strong>报价单（quotation）</strong>：开工前的报价。三张单搞混了，订金（deposit）就会对不上，顾客也不知道自己还欠多少。</p>
-<p>这篇把三种单据摆在一起，再用<strong>一份工作</strong>从报价一路走到最后一笔钱，订金、尾款都算给你看。例子来自活动策划、冷气师傅和美发店，不过只要你是自己报价、自己收钱的人，流程都一样。</p>
-<h2>一张表看懂三种单据</h2>
+<section class="keypoints" aria-labelledby="kp-h">
+<div class="kp-h" id="kp-h">重点</div>
+<ul>
+<li>报价单是开工前的报价，invoice 是向顾客要钱，receipt 证明钱收到了。</li>
+<li>一张 invoice 可以同时写订金（deposit）和尾款；每收一笔钱就出一张 receipt。</li>
+<li>Receipt 号码不要重复用；写错了，就把那张 receipt 标明 CANCELLED 并留底。</li>
+<li>Invoice 和 receipt 至少保存 7 年。</li>
+</ul>
+<nav class="kp-jump" aria-label="本页内容"><span class="kp-jump-label">目录：</span><span class="kp-jump-links"><a href="#table">对照表</a> <a href="#one-job">一份工作的流程</a> <a href="#more">另外 2 个例子</a> <a href="#checklists">必写项目清单</a> <a href="#faq">常见问题</a></span></nav>
+</section>
+
+<p><strong>Invoice（发票）</strong> 是向顾客要钱：“请在这个日期前付这笔钱”。<strong>Receipt（收据）</strong> 是证明钱收到了：“这笔钱我收到了”。在这两张之前，还有一张<strong>报价单（quotation）</strong>：开工前的报价。三张单搞混了，订金就会对不上，顾客也不知道自己还欠多少。</p>
+<p>下面的例子来自活动策划、冷气师傅和美发店，不过只要你是自己报价、自己收钱的人，流程都一样。</p>
+<h2 id="table">一张表看懂三种单据</h2>
 <div class="table-wrap"><table>
 <thead>
 <tr>
 <th></th>
 <th>报价单（Quotation）</th>
-<th>发票（Invoice）</th>
+<th>Invoice</th>
 <th>收据（Receipt）</th>
 </tr>
 </thead>
@@ -235,7 +298,8 @@
 </tbody>
 </table></div>
 <p class="plain">简单记法：还没开口要钱，是报价单；正在要钱，开 invoice；钱进来了，出 receipt。报价单的写法，请看《<a href="/zh/guides/how-to-write-a-quotation/">报价单怎么写</a>》。</p>
-<h2>一份工作，从报价单走到收据</h2>
+<p class="app-note">在 Invois，顾客接受的报价单一键转成 invoice，你记下的每一笔付款都有自己的 receipt，写明还欠多少。更多请看下面的“<a href="#app">从报价单到收据：Invois</a>”。</p>
+<h2 id="one-job">一份工作，从报价单走到收据</h2>
 <p>一位活动策划接了一家公司的 family day。以下价钱只是用来示范格式，不是参考价。</p>
 <h3>第一步：报价单（11月3日）</h3>
 <div class="table-wrap doc"><table>
@@ -351,14 +415,14 @@
 <li>尾款：RM&nbsp;4,850.00 - RM&nbsp;2,100.00 = <strong>RM&nbsp;2,750.00</strong></li>
 </ul>
 <p>最后那张收据也照这个数开。</p>
-<h2>另外 2 种常见情况</h2>
+<h2 id="more">另外 2 种常见情况</h2>
 <h3>冷气师傅：当场付，或 30 天内付</h3>
 <p>住家顾客请冷气师傅洗 2 台冷气，RM 160.00，师傅走之前就用 DuitNow 付了。这时 invoice 和 receipt 可以一起给，或者开一张写明 <strong>PAID</strong> 的 invoice。顾客手上还是有一张有号码的单，以后问保修也有根据。</p>
 <p>同样的工作如果是公司或店铺，就不一样了：会计部要先拿到有你 SSM 号码的 invoice，再照条件付款，例如 30 天内（“Net 30”）。钱进了户口，才出 receipt。</p>
 <h3>美发店：rebonding 当场付，配套先收订金</h3>
 <p>Walk-in 顾客做 rebonding，做完在柜台付钱，出一张收据就够了，不需要另外开 invoice。</p>
 <p>如果顾客预约 rebonding + 3 次 treatment 的配套，总价 RM 380.00，先付 RM 100.00 订金留位，那张订金收据就要写明余额 RM 280.00，下次来付清时再出一张，余额 RM 0.00。</p>
-<h2>Invoice 和 receipt 上一定要有什么</h2>
+<h2 id="checklists">Invoice 和 receipt 上一定要有什么</h2>
 <h3>Invoice</h3>
 <ul>
 <li><strong>INVOICE</strong> 字样和 invoice 号码，按顺序编（<code>INV-2611-005</code>）</li>
@@ -391,7 +455,7 @@
 <p>Invoice 和 receipt 至少保存 7 年。</p>
 <p>1967年所得税法令（Income Tax Act 1967）第 82 条规定，所有生意（包括独资、合伙和公司）都要把记录保存 7 年，从收入所属年份结束起算。参考：LHDN Public Ruling <a href="https://www.hasil.gov.my/wp-content/uploads/PR4_2000_Rev.pdf">4/2000 (Revised)</a> 适用于公司，<a href="https://www.hasil.gov.my/wp-content/uploads/PR5_2000_Rev.pdf">5/2000 (Revised)</a> 适用于个人和合伙。</p>
 <p>e-Invoice 的规定适不适用于你，要看你的生意情况，请参考 LHDN 的指南。</p>
-<section class="promo" aria-label="关于 Invois">
+<section class="promo" id="app" aria-label="关于 Invois">
 <h2>从报价单到收据：Invois</h2>
 <p>把报价单重新打成 invoice，再每收一笔钱就自己算一次余额，最容易出错。<a href="/zh/">Invois</a> 是一个 Android app，让同一份工作从一张单顺顺地走到下一张：</p>
 <ul>
@@ -410,19 +474,35 @@
 </section>
 <p>更多给自己报价、自己收钱的人看的指南：<a href="/zh/guides/">全部指南</a>。</p>
 <hr class="dinkus">
+<section id="faq">
 <h2>常见问题</h2>
-<h3>可以只出收据，不开 invoice 吗？</h3>
+<div class="faq-list">
+<details>
+<summary><h3>可以只出收据，不开 invoice 吗？</h3></summary>
 <p>当场付清的小工作，很多商家只出收据，或开一张写明 PAID 的 invoice。如果顾客迟些才付，或是公司付款，就要先开 invoice，对方会计部是照 invoice 付钱的。</p>
-<h3>收订金要出收据吗？</h3>
+</details>
+<details>
+<summary><h3>收订金要出收据吗？</h3></summary>
 <p>要。每收一笔钱都出收据，订金也一样，并写明还欠多少。这张收据就是顾客“日期或订单已确认”的凭证。</p>
-<h3>订金和尾款可以开在同一张 invoice 吗？</h3>
+</details>
+<details>
+<summary><h3>订金和尾款可以开在同一张 invoice 吗？</h3></summary>
 <p>可以。在一张 invoice 上分别写明订金和尾款，各自注明到期日，每收到一笔钱就出一张收据。如果对方会计部要求每笔钱各开一张 invoice，就先开订金 invoice，最后那张再扣掉订金。</p>
-<h3>没有注册 SST，invoice 可以加 SST 吗？</h3>
+</details>
+<details>
+<summary><h3>没有注册 SST，invoice 可以加 SST 吗？</h3></summary>
 <p>不可以。只有在关税局（JKDM）注册了销售税或服务税的商家才可以收 SST。有注册的话，SST 要单独一行，附上 SST 注册号码。</p>
-<h3>Invoice 和 receipt 要保存多久？</h3>
+</details>
+<details>
+<summary><h3>Invoice 和 receipt 要保存多久？</h3></summary>
 <p>至少 7 年，上文已经说明。如果报税表迟交，7 年从交表那年年底起算。</p>
-<h3>Invoice 和 e-Invoice 是一样的吗？</h3>
+</details>
+<details>
+<summary><h3>Invoice 和 e-Invoice 是一样的吗？</h3></summary>
 <p>不一样。Invoice 是你发给顾客的账单；e-Invoice 是 LHDN 用来验证某些 invoice 的系统，适不适用要看你的生意情况，请参考 LHDN 的指南。</p>
+</details>
+</div>
+</section>
 </article>
 </main>
 

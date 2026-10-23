@@ -23,6 +23,58 @@
 <link rel="stylesheet" href="/assets/site.css">
 <link rel="stylesheet" href="/assets/guide.css?v=2026-10-20">
 <link rel="stylesheet" href="/assets/nav.css">
+<style>
+.story p.refs { color: var(--ink-soft); font-size: .85em; }
+/* "In short", app note and collapsible FAQ (pilot 2026-10-23; move to guide.css when rolled out).
+   Editorial, not UI: hairline rules and type do the work; no cards, tinted boxes or round buttons. */
+
+/* In short: a summary set between two rules, like a standfirst */
+.story .keypoints { margin: 36px 0 0; padding: 22px 0 20px; border-top: 1px solid var(--story-ink); border-bottom: 1px solid #e5e5e5; }
+.story .keypoints .kp-h { font-family: var(--story-sans); font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--story-ink); }
+.story .keypoints ul { list-style: none; margin: 14px 0 0; padding: 0; }
+.story .keypoints li { position: relative; padding-left: 26px; font-family: var(--story-serif); font-size: 19px; line-height: 1.55; color: var(--story-ink); }
+.story .keypoints li::before { content: ""; position: absolute; left: 2px; top: .72em; width: 12px; height: 2px; background: var(--brand); }
+.story .keypoints li + li { margin-top: .7em; }
+.story .keypoints .kp-jump { margin-top: 18px; font-family: var(--story-sans); font-size: 14px; line-height: 1.8; color: var(--story-soft); }
+.story .keypoints .kp-jump a { color: var(--story-soft); text-decoration-color: #c9c9c9; white-space: nowrap; }
+.story .keypoints .kp-jump a:hover { color: var(--story-ink); text-decoration-color: currentColor; }
+.story .keypoints + p { margin-top: 1.8em; }
+
+.story p.app-note { padding: 14px 18px; background: var(--paper); border-radius: 10px; }
+.story p.app-note a { color: var(--brand-dark); }
+
+/* FAQ: questions as quiet rows; a thin chevron, the answer in body serif */
+.story .faq-list { margin-top: 1em; border-top: 1px solid #e5e5e5; }
+.story .faq-list details { border-bottom: 1px solid #e5e5e5; }
+.story .faq-list summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; padding: 20px 0; font-family: var(--story-sans); font-size: 19px; line-height: 1.4; font-weight: 600; color: var(--story-ink); }
+.story .faq-list summary::-webkit-details-marker { display: none; }
+.story .faq-list summary h3 { margin: 0; font: inherit; color: inherit; text-wrap: pretty; }
+.story .faq-list summary:hover h3 { color: var(--brand-dark); }
+.story .faq-list summary:focus-visible { outline: 2px solid var(--brand); outline-offset: 4px; border-radius: 4px; }
+.story .faq-list summary::after { content: ""; flex: none; width: 18px; height: 18px; margin-top: .2em; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%236b6b6b' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center / 18px no-repeat; transition: transform .25s ease; }
+.story .faq-list details[open] summary::after { transform: rotate(180deg); }
+.story .faq-list details p { margin: 0; padding: 0 38px 24px 0; font-size: 19px; line-height: 1.6; color: #3d3d3d; }
+/* browsers that can animate a <details> open/close get a short slide; others just open */
+.story .faq-list { interpolate-size: allow-keywords; }
+.story .faq-list details::details-content { block-size: 0; overflow: hidden; transition: block-size .25s ease, content-visibility .25s allow-discrete; }
+.story .faq-list details[open]::details-content { block-size: auto; }
+@media (max-width: 520px) {
+  .story .keypoints li, .story .faq-list details p { font-size: 18px; }
+  .story .faq-list summary { font-size: 17px; padding: 18px 0; gap: 14px; }
+  .story .faq-list details p { padding-right: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .story .faq-list summary::after, .story .faq-list details::details-content { transition: none; }
+}
+
+/* Jump to (owner, 2026-10-23): the label in its own column; links wrap in the right column, aligned with the first
+   link, separated by a dot that is clipped at line starts, so none hangs at a line end */
+.story .keypoints .kp-jump { display: grid; grid-template-columns: auto 1fr; column-gap: 8px; align-items: baseline; }
+.story .keypoints .kp-jump-links { display: flex; flex-wrap: wrap; column-gap: 16px; row-gap: 2px; overflow: hidden; }
+/* a dot before each link, in the gap; the one before the first link of each line falls outside the box and is clipped */
+.story .keypoints .kp-jump-links a { position: relative; }
+.story .keypoints .kp-jump-links a::before { content: "\00B7"; position: absolute; left: -8px; transform: translateX(-50%); color: var(--story-soft); text-decoration: none; pointer-events: none; }
+</style>
 <meta property="og:site_name" content="Invois">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:type" content="article">
@@ -48,7 +100,7 @@
       "description": "马来西亚的报价单（quotation）要写什么：SSM 号码、SST、有效期和付款条件，附水电、油漆、补习 3 个行业的例子。",
       "inLanguage": "zh-Hans-MY",
       "datePublished": "2026-10-13",
-      "dateModified": "2026-10-13",
+      "dateModified": "2026-10-23",
       "author": {
         "@type": "Organization",
         "name": "Invois 团队，EONGERRA TECH",
@@ -179,14 +231,25 @@
     <img src="/assets/favicon-96.png" alt="" width="40" height="40">
     <div>
       <p class="who">Invois 团队，EONGERRA TECH</p>
-      <p>阅读约 6 分钟 · 最后更新：2026年10月13日</p>
+      <p>阅读约 8 分钟 · 最后更新：2026年10月23日</p>
     </div>
   </div>
 
+<section class="keypoints" aria-labelledby="kp-h">
+<div class="kp-h" id="kp-h">重点</div>
+<ul>
+<li>报价单要有：你的商家资料、顾客和工作地点、报价单号码和有效期、项目、总数、付款条件、包括什么，以及顾客怎样确认。</li>
+<li>有效期 7 到 30 天都常见，一般小工作写 14 天就好。</li>
+<li>只有在关税局（JKDM）注册了，才可以加 SST。</li>
+<li>顾客签名，或在 WhatsApp 回复“OK”，就是书面确认，要留着。</li>
+</ul>
+<nav class="kp-jump" aria-label="本页内容"><span class="kp-jump-label">目录：</span><span class="kp-jump-links"><a href="#what-to-put">要写什么</a> <a href="#examples">例子</a> <a href="#mistakes">要避免的错误</a> <a href="#faq">常见问题</a></span></nav>
+</section>
+
 <p>报价单（quotation）是你在<strong>开工之前</strong>给顾客的书面报价：把要做的工作一项一项列出来，写明总价、这个价钱有效到什么时候，以及怎样付款。报价单不是账单，不是向顾客要钱；顾客同意、到了该付款的时候，你才开 invoice。</p>
-<p>不管你是水电师傅、油漆师傅、摄影师、发型师还是补习老师，一张清楚的报价单有 3 个好处：比在 WhatsApp 只报一个总数更容易接到工作；事后少为“这个有没有包括在内”吵架；之后开 invoice 也更简单。这篇指南讲马来西亚的报价单要写什么，附上 3 个不同行业的例子。</p>
+<p>不管你是水电师傅、油漆师傅、摄影师、发型师还是补习老师，一张清楚的报价单有 3 个好处：比在 WhatsApp 只报一个总数更容易接到工作；事后少为“这个有没有包括在内”吵架；之后开 invoice 也更简单。</p>
 <p>报价单在开工前给，invoice 是向顾客要钱，receipt 证明钱收到了。三张单据的顾客资料和项目要一致。完整的对照，用一份工作从第一笔钱算到最后一张 receipt，请看《<a href="/zh/guides/invoice-vs-receipt/">invoice 和 receipt 有什么分别</a>》。</p>
-<h2>马来西亚的报价单要写什么</h2>
+<h2 id="what-to-put">马来西亚的报价单要写什么</h2>
 <h3>1. 你的商家资料</h3>
 <p>商号名称、地址、电话和电邮。如果有在 SSM 注册，写上注册号码（新格式是 12 位数，例如 <code>202401012345</code>）。</p>
 <p>公司（Sdn Bhd），以及有在 SSM 注册的独资和合伙生意，都必须在商业文件上写上这个号码；很多公司顾客没有这个号码不会处理你的报价。</p>
@@ -212,7 +275,8 @@
 <h3>8. 顾客确认</h3>
 <p>留签名栏，或者写一句：“同意的话请签名回传，或在 WhatsApp 回复 OK。”把顾客的回复留着，那就是书面确认。</p>
 <p>顾客确认之后，下一张单据就是 invoice：请看《<a href="/zh/guides/how-to-write-an-invoice/">Invoice 怎么写</a>》。</p>
-<h2>3 个不同行业的报价单例子</h2>
+<p class="app-note">在 Invois 点选价目表里的项目，每一行都是你自己的价钱，报价单号码和有效期会自动印上。更多请看下面的“<a href="#app">用价目表开报价单：Invois</a>”。</p>
+<h2 id="examples">3 个不同行业的报价单例子</h2>
 <p>以下价钱只是用来示范格式，不是参考价。这 3 个例子的商家都没有注册 SST，所以没有 SST 这一行。</p>
 <h3>水电师傅：加 plug point、换灯</h3>
 <div class="table-wrap doc"><table>
@@ -365,7 +429,7 @@
 </table></div>
 <p>有效期 30 天。分 3 期，每月月初付 RM 380.00。</p>
 <p>这 3 个例子的共同点：每一项都有自己一行，送的东西看得见，条款先回答了顾客本来会在 WhatsApp 问的问题。</p>
-<h2>让你亏钱的 5 个错误</h2>
+<h2 id="mistakes">让你亏钱的 5 个错误</h2>
 <ol>
 <li><strong>没写有效期。</strong> 材料价钱会涨，旧价不应该永远有效。</li>
 <li><strong>只报一个总数。</strong> “全部 RM 3,000”最容易被讲价；逐项列出，顾客看得到钱花在哪里。</li>
@@ -373,7 +437,7 @@
 <li><strong>没注册却加 SST。</strong> 只有注册了的商家才可以收 SST。</li>
 <li><strong>没写订金条件。</strong> 买材料或帮顾客留日期之前，先写清楚。</li>
 </ol>
-<section class="promo" aria-label="关于 Invois">
+<section class="promo" id="app" aria-label="关于 Invois">
 <h2>用价目表开报价单：Invois</h2>
 <p>在两份工作之间用手机键盘打这些，真的很慢。<a href="/zh/">Invois</a> 是一个 Android app，用你自己的价目表帮你开报价单：</p>
 <ul>
@@ -392,19 +456,35 @@
 <div class="cta"><a class="badge" href="https://play.google.com/store/apps/details?id=com.invoisapp&amp;referrer=utm_source%3Dinvoisapp.com%26utm_medium%3Dwebsite%26utm_campaign%3Dguide_quotation_zh"><img src="/assets/badge-googleplay-zh.png" alt="在 Google Play 下载" width="188" height="56" loading="lazy"></a></div>
 </section>
 <hr class="dinkus">
+<section id="faq">
 <h2>常见问题</h2>
-<h3>报价单有法律效力吗？</h3>
+<div class="faq-list">
+<details>
+<summary><h3>报价单有法律效力吗？</h3></summary>
 <p>报价单一般被视为要约（offer）。顾客接受之后，例如签名或在 WhatsApp 书面确认，就可能根据 1950年合约法令（Contracts Act 1950）成为有约束力的协议。工作范围和有效期写清楚，对双方都有保障。以上是一般资讯，不是法律意见。</p>
-<h3>报价单的有效期写多久好？</h3>
+</details>
+<details>
+<summary><h3>报价单的有效期写多久好？</h3></summary>
 <p>7 到 30 天都常见。一般小工作 14 天就够；材料价钱常变的，写短一点；几个月前就预订的活动，可以写长一点。</p>
-<h3>报价单要不要加 SST？</h3>
+</details>
+<details>
+<summary><h3>报价单要不要加 SST？</h3></summary>
 <p>只有在关税局（JKDM）注册了销售税或服务税才加，并且要单独一行，附上 SST 注册号码。没有注册的话，不可以收 SST。</p>
-<h3>报价单一定要写 SSM 号码吗？</h3>
+</details>
+<details>
+<summary><h3>报价单一定要写 SSM 号码吗？</h3></summary>
 <p>要，只要你的生意有在 SSM 注册，不管是公司（Sdn Bhd）、独资还是合伙。独资和合伙生意方面，1957年商业注册条例（Registration of Businesses Rules 1957）规定，印有商号名称的信头、invoice、账单和其他文件都要写上注册号码。公司则受 2016年公司法令（Companies Act 2016）规定，也一样要写。</p>
-<h3>可以用 WhatsApp 发报价单吗？</h3>
+</details>
+<details>
+<summary><h3>可以用 WhatsApp 发报价单吗？</h3></summary>
 <p>可以。最好发 PDF，不要只打字或拍照，这样项目、总数和条款都在一起。顾客回复的“OK”要留着，作为书面确认。</p>
-<h3>报价单和 e-Invoice 是一样的吗？</h3>
+</details>
+<details>
+<summary><h3>报价单和 e-Invoice 是一样的吗？</h3></summary>
 <p>不一样。报价单只是报价，不需要提交给 LHDN。e-Invoice 的规定针对 invoice 和相关单据，要看你的生意情况，请参考 LHDN 的指南。</p>
+</details>
+</div>
+</section>
 </article>
 </main>
 

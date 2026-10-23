@@ -25,6 +25,55 @@
 <link rel="stylesheet" href="/assets/nav.css">
 <style>
 .story p.refs { color: var(--ink-soft); font-size: .85em; }
+/* "In short", app note and collapsible FAQ (pilot 2026-10-23; move to guide.css when rolled out).
+   Editorial, not UI: hairline rules and type do the work; no cards, tinted boxes or round buttons. */
+
+/* In short: a summary set between two rules, like a standfirst */
+.story .keypoints { margin: 36px 0 0; padding: 22px 0 20px; border-top: 1px solid var(--story-ink); border-bottom: 1px solid #e5e5e5; }
+.story .keypoints .kp-h { font-family: var(--story-sans); font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--story-ink); }
+.story .keypoints ul { list-style: none; margin: 14px 0 0; padding: 0; }
+.story .keypoints li { position: relative; padding-left: 26px; font-family: var(--story-serif); font-size: 19px; line-height: 1.55; color: var(--story-ink); }
+.story .keypoints li::before { content: ""; position: absolute; left: 2px; top: .72em; width: 12px; height: 2px; background: var(--brand); }
+.story .keypoints li + li { margin-top: .7em; }
+.story .keypoints .kp-jump { margin-top: 18px; font-family: var(--story-sans); font-size: 14px; line-height: 1.8; color: var(--story-soft); }
+.story .keypoints .kp-jump a { color: var(--story-soft); text-decoration-color: #c9c9c9; white-space: nowrap; }
+.story .keypoints .kp-jump a:hover { color: var(--story-ink); text-decoration-color: currentColor; }
+.story .keypoints + p { margin-top: 1.8em; }
+
+.story p.app-note { padding: 14px 18px; background: var(--paper); border-radius: 10px; }
+.story p.app-note a { color: var(--brand-dark); }
+
+/* FAQ: questions as quiet rows; a thin chevron, the answer in body serif */
+.story .faq-list { margin-top: 1em; border-top: 1px solid #e5e5e5; }
+.story .faq-list details { border-bottom: 1px solid #e5e5e5; }
+.story .faq-list summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; padding: 20px 0; font-family: var(--story-sans); font-size: 19px; line-height: 1.4; font-weight: 600; color: var(--story-ink); }
+.story .faq-list summary::-webkit-details-marker { display: none; }
+.story .faq-list summary h3 { margin: 0; font: inherit; color: inherit; text-wrap: pretty; }
+.story .faq-list summary:hover h3 { color: var(--brand-dark); }
+.story .faq-list summary:focus-visible { outline: 2px solid var(--brand); outline-offset: 4px; border-radius: 4px; }
+.story .faq-list summary::after { content: ""; flex: none; width: 18px; height: 18px; margin-top: .2em; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%236b6b6b' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center / 18px no-repeat; transition: transform .25s ease; }
+.story .faq-list details[open] summary::after { transform: rotate(180deg); }
+.story .faq-list details p { margin: 0; padding: 0 38px 24px 0; font-size: 19px; line-height: 1.6; color: #3d3d3d; }
+/* browsers that can animate a <details> open/close get a short slide; others just open */
+.story .faq-list { interpolate-size: allow-keywords; }
+.story .faq-list details::details-content { block-size: 0; overflow: hidden; transition: block-size .25s ease, content-visibility .25s allow-discrete; }
+.story .faq-list details[open]::details-content { block-size: auto; }
+@media (max-width: 520px) {
+  .story .keypoints li, .story .faq-list details p { font-size: 18px; }
+  .story .faq-list summary { font-size: 17px; padding: 18px 0; gap: 14px; }
+  .story .faq-list details p { padding-right: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .story .faq-list summary::after, .story .faq-list details::details-content { transition: none; }
+}
+
+/* Jump to (owner, 2026-10-23): the label in its own column; links wrap in the right column, aligned with the first
+   link, separated by a dot that is clipped at line starts, so none hangs at a line end */
+.story .keypoints .kp-jump { display: grid; grid-template-columns: auto 1fr; column-gap: 8px; align-items: baseline; }
+.story .keypoints .kp-jump-links { display: flex; flex-wrap: wrap; column-gap: 16px; row-gap: 2px; overflow: hidden; }
+/* a dot before each link, in the gap; the one before the first link of each line falls outside the box and is clipped */
+.story .keypoints .kp-jump-links a { position: relative; }
+.story .keypoints .kp-jump-links a::before { content: "\00B7"; position: absolute; left: -8px; transform: translateX(-50%); color: var(--story-soft); text-decoration: none; pointer-events: none; }
 </style>
 <meta property="og:site_name" content="Invois">
 <meta property="og:locale" content="zh_CN">
@@ -51,7 +100,7 @@
       "description": "马来西亚的 invoice 要写什么：号码、到期日、SSM 号码、SST 和付款资料，附 3 个例子，以及什么时候要用 e-Invoice。",
       "inLanguage": "zh-Hans-MY",
       "datePublished": "2026-10-22",
-      "dateModified": "2026-10-22",
+      "dateModified": "2026-10-23",
       "author": {
         "@type": "Organization",
         "name": "Invois 团队，EONGERRA TECH",
@@ -174,14 +223,24 @@
     <img src="/assets/favicon-96.png" alt="" width="40" height="40">
     <div>
       <p class="who">Invois 团队，EONGERRA TECH</p>
-      <p>阅读约 7 分钟 · 最后更新：2026年10月22日</p>
+      <p>阅读约 7 分钟 · 最后更新：2026年10月23日</p>
     </div>
   </div>
 
-<p>Invoice 是请顾客在某个日期前，付一笔讲好的钱。到了该付钱的时候，你就开 invoice。</p>
-<p>这篇讲马来西亚的 invoice 要写什么，附 3 个例子，以及你需不需要 e-Invoice。</p>
+<section class="keypoints" aria-labelledby="kp-h">
+<div class="kp-h" id="kp-h">重点</div>
+<ul>
+<li>Invoice 要有：invoice 号码、开单日期和到期日、你的商家资料、顾客资料、项目、总数和你的银行资料；有收订金（deposit）的话也写上。</li>
+<li>什么时候开：完工后、收订金时、每个付款阶段，或每月一次。</li>
+<li>已经发出的 invoice 开错了，就发改好的一张，并告诉顾客改了什么。如果你有注册 SST，开错的要标明 CANCELLED；之后金额有变，就用 credit note 或 debit note。</li>
+<li>年营业额或收入少于 RM 3,000,000 的生意，目前获豁免，不用开 e-Invoice，只有少数<a href="#e-invoice">例外</a>。</li>
+</ul>
+<nav class="kp-jump" aria-label="本页内容"><span class="kp-jump-label">目录：</span><span class="kp-jump-links"><a href="#what-to-put">要写什么</a> <a href="#when">什么时候开</a> <a href="#examples">例子</a> <a href="#wrong">开错了怎么办</a> <a href="#e-invoice">e-Invoice</a> <a href="#faq">常见问题</a></span></nav>
+</section>
+
+<p>Invoice 是请顾客在某个日期前，付一笔讲好的钱。</p>
 <p>Invoice 通常在报价单之后开，报价单的写法请看《<a href="/zh/guides/how-to-write-a-quotation/">报价单怎么写</a>》。不确定该用哪一张单据，请看《<a href="/zh/guides/invoice-vs-receipt/">invoice 和 receipt 有什么分别</a>》。</p>
-<h2>马来西亚的 invoice 要写什么</h2>
+<h2 id="what-to-put">马来西亚的 invoice 要写什么</h2>
 <h3>1. 标题和 invoice 号码</h3>
 <p>最上面写 INVOICE，再加一个号码，例如 <code>INV-2611-012</code>。Invoice 号码按顺序编，用过的号码不要再用，这样每个号码只对应一张 invoice。</p>
 <h3>2. 开单日期和到期日</h3>
@@ -202,11 +261,12 @@
 <li><strong>没有注册：</strong>不要加 SST。</li>
 </ul>
 <p>详情请看《<a href="/zh/guides/do-i-need-to-charge-sst/">要不要收 SST？</a>》。</p>
-<h3>7. 订金（deposit）和尾款</h3>
+<h3>7. 订金和尾款</h3>
 <p>顾客已经付了订金的话，在总数下面列出来，再写还要付的尾款，这样双方都看得到订金已经扣掉。</p>
 <h3>8. 怎样付款</h3>
 <p>银行名称、户口名和户口号码，或 DuitNow QR。请顾客 transfer 时，在参考号码填上 invoice 号码，钱进来时，你就知道是付哪一张 invoice。</p>
-<h2>什么时候开 invoice</h2>
+<p class="app-note">Invois 会把这 8 项印在 invoice 上，商家资料和银行资料只需填一次。更多请看下面的“<a href="#app">用 Invois 开 invoice</a>”。</p>
+<h2 id="when">什么时候开 invoice</h2>
 <ul>
 <li><strong>完工后</strong>，做完才收钱的工作。</li>
 <li><strong>开工前</strong>，收订金时，如果顾客要 invoice 才付。</li>
@@ -214,7 +274,7 @@
 <li><strong>每月一次</strong>，用于补习或保养合约这类长期工作。</li>
 </ul>
 <p>到了该付钱的时候就马上开。“14 天”这类付款条件是从开单日期算起的，invoice 开得迟，钱也收得迟。</p>
-<h2>3 个 invoice 例子</h2>
+<h2 id="examples">3 个 invoice 例子</h2>
 <p>以下价钱只是例子，不是参考价。这 3 个例子的商家都没有注册 SST，所以没有 SST 这一行。</p>
 <h3>Freelance 平面设计师：开给公司</h3>
 <p>Invoice <code>INV-2611-003</code>，开单日期2026年11月10日，对应顾客的 PO 4471。付款条件是 Net 30，所以2026年12月10日到期。</p>
@@ -383,20 +443,20 @@
 </tbody>
 </table></div>
 <p>第 1 到 5 行是报价单的项目：RM 600.00 + RM 315.00 + RM 840.00 + RM 225.00 + RM 150.00 = RM 2,130.00。第 6 行是讲好的加项：RM 2,130.00 + RM 80.00 = RM 2,210.00。</p>
-<h2>Invoice 开错了怎么办</h2>
+<h2 id="wrong">Invoice 开错了怎么办</h2>
 <ul>
 <li><strong>还没发出：</strong>直接改就好。</li>
 <li><strong>已经发出：</strong>发改好的 invoice，并告诉顾客改了什么。</li>
 </ul>
 <p>有注册 SST 的商家规矩比较严：开出去的 invoice 不可以改，开错的要标明 CANCELLED，并留底给 audit。之后金额有变，减少用 credit note，增加用 debit note。</p>
 <p class="refs">参考：关税局（JKDM），MySST <a href="https://mysst.customs.gov.my/issuing-invoices/" rel="noopener">Issuing invoices</a>。</p>
-<h2>需要开 e-Invoice 吗？</h2>
+<h2 id="e-invoice">需要开 e-Invoice 吗？</h2>
 <p>e-Invoice 是 LHDN 的系统，用来把 invoice 通过 MyInvois 提交给 LHDN 验证。LHDN 从2024年8月1日起分阶段推行，第一批是年营业额或收入超过 RM 1 亿的生意。</p>
 <p>年营业额或收入少于 RM 3,000,000 的生意，目前获豁免，不用开 e-Invoice，个人、合伙或公司都一样。</p>
 <p>不过，如果你的生意有不是个人的股东（例如一家公司），或有母公司、关联公司（related company）或联营公司（joint venture），而对方的年营业额或收入达到 RM 3,000,000，豁免就不适用。</p>
 <p>获豁免的话，照常开普通的 invoice 和 receipt，也可以自己选择加入 e-Invoice。LHDN 会不时检讨豁免范围，所以做决定之前，请先查最新的指南。以上是一般资讯，不是税务或法律意见。</p>
 <p class="refs">参考：LHDN <a href="https://www.hasil.gov.my/en/e-invois/rujukan-pelaksanaan-e-invois/garis-panduan/" rel="noopener">e-Invoice Guideline</a> 第 4.8 版（2026年8月30日）第 1.5、1.6.1(e)、1.6.6、1.6.8 和 1.6.10 节。</p>
-<section class="promo" aria-label="关于 Invois">
+<section class="promo" id="app" aria-label="关于 Invois">
 <h2>用 Invois 开 invoice</h2>
 <p><a href="/zh/">Invois</a> 是一个开报价单、invoice 和 receipt 的 Android app。</p>
 <ul>
@@ -416,17 +476,31 @@
 </section>
 <p>更多给自己报价、自己收钱的人看的指南：<a href="/zh/guides/">全部指南</a>。</p>
 <hr class="dinkus">
+<section id="faq">
 <h2>常见问题</h2>
-<h3>Net 30 是什么意思？</h3>
+<div class="faq-list">
+<details>
+<summary><h3>Net 30 是什么意思？</h3></summary>
 <p>开单日期后 30 天内要付。不一定是下个月的同一天：1月15日开的 invoice，Net 30 的话是2月14日到期。</p>
-<h3>没有报价单，可以直接开 invoice 吗？</h3>
+</details>
+<details>
+<summary><h3>没有报价单，可以直接开 invoice 吗？</h3></summary>
 <p>可以。小工作、回头客的工作和月费，很多人都是直接开 invoice。只是项目要写得够清楚，单看 invoice 就知道做了什么。</p>
-<h3>几份工作可以开在同一张 invoice 吗？</h3>
+</details>
+<details>
+<summary><h3>几份工作可以开在同一张 invoice 吗？</h3></summary>
 <p>可以，只要是同一个顾客、一起付款，例如一家公司一个月的工作。每份工作各写几行，写上日期或工作地点，顾客才能逐项核对。</p>
-<h3>顾客迟付钱怎么办？</h3>
+</details>
+<details>
+<summary><h3>顾客迟付钱怎么办？</h3></summary>
 <p>发一个简短的提醒，写上 invoice 号码、金额和到期日，再附上 invoice。还没付的话，发第二次提醒，付清之前先不要接这个顾客的新工作。迟付的利息，请看《<a href="/zh/guides/quotation-terms-and-conditions/">报价单条款怎么写</a>》。</p>
-<h3>顾客要 e-Invoice，怎么办？</h3>
+</details>
+<details>
+<summary><h3>顾客要 e-Invoice，怎么办？</h3></summary>
 <p>如果你获豁免，就不用开：你平常的收据和单据，可以作为顾客的开销证明。如果没有获豁免，你要通过 MyInvois 提交 e-Invoice，可以用 LHDN 的 portal，或连接 MyInvois 的软件（LHDN e-Invoice Guideline 第 1.6.2、2.3 和 2.4 节）。</p>
+</details>
+</div>
+</section>
 </article>
 </main>
 

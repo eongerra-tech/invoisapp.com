@@ -24,6 +24,58 @@
 <link rel="stylesheet" href="/assets/guide.css?v=2026-10-20">
 <link rel="stylesheet" href="/assets/nav.css">
 <style>
+.story p.refs { color: var(--ink-soft); font-size: .85em; }
+/* "In short", app note and collapsible FAQ (pilot 2026-10-23; move to guide.css when rolled out).
+   Editorial, not UI: hairline rules and type do the work; no cards, tinted boxes or round buttons. */
+
+/* In short: a summary set between two rules, like a standfirst */
+.story .keypoints { margin: 36px 0 0; padding: 22px 0 20px; border-top: 1px solid var(--story-ink); border-bottom: 1px solid #e5e5e5; }
+.story .keypoints .kp-h { font-family: var(--story-sans); font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--story-ink); }
+.story .keypoints ul { list-style: none; margin: 14px 0 0; padding: 0; }
+.story .keypoints li { position: relative; padding-left: 26px; font-family: var(--story-serif); font-size: 19px; line-height: 1.55; color: var(--story-ink); }
+.story .keypoints li::before { content: ""; position: absolute; left: 2px; top: .72em; width: 12px; height: 2px; background: var(--brand); }
+.story .keypoints li + li { margin-top: .7em; }
+.story .keypoints .kp-jump { margin-top: 18px; font-family: var(--story-sans); font-size: 14px; line-height: 1.8; color: var(--story-soft); }
+.story .keypoints .kp-jump a { color: var(--story-soft); text-decoration-color: #c9c9c9; white-space: nowrap; }
+.story .keypoints .kp-jump a:hover { color: var(--story-ink); text-decoration-color: currentColor; }
+.story .keypoints + p { margin-top: 1.8em; }
+
+.story p.app-note { padding: 14px 18px; background: var(--paper); border-radius: 10px; }
+.story p.app-note a { color: var(--brand-dark); }
+
+/* FAQ: questions as quiet rows; a thin chevron, the answer in body serif */
+.story .faq-list { margin-top: 1em; border-top: 1px solid #e5e5e5; }
+.story .faq-list details { border-bottom: 1px solid #e5e5e5; }
+.story .faq-list summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; padding: 20px 0; font-family: var(--story-sans); font-size: 19px; line-height: 1.4; font-weight: 600; color: var(--story-ink); }
+.story .faq-list summary::-webkit-details-marker { display: none; }
+.story .faq-list summary h3 { margin: 0; font: inherit; color: inherit; text-wrap: pretty; }
+.story .faq-list summary:hover h3 { color: var(--brand-dark); }
+.story .faq-list summary:focus-visible { outline: 2px solid var(--brand); outline-offset: 4px; border-radius: 4px; }
+.story .faq-list summary::after { content: ""; flex: none; width: 18px; height: 18px; margin-top: .2em; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%236b6b6b' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center / 18px no-repeat; transition: transform .25s ease; }
+.story .faq-list details[open] summary::after { transform: rotate(180deg); }
+.story .faq-list details p { margin: 0; padding: 0 38px 24px 0; font-size: 19px; line-height: 1.6; color: #3d3d3d; }
+/* browsers that can animate a <details> open/close get a short slide; others just open */
+.story .faq-list { interpolate-size: allow-keywords; }
+.story .faq-list details::details-content { block-size: 0; overflow: hidden; transition: block-size .25s ease, content-visibility .25s allow-discrete; }
+.story .faq-list details[open]::details-content { block-size: auto; }
+@media (max-width: 520px) {
+  .story .keypoints li, .story .faq-list details p { font-size: 18px; }
+  .story .faq-list summary { font-size: 17px; padding: 18px 0; gap: 14px; }
+  .story .faq-list details p { padding-right: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .story .faq-list summary::after, .story .faq-list details::details-content { transition: none; }
+}
+
+/* Jump to (owner, 2026-10-23): the label in its own column; links wrap in the right column, aligned with the first
+   link, separated by a dot that is clipped at line starts, so none hangs at a line end */
+.story .keypoints .kp-jump { display: grid; grid-template-columns: auto 1fr; column-gap: 8px; align-items: baseline; }
+.story .keypoints .kp-jump-links { display: flex; flex-wrap: wrap; column-gap: 16px; row-gap: 2px; overflow: hidden; }
+/* a dot before each link, in the gap; the one before the first link of each line falls outside the box and is clipped */
+.story .keypoints .kp-jump-links a { position: relative; }
+.story .keypoints .kp-jump-links a::before { content: "\00B7"; position: absolute; left: -8px; transform: translateX(-50%); color: var(--story-soft); text-decoration: none; pointer-events: none; }
+</style>
+<style>
 /* .plist = an example price list (Item + note | Unit | Price): 3 columns fit a phone, so no sideways scroll */
 @media (max-width: 640px) { .story .table-wrap.plist table { min-width: 0; } }
 .story .table-wrap.plist thead th:first-child { width: 60%; }
@@ -58,7 +110,7 @@
       "description": "价目表每一行要写什么、单位怎么选，还有 4 种不同工作的价目表例子。",
       "inLanguage": "zh-Hans-MY",
       "datePublished": "2026-10-22",
-      "dateModified": "2026-10-22",
+      "dateModified": "2026-10-23",
       "author": {
         "@type": "Organization",
         "name": "Invois 团队，EONGERRA TECH",
@@ -181,14 +233,25 @@
     <img src="/assets/favicon-96.png" alt="" width="40" height="40">
     <div>
       <p class="who">Invois 团队，EONGERRA TECH</p>
-      <p>阅读约 6 分钟 · 最后更新：2026年10月22日</p>
+      <p>阅读约 6 分钟 · 最后更新：2026年10月23日</p>
     </div>
   </div>
+
+<section class="keypoints" aria-labelledby="kp-h">
+<div class="kp-h" id="kp-h">重点</div>
+<ul>
+<li>价目表要有：每项服务的名称、单位、RM 价钱，以及写明包括什么的备注。</li>
+<li>一行只用 1 个单位，例如每小时、每 sqft、每个配套或每月。</li>
+<li>价钱有差别的，每种各写一行，例如半天和全天。到做的时候才知道价钱的，就写起价，例如冷气加 gas。</li>
+<li>小费用各写一行：交通、清垃圾、材料、赶工和最低收费。</li>
+</ul>
+<nav class="kp-jump" aria-label="本页内容"><span class="kp-jump-label">目录：</span><span class="kp-jump-links"><a href="#what-to-put">每行写什么</a> <a href="#unit">选单位</a> <a href="#from-prices">固定价和起价</a> <a href="#small-costs">小费用</a> <a href="#examples">例子</a> <a href="#faq">常见问题</a></span></nav>
+</section>
 
 <p>价目表就是你自己的收费清单，列出每项服务、单位和价钱。做一次就好，之后每张报价单都照它开价，同样的工作每次都是同样的价钱。</p>
 <p>顾客还没 book 就先问“多少钱？”，价目表也帮得上忙。你可以直接照表回答，不用每次重新算。</p>
 <p>把价目表变成报价单，请看 <a href="/zh/guides/how-to-write-a-quotation/">报价单怎么写</a>。</p>
-<h2>每一行要写什么</h2>
+<h2 id="what-to-put">每一行要写什么</h2>
 <ul>
 <li><strong>名称：</strong>用顾客的叫法，再加上会影响价钱的条件（“网站，最多 5 页”）。</li>
 <li><strong>单位：</strong>这个价钱算的是什么，例如 1 小时、1 sqft、1 个配套或 1 个月。</li>
@@ -196,7 +259,8 @@
 <li><strong>备注：</strong>价钱包括什么、不包括什么（“包括 2 轮修改。文字和照片由你提供。”）。</li>
 </ul>
 <p>把各行分在几个标题下面，例如“配套”和“额外项目”，要找的时候比较快。</p>
-<h2>单位怎么选</h2>
+<p class="app-note">在 Invois，价目表可以打字、用语音，或拍下现有的那一张，AI 会读出项目和价钱，你再选要加哪些。更多请看下面的“<a href="#app">Invois 里的价目表</a>”。</p>
+<h2 id="unit">单位怎么选</h2>
 <ul>
 <li><strong>按台、按件或按人：</strong>数得出来的东西，例如冷气、logo 设计、剪发、catering 按 pax 算。</li>
 <li><strong>按 sqft 或按米：</strong>尺寸越大、工作越多的，例如铺砖、油漆、洗地毯、印 banner。</li>
@@ -205,14 +269,14 @@
 <li><strong>按月：</strong>长期的工作，例如补习、网站 hosting、每星期一次的清洁合约。</li>
 </ul>
 <p>1 行只放 1 个单位。同样的工作如果按小时卖、也按配套卖，就写成 2 行。</p>
-<h2>固定价和起价</h2>
+<h2 id="from-prices">固定价和起价</h2>
 <p>每次都一样的工作，用固定价就可以了。不一样的话，有 2 个做法：</p>
 <ul>
 <li><strong>拆成几行：</strong>按影响价钱的条件分开写，例如发型屋把“Rebonding，齐肩”和“Rebonding，过肩”写成 2 行、2 个价钱。</li>
 <li><strong>用起价：</strong>差别要到做的时候才看得出来的，就写起价，并在备注写明什么会影响价钱：“看头发长度和颜色而定。”</li>
 </ul>
 <p>能拆就拆。顾客看到“起”，通常会以为就是最低那个价钱，所以开工之前，要在报价单里给真正的价钱。</p>
-<h2>小费用也写进价目表</h2>
+<h2 id="small-costs">小费用也写进价目表</h2>
 <p>大家忘记收的费用，通常是小数目。每样都开 1 行：</p>
 <ul>
 <li>交通、parking 和 outstation</li>
@@ -222,7 +286,7 @@
 <li>每次上门的最低收费，用在很短的工作</li>
 </ul>
 <p>如果为某位顾客免掉其中一样，报价单上还是保留那一行，写 RM&nbsp;0.00，不要删掉。这样顾客就看得到哪些是你免费给的。</p>
-<h2>4 个例子</h2>
+<h2 id="examples">4 个例子</h2>
 <p>以下价钱只是用来示范格式，不是参考价。</p>
 <h3>Freelance 网页设计师</h3>
 <div class="table-wrap plist"><table>
@@ -306,7 +370,7 @@
 <tr><td>Outstation，超过 30 km</td><td>趟</td><td>50.00</td></tr>
 </tbody>
 </table></div>
-<section class="promo" aria-label="关于 Invois">
+<section class="promo" id="app" aria-label="关于 Invois">
 <h2>Invois 里的价目表</h2>
 <p>在 <a href="/zh/">Invois</a>，你用自己的价目表来开报价单。</p>
 <ul>
@@ -321,17 +385,31 @@
 </section>
 <p>更多给自己报价、自己收钱的人看的指南：<a href="/zh/guides/">全部指南</a>。</p>
 <hr class="dinkus">
+<section id="faq">
 <h2>常见问题</h2>
-<h3>价目表和报价单是一样的吗？</h3>
+<div class="faq-list">
+<details>
+<summary><h3>价目表和报价单是一样的吗？</h3></summary>
 <p>不一样。价目表放的是你给所有顾客的平常价钱。报价单是一份工作、一位顾客的价钱，有数量、总数和有效期（valid until）。报价单是从价目表做出来的。</p>
-<h3>价钱要不要给顾客看？</h3>
+</details>
+<details>
+<summary><h3>价钱要不要给顾客看？</h3></summary>
 <p>如果你的工作大多是固定的几种，给顾客看可以省时间：顾客还没问就看到价钱。如果价钱要看工作而定，就列出起价和影响价钱的因素，之后在报价单里给准确的价钱。</p>
-<h3>按小时还是按工作收费，哪个比较好？</h3>
+</details>
+<details>
+<summary><h3>按小时还是按工作收费，哪个比较好？</h3></summary>
 <p>开工前就知道整份工作要做什么的，就按工作收费，顾客一开始就知道总数。看不清楚的，就按小时算。也可以一起用：一个配套价，超出配套的部分按小时算。</p>
-<h3>价钱要不要包 SST？</h3>
+</details>
+<details>
+<summary><h3>价钱要不要包 SST？</h3></summary>
 <p>如果你已经注册 SST，比较简单的做法是价目表上的价钱不含 SST，再在报价单上把 SST 单独列成 1 行。如果你会把价目表给顾客看，就注明“价钱不含 SST”。没有注册的话，就完全不要加 SST。更多请看 <a href="/zh/guides/do-i-need-to-charge-sst/">要不要收 SST？</a></p>
-<h3>价目表多久要更新一次？</h3>
+</details>
+<details>
+<summary><h3>价目表多久要更新一次？</h3></summary>
 <p>成本一有变动就更新，例如供应商的价钱或你的交通费。已经发出去的报价单，价钱通常会维持到有效期为止，所以新价钱只用在新的报价单上。</p>
+</details>
+</div>
+</section>
 </article>
 </main>
 
