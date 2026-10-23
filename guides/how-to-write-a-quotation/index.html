@@ -23,6 +23,58 @@
 <link rel="stylesheet" href="/assets/site.css">
 <link rel="stylesheet" href="/assets/guide.css?v=2026-10-20">
 <link rel="stylesheet" href="/assets/nav.css">
+<style>
+.story p.refs { color: var(--ink-soft); font-size: .85em; }
+/* "In short", app note and collapsible FAQ (pilot 2026-10-23; move to guide.css when rolled out).
+   Editorial, not UI: hairline rules and type do the work; no cards, tinted boxes or round buttons. */
+
+/* In short: a summary set between two rules, like a standfirst */
+.story .keypoints { margin: 36px 0 0; padding: 22px 0 20px; border-top: 1px solid var(--story-ink); border-bottom: 1px solid #e5e5e5; }
+.story .keypoints .kp-h { font-family: var(--story-sans); font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--story-ink); }
+.story .keypoints ul { list-style: none; margin: 14px 0 0; padding: 0; }
+.story .keypoints li { position: relative; padding-left: 26px; font-family: var(--story-serif); font-size: 19px; line-height: 1.55; color: var(--story-ink); }
+.story .keypoints li::before { content: ""; position: absolute; left: 2px; top: .72em; width: 12px; height: 2px; background: var(--brand); }
+.story .keypoints li + li { margin-top: .7em; }
+.story .keypoints .kp-jump { margin-top: 18px; font-family: var(--story-sans); font-size: 14px; line-height: 1.8; color: var(--story-soft); }
+.story .keypoints .kp-jump a { color: var(--story-soft); text-decoration-color: #c9c9c9; white-space: nowrap; }
+.story .keypoints .kp-jump a:hover { color: var(--story-ink); text-decoration-color: currentColor; }
+.story .keypoints + p { margin-top: 1.8em; }
+
+.story p.app-note { padding: 14px 18px; background: var(--paper); border-radius: 10px; }
+.story p.app-note a { color: var(--brand-dark); white-space: nowrap; }
+
+/* FAQ: questions as quiet rows; a thin chevron, the answer in body serif */
+.story .faq-list { margin-top: 1em; border-top: 1px solid #e5e5e5; }
+.story .faq-list details { border-bottom: 1px solid #e5e5e5; }
+.story .faq-list summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; padding: 20px 0; font-family: var(--story-sans); font-size: 19px; line-height: 1.4; font-weight: 600; color: var(--story-ink); }
+.story .faq-list summary::-webkit-details-marker { display: none; }
+.story .faq-list summary h3 { margin: 0; font: inherit; color: inherit; text-wrap: pretty; }
+.story .faq-list summary:hover h3 { color: var(--brand-dark); }
+.story .faq-list summary:focus-visible { outline: 2px solid var(--brand); outline-offset: 4px; border-radius: 4px; }
+.story .faq-list summary::after { content: ""; flex: none; width: 18px; height: 18px; margin-top: .2em; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%236b6b6b' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center / 18px no-repeat; transition: transform .25s ease; }
+.story .faq-list details[open] summary::after { transform: rotate(180deg); }
+.story .faq-list details p { margin: 0; padding: 0 38px 24px 0; font-size: 19px; line-height: 1.6; color: #3d3d3d; }
+/* browsers that can animate a <details> open/close get a short slide; others just open */
+.story .faq-list { interpolate-size: allow-keywords; }
+.story .faq-list details::details-content { block-size: 0; overflow: hidden; transition: block-size .25s ease, content-visibility .25s allow-discrete; }
+.story .faq-list details[open]::details-content { block-size: auto; }
+@media (max-width: 520px) {
+  .story .keypoints li, .story .faq-list details p { font-size: 18px; }
+  .story .faq-list summary { font-size: 17px; padding: 18px 0; gap: 14px; }
+  .story .faq-list details p { padding-right: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .story .faq-list summary::after, .story .faq-list details::details-content { transition: none; }
+}
+
+/* Jump to (owner, 2026-10-23): the label in its own column; links wrap in the right column, aligned with the first
+   link, separated by a dot that is clipped at line starts, so none hangs at a line end */
+.story .keypoints .kp-jump { display: grid; grid-template-columns: auto 1fr; column-gap: 8px; align-items: baseline; }
+.story .keypoints .kp-jump-links { display: flex; flex-wrap: wrap; column-gap: 16px; row-gap: 2px; overflow: hidden; }
+/* a dot before each link, in the gap; the one before the first link of each line falls outside the box and is clipped */
+.story .keypoints .kp-jump-links a { position: relative; }
+.story .keypoints .kp-jump-links a::before { content: "\00B7"; position: absolute; left: -8px; transform: translateX(-50%); color: var(--story-soft); text-decoration: none; pointer-events: none; }
+</style>
 <meta property="og:site_name" content="Invois">
 <meta property="og:locale" content="en_MY">
 <meta property="og:type" content="article">
@@ -48,7 +100,7 @@
       "description": "What to put on a quotation in Malaysia: SSM no., SST, validity and payment terms, with worked examples from 3 different trades.",
       "inLanguage": "en-MY",
       "datePublished": "2026-10-13",
-      "dateModified": "2026-10-13",
+      "dateModified": "2026-10-23",
       "author": {
         "@type": "Organization",
         "name": "Invois team, EONGERRA TECH",
@@ -179,18 +231,29 @@
     <img src="/assets/favicon-96.png" alt="" width="40" height="40">
     <div>
       <p class="who">Invois team, EONGERRA TECH</p>
-      <p>7 min read · Last updated 13 October 2026</p>
+      <p>8 min read · Last updated 23 October 2026</p>
     </div>
   </div>
+
+<section class="keypoints" aria-labelledby="kp-h">
+<div class="kp-h" id="kp-h">In short</div>
+<ul>
+<li>Put these on it: your business details, the customer and site, a number and valid-until date, the items, the total, payment terms, what is included, and a way to accept.</li>
+<li>A validity of 7 to 30 days is common; 14 days suits most small jobs.</li>
+<li>Add SST only if you are registered with JKDM.</li>
+<li>A signature or a WhatsApp "OK" from the customer is your written acceptance, so keep it.</li>
+</ul>
+<nav class="kp-jump" aria-label="On this page"><span class="kp-jump-label">Jump to:</span><span class="kp-jump-links"><a href="#what-to-put">What to include</a> <a href="#examples">Examples</a> <a href="#mistakes">Mistakes to avoid</a> <a href="#faq">FAQ</a></span></nav>
+</section>
 
 <p>A quotation (in Malay <em>sebut harga</em>, in Chinese 报价单) is a written price offer you give a customer <strong>before</strong> you
 start a job. It lists the work item by item, the total, how long the price is valid, and how you want to be paid.
 It does not ask for payment. You send an invoice once the customer accepts and the work is due.</p>
 <p>A clear quotation wins more jobs than a bare total on WhatsApp, stops arguments later about what was included,
 and makes your invoice easy to write. That is true whether you fix sinks, shoot weddings, clean houses or give
-tuition. This guide covers what must be on it in Malaysia, with 3 worked examples.</p>
+tuition.</p>
 <p>A quotation comes before the work, an invoice asks for payment, and a receipt confirms you were paid. Keep the same customer details and item lines on all three. For the full comparison, with one job followed from deposit to final receipt, see <a href="/guides/quotation-vs-invoice-vs-receipt/">quotation vs invoice vs receipt</a>.</p>
-<h2>What to put on a quotation in Malaysia</h2>
+<h2 id="what-to-put">What to put on a quotation in Malaysia</h2>
 <h3>1. Your business details</h3>
 <p>Business name, address, phone and email. If you are registered with SSM, add your registration number (the new
 format is 12 digits, for example <code>202401012345</code>).</p>
@@ -224,7 +287,8 @@ the site, and cancellation. Short, plain sentences work better than legal-soundi
 <p>A signature line, or simply: "To accept, sign and return, or reply 'OK' on WhatsApp." Keep that reply: it is your
 written acceptance.</p>
 <p>Once the customer accepts, the next document is the invoice: see <a href="/guides/how-to-write-an-invoice/">How to write an invoice</a>.</p>
-<h2>3 examples from different trades</h2>
+<p class="app-note">In Invois, you tap items from your price list and each line comes with your own price. The quotation prints its number and valid-until date. More in <a href="#app">Build itemised quotations in Invois</a>.</p>
+<h2 id="examples">3 examples from different trades</h2>
 <p>The prices below are made up to show the format. They are not a price guide. None of these businesses is SST-registered, so there is no SST line.</p>
 <h3>Plumber: kitchen sink and floor trap</h3>
 <div class="table-wrap doc"><table>
@@ -392,7 +456,7 @@ written acceptance.</p>
 <p>Customer provides visitor parking; otherwise parking is charged at cost. Valid 14 days. Payment on completion.</p>
 <p>In all 3 examples, every item is on its own line, free items are visible, and the terms answer
 the question the customer would otherwise ask on WhatsApp.</p>
-<h2>5 mistakes that cost you money</h2>
+<h2 id="mistakes">5 mistakes that cost you money</h2>
 <ol>
 <li><strong>No valid-until date.</strong> Material prices move; your old price should not be forever.</li>
 <li><strong>A lump sum only.</strong> "Total RM 3,000" invites haggling; itemised lines show where the money goes.</li>
@@ -401,7 +465,7 @@ the question the customer would otherwise ask on WhatsApp.</p>
 <li><strong>Adding SST without being registered.</strong> Only registered businesses may charge it.</li>
 <li><strong>No deposit term.</strong> Write it down before you buy materials or block a date.</li>
 </ol>
-<section class="promo" aria-label="About Invois">
+<section class="promo" id="app" aria-label="About Invois">
 <h2>Build itemised quotations in Invois</h2>
 <p>Writing all of this on a phone keyboard between jobs is slow. <a href="/">Invois</a> is an Android app
 that builds the quotation from your own price list:</p>
@@ -424,24 +488,40 @@ that builds the quotation from your own price list:</p>
 <div class="cta"><a class="badge" href="https://play.google.com/store/apps/details?id=com.invoisapp&amp;referrer=utm_source%3Dinvoisapp.com%26utm_medium%3Dwebsite%26utm_campaign%3Dguide_quotation_en"><img src="/assets/badge-googleplay.png" alt="Get it on Google Play" width="168" height="56" loading="lazy"></a></div>
 </section>
 <hr class="dinkus">
+<section id="faq">
 <h2>FAQ</h2>
-<h3>Is a quotation legally binding in Malaysia?</h3>
+<div class="faq-list">
+<details>
+<summary><h3>Is a quotation legally binding in Malaysia?</h3></summary>
 <p>A quotation is normally treated as an offer. Once the customer accepts it, for example by signing it or confirming in writing on
 WhatsApp, it can become a binding agreement under the Contracts Act 1950. A clear scope and validity date protect
 both sides. This is general information, not legal advice.</p>
-<h3>How long should a quotation be valid?</h3>
+</details>
+<details>
+<summary><h3>How long should a quotation be valid?</h3></summary>
 <p>7 to 30 days is common. 14 days suits most small jobs; use a shorter period when your material prices
 change often, and a longer one for events booked months ahead.</p>
-<h3>Should I add SST to my quotation?</h3>
+</details>
+<details>
+<summary><h3>Should I add SST to my quotation?</h3></summary>
 <p>Only if you are registered with JKDM. Charging SST without registration is not allowed; if you are registered, show it as its own line with your SST number.</p>
-<h3>Do I need an SSM number on my quotation?</h3>
+</details>
+<details>
+<summary><h3>Do I need an SSM number on my quotation?</h3></summary>
 <p>Yes, if your business is registered with SSM, whether it is a company (Sdn Bhd), a sole proprietorship or a partnership. For sole proprietors and partnerships, the Registration of Businesses Rules 1957 require the number on every letterhead, invoice, bill or other document that carries the business name. Companies have the same duty under the Companies Act 2016.</p>
-<h3>Can I send a quotation on WhatsApp?</h3>
+</details>
+<details>
+<summary><h3>Can I send a quotation on WhatsApp?</h3></summary>
 <p>Yes. Send it as a PDF rather than a typed message or a photo, so the items, totals and terms stay together. Keep the
 customer's "OK" reply as written acceptance.</p>
-<h3>Is a quotation the same as an e-Invoice?</h3>
+</details>
+<details>
+<summary><h3>Is a quotation the same as an e-Invoice?</h3></summary>
 <p>No. A quotation comes before any bill and is not submitted to LHDN. e-Invoice rules apply to invoices and related documents,
 depending on your business; check LHDN's guidance for your situation.</p>
+</details>
+</div>
+</section>
 </article>
 </main>
 

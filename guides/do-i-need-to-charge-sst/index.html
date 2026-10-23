@@ -23,6 +23,58 @@
 <link rel="stylesheet" href="/assets/site.css">
 <link rel="stylesheet" href="/assets/guide.css?v=2026-10-20">
 <link rel="stylesheet" href="/assets/nav.css">
+<style>
+.story p.refs { color: var(--ink-soft); font-size: .85em; }
+/* "In short", app note and collapsible FAQ (pilot 2026-10-23; move to guide.css when rolled out).
+   Editorial, not UI: hairline rules and type do the work; no cards, tinted boxes or round buttons. */
+
+/* In short: a summary set between two rules, like a standfirst */
+.story .keypoints { margin: 36px 0 0; padding: 22px 0 20px; border-top: 1px solid var(--story-ink); border-bottom: 1px solid #e5e5e5; }
+.story .keypoints .kp-h { font-family: var(--story-sans); font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--story-ink); }
+.story .keypoints ul { list-style: none; margin: 14px 0 0; padding: 0; }
+.story .keypoints li { position: relative; padding-left: 26px; font-family: var(--story-serif); font-size: 19px; line-height: 1.55; color: var(--story-ink); }
+.story .keypoints li::before { content: ""; position: absolute; left: 2px; top: .72em; width: 12px; height: 2px; background: var(--brand); }
+.story .keypoints li + li { margin-top: .7em; }
+.story .keypoints .kp-jump { margin-top: 18px; font-family: var(--story-sans); font-size: 14px; line-height: 1.8; color: var(--story-soft); }
+.story .keypoints .kp-jump a { color: var(--story-soft); text-decoration-color: #c9c9c9; white-space: nowrap; }
+.story .keypoints .kp-jump a:hover { color: var(--story-ink); text-decoration-color: currentColor; }
+.story .keypoints + p { margin-top: 1.8em; }
+
+.story p.app-note { padding: 14px 18px; background: var(--paper); border-radius: 10px; }
+.story p.app-note a { color: var(--brand-dark); white-space: nowrap; }
+
+/* FAQ: questions as quiet rows; a thin chevron, the answer in body serif */
+.story .faq-list { margin-top: 1em; border-top: 1px solid #e5e5e5; }
+.story .faq-list details { border-bottom: 1px solid #e5e5e5; }
+.story .faq-list summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; padding: 20px 0; font-family: var(--story-sans); font-size: 19px; line-height: 1.4; font-weight: 600; color: var(--story-ink); }
+.story .faq-list summary::-webkit-details-marker { display: none; }
+.story .faq-list summary h3 { margin: 0; font: inherit; color: inherit; text-wrap: pretty; }
+.story .faq-list summary:hover h3 { color: var(--brand-dark); }
+.story .faq-list summary:focus-visible { outline: 2px solid var(--brand); outline-offset: 4px; border-radius: 4px; }
+.story .faq-list summary::after { content: ""; flex: none; width: 18px; height: 18px; margin-top: .2em; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%236b6b6b' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center / 18px no-repeat; transition: transform .25s ease; }
+.story .faq-list details[open] summary::after { transform: rotate(180deg); }
+.story .faq-list details p { margin: 0; padding: 0 38px 24px 0; font-size: 19px; line-height: 1.6; color: #3d3d3d; }
+/* browsers that can animate a <details> open/close get a short slide; others just open */
+.story .faq-list { interpolate-size: allow-keywords; }
+.story .faq-list details::details-content { block-size: 0; overflow: hidden; transition: block-size .25s ease, content-visibility .25s allow-discrete; }
+.story .faq-list details[open]::details-content { block-size: auto; }
+@media (max-width: 520px) {
+  .story .keypoints li, .story .faq-list details p { font-size: 18px; }
+  .story .faq-list summary { font-size: 17px; padding: 18px 0; gap: 14px; }
+  .story .faq-list details p { padding-right: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .story .faq-list summary::after, .story .faq-list details::details-content { transition: none; }
+}
+
+/* Jump to (owner, 2026-10-23): the label in its own column; links wrap in the right column, aligned with the first
+   link, separated by a dot that is clipped at line starts, so none hangs at a line end */
+.story .keypoints .kp-jump { display: grid; grid-template-columns: auto 1fr; column-gap: 8px; align-items: baseline; }
+.story .keypoints .kp-jump-links { display: flex; flex-wrap: wrap; column-gap: 16px; row-gap: 2px; overflow: hidden; }
+/* a dot before each link, in the gap; the one before the first link of each line falls outside the box and is clipped */
+.story .keypoints .kp-jump-links a { position: relative; }
+.story .keypoints .kp-jump-links a::before { content: "\00B7"; position: absolute; left: -8px; transform: translateX(-50%); color: var(--story-soft); text-decoration: none; pointer-events: none; }
+</style>
 <meta property="og:site_name" content="Invois">
 <meta property="og:locale" content="en_MY">
 <meta property="og:type" content="article">
@@ -48,7 +100,7 @@
       "description": "Most self-employed people in Malaysia do not charge SST. When you must register (RM 500,000), which services are taxed at 8% or 6%, and what the invoice shows.",
       "inLanguage": "en-MY",
       "datePublished": "2026-10-19",
-      "dateModified": "2026-10-20",
+      "dateModified": "2026-10-23",
       "author": {
         "@type": "Organization",
         "name": "Invois team, EONGERRA TECH",
@@ -171,17 +223,27 @@
     <img src="/assets/favicon-96.png" alt="" width="40" height="40">
     <div>
       <p class="who">Invois team, EONGERRA TECH</p>
-      <p>7 min read · Last updated 20 October 2026 · General information, not tax advice</p>
+      <p>8 min read · Last updated 23 October 2026 · General information, not tax advice</p>
     </div>
   </div>
+
+<section class="keypoints" aria-labelledby="kp-h">
+<div class="kp-h" id="kp-h">In short</div>
+<ul>
+<li>You charge SST only if you are registered with Customs (JKDM).</li>
+<li>You must register once your taxable services pass RM 500,000 in 12 months; for rental it is RM 1,000,000 and for construction work RM 1,500,000.</li>
+<li>Renovation, wiring and tiling on a house, home cleaning and haircuts are not taxed.</li>
+<li>If you are not registered, do not put SST on your invoice: showing it is an offence.</li>
+</ul>
+<nav class="kp-jump" aria-label="On this page"><span class="kp-jump-label">Jump to:</span><span class="kp-jump-links"><a href="#checks">Quick check</a> <a href="#services">Taxed services</a> <a href="#counting">Counting RM 500,000</a> <a href="#not-registered">If not registered</a> <a href="#registered">If registered</a> <a href="#faq">FAQ</a></span></nav>
+</section>
 
 <p>You charge service tax only if you are <strong>registered</strong> with the Royal Malaysian Customs Department, and you have to
 register only when your <strong>taxable</strong> services pass <strong>RM&nbsp;500,000 in 12 months</strong> (higher for a few services).</p>
 <p>Below that, you do not charge SST, and you must not show it on your invoice. Most freelancers, tradespeople and small
 studios are below that line.</p>
-<p>This guide covers the services our users ask about, how the 12 months are counted, and what changes on your invoice
-once you register. Facts are as at 20 October 2026, from the law and Customs' own guides (links at the end).</p>
-<h2>3 checks</h2>
+<p>Facts are as at 20 October 2026, from the law and Customs' own guides (links at the end).</p>
+<h2 id="checks">3 checks</h2>
 <ol>
 <li><strong>Is what you do a taxable service?</strong> Only services listed in the Service Tax Regulations 2018 are taxed. Many
   everyday jobs are not on the list, or are excluded when done for a home.</li>
@@ -191,7 +253,8 @@ once you register. Facts are as at 20 October 2026, from the law and Customs' ow
   your invoice.</li>
 </ol>
 <p>If the answer to 1 or 2 is no, you do not register and you do not charge SST.</p>
-<h2>Which services are taxed</h2>
+<p class="app-note">In Invois, SST goes on its own line when you add it, and the SST number you enter once prints on your letterhead. More in <a href="#app">SST in Invois</a>.</p>
+<h2 id="services">Which services are taxed</h2>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -287,7 +350,7 @@ together for the RM&nbsp;500,000. A web developer who also teaches paid coding c
 <li>makeup</li>
 </ul>
 <p>If you are anywhere near RM&nbsp;500,000 a year from one of these, ask Customs through <a href="https://mysst.customs.gov.my/">MySST</a> before you decide.</p>
-<h2>How the RM&nbsp;500,000 is counted</h2>
+<h2 id="counting">How the RM&nbsp;500,000 is counted</h2>
 <p>You become liable at the end of a month when either is true, whichever comes first:</p>
 <ul>
 <li><strong>Looking back:</strong> that month plus the 11 months before it add up to more than RM&nbsp;500,000.</li>
@@ -303,7 +366,7 @@ together for the RM&nbsp;500,000. A web developer who also teaches paid coding c
 <p>Once liable, apply on MySST by the <strong>last day of the following month</strong>. Registration starts on the first day of the
 month after you apply. Customs' own example: the threshold is passed in June, you apply in July, and you charge
 SST from 1 August.</p>
-<h2>If you are not registered</h2>
+<h2 id="not-registered">If you are not registered</h2>
 <p>Do not add an SST line, and do not show any amount as service tax. Under section 21 of the Service Tax Act 2018 that
 is an offence, with a fine of up to RM&nbsp;30,000, up to 2 years in jail, or both (section 79). Any amount you showed as
 tax can also be collected from you (section 28).</p>
@@ -311,7 +374,7 @@ tax can also be collected from you (section 28).</p>
 can still put your SSM number on it.</p>
 <p>You may register voluntarily below the threshold (section 14) if you provide taxable services, on conditions Customs
 sets. Once registered, you charge SST and file returns like any registered person, so talk to a tax agent first.</p>
-<h2>If you are registered</h2>
+<h2 id="registered">If you are registered</h2>
 <p>Your invoice has to show (Service Tax Regulations 2018, regulation 10):</p>
 <ul>
 <li>a serial number and the date</li>
@@ -343,7 +406,7 @@ renovates a shop:</p>
 <li><strong>Records:</strong> keep them for 7 years.</li>
 </ul>
 <p>The other things every invoice needs are in <a href="/guides/quotation-vs-invoice-vs-receipt/">quotation vs invoice vs receipt</a>.</p>
-<section class="promo" aria-label="About Invois">
+<section class="promo" id="app" aria-label="About Invois">
 <h2>SST in Invois</h2>
 <p>If you are registered:</p>
 <ul>
@@ -359,17 +422,31 @@ Chinese. Invois is not affiliated with Customs or LHDN and does not file returns
 </section>
 <p>More guides for people who quote and bill their own jobs: <a href="/guides/">all guides</a>.</p>
 <hr class="dinkus">
+<section id="faq">
 <h2>FAQ</h2>
-<h3>I earn about RM&nbsp;5,000 a month. Do I need to register?</h3>
+<div class="faq-list">
+<details>
+<summary><h3>I earn about RM&nbsp;5,000 a month. Do I need to register?</h3></summary>
 <p>No. That is about RM&nbsp;60,000 a year (12 × RM&nbsp;5,000.00), far below RM&nbsp;500,000, so you do not register and you do not show SST on your invoices.</p>
-<h3>My customer wants SST on the invoice. What do I do?</h3>
+</details>
+<details>
+<summary><h3>My customer wants SST on the invoice. What do I do?</h3></summary>
 <p>If you are not registered, you cannot add it: showing service tax when you are not registered is an offence. Send the invoice without SST and tell the customer you are not SST-registered.</p>
-<h3>Do hair salons and beauty services charge SST?</h3>
+</details>
+<details>
+<summary><h3>Do hair salons and beauty services charge SST?</h3></summary>
 <p>No. The plan to tax beauty services from July 2025 was dropped in June 2025, so haircuts, nails and facials are not taxed. Massage parlours are a separate, taxable category.</p>
-<h3>Is SST the same as e-Invoice?</h3>
+</details>
+<details>
+<summary><h3>Is SST the same as e-Invoice?</h3></summary>
 <p>No. SST is a tax run by Customs. e-Invoice is LHDN's system for validating certain invoices, and whether it applies depends on your business. One does not replace the other.</p>
-<h3>Do I charge SST on a renovation for a house?</h3>
+</details>
+<details>
+<summary><h3>Do I charge SST on a renovation for a house?</h3></summary>
 <p>No. Renovation, wiring and tiling work on a house is not taxed. Construction work on shops, offices and factories is taxed at 6%, but only once the contractor's construction work passes RM&nbsp;1,500,000 in 12 months and they register.</p>
+</details>
+</div>
+</section>
 <p><em>This is general information, not legal or tax advice. Rules change; check your own case with Customs on
 <a href="https://mysst.customs.gov.my/">MySST</a> or with a tax agent.</em></p>
 <h2>Sources</h2>

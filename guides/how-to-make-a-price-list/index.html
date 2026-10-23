@@ -24,6 +24,58 @@
 <link rel="stylesheet" href="/assets/guide.css?v=2026-10-20">
 <link rel="stylesheet" href="/assets/nav.css">
 <style>
+.story p.refs { color: var(--ink-soft); font-size: .85em; }
+/* "In short", app note and collapsible FAQ (pilot 2026-10-23; move to guide.css when rolled out).
+   Editorial, not UI: hairline rules and type do the work; no cards, tinted boxes or round buttons. */
+
+/* In short: a summary set between two rules, like a standfirst */
+.story .keypoints { margin: 36px 0 0; padding: 22px 0 20px; border-top: 1px solid var(--story-ink); border-bottom: 1px solid #e5e5e5; }
+.story .keypoints .kp-h { font-family: var(--story-sans); font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--story-ink); }
+.story .keypoints ul { list-style: none; margin: 14px 0 0; padding: 0; }
+.story .keypoints li { position: relative; padding-left: 26px; font-family: var(--story-serif); font-size: 19px; line-height: 1.55; color: var(--story-ink); }
+.story .keypoints li::before { content: ""; position: absolute; left: 2px; top: .72em; width: 12px; height: 2px; background: var(--brand); }
+.story .keypoints li + li { margin-top: .7em; }
+.story .keypoints .kp-jump { margin-top: 18px; font-family: var(--story-sans); font-size: 14px; line-height: 1.8; color: var(--story-soft); }
+.story .keypoints .kp-jump a { color: var(--story-soft); text-decoration-color: #c9c9c9; white-space: nowrap; }
+.story .keypoints .kp-jump a:hover { color: var(--story-ink); text-decoration-color: currentColor; }
+.story .keypoints + p { margin-top: 1.8em; }
+
+.story p.app-note { padding: 14px 18px; background: var(--paper); border-radius: 10px; }
+.story p.app-note a { color: var(--brand-dark); white-space: nowrap; }
+
+/* FAQ: questions as quiet rows; a thin chevron, the answer in body serif */
+.story .faq-list { margin-top: 1em; border-top: 1px solid #e5e5e5; }
+.story .faq-list details { border-bottom: 1px solid #e5e5e5; }
+.story .faq-list summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; padding: 20px 0; font-family: var(--story-sans); font-size: 19px; line-height: 1.4; font-weight: 600; color: var(--story-ink); }
+.story .faq-list summary::-webkit-details-marker { display: none; }
+.story .faq-list summary h3 { margin: 0; font: inherit; color: inherit; text-wrap: pretty; }
+.story .faq-list summary:hover h3 { color: var(--brand-dark); }
+.story .faq-list summary:focus-visible { outline: 2px solid var(--brand); outline-offset: 4px; border-radius: 4px; }
+.story .faq-list summary::after { content: ""; flex: none; width: 18px; height: 18px; margin-top: .2em; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%236b6b6b' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center / 18px no-repeat; transition: transform .25s ease; }
+.story .faq-list details[open] summary::after { transform: rotate(180deg); }
+.story .faq-list details p { margin: 0; padding: 0 38px 24px 0; font-size: 19px; line-height: 1.6; color: #3d3d3d; }
+/* browsers that can animate a <details> open/close get a short slide; others just open */
+.story .faq-list { interpolate-size: allow-keywords; }
+.story .faq-list details::details-content { block-size: 0; overflow: hidden; transition: block-size .25s ease, content-visibility .25s allow-discrete; }
+.story .faq-list details[open]::details-content { block-size: auto; }
+@media (max-width: 520px) {
+  .story .keypoints li, .story .faq-list details p { font-size: 18px; }
+  .story .faq-list summary { font-size: 17px; padding: 18px 0; gap: 14px; }
+  .story .faq-list details p { padding-right: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .story .faq-list summary::after, .story .faq-list details::details-content { transition: none; }
+}
+
+/* Jump to (owner, 2026-10-23): the label in its own column; links wrap in the right column, aligned with the first
+   link, separated by a dot that is clipped at line starts, so none hangs at a line end */
+.story .keypoints .kp-jump { display: grid; grid-template-columns: auto 1fr; column-gap: 8px; align-items: baseline; }
+.story .keypoints .kp-jump-links { display: flex; flex-wrap: wrap; column-gap: 16px; row-gap: 2px; overflow: hidden; }
+/* a dot before each link, in the gap; the one before the first link of each line falls outside the box and is clipped */
+.story .keypoints .kp-jump-links a { position: relative; }
+.story .keypoints .kp-jump-links a::before { content: "\00B7"; position: absolute; left: -8px; transform: translateX(-50%); color: var(--story-soft); text-decoration: none; pointer-events: none; }
+</style>
+<style>
 /* .plist = an example price list (Item + note | Unit | Price): 3 columns fit a phone, so no sideways scroll */
 @media (max-width: 640px) { .story .table-wrap.plist table { min-width: 0; } }
 .story .table-wrap.plist thead th:first-child { width: 60%; }
@@ -58,7 +110,7 @@
       "description": "What to put on each line of a price list, how to choose the unit, and 4 example lists from different kinds of work.",
       "inLanguage": "en-MY",
       "datePublished": "2026-10-22",
-      "dateModified": "2026-10-22",
+      "dateModified": "2026-10-23",
       "author": {
         "@type": "Organization",
         "name": "Invois team, EONGERRA TECH",
@@ -181,14 +233,25 @@
     <img src="/assets/favicon-96.png" alt="" width="40" height="40">
     <div>
       <p class="who">Invois team, EONGERRA TECH</p>
-      <p>6 min read · Last updated 22 October 2026</p>
+      <p>7 min read · Last updated 23 October 2026</p>
     </div>
   </div>
+
+<section class="keypoints" aria-labelledby="kp-h">
+<div class="kp-h" id="kp-h">In short</div>
+<ul>
+<li>Each line needs a name, a unit, a price in RM and a note on what is included.</li>
+<li>Use 1 unit per line, such as per hour, per sq ft, per package or per month.</li>
+<li>When the price varies, split the line, for example by hair length. Use a "from" price only when you cannot.</li>
+<li>Give small costs their own lines: transport, disposal, materials, rush jobs and a minimum charge.</li>
+</ul>
+<nav class="kp-jump" aria-label="On this page"><span class="kp-jump-label">Jump to:</span><span class="kp-jump-links"><a href="#what-to-put">What goes on a line</a> <a href="#unit">Choosing the unit</a> <a href="#from-prices">"From" prices</a> <a href="#small-costs">Small costs</a> <a href="#examples">Examples</a> <a href="#faq">FAQ</a></span></nav>
+</section>
 
 <p>A price list is your own list of what you charge: each service, its unit and its price. You set it up once and price every quotation from it, so the same job gets the same price every time.</p>
 <p>It also helps when a customer asks "how much?" before booking. You can answer from the list instead of working the price out again.</p>
 <p>Turning the list into a quotation is covered in <a href="/guides/how-to-write-a-quotation/">How to write a quotation</a>.</p>
-<h2>What to put on each line</h2>
+<h2 id="what-to-put">What to put on each line</h2>
 <ul>
 <li><strong>Name:</strong> the words your customer uses, plus whatever changes the price ("Website, up to 5 pages").</li>
 <li><strong>Unit:</strong> what the price is for, such as 1 hour, 1 sq ft, 1 package or 1 month.</li>
@@ -196,7 +259,8 @@
 <li><strong>Note:</strong> what the price includes, and what it does not ("2 rounds of changes included. You supply the text and photos.").</li>
 </ul>
 <p>Put the lines under a few headings, such as Packages and Add-ons, so you can find an item quickly.</p>
-<h2>How to choose the unit</h2>
+<p class="app-note">In Invois, you can type the list, say it, or photograph the one you already have, and AI reads the items and prices; you choose which to add. More in <a href="#app">Your price list in Invois</a>.</p>
+<h2 id="unit">How to choose the unit</h2>
 <ul>
 <li><strong>Per unit or per person</strong> for things you can count: aircond units, logo designs, haircuts, catering per pax.</li>
 <li><strong>Per sq ft or per metre</strong> for work that grows with size: tiling, painting, carpet cleaning, banner printing.</li>
@@ -205,14 +269,14 @@
 <li><strong>Per month</strong> for ongoing work: tuition, website hosting, a weekly cleaning contract.</li>
 </ul>
 <p>Keep 1 unit per line. If you sell the same work by the hour and as a package, make them 2 lines.</p>
-<h2>Fixed prices and "from" prices</h2>
+<h2 id="from-prices">Fixed prices and "from" prices</h2>
 <p>A fixed price works when the job is the same every time. When it is not, you have 2 options:</p>
 <ul>
 <li><strong>Split the line</strong> by what changes the price: a salon can list "Rebonding, shoulder length" and "Rebonding, below shoulder" as 2 lines with 2 prices.</li>
 <li><strong>Use a "from" price</strong> when the difference only shows at the job, and say in the note what moves it: "Depends on hair length and colour."</li>
 </ul>
 <p>Split the line when you can. A customer who sees "from" tends to expect the lowest number, so give the real price in the quotation before you start.</p>
-<h2>Put the small costs on the list</h2>
+<h2 id="small-costs">Put the small costs on the list</h2>
 <p>The costs people forget to charge are usually the small ones. Give each its own line:</p>
 <ul>
 <li>Transport, parking and outstation trips</li>
@@ -222,7 +286,7 @@
 <li>A minimum charge per visit, for very short jobs</li>
 </ul>
 <p>If you waive one of them for a customer, keep its line on the quotation at RM&nbsp;0.00 instead of deleting it. The customer then sees what you included at no charge.</p>
-<h2>4 examples</h2>
+<h2 id="examples">4 examples</h2>
 <p>The prices below are made up to show the layout. They are not a price guide.</p>
 <h3>Freelance web designer</h3>
 <div class="table-wrap plist"><table>
@@ -306,7 +370,7 @@
 <tr><td>Outstation, more than 30 km</td><td>trip</td><td>50.00</td></tr>
 </tbody>
 </table></div>
-<section class="promo" aria-label="About Invois">
+<section class="promo" id="app" aria-label="About Invois">
 <h2>Your price list in Invois</h2>
 <p>In <a href="/">Invois</a>, you build quotations from your price list.</p>
 <ul>
@@ -321,17 +385,31 @@
 </section>
 <p>More guides for people who quote and bill their own jobs: <a href="/guides/">all guides</a>.</p>
 <hr class="dinkus">
+<section id="faq">
 <h2>FAQ</h2>
-<h3>Is a price list the same as a quotation?</h3>
+<div class="faq-list">
+<details>
+<summary><h3>Is a price list the same as a quotation?</h3></summary>
 <p>No. A price list holds your usual rates for every customer. A quotation is the price of one job for one customer, with quantities, a total and a valid-until date. You build the quotation from the list.</p>
-<h3>Should I show my prices to customers?</h3>
+</details>
+<details>
+<summary><h3>Should I show my prices to customers?</h3></summary>
 <p>If most of your jobs are standard, it saves time: customers see the price before they ask. If prices depend on the job, show the "from" prices and what moves them, then give the exact price in a quotation.</p>
-<h3>Per hour or per job: which is better?</h3>
+</details>
+<details>
+<summary><h3>Per hour or per job: which is better?</h3></summary>
 <p>Charge per job when you can see the whole job before you start, so the customer knows the total. Charge per hour when you cannot. You can also combine them: a package price, plus an hourly rate for anything beyond it.</p>
-<h3>Should my prices include SST?</h3>
+</details>
+<details>
+<summary><h3>Should my prices include SST?</h3></summary>
 <p>If you are registered, it is simpler to keep the prices on your list before SST and add SST as its own line on the quotation. If you share the list, mark it "Prices exclude SST". If you are not registered, do not add SST at all. More in <a href="/guides/do-i-need-to-charge-sst/">Do I need to charge SST?</a></p>
-<h3>How often should I update my price list?</h3>
+</details>
+<details>
+<summary><h3>How often should I update my price list?</h3></summary>
 <p>Update it whenever one of your costs changes, such as a supplier's price or your transport costs. A quotation you have already sent normally keeps its price until its valid-until date, so new prices apply to new quotations.</p>
+</details>
+</div>
+</section>
 </article>
 </main>
 

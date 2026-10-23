@@ -23,6 +23,58 @@
 <link rel="stylesheet" href="/assets/site.css">
 <link rel="stylesheet" href="/assets/guide.css?v=2026-10-20">
 <link rel="stylesheet" href="/assets/nav.css">
+<style>
+.story p.refs { color: var(--ink-soft); font-size: .85em; }
+/* "In short", app note and collapsible FAQ (pilot 2026-10-23; move to guide.css when rolled out).
+   Editorial, not UI: hairline rules and type do the work; no cards, tinted boxes or round buttons. */
+
+/* In short: a summary set between two rules, like a standfirst */
+.story .keypoints { margin: 36px 0 0; padding: 22px 0 20px; border-top: 1px solid var(--story-ink); border-bottom: 1px solid #e5e5e5; }
+.story .keypoints .kp-h { font-family: var(--story-sans); font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--story-ink); }
+.story .keypoints ul { list-style: none; margin: 14px 0 0; padding: 0; }
+.story .keypoints li { position: relative; padding-left: 26px; font-family: var(--story-serif); font-size: 19px; line-height: 1.55; color: var(--story-ink); }
+.story .keypoints li::before { content: ""; position: absolute; left: 2px; top: .72em; width: 12px; height: 2px; background: var(--brand); }
+.story .keypoints li + li { margin-top: .7em; }
+.story .keypoints .kp-jump { margin-top: 18px; font-family: var(--story-sans); font-size: 14px; line-height: 1.8; color: var(--story-soft); }
+.story .keypoints .kp-jump a { color: var(--story-soft); text-decoration-color: #c9c9c9; white-space: nowrap; }
+.story .keypoints .kp-jump a:hover { color: var(--story-ink); text-decoration-color: currentColor; }
+.story .keypoints + p { margin-top: 1.8em; }
+
+.story p.app-note { padding: 14px 18px; background: var(--paper); border-radius: 10px; }
+.story p.app-note a { color: var(--brand-dark); white-space: nowrap; }
+
+/* FAQ: questions as quiet rows; a thin chevron, the answer in body serif */
+.story .faq-list { margin-top: 1em; border-top: 1px solid #e5e5e5; }
+.story .faq-list details { border-bottom: 1px solid #e5e5e5; }
+.story .faq-list summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; padding: 20px 0; font-family: var(--story-sans); font-size: 19px; line-height: 1.4; font-weight: 600; color: var(--story-ink); }
+.story .faq-list summary::-webkit-details-marker { display: none; }
+.story .faq-list summary h3 { margin: 0; font: inherit; color: inherit; text-wrap: pretty; }
+.story .faq-list summary:hover h3 { color: var(--brand-dark); }
+.story .faq-list summary:focus-visible { outline: 2px solid var(--brand); outline-offset: 4px; border-radius: 4px; }
+.story .faq-list summary::after { content: ""; flex: none; width: 18px; height: 18px; margin-top: .2em; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%236b6b6b' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center / 18px no-repeat; transition: transform .25s ease; }
+.story .faq-list details[open] summary::after { transform: rotate(180deg); }
+.story .faq-list details p { margin: 0; padding: 0 38px 24px 0; font-size: 19px; line-height: 1.6; color: #3d3d3d; }
+/* browsers that can animate a <details> open/close get a short slide; others just open */
+.story .faq-list { interpolate-size: allow-keywords; }
+.story .faq-list details::details-content { block-size: 0; overflow: hidden; transition: block-size .25s ease, content-visibility .25s allow-discrete; }
+.story .faq-list details[open]::details-content { block-size: auto; }
+@media (max-width: 520px) {
+  .story .keypoints li, .story .faq-list details p { font-size: 18px; }
+  .story .faq-list summary { font-size: 17px; padding: 18px 0; gap: 14px; }
+  .story .faq-list details p { padding-right: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .story .faq-list summary::after, .story .faq-list details::details-content { transition: none; }
+}
+
+/* Jump to (owner, 2026-10-23): the label in its own column; links wrap in the right column, aligned with the first
+   link, separated by a dot that is clipped at line starts, so none hangs at a line end */
+.story .keypoints .kp-jump { display: grid; grid-template-columns: auto 1fr; column-gap: 8px; align-items: baseline; }
+.story .keypoints .kp-jump-links { display: flex; flex-wrap: wrap; column-gap: 16px; row-gap: 2px; overflow: hidden; }
+/* a dot before each link, in the gap; the one before the first link of each line falls outside the box and is clipped */
+.story .keypoints .kp-jump-links a { position: relative; }
+.story .keypoints .kp-jump-links a::before { content: "\00B7"; position: absolute; left: -8px; transform: translateX(-50%); color: var(--story-soft); text-decoration: none; pointer-events: none; }
+</style>
 <meta property="og:site_name" content="Invois">
 <meta property="og:locale" content="en_MY">
 <meta property="og:type" content="article">
@@ -48,7 +100,7 @@
       "description": "The difference between a quotation, an invoice and a receipt in Malaysia, with one job followed from quote to deposit, balance and official receipt.",
       "inLanguage": "en-MY",
       "datePublished": "2026-10-13",
-      "dateModified": "2026-10-13",
+      "dateModified": "2026-10-23",
       "author": {
         "@type": "Organization",
         "name": "Invois team, EONGERRA TECH",
@@ -179,16 +231,26 @@
     <img src="/assets/favicon-96.png" alt="" width="40" height="40">
     <div>
       <p class="who">Invois team, EONGERRA TECH</p>
-      <p>8 min read · Last updated 13 October 2026</p>
+      <p>8 min read · Last updated 23 October 2026</p>
     </div>
   </div>
 
+<section class="keypoints" aria-labelledby="kp-h">
+<div class="kp-h" id="kp-h">In short</div>
+<ul>
+<li>A quotation offers a price before the job, an invoice asks for payment, and a receipt confirms you were paid.</li>
+<li>One invoice can carry both the deposit and the balance; issue a receipt for each payment.</li>
+<li>Never reuse a receipt number. If you make a mistake on a receipt, mark it CANCELLED and keep the copy.</li>
+<li>Keep invoices and receipts for at least 7 years.</li>
+</ul>
+<nav class="kp-jump" aria-label="On this page"><span class="kp-jump-label">Jump to:</span><span class="kp-jump-links"><a href="#table">Comparison table</a> <a href="#one-job">One job, step by step</a> <a href="#more">2 more examples</a> <a href="#checklists">Invoice and receipt checklists</a> <a href="#faq">FAQ</a></span></nav>
+</section>
+
 <p>A <strong>quotation</strong> says what a job will cost if the customer agrees. An <strong>invoice</strong> asks the customer to pay. A
 <strong>receipt</strong> confirms you were paid. Mix them up and deposits go missing, or customers pay twice.</p>
-<p>This guide puts the three side by side, then follows <strong>one job</strong> from quote to the last ringgit, deposit and balance
-included, with the maths shown. The examples are an event caterer, an electrician and a tutor; the flow is the same
+<p>The examples below come from an event caterer, an electrician and a tutor, and the flow is the same
 whether you cut hair, fix pipes or shoot weddings.</p>
-<h2>The difference in one table</h2>
+<h2 id="table">The difference in one table</h2>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -239,7 +301,8 @@ whether you cut hair, fix pipes or shoot weddings.</p>
 </table></div>
 <p class="plain">Quick test: if you have not asked for money yet, it is a quotation; if you are asking for money, it is an invoice; if the money has arrived, it is a receipt. For the first one, see
 <a href="/guides/how-to-write-a-quotation/">How to write a quotation in Malaysia</a>.</p>
-<h2>One job from quotation to receipt</h2>
+<p class="app-note">In Invois, an accepted quotation becomes an invoice in one tap, and each payment you record gets its own receipt showing what is still due. More in <a href="#app">From quotation to receipt in Invois</a>.</p>
+<h2 id="one-job">One job from quotation to receipt</h2>
 <p>An event caterer is asked to do a family-day buffet. Prices are made up to show the format, not a price guide.</p>
 <h3>Step 1: the quotation (3 Nov)</h3>
 <div class="table-wrap doc"><table>
@@ -360,7 +423,7 @@ paid in between; what matters is that each number is used once.</p>
 <li>Balance: RM&nbsp;3,420.00 - RM&nbsp;894.00 = <strong>RM&nbsp;2,526.00</strong></li>
 </ul>
 <p>The final receipt would show RM&nbsp;2,526.00 paid.</p>
-<h2>2 more ways it plays out</h2>
+<h2 id="more">2 more ways it plays out</h2>
 <h3>Electrician: paid on the spot, or within 30 days</h3>
 <p>A homeowner pays the electrician RM 380.00 by DuitNow for a new RCCB and 2 plug points before the van leaves. The
 invoice and receipt go out together, or one invoice marked <strong>PAID</strong>. The customer still gets a numbered document,
@@ -370,7 +433,7 @@ days ("Net 30"). The receipt follows when the money is in.</p>
 <h3>Tutor: no quotation, an invoice every month</h3>
 <p>A tutor charges RM&nbsp;320.00 a month; the fee was agreed once, so there is no monthly quotation. On the 1st of each month the tutor sends an invoice due on the 7th, and issues a receipt when the parent pays.</p>
 <p>If the parent pays RM&nbsp;160.00 now and RM&nbsp;160.00 next week, that is 2 receipts against one invoice; the first shows RM&nbsp;160.00 outstanding.</p>
-<h2>What must be on an invoice and a receipt</h2>
+<h2 id="checklists">What must be on an invoice and a receipt</h2>
 <h3>Invoice checklist</h3>
 <ul>
 <li>The word <strong>INVOICE</strong> and an invoice number in one running sequence (<code>INV-2611-012</code>)</li>
@@ -405,7 +468,7 @@ handwritten note.</p>
 <p>Keep your invoices and receipts for at least 7 years.</p>
 <p>Section 82 of the Income Tax Act 1967 requires every business, from sole proprietors and partnerships to companies (Sdn Bhd), to keep its records for 7 years from the end of the year the income relates to. See LHDN Public Rulings <a href="https://www.hasil.gov.my/wp-content/uploads/PR4_2000_Rev.pdf">4/2000 (Revised)</a> for companies and <a href="https://www.hasil.gov.my/wp-content/uploads/PR5_2000_Rev.pdf">5/2000 (Revised)</a> for individuals and partnerships.</p>
 <p>Whether e-Invoice rules also apply to you depends on your business; check LHDN's guidance.</p>
-<section class="promo" aria-label="About Invois">
+<section class="promo" id="app" aria-label="About Invois">
 <h2>From quotation to receipt in Invois</h2>
 <p>Retyping a quotation into an invoice and working out each balance by hand is where mistakes creep in.
 <a href="/">Invois</a> is an Android app that carries the job from one document to the next:</p>
@@ -427,23 +490,39 @@ handwritten note.</p>
 </section>
 <p>More guides for people who quote and bill their own jobs: <a href="/guides/">all guides</a>.</p>
 <hr class="dinkus">
+<section id="faq">
 <h2>FAQ</h2>
-<h3>Can a receipt replace an invoice?</h3>
+<div class="faq-list">
+<details>
+<summary><h3>Can a receipt replace an invoice?</h3></summary>
 <p>For a small job paid on the spot, many businesses issue only a receipt, or an invoice marked PAID. When the customer
 pays later, or a company is paying, send an invoice first: it is what their accounts department pays against.</p>
-<h3>Should I give a receipt for a deposit?</h3>
+</details>
+<details>
+<summary><h3>Should I give a receipt for a deposit?</h3></summary>
 <p>Yes. Issue a receipt for every payment, deposit included, showing the balance still outstanding. It is the
 customer's proof that the date or order is confirmed.</p>
-<h3>Can I issue one invoice for the deposit and the balance?</h3>
+</details>
+<details>
+<summary><h3>Can I issue one invoice for the deposit and the balance?</h3></summary>
 <p>Yes. List the deposit and the balance, each with its due date, on one invoice, then issue a receipt for each payment as it comes in. If the customer's accounts department wants a separate invoice for each payment, issue a deposit invoice and a final invoice that deducts the deposit.</p>
-<h3>Can I add SST to my invoice if I am not registered?</h3>
+</details>
+<details>
+<summary><h3>Can I add SST to my invoice if I am not registered?</h3></summary>
 <p>No. Only businesses registered with JKDM for sales tax or service tax may charge SST. If you are registered, show SST
 as a separate line with your SST registration number.</p>
-<h3>How long should I keep invoices and receipts?</h3>
+</details>
+<details>
+<summary><h3>How long should I keep invoices and receipts?</h3></summary>
 <p>At least 7 years, as the section above explains. If a tax return is filed late, the 7 years run from the end of the year it is filed.</p>
-<h3>Is an invoice the same as an e-Invoice?</h3>
+</details>
+<details>
+<summary><h3>Is an invoice the same as an e-Invoice?</h3></summary>
 <p>No. An invoice is the bill you send your customer. e-Invoice is LHDN's system for validating certain invoices, and
 whether it applies depends on your business; check LHDN's guidance.</p>
+</details>
+</div>
+</section>
 </article>
 </main>
 

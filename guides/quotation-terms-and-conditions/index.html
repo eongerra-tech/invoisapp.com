@@ -24,6 +24,58 @@
 <link rel="stylesheet" href="/assets/guide.css?v=2026-10-20">
 <link rel="stylesheet" href="/assets/nav.css">
 <style>
+.story p.refs { color: var(--ink-soft); font-size: .85em; }
+/* "In short", app note and collapsible FAQ (pilot 2026-10-23; move to guide.css when rolled out).
+   Editorial, not UI: hairline rules and type do the work; no cards, tinted boxes or round buttons. */
+
+/* In short: a summary set between two rules, like a standfirst */
+.story .keypoints { margin: 36px 0 0; padding: 22px 0 20px; border-top: 1px solid var(--story-ink); border-bottom: 1px solid #e5e5e5; }
+.story .keypoints .kp-h { font-family: var(--story-sans); font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--story-ink); }
+.story .keypoints ul { list-style: none; margin: 14px 0 0; padding: 0; }
+.story .keypoints li { position: relative; padding-left: 26px; font-family: var(--story-serif); font-size: 19px; line-height: 1.55; color: var(--story-ink); }
+.story .keypoints li::before { content: ""; position: absolute; left: 2px; top: .72em; width: 12px; height: 2px; background: var(--brand); }
+.story .keypoints li + li { margin-top: .7em; }
+.story .keypoints .kp-jump { margin-top: 18px; font-family: var(--story-sans); font-size: 14px; line-height: 1.8; color: var(--story-soft); }
+.story .keypoints .kp-jump a { color: var(--story-soft); text-decoration-color: #c9c9c9; white-space: nowrap; }
+.story .keypoints .kp-jump a:hover { color: var(--story-ink); text-decoration-color: currentColor; }
+.story .keypoints + p { margin-top: 1.8em; }
+
+.story p.app-note { padding: 14px 18px; background: var(--paper); border-radius: 10px; }
+.story p.app-note a { color: var(--brand-dark); white-space: nowrap; }
+
+/* FAQ: questions as quiet rows; a thin chevron, the answer in body serif */
+.story .faq-list { margin-top: 1em; border-top: 1px solid #e5e5e5; }
+.story .faq-list details { border-bottom: 1px solid #e5e5e5; }
+.story .faq-list summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; padding: 20px 0; font-family: var(--story-sans); font-size: 19px; line-height: 1.4; font-weight: 600; color: var(--story-ink); }
+.story .faq-list summary::-webkit-details-marker { display: none; }
+.story .faq-list summary h3 { margin: 0; font: inherit; color: inherit; text-wrap: pretty; }
+.story .faq-list summary:hover h3 { color: var(--brand-dark); }
+.story .faq-list summary:focus-visible { outline: 2px solid var(--brand); outline-offset: 4px; border-radius: 4px; }
+.story .faq-list summary::after { content: ""; flex: none; width: 18px; height: 18px; margin-top: .2em; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%236b6b6b' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center / 18px no-repeat; transition: transform .25s ease; }
+.story .faq-list details[open] summary::after { transform: rotate(180deg); }
+.story .faq-list details p { margin: 0; padding: 0 38px 24px 0; font-size: 19px; line-height: 1.6; color: #3d3d3d; }
+/* browsers that can animate a <details> open/close get a short slide; others just open */
+.story .faq-list { interpolate-size: allow-keywords; }
+.story .faq-list details::details-content { block-size: 0; overflow: hidden; transition: block-size .25s ease, content-visibility .25s allow-discrete; }
+.story .faq-list details[open]::details-content { block-size: auto; }
+@media (max-width: 520px) {
+  .story .keypoints li, .story .faq-list details p { font-size: 18px; }
+  .story .faq-list summary { font-size: 17px; padding: 18px 0; gap: 14px; }
+  .story .faq-list details p { padding-right: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .story .faq-list summary::after, .story .faq-list details::details-content { transition: none; }
+}
+
+/* Jump to (owner, 2026-10-23): the label in its own column; links wrap in the right column, aligned with the first
+   link, separated by a dot that is clipped at line starts, so none hangs at a line end */
+.story .keypoints .kp-jump { display: grid; grid-template-columns: auto 1fr; column-gap: 8px; align-items: baseline; }
+.story .keypoints .kp-jump-links { display: flex; flex-wrap: wrap; column-gap: 16px; row-gap: 2px; overflow: hidden; }
+/* a dot before each link, in the gap; the one before the first link of each line falls outside the box and is clipped */
+.story .keypoints .kp-jump-links a { position: relative; }
+.story .keypoints .kp-jump-links a::before { content: "\00B7"; position: absolute; left: -8px; transform: translateX(-50%); color: var(--story-soft); text-decoration: none; pointer-events: none; }
+</style>
+<style>
 .story ol.clauses { padding-left: 1.4em; }
 .story ol.clauses li { margin: 0 0 18px; }
 .story .clause { display: block; margin: 2px 0 6px; padding: 8px 12px; border-left: 3px solid var(--brand-dark); background: #f6f5ff; border-radius: 0 8px 8px 0; font-family: "Figtree", system-ui, sans-serif; font-size: .92em; line-height: 1.5; }
@@ -55,7 +107,7 @@
       "description": "20 quotation terms you can copy for deposits, payment, scope, cancellation and warranty, with notes on when to use them and what the law says about deposits.",
       "inLanguage": "en-MY",
       "datePublished": "2026-10-21",
-      "dateModified": "2026-10-21",
+      "dateModified": "2026-10-23",
       "author": {
         "@type": "Organization",
         "name": "Invois team, EONGERRA TECH",
@@ -178,40 +230,52 @@
     <img src="/assets/favicon-96.png" alt="" width="40" height="40">
     <div>
       <p class="who">Invois team, EONGERRA TECH</p>
-      <p>7 min read · Last updated 21 October 2026 · General information, not legal advice</p>
+      <p>8 min read · Last updated 23 October 2026 · General information, not legal advice</p>
     </div>
   </div>
+
+<section class="keypoints" aria-labelledby="kp-h">
+<div class="kp-h" id="kp-h">In short</div>
+<ul>
+<li>Pick 5 to 8 terms; a long list usually goes unread.</li>
+<li>Say how you get paid, how long the price holds and what it covers; add cancellation and warranty terms where they fit.</li>
+<li>Keep a non-refundable deposit close to your real costs; a court can reduce one that is far higher.</li>
+<li>If your customer is a consumer, your terms cannot take away their rights under the Consumer Protection Act 1999.</li>
+</ul>
+<nav class="kp-jump" aria-label="On this page"><span class="kp-jump-label">Jump to:</span><span class="kp-jump-links"><a href="#deposit">Deposit and payment</a> <a href="#validity">Validity</a> <a href="#scope">Scope</a> <a href="#cancellation">Cancellation</a> <a href="#warranty">Warranty</a> <a href="#faq">FAQ</a></span></nav>
+</section>
 
 <p>Terms are the few lines at the bottom of a quotation: how you get paid, what the price covers, and what happens if something changes.</p>
 <p>Once the customer accepts the quotation, these lines normally become part of what you both agreed. Short, clear terms help avoid arguments later.</p>
 <p>Below are 20 terms ready to copy: 16 by topic and 4 for particular kinds of work. Everything else a quotation must show is in <a href="/guides/how-to-write-a-quotation/">How to write a quotation</a>.</p>
-<h2>How to use these terms</h2>
+<h2 id="how-to-use">How to use these terms</h2>
 <ul>
 <li>Pick 5 to 8. A long list of terms usually goes unread.</li>
 <li>Check the numbers: the deposit you actually take, and a warranty you can keep.</li>
 <li>Use the same terms on the invoice, so nothing changes between the quotation and the invoice.</li>
 </ul>
-<h2>Deposit and payment</h2>
+<p class="app-note">In Invois, answer a few questions and AI writes your terms in English; they print at the bottom of the quotation. More in <a href="#app">Terms in Invois</a>.</p>
+<h2 id="deposit">Deposit and payment</h2>
 <ol class="clauses" start="1">
 <li><span class="clause">"A deposit of 50% is payable to confirm the booking. Work starts once the deposit is received."</span><span class="when"><strong>When to use:</strong> jobs where you block a date or buy materials before you start.</span></li>
 <li><span class="clause">"The balance is due on the day the work is completed."</span><span class="when"><strong>When to use:</strong> short jobs finished in 1 visit or 1 day.</span></li>
 <li><span class="clause">"For jobs above RM&nbsp;5,000.00, payment is in 3 parts: 30% deposit, 40% at the halfway point and 30% on completion."</span><span class="when"><strong>When to use:</strong> longer jobs, so you are not paying for the whole job out of your own pocket.<br>For a RM&nbsp;6,000.00 job: RM&nbsp;1,800.00 + RM&nbsp;2,400.00 + RM&nbsp;1,800.00 = RM&nbsp;6,000.00.</span></li>
 <li><span class="clause">"Invoices are due within 14 days of the invoice date. The next stage starts after the previous stage is paid."</span><span class="when"><strong>When to use:</strong> staged work, or business customers who pay against an invoice.</span></li>
 </ol>
-<h2>Validity and price</h2>
+<h2 id="validity">Validity and price</h2>
 <ol class="clauses" start="5">
 <li><span class="clause">"This quotation is valid for 14 days from the date above."</span><span class="when"><strong>When to use:</strong> always. After that date, you can send a new quotation if your costs have changed.</span></li>
 <li><span class="clause">"Prices are based on material prices on the date of this quotation. If the job starts after the validity date, we will send a revised quotation for your approval before work starts."</span><span class="when"><strong>When to use:</strong> jobs that depend on materials whose prices move often.</span></li>
 <li><span class="clause">"Outstation jobs more than 30 km from Kuala Lumpur carry a transport charge of RM&nbsp;50.00."</span><span class="when"><strong>When to use:</strong> jobs at a customer's location far from your base. Put in your own town and distance.</span></li>
 </ol>
-<h2>Scope and extra work</h2>
+<h2 id="scope">Scope and extra work</h2>
 <ol class="clauses" start="8">
 <li><span class="clause">"The price covers only the items listed above. Anything not listed is quoted separately."</span><span class="when"><strong>When to use:</strong> always. It avoids the "I thought that was included" argument.</span></li>
 <li><span class="clause">"Any change or extra work requested after acceptance will be quoted in writing and agreed before it starts."</span><span class="when"><strong>When to use:</strong> jobs where customers often add things while the work is going on.</span></li>
 <li><span class="clause">"If damage that could not be seen when we quoted is found once work starts, we will stop, show you, and quote before continuing."</span><span class="when"><strong>When to use:</strong> repairs and renovation, where the real condition only shows once work starts.</span></li>
 <li><span class="clause">"The price includes 2 rounds of changes. Further changes are charged at RM&nbsp;80.00 per hour."</span><span class="when"><strong>When to use:</strong> design, photography, video and writing, where the customer reviews the work and asks for changes.</span></li>
 </ol>
-<h2>Cancellation and date changes</h2>
+<h2 id="cancellation">Cancellation and date changes</h2>
 <ol class="clauses" start="12">
 <li><span class="clause">"If you cancel more than 14 days before the agreed date, the deposit is refunded less any costs already paid for this job."</span></li>
 <li><span class="clause">"If you cancel within 14 days of the agreed date, the deposit covers the date we reserved and the materials already bought, and is not refunded."</span></li>
@@ -227,7 +291,7 @@
 </ul>
 <p>So tie the deposit to real costs, as term 13 does: the date you reserved and the materials you have already bought. Do not set it far above those costs.</p>
 <p class="refs">References: Contracts Act 1950, section 75; Federal Court, Cubic Electronics v Mars Telecommunications, 2018; Consumer Protection Act 1999, sections 24D, 24G and 98.</p>
-<h2>Warranty</h2>
+<h2 id="warranty">Warranty</h2>
 <ol class="clauses" start="15">
 <li><span class="clause">"Our workmanship is guaranteed for 12 months from completion. We will fix any defect in our work at no charge during this period. This is in addition to your rights under the Consumer Protection Act 1999."</span></li>
 <li><span class="clause">"The warranty does not cover damage from misuse, accidents, or work done by others after we finish."</span><span class="when"><strong>When to use:</strong> repairs, installation and renovation. Offer only a period you can honour.</span></li>
@@ -247,14 +311,14 @@
 <li>A court or the Tribunal can declare a one-sided term unenforceable. One example is a clause saying you are not responsible for your own negligence.</li>
 </ul>
 <p class="refs">References: Consumer Protection Act 1999, sections 2, 3, 6, 24D, 24G, 53 and 55.</p>
-<h2>4 terms for particular kinds of work</h2>
+<h2 id="kinds-of-work">4 terms for particular kinds of work</h2>
 <ol class="clauses" start="17">
 <li><strong>Cleaning</strong> <span class="clause">"Cleaning supplies are included. Mould or hard stains are quoted separately after inspection."</span></li>
 <li><strong>Makeup</strong> <span class="clause">"A trial session is charged separately and deducted from the package if you book within 30 days of the trial."</span></li>
 <li><strong>Roofing</strong> <span class="clause">"Days lost to rain are added to the completion date."</span></li>
 <li><strong>Tuition</strong> <span class="clause">"Fees are paid at the start of each month. A missed class is replaced in the same month if you tell us at least 24 hours before the class."</span></li>
 </ol>
-<section class="promo" aria-label="About Invois">
+<section class="promo" id="app" aria-label="About Invois">
 <h2>Terms in Invois</h2>
 <ul>
 <li>In <a href="/">Invois</a>, answer a few questions (deposit, warranty, cancellation) and AI writes your terms in English.</li>
@@ -266,17 +330,31 @@
 </section>
 <p>More guides for people who quote and bill their own jobs: <a href="/guides/">all guides</a>.</p>
 <hr class="dinkus">
+<section id="faq">
 <h2>FAQ</h2>
-<h3>Can I write my terms in Bahasa Melayu or Chinese?</h3>
+<div class="faq-list">
+<details>
+<summary><h3>Can I write my terms in Bahasa Melayu or Chinese?</h3></summary>
 <p>Yes, as long as the meaning is clear. Use the language your customer reads best.</p>
-<h3>Can I keep the whole deposit if the customer cancels?</h3>
+</details>
+<details>
+<summary><h3>Can I keep the whole deposit if the customer cancels?</h3></summary>
 <p>Usually, but only up to an amount that is reasonable against your loss (see Cancellation above). Keep proof of your costs: material receipts, and messages from other bookings you turned down for that date. This helps if the customer disputes the deposit.</p>
-<h3>How much deposit should I ask for?</h3>
+</details>
+<details>
+<summary><h3>How much deposit should I ask for?</h3></summary>
 <p>There is no set percentage. This guide uses 50% (term 1) and 30% (term 3) as examples. Take enough to cover the date you block and the materials you buy before the job starts.</p>
-<h3>Can I charge interest on late payment?</h3>
+</details>
+<details>
+<summary><h3>Can I charge interest on late payment?</h3></summary>
 <p>No general law sets a late-payment interest rate for ordinary invoices. If you want to charge interest, put the rate in the quotation so the customer agrees to it first. A rate that is excessive can be treated as a penalty and reduced (Contracts Act 1950, section 75).</p>
-<h3>Where do the terms go on a quotation?</h3>
+</details>
+<details>
+<summary><h3>Where do the terms go on a quotation?</h3></summary>
 <p>Under the total, so the customer sees them before agreeing to the price. If the customer agrees on WhatsApp, send the quotation as a PDF so the terms arrive with the price.</p>
+</details>
+</div>
+</section>
 <p><em>This is general information, not legal advice. For large or unusual jobs, ask a lawyer to check your terms.</em></p>
 <h2>Sources</h2>
 <ul class="sources">
