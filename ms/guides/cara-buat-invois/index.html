@@ -25,6 +25,55 @@
 <link rel="stylesheet" href="/assets/nav.css">
 <style>
 .story p.refs { color: var(--ink-soft); font-size: .85em; }
+/* "In short", app note and collapsible FAQ (pilot 2026-10-23; move to guide.css when rolled out).
+   Editorial, not UI: hairline rules and type do the work; no cards, tinted boxes or round buttons. */
+
+/* In short: a summary set between two rules, like a standfirst */
+.story .keypoints { margin: 36px 0 0; padding: 22px 0 20px; border-top: 1px solid var(--story-ink); border-bottom: 1px solid #e5e5e5; }
+.story .keypoints .kp-h { font-family: var(--story-sans); font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--story-ink); }
+.story .keypoints ul { list-style: none; margin: 14px 0 0; padding: 0; }
+.story .keypoints li { position: relative; padding-left: 26px; font-family: var(--story-serif); font-size: 19px; line-height: 1.55; color: var(--story-ink); }
+.story .keypoints li::before { content: ""; position: absolute; left: 2px; top: .72em; width: 12px; height: 2px; background: var(--brand); }
+.story .keypoints li + li { margin-top: .7em; }
+.story .keypoints .kp-jump { margin-top: 18px; font-family: var(--story-sans); font-size: 14px; line-height: 1.8; color: var(--story-soft); }
+.story .keypoints .kp-jump a { color: var(--story-soft); text-decoration-color: #c9c9c9; white-space: nowrap; }
+.story .keypoints .kp-jump a:hover { color: var(--story-ink); text-decoration-color: currentColor; }
+.story .keypoints + p { margin-top: 1.8em; }
+
+.story p.app-note { padding: 14px 18px; background: var(--paper); border-radius: 10px; }
+.story p.app-note a { color: var(--brand-dark); }
+
+/* FAQ: questions as quiet rows; a thin chevron, the answer in body serif */
+.story .faq-list { margin-top: 1em; border-top: 1px solid #e5e5e5; }
+.story .faq-list details { border-bottom: 1px solid #e5e5e5; }
+.story .faq-list summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; padding: 20px 0; font-family: var(--story-sans); font-size: 19px; line-height: 1.4; font-weight: 600; color: var(--story-ink); }
+.story .faq-list summary::-webkit-details-marker { display: none; }
+.story .faq-list summary h3 { margin: 0; font: inherit; color: inherit; text-wrap: pretty; }
+.story .faq-list summary:hover h3 { color: var(--brand-dark); }
+.story .faq-list summary:focus-visible { outline: 2px solid var(--brand); outline-offset: 4px; border-radius: 4px; }
+.story .faq-list summary::after { content: ""; flex: none; width: 18px; height: 18px; margin-top: .2em; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%236b6b6b' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center / 18px no-repeat; transition: transform .25s ease; }
+.story .faq-list details[open] summary::after { transform: rotate(180deg); }
+.story .faq-list details p { margin: 0; padding: 0 38px 24px 0; font-size: 19px; line-height: 1.6; color: #3d3d3d; }
+/* browsers that can animate a <details> open/close get a short slide; others just open */
+.story .faq-list { interpolate-size: allow-keywords; }
+.story .faq-list details::details-content { block-size: 0; overflow: hidden; transition: block-size .25s ease, content-visibility .25s allow-discrete; }
+.story .faq-list details[open]::details-content { block-size: auto; }
+@media (max-width: 520px) {
+  .story .keypoints li, .story .faq-list details p { font-size: 18px; }
+  .story .faq-list summary { font-size: 17px; padding: 18px 0; gap: 14px; }
+  .story .faq-list details p { padding-right: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .story .faq-list summary::after, .story .faq-list details::details-content { transition: none; }
+}
+
+/* Jump to (owner, 2026-10-23): the label in its own column; links wrap in the right column, aligned with the first
+   link, separated by a dot that is clipped at line starts, so none hangs at a line end */
+.story .keypoints .kp-jump { display: grid; grid-template-columns: auto 1fr; column-gap: 8px; align-items: baseline; }
+.story .keypoints .kp-jump-links { display: flex; flex-wrap: wrap; column-gap: 16px; row-gap: 2px; overflow: hidden; }
+/* a dot before each link, in the gap; the one before the first link of each line falls outside the box and is clipped */
+.story .keypoints .kp-jump-links a { position: relative; }
+.story .keypoints .kp-jump-links a::before { content: "\00B7"; position: absolute; left: -8px; transform: translateX(-50%); color: var(--story-soft); text-decoration: none; pointer-events: none; }
 </style>
 <meta property="og:site_name" content="Invois">
 <meta property="og:locale" content="ms_MY">
@@ -51,7 +100,7 @@
       "description": "Apa perlu ada dalam invois di Malaysia: nombor invois, tarikh akhir bayaran, no. SSM, SST dan butiran bayaran, dengan 3 contoh dan bila e-Invois terpakai.",
       "inLanguage": "ms-MY",
       "datePublished": "2026-10-22",
-      "dateModified": "2026-10-22",
+      "dateModified": "2026-10-23",
       "author": {
         "@type": "Organization",
         "name": "EONGERRA TECH, pembangun aplikasi Invois",
@@ -174,14 +223,24 @@
     <img src="/assets/favicon-96.png" alt="" width="40" height="40">
     <div>
       <p class="who">EONGERRA TECH, pembangun aplikasi Invois</p>
-      <p>7 minit bacaan · Dikemas kini 22 Oktober 2026</p>
+      <p>8 minit bacaan · Dikemas kini 23 Oktober 2026</p>
     </div>
   </div>
 
-<p>Invois ialah dokumen yang meminta pelanggan bayar jumlah tertentu sebelum tarikh tertentu. Anda hantar invois apabila bayaran perlu dibuat.</p>
-<p>Panduan ini menerangkan apa perlu ada dalam invois di Malaysia, dengan 3 contoh, dan sama ada anda perlu keluarkan e-Invois.</p>
+<section class="keypoints" aria-labelledby="kp-h">
+<div class="kp-h" id="kp-h">Ringkasnya</div>
+<ul>
+<li>Invois perlu ada: nombor invois, tarikh invois dan tarikh akhir bayaran, butiran perniagaan anda, butiran pelanggan, item, jumlah, deposit jika sudah dibayar, dan butiran bank anda.</li>
+<li>Hantar sebaik sahaja bayaran perlu dibuat: terma bayaran dikira dari tarikh invois.</li>
+<li>Jika sudah hantar invois yang tersilap, hantar yang sudah dibetulkan dan beritahu pelanggan apa yang berubah. Jika anda berdaftar SST, tanda invois yang tersilap itu CANCELLED; perubahan nilai selepas itu dibuat melalui nota kredit atau nota debit.</li>
+<li>Perniagaan dengan pendapatan atau jualan tahunan kurang daripada RM 3,000,000 kini dikecualikan daripada e-Invois, kecuali dalam beberapa <a href="#e-invoice">keadaan</a>.</li>
+</ul>
+<nav class="kp-jump" aria-label="Dalam halaman ini"><span class="kp-jump-label">Lompat ke:</span><span class="kp-jump-links"><a href="#what-to-put">Apa perlu ada</a> <a href="#when">Bila perlu hantar</a> <a href="#examples">Contoh</a> <a href="#wrong">Betulkan invois</a> <a href="#e-invoice">e-Invois</a> <a href="#faq">Soalan lazim</a></span></nav>
+</section>
+
+<p>Invois ialah dokumen yang meminta pelanggan bayar jumlah tertentu sebelum tarikh tertentu.</p>
 <p>Invois biasanya dikeluarkan selepas sebut harga (<a href="/ms/guides/cara-buat-sebut-harga/">Cara buat sebut harga</a>). Jika tidak pasti dokumen mana yang anda perlukan, lihat <a href="/ms/guides/beza-invois-dan-resit/">Beza invois dan resit</a>.</p>
-<h2>Apa perlu ada dalam invois</h2>
+<h2 id="what-to-put">Apa perlu ada dalam invois</h2>
 <h3>1. Tajuk dan nombor invois</h3>
 <p>Letak perkataan INVOICE (atau INVOIS) di bahagian atas, dengan nombor seperti <code>INV-2611-012</code>. Nomborkan invois mengikut urutan dan jangan guna semula nombor, supaya setiap nombor merujuk kepada satu invois sahaja.</p>
 <h3>2. Tarikh invois dan tarikh akhir bayaran</h3>
@@ -206,7 +265,8 @@
 <p>Jika pelanggan sudah bayar deposit, tunjukkan di bawah jumlah, diikuti baki yang masih perlu dibayar, supaya kedua-dua pihak nampak deposit itu sudah diambil kira.</p>
 <h3>8. Cara bayar</h3>
 <p>Nama bank, nama akaun dan nombor akaun, atau QR DuitNow. Minta pelanggan tulis nombor invois dalam rujukan pindahan, supaya anda tahu bayaran itu untuk invois yang mana.</p>
-<h2>Bila perlu hantar invois</h2>
+<p class="app-note">Aplikasi Invois mencetak kesemua 8 maklumat ini pada invois, dan anda masukkan butiran perniagaan serta bank sekali sahaja. Lebih lanjut dalam <a href="#app">Invois dalam aplikasi Invois</a>.</p>
+<h2 id="when">Bila perlu hantar invois</h2>
 <ul>
 <li><strong>Selepas kerja</strong>, untuk kerja yang dibayar selepas siap.</li>
 <li><strong>Sebelum mula</strong>, untuk deposit, jika pelanggan mahu invois untuk membayarnya.</li>
@@ -214,7 +274,7 @@
 <li><strong>Sebulan sekali</strong>, untuk kerja berterusan seperti tuisyen atau kontrak penyelenggaraan.</li>
 </ul>
 <p>Hantar sebaik sahaja bayaran perlu dibuat. Terma seperti "14 hari" dikira dari tarikh invois, jadi invois yang lewat dihantar juga lewat dibayar.</p>
-<h2>3 contoh invois</h2>
+<h2 id="examples">3 contoh invois</h2>
 <p>Harga di bawah hanya contoh, bukan panduan harga. Ketiga-tiga perniagaan ini tidak berdaftar SST, jadi tiada baris SST.</p>
 <h3>Pereka grafik freelance: invois kepada syarikat</h3>
 <p>Invois <code>INV-2611-003</code>, bertarikh 10 November 2026, untuk PO 4471 daripada pelanggan. Dengan terma Net 30, tarikh akhir bayaran ialah 10 Disember 2026.</p>
@@ -383,20 +443,20 @@
 </tbody>
 </table></div>
 <p>Baris 1 hingga 5 ialah sebut harga: RM 600.00 + RM 315.00 + RM 840.00 + RM 225.00 + RM 150.00 = RM 2,130.00. Baris 6 ialah kerja tambahan yang dipersetujui: RM 2,130.00 + RM 80.00 = RM 2,210.00.</p>
-<h2>Jika invois tersilap</h2>
+<h2 id="wrong">Jika invois tersilap</h2>
 <ul>
 <li><strong>Belum dihantar:</strong> betulkan sahaja.</li>
 <li><strong>Sudah dihantar:</strong> hantar invois yang sudah dibetulkan dan beritahu pelanggan apa yang berubah.</li>
 </ul>
 <p>Perniagaan berdaftar SST ada peraturan lebih ketat. Invois yang sudah dikeluarkan tidak boleh diubah: invois yang tersilap ditanda CANCELLED dan disimpan untuk audit. Perubahan nilai selepas itu dibuat melalui nota kredit (jika berkurang) atau nota debit (jika bertambah).</p>
 <p class="refs">Rujukan: JKDM, MySST, <a href="https://mysst.customs.gov.my/issuing-invoices/" rel="noopener">Issuing invoices</a>.</p>
-<h2>Perlukah anda keluarkan e-Invois?</h2>
+<h2 id="e-invoice">Perlukah anda keluarkan e-Invois?</h2>
 <p>e-Invois ialah sistem LHDN untuk menghantar invois melalui MyInvois bagi pengesahan. LHDN melaksanakannya secara berperingkat sejak 1 Ogos 2024, bermula dengan perniagaan yang pendapatan atau jualan tahunannya melebihi RM 100 juta.</p>
 <p>Perniagaan dengan pendapatan atau jualan tahunan kurang daripada RM 3,000,000 kini dikecualikan daripada mengeluarkan e-Invois, sama ada individu, perkongsian atau syarikat.</p>
 <p>Pengecualian ini tidak terpakai jika perniagaan anda ada pemegang saham bukan individu (seperti syarikat), syarikat induk, syarikat berkaitan atau usaha sama yang pendapatan atau jualan tahunannya sekurang-kurangnya RM 3,000,000.</p>
 <p>Jika anda dikecualikan, teruskan keluarkan invois dan resit biasa, dan anda masih boleh pilih untuk sertai e-Invois. LHDN mengkaji semula pengecualian ini dari semasa ke semasa, jadi semak garis panduan terkini sebelum bergantung pada maklumat ini. Ini maklumat umum, bukan nasihat cukai atau undang-undang.</p>
 <p class="refs">Rujukan: LHDN, <a href="https://www.hasil.gov.my/e-invois/rujukan-pelaksanaan-e-invois/garis-panduan/" rel="noopener">Garis Panduan e-Invois</a>, Versi 4.8 (30 Ogos 2026), seksyen 1.5, 1.6.1(e), 1.6.6, 1.6.8 dan 1.6.10; LHDN, <a href="https://www.hasil.gov.my/e-invois/garis-masa-pelaksanaan-e-invois/" rel="noopener">Garis Masa Pelaksanaan e-Invois</a>.</p>
-<section class="promo" aria-label="Tentang Invois">
+<section class="promo" id="app" aria-label="Tentang Invois">
 <h2>Invois dalam aplikasi Invois</h2>
 <p><a href="/ms/">Aplikasi Invois</a> ialah aplikasi Android untuk sebut harga, invois dan resit.</p>
 <ul>
@@ -416,17 +476,31 @@
 </section>
 <p>Panduan lain untuk sesiapa yang buat sebut harga dan kutip bayaran sendiri: <a href="/ms/guides/">semua panduan</a>.</p>
 <hr class="dinkus">
+<section id="faq">
 <h2>Soalan lazim</h2>
-<h3>Apa maksud Net 30?</h3>
+<div class="faq-list">
+<details>
+<summary><h3>Apa maksud Net 30?</h3></summary>
 <p>Bayaran perlu dibuat 30 hari selepas tarikh invois. Tarikh akhirnya tidak semestinya jatuh pada haribulan yang sama bulan berikutnya: invois bertarikh 15 Januari dengan terma Net 30 perlu dibayar pada 14 Februari.</p>
-<h3>Boleh hantar invois tanpa sebut harga?</h3>
+</details>
+<details>
+<summary><h3>Boleh hantar invois tanpa sebut harga?</h3></summary>
 <p>Boleh. Ramai yang terus keluarkan invois untuk kerja kecil, kerja berulang dan yuran bulanan. Cuma, baris item perlu cukup jelas untuk menerangkan kerja itu tanpa sebut harga.</p>
-<h3>Boleh letak beberapa kerja dalam satu invois?</h3>
+</details>
+<details>
+<summary><h3>Boleh letak beberapa kerja dalam satu invois?</h3></summary>
 <p>Boleh, jika untuk pelanggan yang sama dan dibayar sekali gus, contohnya kerja sebulan untuk satu syarikat. Beri setiap kerja barisnya sendiri dengan tarikh atau lokasinya, supaya pelanggan boleh semak satu per satu.</p>
-<h3>Apa perlu buat jika pelanggan lewat bayar?</h3>
+</details>
+<details>
+<summary><h3>Apa perlu buat jika pelanggan lewat bayar?</h3></summary>
 <p>Hantar peringatan ringkas dengan nombor invois, jumlah dan tarikh akhir bayaran, dan lampirkan invois sekali lagi. Jika masih belum dibayar, hantar peringatan kedua, dan tangguhkan kerja baharu untuk pelanggan itu sehingga invois dibayar. Faedah bayaran lewat diterangkan dalam <a href="/ms/guides/terma-dan-syarat-sebut-harga/">Terma dan syarat sebut harga</a>.</p>
-<h3>Pelanggan minta e-Invois. Apa perlu buat?</h3>
+</details>
+<details>
+<summary><h3>Pelanggan minta e-Invois. Apa perlu buat?</h3></summary>
 <p>Jika anda dikecualikan, anda tidak perlu mengeluarkannya: resit dan dokumen biasa anda digunakan sebagai bukti perbelanjaan pelanggan. Jika tidak dikecualikan, anda hantar e-Invois melalui MyInvois, sama ada di portal LHDN atau melalui perisian yang berhubung dengannya (Garis Panduan e-Invois LHDN, seksyen 1.6.2, 2.3 dan 2.4).</p>
+</details>
+</div>
+</section>
 </article>
 </main>
 

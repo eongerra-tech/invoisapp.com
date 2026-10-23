@@ -24,6 +24,58 @@
 <link rel="stylesheet" href="/assets/guide.css?v=2026-10-20">
 <link rel="stylesheet" href="/assets/nav.css">
 <style>
+.story p.refs { color: var(--ink-soft); font-size: .85em; }
+/* "In short", app note and collapsible FAQ (pilot 2026-10-23; move to guide.css when rolled out).
+   Editorial, not UI: hairline rules and type do the work; no cards, tinted boxes or round buttons. */
+
+/* In short: a summary set between two rules, like a standfirst */
+.story .keypoints { margin: 36px 0 0; padding: 22px 0 20px; border-top: 1px solid var(--story-ink); border-bottom: 1px solid #e5e5e5; }
+.story .keypoints .kp-h { font-family: var(--story-sans); font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--story-ink); }
+.story .keypoints ul { list-style: none; margin: 14px 0 0; padding: 0; }
+.story .keypoints li { position: relative; padding-left: 26px; font-family: var(--story-serif); font-size: 19px; line-height: 1.55; color: var(--story-ink); }
+.story .keypoints li::before { content: ""; position: absolute; left: 2px; top: .72em; width: 12px; height: 2px; background: var(--brand); }
+.story .keypoints li + li { margin-top: .7em; }
+.story .keypoints .kp-jump { margin-top: 18px; font-family: var(--story-sans); font-size: 14px; line-height: 1.8; color: var(--story-soft); }
+.story .keypoints .kp-jump a { color: var(--story-soft); text-decoration-color: #c9c9c9; white-space: nowrap; }
+.story .keypoints .kp-jump a:hover { color: var(--story-ink); text-decoration-color: currentColor; }
+.story .keypoints + p { margin-top: 1.8em; }
+
+.story p.app-note { padding: 14px 18px; background: var(--paper); border-radius: 10px; }
+.story p.app-note a { color: var(--brand-dark); }
+
+/* FAQ: questions as quiet rows; a thin chevron, the answer in body serif */
+.story .faq-list { margin-top: 1em; border-top: 1px solid #e5e5e5; }
+.story .faq-list details { border-bottom: 1px solid #e5e5e5; }
+.story .faq-list summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; padding: 20px 0; font-family: var(--story-sans); font-size: 19px; line-height: 1.4; font-weight: 600; color: var(--story-ink); }
+.story .faq-list summary::-webkit-details-marker { display: none; }
+.story .faq-list summary h3 { margin: 0; font: inherit; color: inherit; text-wrap: pretty; }
+.story .faq-list summary:hover h3 { color: var(--brand-dark); }
+.story .faq-list summary:focus-visible { outline: 2px solid var(--brand); outline-offset: 4px; border-radius: 4px; }
+.story .faq-list summary::after { content: ""; flex: none; width: 18px; height: 18px; margin-top: .2em; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%236b6b6b' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center / 18px no-repeat; transition: transform .25s ease; }
+.story .faq-list details[open] summary::after { transform: rotate(180deg); }
+.story .faq-list details p { margin: 0; padding: 0 38px 24px 0; font-size: 19px; line-height: 1.6; color: #3d3d3d; }
+/* browsers that can animate a <details> open/close get a short slide; others just open */
+.story .faq-list { interpolate-size: allow-keywords; }
+.story .faq-list details::details-content { block-size: 0; overflow: hidden; transition: block-size .25s ease, content-visibility .25s allow-discrete; }
+.story .faq-list details[open]::details-content { block-size: auto; }
+@media (max-width: 520px) {
+  .story .keypoints li, .story .faq-list details p { font-size: 18px; }
+  .story .faq-list summary { font-size: 17px; padding: 18px 0; gap: 14px; }
+  .story .faq-list details p { padding-right: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .story .faq-list summary::after, .story .faq-list details::details-content { transition: none; }
+}
+
+/* Jump to (owner, 2026-10-23): the label in its own column; links wrap in the right column, aligned with the first
+   link, separated by a dot that is clipped at line starts, so none hangs at a line end */
+.story .keypoints .kp-jump { display: grid; grid-template-columns: auto 1fr; column-gap: 8px; align-items: baseline; }
+.story .keypoints .kp-jump-links { display: flex; flex-wrap: wrap; column-gap: 16px; row-gap: 2px; overflow: hidden; }
+/* a dot before each link, in the gap; the one before the first link of each line falls outside the box and is clipped */
+.story .keypoints .kp-jump-links a { position: relative; }
+.story .keypoints .kp-jump-links a::before { content: "\00B7"; position: absolute; left: -8px; transform: translateX(-50%); color: var(--story-soft); text-decoration: none; pointer-events: none; }
+</style>
+<style>
 .story ol.clauses { padding-left: 1.4em; }
 .story ol.clauses li { margin: 0 0 18px; }
 .story .clause { display: block; margin: 2px 0 6px; padding: 8px 12px; border-left: 3px solid var(--brand-dark); background: #f6f5ff; border-radius: 0 8px 8px 0; font-family: "Figtree", system-ui, sans-serif; font-size: .92em; line-height: 1.5; }
@@ -55,7 +107,7 @@
       "description": "20 ayat terma sebut harga yang boleh anda salin, untuk deposit, bayaran, skop, pembatalan dan waranti, dengan penerangan bila patut guna.",
       "inLanguage": "ms-MY",
       "datePublished": "2026-10-21",
-      "dateModified": "2026-10-21",
+      "dateModified": "2026-10-23",
       "author": {
         "@type": "Organization",
         "name": "EONGERRA TECH, pembangun aplikasi Invois",
@@ -178,41 +230,53 @@
     <img src="/assets/favicon-96.png" alt="" width="40" height="40">
     <div>
       <p class="who">EONGERRA TECH, pembangun aplikasi Invois</p>
-      <p>6 minit bacaan · Dikemas kini 21 Oktober 2026 · Maklumat umum, bukan nasihat undang-undang</p>
+      <p>7 minit bacaan · Dikemas kini 23 Oktober 2026 · Maklumat umum, bukan nasihat undang-undang</p>
     </div>
   </div>
+
+<section class="keypoints" aria-labelledby="kp-h">
+<div class="kp-h" id="kp-h">Ringkasnya</div>
+<ul>
+<li>Pilih 5 hingga 8 ayat; senarai terma yang panjang biasanya tidak dibaca.</li>
+<li>Nyatakan cara bayaran, berapa lama harga sah dan apa yang termasuk; tambah terma pembatalan dan waranti bila sesuai.</li>
+<li>Kaitkan deposit yang tidak dikembalikan dengan kos sebenar; mahkamah boleh kurangkan deposit yang jauh lebih besar daripada kerugian yang mungkin anda tanggung.</li>
+<li>Kalau pelanggan anda pengguna, terma anda tidak boleh membuang atau mengurangkan hak mereka di bawah Akta Perlindungan Pengguna 1999.</li>
+</ul>
+<nav class="kp-jump" aria-label="Dalam halaman ini"><span class="kp-jump-label">Lompat ke:</span><span class="kp-jump-links"><a href="#deposit">Deposit dan bayaran</a> <a href="#validity">Tempoh sah</a> <a href="#scope">Skop</a> <a href="#cancellation">Pembatalan</a> <a href="#warranty">Waranti</a> <a href="#faq">Soalan lazim</a></span></nav>
+</section>
 
 <p>Terma ialah beberapa baris di bahagian bawah sebut harga: cara bayaran, apa yang termasuk dalam harga, dan apa jadi kalau ada perubahan.</p>
 <p>Bila pelanggan terima sebut harga, terma ini biasanya jadi sebahagian daripada persetujuan kedua-dua pihak, jadi ayat yang pendek dan jelas boleh elak pertikaian nanti.</p>
 <p>Di bawah ada 20 ayat siap guna: 16 ikut topik, dan 4 untuk jenis kerja tertentu. Ayat-ayat ini dalam Bahasa Inggeris, sama seperti label pada dokumen aplikasi Invois. Penerangannya dalam Bahasa Melayu.</p>
 <p>Perkara lain yang mesti ada dalam sebut harga diterangkan dalam <a href="/ms/guides/cara-buat-sebut-harga/">Cara buat sebut harga</a>.</p>
-<h2>Cara guna ayat-ayat ini</h2>
+<h2 id="how-to-use">Cara guna ayat-ayat ini</h2>
 <ul>
 <li>Pilih 5 hingga 8 ayat. Senarai terma yang terlalu panjang biasanya tidak dibaca.</li>
 <li>Pastikan nombornya betul: deposit yang anda benar-benar ambil, waranti yang anda mampu beri.</li>
 <li>Guna terma yang sama pada invois, supaya tiada apa yang berubah antara sebut harga dan invois.</li>
 </ul>
-<h2>Deposit dan bayaran</h2>
+<p class="app-note">Dalam aplikasi Invois, jawab beberapa soalan dan AI tulis terma anda dalam Bahasa Inggeris; terma itu dicetak di bahagian bawah sebut harga. Lebih lanjut dalam <a href="#app">Terma dalam aplikasi Invois</a>.</p>
+<h2 id="deposit">Deposit dan bayaran</h2>
 <ol class="clauses" start="1">
 <li><span class="clause">"A deposit of 50% is payable to confirm the booking. Work starts once the deposit is received."</span><span class="when"><strong>Bila guna:</strong> kerja yang anda perlu kunci tarikh atau beli bahan dulu sebelum mula.</span></li>
 <li><span class="clause">"The balance is due on the day the work is completed."</span><span class="when"><strong>Bila guna:</strong> kerja pendek yang siap dalam 1 lawatan atau 1 hari.</span></li>
 <li><span class="clause">"For jobs above RM&nbsp;5,000.00, payment is in 3 parts: 30% deposit, 40% at the halfway point and 30% on completion."</span><span class="when"><strong>Bila guna:</strong> kerja yang lebih lama, supaya anda tidak membiayai seluruh kerja dengan duit sendiri.<br>Contoh kerja bernilai RM&nbsp;6,000.00: RM&nbsp;1,800.00 + RM&nbsp;2,400.00 + RM&nbsp;1,800.00 = RM&nbsp;6,000.00.</span></li>
 <li><span class="clause">"Invoices are due within 14 days of the invoice date. The next stage starts after the previous stage is paid."</span><span class="when"><strong>Bila guna:</strong> kerja berperingkat, atau pelanggan perniagaan yang bayar ikut invois.</span></li>
 </ol>
-<h2>Tempoh sah dan harga</h2>
+<h2 id="validity">Tempoh sah dan harga</h2>
 <ol class="clauses" start="5">
 <li><span class="clause">"This quotation is valid for 14 days from the date above."</span><span class="when"><strong>Bila guna:</strong> sentiasa. Selepas tarikh itu, anda boleh beri sebut harga baharu kalau kos anda berubah.</span></li>
 <li><span class="clause">"Prices are based on material prices on the date of this quotation. If the job starts after the validity date, we will send a revised quotation for your approval before work starts."</span><span class="when"><strong>Bila guna:</strong> kerja yang bergantung pada bahan yang harganya selalu berubah.</span></li>
 <li><span class="clause">"Outstation jobs more than 30 km from Kuala Lumpur carry a transport charge of RM&nbsp;50.00."</span><span class="when"><strong>Bila guna:</strong> kerja di tempat pelanggan yang jauh. Tukar kepada bandar dan jarak anda sendiri.</span></li>
 </ol>
-<h2>Skop dan kerja tambahan</h2>
+<h2 id="scope">Skop dan kerja tambahan</h2>
 <ol class="clauses" start="8">
 <li><span class="clause">"The price covers only the items listed above. Anything not listed is quoted separately."</span><span class="when"><strong>Bila guna:</strong> sentiasa. Ayat ini elak pelanggan kata "saya ingat itu termasuk".</span></li>
 <li><span class="clause">"Any change or extra work requested after acceptance will be quoted in writing and agreed before it starts."</span><span class="when"><strong>Bila guna:</strong> kerja yang pelanggan selalu tambah sesuatu semasa kerja sedang berjalan.</span></li>
 <li><span class="clause">"If damage that could not be seen when we quoted is found once work starts, we will stop, show you, and quote before continuing."</span><span class="when"><strong>Bila guna:</strong> kerja baik pulih dan ubah suai, yang keadaan sebenarnya hanya nampak selepas kerja bermula.</span></li>
 <li><span class="clause">"The price includes 2 rounds of changes. Further changes are charged at RM&nbsp;80.00 per hour."</span><span class="when"><strong>Bila guna:</strong> reka bentuk, fotografi, video, penulisan: kerja yang pelanggan semak dan minta ubah.</span></li>
 </ol>
-<h2>Pembatalan dan tukar tarikh</h2>
+<h2 id="cancellation">Pembatalan dan tukar tarikh</h2>
 <ol class="clauses" start="12">
 <li><span class="clause">"If you cancel more than 14 days before the agreed date, the deposit is refunded less any costs already paid for this job."</span></li>
 <li><span class="clause">"If you cancel within 14 days of the agreed date, the deposit covers the date we reserved and the materials already bought, and is not refunded."</span></li>
@@ -228,7 +292,7 @@
 </ul>
 <p>Jadi kaitkan deposit dengan kos sebenar, macam ayat 13: tarikh yang anda kunci dan bahan yang sudah anda beli. Pastikan jumlah deposit tidak jauh melebihi kos itu.</p>
 <p class="refs">Rujukan: Akta Kontrak 1950, seksyen 75; Mahkamah Persekutuan, Cubic Electronics v Mars Telecommunications, 2018; Akta Perlindungan Pengguna 1999, seksyen 24D, 24G dan 98.</p>
-<h2>Waranti</h2>
+<h2 id="warranty">Waranti</h2>
 <ol class="clauses" start="15">
 <li><span class="clause">"Our workmanship is guaranteed for 12 months from completion. We will fix any defect in our work at no charge during this period. This is in addition to your rights under the Consumer Protection Act 1999."</span></li>
 <li><span class="clause">"The warranty does not cover damage from misuse, accidents, or work done by others after we finish."</span><span class="when"><strong>Bila guna:</strong> baik pulih, pemasangan, ubah suai. Beri tempoh yang anda mampu tunaikan sahaja.</span></li>
@@ -248,14 +312,14 @@
 <li>Terma yang berat sebelah boleh diisytiharkan tidak boleh dikuatkuasakan oleh mahkamah atau Tribunal, contohnya klausa yang kata anda tidak bertanggungjawab atas kecuaian anda sendiri.</li>
 </ul>
 <p class="refs">Rujukan: Akta Perlindungan Pengguna 1999, seksyen 2, 3, 6, 24D, 24G, 53 dan 55.</p>
-<h2>4 ayat untuk jenis kerja tertentu</h2>
+<h2 id="kinds-of-work">4 ayat untuk jenis kerja tertentu</h2>
 <ol class="clauses" start="17">
 <li><strong>Pembersihan</strong> <span class="clause">"Cleaning supplies are included. Mould or hard stains are quoted separately after inspection."</span></li>
 <li><strong>Solekan</strong> <span class="clause">"A trial session is charged separately and deducted from the package if you book within 30 days of the trial."</span></li>
 <li><strong>Kerja bumbung</strong> <span class="clause">"Days lost to rain are added to the completion date."</span></li>
 <li><strong>Tuisyen</strong> <span class="clause">"Fees are paid at the start of each month. A missed class is replaced in the same month if you tell us at least 24 hours before the class."</span></li>
 </ol>
-<section class="promo" aria-label="Tentang Invois">
+<section class="promo" id="app" aria-label="Tentang Invois">
 <h2>Terma dalam aplikasi Invois</h2>
 <ul>
 <li>Jawab beberapa soalan (deposit, waranti, pembatalan), dan AI tulis terma anda dalam Bahasa Inggeris.</li>
@@ -267,17 +331,31 @@
 </section>
 <p>Panduan lain untuk sesiapa yang buat sebut harga dan kutip bayaran sendiri: <a href="/ms/guides/">semua panduan</a>.</p>
 <hr class="dinkus">
+<section id="faq">
 <h2>Soalan lazim</h2>
-<h3>Perlukah terma ditulis dalam Bahasa Inggeris?</h3>
+<div class="faq-list">
+<details>
+<summary><h3>Perlukah terma ditulis dalam Bahasa Inggeris?</h3></summary>
 <p>Tidak semestinya. Guna bahasa yang pelanggan anda faham; terma dalam Bahasa Melayu pun boleh, asalkan maksudnya jelas.</p>
-<h3>Boleh saya simpan semua deposit kalau pelanggan batal?</h3>
+</details>
+<details>
+<summary><h3>Boleh saya simpan semua deposit kalau pelanggan batal?</h3></summary>
 <p>Biasanya boleh, tetapi hanya setakat jumlah yang munasabah berbanding kerugian anda (lihat bahagian Pembatalan di atas). Simpan bukti kos anda: resit bahan, dan mesej tempahan lain yang anda tolak untuk tarikh itu. Bukti ini membantu kalau pelanggan pertikaikan jumlah deposit.</p>
-<h3>Berapa peratus deposit patut saya minta?</h3>
+</details>
+<details>
+<summary><h3>Berapa peratus deposit patut saya minta?</h3></summary>
 <p>Tiada peratus yang ditetapkan. Panduan ini guna 50% (ayat 1) dan 30% (ayat 3) sebagai contoh. Ambil cukup untuk tampung kos tarikh yang anda kunci dan bahan yang anda beli sebelum kerja mula.</p>
-<h3>Boleh saya caj faedah untuk bayaran lewat?</h3>
+</details>
+<details>
+<summary><h3>Boleh saya caj faedah untuk bayaran lewat?</h3></summary>
 <p>Tiada undang-undang umum yang menetapkan kadar faedah bayaran lewat untuk invois biasa. Kalau mahu caj faedah, tulis kadarnya dalam sebut harga supaya pelanggan bersetuju terlebih dahulu. Kadar yang keterlaluan boleh dianggap penalti dan dikurangkan (Akta Kontrak 1950, seksyen 75).</p>
-<h3>Di mana saya letak terma?</h3>
+</details>
+<details>
+<summary><h3>Di mana saya letak terma?</h3></summary>
 <p>Di bawah jumlah, supaya pelanggan nampak terma sebelum setuju dengan harga. Kalau pelanggan setuju melalui WhatsApp, hantar sebut harga sebagai PDF supaya terma sampai bersama harga.</p>
+</details>
+</div>
+</section>
 <p><em>Maklumat umum, bukan nasihat undang-undang. Untuk kerja yang besar atau luar biasa, minta peguam semak terma anda.</em></p>
 <h2>Sumber</h2>
 <ul class="sources">

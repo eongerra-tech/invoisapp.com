@@ -24,6 +24,58 @@
 <link rel="stylesheet" href="/assets/guide.css?v=2026-10-20">
 <link rel="stylesheet" href="/assets/nav.css">
 <style>
+.story p.refs { color: var(--ink-soft); font-size: .85em; }
+/* "In short", app note and collapsible FAQ (pilot 2026-10-23; move to guide.css when rolled out).
+   Editorial, not UI: hairline rules and type do the work; no cards, tinted boxes or round buttons. */
+
+/* In short: a summary set between two rules, like a standfirst */
+.story .keypoints { margin: 36px 0 0; padding: 22px 0 20px; border-top: 1px solid var(--story-ink); border-bottom: 1px solid #e5e5e5; }
+.story .keypoints .kp-h { font-family: var(--story-sans); font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--story-ink); }
+.story .keypoints ul { list-style: none; margin: 14px 0 0; padding: 0; }
+.story .keypoints li { position: relative; padding-left: 26px; font-family: var(--story-serif); font-size: 19px; line-height: 1.55; color: var(--story-ink); }
+.story .keypoints li::before { content: ""; position: absolute; left: 2px; top: .72em; width: 12px; height: 2px; background: var(--brand); }
+.story .keypoints li + li { margin-top: .7em; }
+.story .keypoints .kp-jump { margin-top: 18px; font-family: var(--story-sans); font-size: 14px; line-height: 1.8; color: var(--story-soft); }
+.story .keypoints .kp-jump a { color: var(--story-soft); text-decoration-color: #c9c9c9; white-space: nowrap; }
+.story .keypoints .kp-jump a:hover { color: var(--story-ink); text-decoration-color: currentColor; }
+.story .keypoints + p { margin-top: 1.8em; }
+
+.story p.app-note { padding: 14px 18px; background: var(--paper); border-radius: 10px; }
+.story p.app-note a { color: var(--brand-dark); }
+
+/* FAQ: questions as quiet rows; a thin chevron, the answer in body serif */
+.story .faq-list { margin-top: 1em; border-top: 1px solid #e5e5e5; }
+.story .faq-list details { border-bottom: 1px solid #e5e5e5; }
+.story .faq-list summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; padding: 20px 0; font-family: var(--story-sans); font-size: 19px; line-height: 1.4; font-weight: 600; color: var(--story-ink); }
+.story .faq-list summary::-webkit-details-marker { display: none; }
+.story .faq-list summary h3 { margin: 0; font: inherit; color: inherit; text-wrap: pretty; }
+.story .faq-list summary:hover h3 { color: var(--brand-dark); }
+.story .faq-list summary:focus-visible { outline: 2px solid var(--brand); outline-offset: 4px; border-radius: 4px; }
+.story .faq-list summary::after { content: ""; flex: none; width: 18px; height: 18px; margin-top: .2em; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%236b6b6b' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center / 18px no-repeat; transition: transform .25s ease; }
+.story .faq-list details[open] summary::after { transform: rotate(180deg); }
+.story .faq-list details p { margin: 0; padding: 0 38px 24px 0; font-size: 19px; line-height: 1.6; color: #3d3d3d; }
+/* browsers that can animate a <details> open/close get a short slide; others just open */
+.story .faq-list { interpolate-size: allow-keywords; }
+.story .faq-list details::details-content { block-size: 0; overflow: hidden; transition: block-size .25s ease, content-visibility .25s allow-discrete; }
+.story .faq-list details[open]::details-content { block-size: auto; }
+@media (max-width: 520px) {
+  .story .keypoints li, .story .faq-list details p { font-size: 18px; }
+  .story .faq-list summary { font-size: 17px; padding: 18px 0; gap: 14px; }
+  .story .faq-list details p { padding-right: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .story .faq-list summary::after, .story .faq-list details::details-content { transition: none; }
+}
+
+/* Jump to (owner, 2026-10-23): the label in its own column; links wrap in the right column, aligned with the first
+   link, separated by a dot that is clipped at line starts, so none hangs at a line end */
+.story .keypoints .kp-jump { display: grid; grid-template-columns: auto 1fr; column-gap: 8px; align-items: baseline; }
+.story .keypoints .kp-jump-links { display: flex; flex-wrap: wrap; column-gap: 16px; row-gap: 2px; overflow: hidden; }
+/* a dot before each link, in the gap; the one before the first link of each line falls outside the box and is clipped */
+.story .keypoints .kp-jump-links a { position: relative; }
+.story .keypoints .kp-jump-links a::before { content: "\00B7"; position: absolute; left: -8px; transform: translateX(-50%); color: var(--story-soft); text-decoration: none; pointer-events: none; }
+</style>
+<style>
 .tl{margin:1.2em 0;padding:14px 14px 10px;border:1px solid var(--line);border-radius:12px}
 .tl-cap{font-size:13px;color:var(--ink-soft);margin:0 0 10px}
 .tl-row{margin:0 0 12px}
@@ -64,7 +116,7 @@
       "description": "Kebanyakan orang yang bekerja sendiri tidak caj SST. Bila wajib daftar (RM 500,000), perkhidmatan mana kena 8% atau 6%, dan apa yang perlu ada dalam invois.",
       "inLanguage": "ms-MY",
       "datePublished": "2026-10-20",
-      "dateModified": "2026-10-20",
+      "dateModified": "2026-10-23",
       "author": {
         "@type": "Organization",
         "name": "EONGERRA TECH, pembangun aplikasi Invois",
@@ -187,21 +239,33 @@
     <img src="/assets/favicon-96.png" alt="" width="40" height="40">
     <div>
       <p class="who">EONGERRA TECH, pembangun aplikasi Invois</p>
-      <p>6 minit bacaan · Dikemas kini 20 Oktober 2026 · Maklumat umum, bukan nasihat cukai</p>
+      <p>8 minit bacaan · Dikemas kini 23 Oktober 2026 · Maklumat umum, bukan nasihat cukai</p>
     </div>
   </div>
 
+<section class="keypoints" aria-labelledby="kp-h">
+<div class="kp-h" id="kp-h">Ringkasnya</div>
+<ul>
+<li>Anda caj SST hanya jika anda berdaftar dengan Kastam (JKDM).</li>
+<li>Anda wajib daftar bila perkhidmatan bercukai anda melebihi RM&nbsp;500,000 dalam 12 bulan; untuk sewaan RM&nbsp;1,000,000 dan untuk kerja pembinaan RM&nbsp;1,500,000.</li>
+<li>Ubah suai, pendawaian atau pasang jubin di rumah, cuci rumah dan dandanan rambut tidak dikenakan cukai.</li>
+<li>Kalau anda tidak berdaftar, jangan letak SST dalam invois: meletakkannya ialah satu kesalahan.</li>
+</ul>
+<nav class="kp-jump" aria-label="Dalam halaman ini"><span class="kp-jump-label">Lompat ke:</span><span class="kp-jump-links"><a href="#checks">Semak cepat</a> <a href="#services">Perkhidmatan bercukai</a> <a href="#counting">Cara kira RM&nbsp;500,000</a> <a href="#not-registered">Kalau tidak berdaftar</a> <a href="#registered">Kalau berdaftar</a> <a href="#faq">Soalan lazim</a></span></nav>
+</section>
+
 <p>Anda hanya boleh kenakan cukai perkhidmatan jika anda <strong>berdaftar</strong> dengan Jabatan Kastam Diraja Malaysia (JKDM), dan anda hanya wajib daftar bila <strong>perkhidmatan bercukai</strong> anda melebihi <strong>RM&nbsp;500,000 dalam 12 bulan</strong> (had untuk beberapa perkhidmatan lebih tinggi).</p>
 <p>Di bawah had itu, anda tidak caj SST, dan SST tidak boleh ada dalam invois anda. Kebanyakan freelancer, tukang dan studio kecil berada di bawah had ini.</p>
-<p>Panduan ini menerangkan perkhidmatan yang selalu ditanya oleh pengguna kami, cara 12 bulan itu dikira, dan apa yang berubah pada invois selepas anda berdaftar. Maklumat ini terkini setakat 20 Oktober 2026 dan diambil daripada undang-undang serta panduan Kastam sendiri (pautan di hujung).</p>
-<h2>Semak 3 perkara ini</h2>
+<p>Maklumat ini terkini setakat 20 Oktober 2026 dan diambil daripada undang-undang serta panduan Kastam sendiri (pautan di hujung).</p>
+<h2 id="checks">Semak 3 perkara ini</h2>
 <ol>
 <li><strong>Adakah kerja anda perkhidmatan bercukai?</strong> Hanya perkhidmatan yang tersenarai dalam Peraturan-Peraturan Cukai Perkhidmatan 2018 dikenakan cukai. Banyak jenis kerja biasa tiada dalam senarai itu, atau tidak termasuk bila dibuat untuk rumah.</li>
 <li><strong>Adakah perkhidmatan bercukai anda sudah melebihi had?</strong> RM&nbsp;500,000 dalam 12 bulan untuk kebanyakan perkhidmatan; RM&nbsp;1,000,000 untuk sewaan; RM&nbsp;1,500,000 untuk kerja pembinaan.</li>
 <li><strong>Adakah anda berdaftar?</strong> Hanya orang berdaftar yang caj cukai perkhidmatan. Kalau anda tidak berdaftar, tiada SST dalam invois anda.</li>
 </ol>
 <p>Kalau jawapan soalan 1 atau 2 ialah "tidak", anda tidak perlu daftar dan tidak caj SST.</p>
-<h2>Perkhidmatan mana yang kena cukai</h2>
+<p class="app-note">Dalam aplikasi Invois, bila anda tambah SST, ia masuk pada barisnya sendiri, dan nombor SST yang anda isi sekali sahaja dicetak pada kepala surat. Lebih lanjut dalam <a href="#app">SST dalam aplikasi Invois</a>.</p>
+<h2 id="services">Perkhidmatan mana yang kena cukai</h2>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -296,7 +360,7 @@
 <li>solekan</li>
 </ul>
 <p>Kalau nilai kerja jenis ini sudah menghampiri RM&nbsp;500,000 setahun, tanya Kastam melalui <a href="https://mysst.customs.gov.my/">MySST</a> sebelum buat keputusan.</p>
-<h2>Cara RM&nbsp;500,000 dikira</h2>
+<h2 id="counting">Cara RM&nbsp;500,000 dikira</h2>
 <p>Pada akhir sesuatu bulan, anda wajib daftar jika salah satu perkara ini benar (mana-mana yang berlaku dahulu):</p>
 <ul>
 <li><strong>Lihat ke belakang:</strong> bulan itu dan 11 bulan sebelumnya berjumlah lebih daripada RM&nbsp;500,000.</li>
@@ -330,11 +394,11 @@
     <div class="tl-step go"><b>1 Ogos</b>Pendaftaran berkuat kuasa, mula caj SST</div>
   </div>
 </figure>
-<h2>Kalau anda tidak berdaftar</h2>
+<h2 id="not-registered">Kalau anda tidak berdaftar</h2>
 <p>Jangan tambah baris SST, dan jangan tunjukkan apa-apa jumlah sebagai cukai perkhidmatan. Di bawah seksyen 21 Akta Cukai Perkhidmatan 2018, perbuatan ini ialah satu kesalahan: denda sehingga RM&nbsp;30,000, penjara sehingga 2 tahun, atau kedua-duanya (seksyen 79). Kerajaan juga boleh menuntut daripada anda apa-apa jumlah yang anda tunjukkan sebagai cukai (seksyen 28).</p>
 <p>Kalau pelanggan minta SST dalam invois, jawapannya: anda tidak berdaftar, jadi invois anda tiada SST. Anda masih boleh letak nombor SSM anda dalam invois itu.</p>
 <p>Anda boleh daftar secara sukarela walaupun di bawah had (seksyen 14), jika anda menyediakan perkhidmatan bercukai, tertakluk kepada syarat yang Kastam tetapkan. Selepas berdaftar, anda perlu caj SST dan hantar penyata seperti orang berdaftar yang lain, jadi bincang dengan ejen cukai dahulu.</p>
-<h2>Kalau anda sudah berdaftar</h2>
+<h2 id="registered">Kalau anda sudah berdaftar</h2>
 <p>Invois anda mesti ada (Peraturan-Peraturan Cukai Perkhidmatan 2018, peraturan 10):</p>
 <ul>
 <li>nombor siri dan tarikh</li>
@@ -363,7 +427,7 @@
 <li><strong>Rekod:</strong> simpan selama 7 tahun.</li>
 </ul>
 <p>Perkara lain yang perlu ada dalam setiap invois diterangkan dalam <a href="/ms/guides/beza-invois-dan-resit/">Beza invois dan resit</a>.</p>
-<section class="promo" aria-label="Tentang Invois">
+<section class="promo" id="app" aria-label="Tentang Invois">
 <h2>SST dalam aplikasi Invois</h2>
 <p>Kalau anda berdaftar:</p>
 <ul>
@@ -378,17 +442,31 @@
 </section>
 <p>Panduan lain untuk sesiapa yang buat sebut harga dan kutip bayaran sendiri: <a href="/ms/guides/">semua panduan</a>.</p>
 <hr class="dinkus">
+<section id="faq">
 <h2>Soalan lazim</h2>
-<h3>Saya dapat lebih kurang RM&nbsp;5,000 sebulan. Perlu daftar?</h3>
+<div class="faq-list">
+<details>
+<summary><h3>Saya dapat lebih kurang RM&nbsp;5,000 sebulan. Perlu daftar?</h3></summary>
 <p>Tidak perlu. Itu lebih kurang RM&nbsp;60,000 setahun (12 × RM&nbsp;5,000.00), jauh di bawah RM&nbsp;500,000. Jadi anda tidak perlu daftar, dan invois anda tidak boleh tunjuk SST.</p>
-<h3>Pelanggan mahu SST dalam invois. Apa yang patut saya buat?</h3>
+</details>
+<details>
+<summary><h3>Pelanggan mahu SST dalam invois. Apa yang patut saya buat?</h3></summary>
 <p>Kalau anda tidak berdaftar, anda tidak boleh letak SST: menunjukkan cukai perkhidmatan semasa tidak berdaftar ialah satu kesalahan. Hantar invois tanpa SST, dan beritahu pelanggan yang anda tidak berdaftar untuk SST.</p>
-<h3>Salun rambut dan perkhidmatan kecantikan kena caj SST?</h3>
+</details>
+<details>
+<summary><h3>Salun rambut dan perkhidmatan kecantikan kena caj SST?</h3></summary>
 <p>Tidak. Rancangan untuk kenakan cukai ke atas perkhidmatan kecantikan mulai Julai 2025 dibatalkan pada Jun 2025, jadi gunting rambut, rawatan kuku dan facial tidak dikenakan cukai. Pusat urut pula ialah kategori lain yang bercukai.</p>
-<h3>SST sama dengan e-Invois?</h3>
+</details>
+<details>
+<summary><h3>SST sama dengan e-Invois?</h3></summary>
 <p>Tidak. SST ialah cukai yang diuruskan oleh Kastam. e-Invois ialah sistem LHDN untuk mengesahkan invois tertentu, dan sama ada ia terpakai atau tidak bergantung pada perniagaan anda. Yang satu tidak menggantikan yang lain.</p>
-<h3>Ubah suai rumah kena caj SST?</h3>
+</details>
+<details>
+<summary><h3>Ubah suai rumah kena caj SST?</h3></summary>
 <p>Tidak. Kerja ubah suai, pendawaian dan pasang jubin di rumah tidak dikenakan cukai. Kerja pembinaan untuk kedai, pejabat dan kilang dikenakan cukai 6%, tetapi hanya selepas kerja pembinaan kontraktor itu melebihi RM&nbsp;1,500,000 dalam 12 bulan dan dia berdaftar.</p>
+</details>
+</div>
+</section>
 <p><em>Ini maklumat umum, bukan nasihat undang-undang atau cukai. Undang-undang boleh berubah; semak kes anda sendiri dengan Kastam di <a href="https://mysst.customs.gov.my/">MySST</a> atau dengan ejen cukai.</em></p>
 <h2>Sumber</h2>
 <ul class="sources">

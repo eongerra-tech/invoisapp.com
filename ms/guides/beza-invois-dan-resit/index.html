@@ -23,6 +23,58 @@
 <link rel="stylesheet" href="/assets/site.css">
 <link rel="stylesheet" href="/assets/guide.css?v=2026-10-20">
 <link rel="stylesheet" href="/assets/nav.css">
+<style>
+.story p.refs { color: var(--ink-soft); font-size: .85em; }
+/* "In short", app note and collapsible FAQ (pilot 2026-10-23; move to guide.css when rolled out).
+   Editorial, not UI: hairline rules and type do the work; no cards, tinted boxes or round buttons. */
+
+/* In short: a summary set between two rules, like a standfirst */
+.story .keypoints { margin: 36px 0 0; padding: 22px 0 20px; border-top: 1px solid var(--story-ink); border-bottom: 1px solid #e5e5e5; }
+.story .keypoints .kp-h { font-family: var(--story-sans); font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--story-ink); }
+.story .keypoints ul { list-style: none; margin: 14px 0 0; padding: 0; }
+.story .keypoints li { position: relative; padding-left: 26px; font-family: var(--story-serif); font-size: 19px; line-height: 1.55; color: var(--story-ink); }
+.story .keypoints li::before { content: ""; position: absolute; left: 2px; top: .72em; width: 12px; height: 2px; background: var(--brand); }
+.story .keypoints li + li { margin-top: .7em; }
+.story .keypoints .kp-jump { margin-top: 18px; font-family: var(--story-sans); font-size: 14px; line-height: 1.8; color: var(--story-soft); }
+.story .keypoints .kp-jump a { color: var(--story-soft); text-decoration-color: #c9c9c9; white-space: nowrap; }
+.story .keypoints .kp-jump a:hover { color: var(--story-ink); text-decoration-color: currentColor; }
+.story .keypoints + p { margin-top: 1.8em; }
+
+.story p.app-note { padding: 14px 18px; background: var(--paper); border-radius: 10px; }
+.story p.app-note a { color: var(--brand-dark); }
+
+/* FAQ: questions as quiet rows; a thin chevron, the answer in body serif */
+.story .faq-list { margin-top: 1em; border-top: 1px solid #e5e5e5; }
+.story .faq-list details { border-bottom: 1px solid #e5e5e5; }
+.story .faq-list summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; padding: 20px 0; font-family: var(--story-sans); font-size: 19px; line-height: 1.4; font-weight: 600; color: var(--story-ink); }
+.story .faq-list summary::-webkit-details-marker { display: none; }
+.story .faq-list summary h3 { margin: 0; font: inherit; color: inherit; text-wrap: pretty; }
+.story .faq-list summary:hover h3 { color: var(--brand-dark); }
+.story .faq-list summary:focus-visible { outline: 2px solid var(--brand); outline-offset: 4px; border-radius: 4px; }
+.story .faq-list summary::after { content: ""; flex: none; width: 18px; height: 18px; margin-top: .2em; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%236b6b6b' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center / 18px no-repeat; transition: transform .25s ease; }
+.story .faq-list details[open] summary::after { transform: rotate(180deg); }
+.story .faq-list details p { margin: 0; padding: 0 38px 24px 0; font-size: 19px; line-height: 1.6; color: #3d3d3d; }
+/* browsers that can animate a <details> open/close get a short slide; others just open */
+.story .faq-list { interpolate-size: allow-keywords; }
+.story .faq-list details::details-content { block-size: 0; overflow: hidden; transition: block-size .25s ease, content-visibility .25s allow-discrete; }
+.story .faq-list details[open]::details-content { block-size: auto; }
+@media (max-width: 520px) {
+  .story .keypoints li, .story .faq-list details p { font-size: 18px; }
+  .story .faq-list summary { font-size: 17px; padding: 18px 0; gap: 14px; }
+  .story .faq-list details p { padding-right: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .story .faq-list summary::after, .story .faq-list details::details-content { transition: none; }
+}
+
+/* Jump to (owner, 2026-10-23): the label in its own column; links wrap in the right column, aligned with the first
+   link, separated by a dot that is clipped at line starts, so none hangs at a line end */
+.story .keypoints .kp-jump { display: grid; grid-template-columns: auto 1fr; column-gap: 8px; align-items: baseline; }
+.story .keypoints .kp-jump-links { display: flex; flex-wrap: wrap; column-gap: 16px; row-gap: 2px; overflow: hidden; }
+/* a dot before each link, in the gap; the one before the first link of each line falls outside the box and is clipped */
+.story .keypoints .kp-jump-links a { position: relative; }
+.story .keypoints .kp-jump-links a::before { content: "\00B7"; position: absolute; left: -8px; transform: translateX(-50%); color: var(--story-soft); text-decoration: none; pointer-events: none; }
+</style>
 <meta property="og:site_name" content="Invois">
 <meta property="og:locale" content="ms_MY">
 <meta property="og:type" content="article">
@@ -48,7 +100,7 @@
       "description": "Beza sebut harga, invois dan resit, dengan contoh satu tempahan dari deposit, baki hingga resit rasmi. Senarai semak untuk setiap dokumen.",
       "inLanguage": "ms-MY",
       "datePublished": "2026-10-13",
-      "dateModified": "2026-10-13",
+      "dateModified": "2026-10-23",
       "author": {
         "@type": "Organization",
         "name": "EONGERRA TECH, pembangun aplikasi Invois",
@@ -179,17 +231,27 @@
     <img src="/assets/favicon-96.png" alt="" width="40" height="40">
     <div>
       <p class="who">EONGERRA TECH, pembangun aplikasi Invois</p>
-      <p>7 minit bacaan · Dikemas kini 13 Oktober 2026</p>
+      <p>8 minit bacaan · Dikemas kini 23 Oktober 2026</p>
     </div>
   </div>
+
+<section class="keypoints" aria-labelledby="kp-h">
+<div class="kp-h" id="kp-h">Ringkasnya</div>
+<ul>
+<li>Sebut harga menawarkan harga sebelum kerja, invois meminta bayaran, dan resit mengesahkan anda sudah dibayar.</li>
+<li>Satu invois boleh memuatkan deposit dan baki sekali gus; keluarkan resit untuk setiap bayaran.</li>
+<li>Jangan guna semula nombor resit. Kalau tersilap, tanda resit itu CANCELLED dan simpan salinannya.</li>
+<li>Simpan invois dan resit sekurang-kurangnya 7 tahun.</li>
+</ul>
+<nav class="kp-jump" aria-label="Dalam halaman ini"><span class="kp-jump-label">Lompat ke:</span><span class="kp-jump-links"><a href="#table">Jadual perbandingan</a> <a href="#one-job">Satu tempahan, langkah demi langkah</a> <a href="#more">2 situasi lain</a> <a href="#checklists">Senarai semak invois dan resit</a> <a href="#faq">Soalan lazim</a></span></nav>
+</section>
 
 <p><strong>Invois</strong> ialah permintaan bayaran: "sila bayar jumlah ini sebelum tarikh ini". <strong>Resit</strong> ialah bukti bayaran sudah
 diterima: "saya sudah terima jumlah ini". Sebelum kedua-duanya ada <strong>sebut harga</strong> (<em>quotation</em>): tawaran harga
 sebelum kerja bermula. Bila ketiga-tiga dokumen ini bercampur, deposit hilang jejak dan pelanggan keliru berapa baki lagi.</p>
-<p>Panduan ini letak ketiga-tiganya sebelah-menyebelah, kemudian ikut <strong>satu tempahan</strong> dari sebut harga hingga ringgit
-terakhir, termasuk deposit dan baki, dengan kiraan sekali. Contoh daripada kedai jahit, tukang paip dan jurugambar,
+<p>Contoh di bawah diambil daripada kedai jahit, tukang paip dan jurugambar,
 tetapi alirannya sama untuk sesiapa yang buat sebut harga dan kutip bayaran sendiri.</p>
-<h2>Beza sebut harga, invois dan resit</h2>
+<h2 id="table">Beza sebut harga, invois dan resit</h2>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -240,7 +302,8 @@ tetapi alirannya sama untuk sesiapa yang buat sebut harga dan kutip bayaran send
 </table></div>
 <p class="plain">Cara mudah ingat: kalau belum minta duit, itu sebut harga; kalau sedang minta duit, itu invois; kalau duit sudah masuk, itu resit. Cara tulis sebut
 harga yang kemas ada dalam <a href="/ms/guides/cara-buat-sebut-harga/">Cara buat sebut harga</a>.</p>
-<h2>Satu tempahan dari sebut harga hingga resit</h2>
+<p class="app-note">Dalam aplikasi Invois, sebut harga yang diterima jadi invois dengan satu ketikan, dan setiap bayaran yang anda rekod dapat resitnya sendiri, lengkap dengan baki tertunggak. Lebih lanjut dalam <a href="#app">Dari sebut harga hingga resit dengan aplikasi Invois</a>.</p>
+<h2 id="one-job">Satu tempahan dari sebut harga hingga resit</h2>
 <p>Sebuah kedai jahit dapat tempahan baju sedondon untuk majlis kahwin keluarga. Harga di bawah hanya contoh untuk
 menunjukkan format, bukan panduan harga.</p>
 <h3>Langkah 1: sebut harga (3 Nov)</h3>
@@ -356,7 +419,7 @@ bayar di antaranya; yang penting, setiap nombor digunakan sekali sahaja.</p>
 <li>Baki: RM&nbsp;785.00 - RM&nbsp;350.00 = <strong>RM&nbsp;435.00</strong></li>
 </ul>
 <p>Resit akhir akan tunjuk RM&nbsp;435.00 dibayar.</p>
-<h2>2 situasi lain</h2>
+<h2 id="more">2 situasi lain</h2>
 <h3>Tukang paip: bayar terus, atau bayar dalam 30 hari</h3>
 <p>Tuan rumah panggil tukang paip tukar paip bocor bawah sinki: RM 180.00, bayar tunai sebelum tukang paip balik. Di sini
 invois dan resit boleh diberi serentak, atau satu invois yang ditanda <strong>PAID</strong>. Pelanggan tetap dapat dokumen
@@ -367,7 +430,7 @@ dahulu, kemudian bayar ikut terma, contohnya dalam 30 hari ("Net 30"). Resit dik
 <p>Jurugambar pre-wedding dengan pakej RM 2,500.00 minta deposit RM 500.00 untuk kunci tarikh. Resit deposit itulah yang
 pelanggan pegang sebagai bukti tarikh sudah dikunci, dan baki RM 2,000.00 tertera padanya.</p>
 <p>Kalau deposit tak dikembalikan bila pelanggan batal, tulis terma itu dalam sebut harga dan invois; jangan beritahu selepas kejadian. Contoh ayat ada dalam <a href="/ms/guides/terma-dan-syarat-sebut-harga/">Terma dan syarat sebut harga</a>.</p>
-<h2>Apa perlu ada pada invois dan resit</h2>
+<h2 id="checklists">Apa perlu ada pada invois dan resit</h2>
 <h3>Invois</h3>
 <ul>
 <li>Perkataan <strong>INVOICE</strong> (atau INVOIS) dan nombor invois mengikut urutan (<code>INV-2611-006</code>)</li>
@@ -402,7 +465,7 @@ bernombor dan formal, bukan nota tulisan tangan.</p>
 <p>Simpan invois dan resit sekurang-kurangnya 7 tahun.</p>
 <p>Seksyen 82 Akta Cukai Pendapatan 1967 mewajibkan setiap perniagaan, daripada pemilikan tunggal dan perkongsian hingga syarikat (Sdn Bhd), menyimpan rekod selama 7 tahun dari akhir tahun pendapatan itu berkaitan. Rujukan: Ketetapan Umum LHDN <a href="https://www.hasil.gov.my/wp-content/uploads/PR4_2000_Rev.pdf">4/2000 (Pindaan)</a> untuk syarikat dan <a href="https://www.hasil.gov.my/wp-content/uploads/PR5_2000_Rev.pdf">5/2000 (Pindaan)</a> untuk individu dan perkongsian.</p>
 <p>Sama ada peraturan e-Invois terpakai kepada anda bergantung pada perniagaan anda; semak panduan LHDN.</p>
-<section class="promo" aria-label="Tentang Invois">
+<section class="promo" id="app" aria-label="Tentang Invois">
 <h2>Dari sebut harga hingga resit dengan aplikasi Invois</h2>
 <p>Taip semula sebut harga jadi invois, kemudian kira baki untuk setiap resit, di situlah silap selalu berlaku.
 <a href="/ms/">Invois</a> ialah aplikasi Android yang bawa satu kerja dari satu dokumen ke dokumen
@@ -425,23 +488,39 @@ seterusnya:</p>
 </section>
 <p>Panduan lain untuk sesiapa yang buat sebut harga dan kutip bayaran sendiri: <a href="/ms/guides/">semua panduan</a>.</p>
 <hr class="dinkus">
+<section id="faq">
 <h2>Soalan lazim</h2>
-<h3>Boleh guna resit sahaja tanpa invois?</h3>
+<div class="faq-list">
+<details>
+<summary><h3>Boleh guna resit sahaja tanpa invois?</h3></summary>
 <p>Untuk kerja kecil yang dibayar terus, ramai peniaga beri resit sahaja, atau invois yang ditanda PAID. Kalau pelanggan
 bayar kemudian, atau syarikat yang bayar, hantar invois dahulu: itulah yang bahagian akaun mereka bayar.</p>
-<h3>Perlukah beri resit untuk deposit?</h3>
+</details>
+<details>
+<summary><h3>Perlukah beri resit untuk deposit?</h3></summary>
 <p>Perlu. Keluarkan resit untuk setiap bayaran, termasuk deposit, dan tunjuk baki yang masih tertunggak. Itulah bukti
 pelanggan bahawa tarikh atau tempahan sudah disahkan.</p>
-<h3>Boleh guna satu invois untuk deposit dan baki?</h3>
+</details>
+<details>
+<summary><h3>Boleh guna satu invois untuk deposit dan baki?</h3></summary>
 <p>Boleh. Senaraikan deposit dan baki, masing-masing dengan tarikh akhir bayaran, dalam satu invois, kemudian keluarkan resit untuk setiap bayaran yang masuk. Jika bahagian akaun pelanggan mahu invois berasingan untuk setiap bayaran, keluarkan invois deposit dan invois akhir yang menolak deposit.</p>
-<h3>Boleh letak SST dalam invois kalau tidak berdaftar?</h3>
+</details>
+<details>
+<summary><h3>Boleh letak SST dalam invois kalau tidak berdaftar?</h3></summary>
 <p>Tidak boleh. Hanya perniagaan yang berdaftar dengan JKDM untuk cukai jualan atau cukai perkhidmatan boleh mengenakan
 SST. Jika berdaftar, tunjukkan SST sebagai baris berasingan bersama nombor pendaftaran SST anda.</p>
-<h3>Berapa lama perlu simpan invois dan resit?</h3>
+</details>
+<details>
+<summary><h3>Berapa lama perlu simpan invois dan resit?</h3></summary>
 <p>Sekurang-kurangnya 7 tahun, seperti yang diterangkan di atas. Jika borang nyata cukai dihantar lewat, tempoh 7 tahun dikira dari akhir tahun borang itu dihantar.</p>
-<h3>Adakah invois sama dengan e-Invois?</h3>
+</details>
+<details>
+<summary><h3>Adakah invois sama dengan e-Invois?</h3></summary>
 <p>Tidak. Invois ialah bil yang anda hantar kepada pelanggan. e-Invois ialah sistem LHDN untuk mengesahkan invois
 tertentu, dan sama ada ia terpakai bergantung pada perniagaan anda; semak panduan LHDN.</p>
+</details>
+</div>
+</section>
 </article>
 </main>
 
