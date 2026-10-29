@@ -34,7 +34,7 @@ language and keep this markup; each piece fails quietly (falls back to plain sty
 
 ```html
 <link rel="stylesheet" href="/assets/site.css">
-<link rel="stylesheet" href="/assets/guide.css?v=2026-10-29">  <!-- bump ?v= on every page whenever guide.css changes, or browsers keep the old file -->
+<link rel="stylesheet" href="/assets/guide.css?v=2026-10-29e">  <!-- bump ?v= on every page whenever guide.css changes, or browsers keep the old file -->
 <link rel="stylesheet" href="/assets/nav.css">
 <!-- en / ms only: add Source Serif 4 to the Google Fonts URL (all 3 font links). zh pages use system CJK fonts -->
 

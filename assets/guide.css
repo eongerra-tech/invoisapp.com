@@ -201,6 +201,7 @@ html:lang(zh-Hans) .story figure p { line-height: 1.5; letter-spacing: 0; }
 html:lang(zh-Hans) .story .tl-cap, html:lang(zh-Hans) .story .tl-note { font-size: 13px; }
 html:lang(zh-Hans) .story .tl-lab, html:lang(zh-Hans) .story .tl-end { font-size: 14px; }
 html:lang(zh-Hans) .story ul.sources li { font-size: 15px; line-height: 1.6; letter-spacing: 0; }
+html:lang(zh-Hans) .story p.refs { font-size: 14px; line-height: 1.6; letter-spacing: 0; }   /* "参考：" lines: the zh body rule above outranks .story p.refs, so they were full body size */
 
 /* ── guide hub (/guides/, /ms/guides/, /zh/guides/): a Medium-style story list, no cards ──
    <main class="wrap story-wrap"><div class="story hub"> … <ul class="hub-list"><li><h2><a>…</a></h2><p class="hub-sum">…</p><p class="hub-meta">…</p></li> */
@@ -285,3 +286,42 @@ html:lang(zh-Hans) .story h1, html:lang(zh-Hans) .story h2, html:lang(zh-Hans) .
 /* a dot before each link, in the gap; the one before the first link of each line falls outside the box and is clipped */
 .story .keypoints .kp-jump-links a { position: relative; }
 .story .keypoints .kp-jump-links a::before { content: "\00B7"; position: absolute; left: -8px; transform: translateX(-50%); color: var(--story-soft); text-decoration: none; pointer-events: none; }
+
+/* money worked out in the text (owner, 2026-10-29): a small ledger, label left, amount right, a rule above the result.
+   <dl class="ledger"><div><dt>Invoice total</dt><dd>RM&nbsp;1,800.00</dd></div>…<div class="ledger-total">…</div></dl> */
+.story .ledger { max-width: 400px; margin: 1.5em 0 0; font-family: var(--story-sans); font-size: 17px; line-height: 1.4; font-variant-numeric: tabular-nums; }
+.story .ledger > div { display: flex; justify-content: space-between; gap: 24px; padding: 6px 0; }
+.story .ledger dt { color: var(--story-soft); }
+.story .ledger dd { margin: 0; color: var(--story-ink); white-space: nowrap; }
+.story .ledger .ledger-total { margin-top: 6px; padding-top: 10px; border-top: 1px solid var(--story-ink); }
+.story .ledger .ledger-total dt { color: var(--story-ink); font-weight: 600; }
+.story .ledger .ledger-total dd { font-weight: 700; }
+.story .ledger + p { margin-top: 1.5em; }
+
+/* step-by-step dates: a thin rail with a dot per step; the last step (the claim) is filled.
+   Wide screens: date and step on one line; phones: date above the step.
+   <ol class="timeline"><li><span class="tl-date">…</span><span class="tl-what">…</span></li>…<li class="tl-last">…</li></ol> */
+.story .ledger + .timeline { margin-top: 2.2em; }
+.story .timeline { list-style: none; margin: 1.8em 0 0; padding: 0; font-family: var(--story-sans); }
+.story .timeline li { position: relative; margin: 0; padding: 0 0 18px 30px; font-family: var(--story-sans); display: grid; grid-template-columns: 128px 1fr; column-gap: 16px; align-items: baseline; }
+.story .timeline li::before { content: ""; position: absolute; left: 4px; top: 7px; width: 9px; height: 9px; border-radius: 50%; background: #fff; border: 1.5px solid var(--story-ink); box-sizing: border-box; }
+.story .timeline li::after { content: ""; position: absolute; left: 8px; top: 19px; bottom: 1px; width: 1px; background: #d9d9d9; }
+.story .timeline li:last-child { padding-bottom: 0; }
+.story .timeline li:last-child::after { display: none; }
+.story .timeline li.tl-last::before { background: var(--story-ink); }
+.story .timeline .tl-date { font-size: 13px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--story-soft); white-space: nowrap; }
+.story .timeline .tl-what { font-size: 17px; line-height: 1.45; color: var(--story-ink); }
+html:lang(ms) .story .timeline li { grid-template-columns: 156px 1fr; }   /* "SELEPAS 5 JANUARI" is wider than 128px */
+@media (max-width: 560px) {
+  .story .timeline li { display: block; padding-bottom: 16px; }
+  .story .timeline .tl-date, .story .timeline .tl-what { display: block; }
+  .story .timeline .tl-what { margin-top: 1px; }
+  .story .timeline li::before { top: 4px; }
+  .story .timeline li::after { top: 16px; }
+}
+.story .timeline + p { margin-top: 1.4em; font-size: 17px; color: var(--story-soft); }
+html:lang(zh-Hans) .story .timeline li { line-height: 1.5; letter-spacing: 0; }   /* the zh li rules outrank the ones above and doubled the gaps */
+html:lang(zh-Hans) .story .timeline li + li { margin-top: 0; }
+html:lang(zh-Hans) .story .timeline .tl-what { word-break: keep-all; }   /* break at the space before a date, not inside "1月5日" */
+html:lang(zh-Hans) .story .timeline + p { font-size: 16px; }
+
