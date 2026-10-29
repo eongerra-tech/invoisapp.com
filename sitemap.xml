@@ -46,7 +46,7 @@
   </url>
   <url>
     <loc>https://invoisapp.com/guides/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/"/>
     <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/"/>
@@ -55,7 +55,7 @@
   </url>
   <url>
     <loc>https://invoisapp.com/ms/guides/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/"/>
     <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/"/>
@@ -64,7 +64,7 @@
   </url>
   <url>
     <loc>https://invoisapp.com/zh/guides/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/"/>
     <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/"/>
@@ -214,6 +214,33 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/cara-buat-invois/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/how-to-write-an-invoice/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/how-to-write-an-invoice/"/>
+  </url>
+  <url>
+    <loc>https://invoisapp.com/guides/how-to-write-a-receipt/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/how-to-write-a-receipt/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/cara-buat-resit/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/how-to-write-a-receipt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/how-to-write-a-receipt/"/>
+  </url>
+  <url>
+    <loc>https://invoisapp.com/ms/guides/cara-buat-resit/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/how-to-write-a-receipt/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/cara-buat-resit/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/how-to-write-a-receipt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/how-to-write-a-receipt/"/>
+  </url>
+  <url>
+    <loc>https://invoisapp.com/zh/guides/how-to-write-a-receipt/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/how-to-write-a-receipt/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/cara-buat-resit/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/how-to-write-a-receipt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/how-to-write-a-receipt/"/>
   </url>
   <url>
     <loc>https://invoisapp.com/ms/guides/terma-dan-syarat-sebut-harga/</loc>

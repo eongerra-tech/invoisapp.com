@@ -124,6 +124,10 @@ main.wrap.story-wrap { max-width: calc(680px + 2 * var(--edge)); padding-top: 48
 .story .table-wrap.money th:nth-child(n+2), .story .table-wrap.money td:nth-child(n+2) { text-align: right; white-space: nowrap; }
 .story .table-wrap + p:not(.plain) { margin-top: 14px; font-size: 17px; color: var(--story-soft); }
 .story .table-wrap + p.plain { margin-top: 1.2em; }
+/* .kv = a short table that fits a phone (a receipt's fields, 3 columns): no min width, cells wrap */
+.table-wrap.kv table { min-width: 0; }
+.table-wrap.kv td:first-child { white-space: nowrap; }
+.story .table-wrap.kv tbody th { width: 38%; color: var(--story-soft); font-weight: 500; }
 
 /* ── section break (Medium's three dots) ── */
 .story hr.dinkus { border: 0; margin: 56px 0 0; height: auto; text-align: center; }
