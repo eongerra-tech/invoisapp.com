@@ -355,15 +355,15 @@ html:lang(zh-Hans) .story .cc-h { font-size: 15px; line-height: 1.4; letter-spac
 .story .ledger .ledger-sub dt { color: var(--story-ink); font-weight: 600; }
 .story .ledger .ledger-sub dd { font-weight: 600; }
 .story .ledger .ledger-sub + div { margin-top: 4px; }
-/* tables drawn like the ledgers and lists around them (the owner's design agent, 2026-11-03; business expenses guide only, via
-   .flat-tables on its article): no box, no tinted header band, hairline rows, text on the article's left edge */
-.story.flat-tables .table-wrap { border: 0; border-radius: 0; border-top: 1px solid var(--story-ink); }
-.story.flat-tables .table-wrap thead th { background: transparent; color: var(--story-soft); border-bottom: 1px solid #d4d4d4; }
-.story.flat-tables .table-wrap th, .story.flat-tables .table-wrap td { border-bottom-color: #e8e8e8; }
-.story.flat-tables .table-wrap tr > :first-child { padding-left: 0; }
-.story.flat-tables .table-wrap tr > :last-child { padding-right: 0; }
-.story.flat-tables .table-wrap tbody tr:last-child > * { border-bottom: 1px solid #d4d4d4; }
+/* tables drawn like the ledgers and lists around them (the owner's design agent, 2026-11-03; all guides from 2026-11-03, owner:
+   "可以全站都换"): no box, no tinted header band, hairline rows, text on the article's left edge */
+.story .table-wrap { border: 0; border-radius: 0; border-top: 1px solid var(--story-ink); }
+.story .table-wrap thead th { background: transparent; color: var(--story-soft); border-bottom: 1px solid #d4d4d4; }
+.story .table-wrap th, .story .table-wrap td { border-bottom-color: #e8e8e8; }
+.story .table-wrap tr > :first-child { padding-left: 0; }
+.story .table-wrap tr > :last-child { padding-right: 0; }
+.story .table-wrap tbody tr:last-child > * { border-bottom: 1px solid #d4d4d4; }
 /* two tables in a row: drop the first one's closing line (it doubled up with the next table's top rule) and give them air */
-.story.flat-tables .table-wrap:has(+ .table-wrap) tbody tr:last-child > * { border-bottom: 0; }
-.story.flat-tables .table-wrap + .table-wrap { margin-top: 32px; }
+.story .table-wrap:has(+ .table-wrap) tbody tr:last-child > * { border-bottom: 0; }
+.story .table-wrap + .table-wrap { margin-top: 32px; }
 
