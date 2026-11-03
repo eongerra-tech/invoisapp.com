@@ -325,3 +325,45 @@ html:lang(zh-Hans) .story .timeline li + li { margin-top: 0; }
 html:lang(zh-Hans) .story .timeline .tl-what { word-break: keep-all; }   /* break at the space before a date, not inside "1月5日" */
 html:lang(zh-Hans) .story .timeline + p { font-size: 16px; }
 
+/* first-year walkthrough (business expenses guide; the owner's design agent, 2026-11-03): facts list for the example person,
+   can / cannot lists, money tables with a total row, a ledger subtotal, a zh title that keeps its second half together */
+.story h1 .keep { white-space: nowrap; }
+.story .facts { margin: .9em 0 0; font-family: var(--story-sans); font-size: 16px; line-height: 1.5; border-top: 1px solid #e5e5e5; }
+.story .facts > div { display: grid; grid-template-columns: 8.5em 1fr; gap: 16px; padding: 10px 0; border-bottom: 1px solid #e5e5e5; }
+.story .facts dt { color: var(--story-soft); }
+.story .facts dd { margin: 0; color: var(--story-ink); }
+.story .can-cant { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 1.4em; font-family: var(--story-sans); }
+.story .cc-h { margin: 0; padding-bottom: 8px; font-family: var(--story-sans); font-size: 15px; line-height: 1.4; font-weight: 700; border-bottom: 2px solid currentColor; }
+.story .cc-yes .cc-h { color: #1f7a4d; }
+.story .cc-no .cc-h { color: #b3261e; }
+.story .can-cant ul { list-style: none; margin: 0; padding: 0; }
+.story .can-cant li { margin: 0; padding: 10px 0 10px 22px; position: relative; font-family: var(--story-sans); font-size: 16px; line-height: 1.45; color: var(--story-ink); border-bottom: 1px solid #ececec; }
+.story .can-cant li + li { margin-top: 0; }
+.story .can-cant li::before { position: absolute; left: 0; top: 10px; font-weight: 700; }
+.story .cc-yes li::before { content: "✓"; color: #1f7a4d; }
+.story .cc-no li::before { content: "✕"; color: #b3261e; }
+.story .cc-note { display: block; margin-top: 2px; font-size: 14px; color: var(--story-soft); }
+@media (max-width: 640px) { .story .can-cant { grid-template-columns: 1fr; gap: 28px; } }
+html:lang(zh-Hans) .story .can-cant li { font-size: 16px; line-height: 1.45; letter-spacing: 0; }   /* the zh li rules outrank the ones above */
+html:lang(zh-Hans) .story .can-cant li + li { margin-top: 0; }
+html:lang(zh-Hans) .story .cc-h { font-size: 15px; line-height: 1.4; letter-spacing: 0; }
+.story .table-wrap.money.steps tbody th { color: var(--story-ink); font-weight: 500; }
+.story .table-wrap.money.steps tr.total th, .story .table-wrap.money.steps tr.total td { font-weight: 700; border-top: 1.5px solid var(--story-ink); }
+.story .table-wrap.money.steps table { min-width: 0; }   /* all 3 columns stay on screen at 390 px (480 px hid the "Claim" column) */
+@media (max-width: 560px) { .story .table-wrap.money.steps th, .story .table-wrap.money.steps td { padding: 10px 9px; font-size: 14px; } .story .table-wrap.money.steps tbody th { min-width: 6em; } }
+.story .ledger .ledger-sub { margin-top: 6px; padding-top: 10px; border-top: 1px solid #bdbdbd; }
+.story .ledger .ledger-sub dt { color: var(--story-ink); font-weight: 600; }
+.story .ledger .ledger-sub dd { font-weight: 600; }
+.story .ledger .ledger-sub + div { margin-top: 4px; }
+/* tables drawn like the ledgers and lists around them (the owner's design agent, 2026-11-03; business expenses guide only, via
+   .flat-tables on its article): no box, no tinted header band, hairline rows, text on the article's left edge */
+.story.flat-tables .table-wrap { border: 0; border-radius: 0; border-top: 1px solid var(--story-ink); }
+.story.flat-tables .table-wrap thead th { background: transparent; color: var(--story-soft); border-bottom: 1px solid #d4d4d4; }
+.story.flat-tables .table-wrap th, .story.flat-tables .table-wrap td { border-bottom-color: #e8e8e8; }
+.story.flat-tables .table-wrap tr > :first-child { padding-left: 0; }
+.story.flat-tables .table-wrap tr > :last-child { padding-right: 0; }
+.story.flat-tables .table-wrap tbody tr:last-child > * { border-bottom: 1px solid #d4d4d4; }
+/* two tables in a row: drop the first one's closing line (it doubled up with the next table's top rule) and give them air */
+.story.flat-tables .table-wrap:has(+ .table-wrap) tbody tr:last-child > * { border-bottom: 0; }
+.story.flat-tables .table-wrap + .table-wrap { margin-top: 32px; }
+
