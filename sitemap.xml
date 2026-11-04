@@ -243,8 +243,35 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/how-to-write-a-receipt/"/>
   </url>
   <url>
+    <loc>https://invoisapp.com/guides/how-to-file-form-b/</loc>
+    <lastmod>2026-11-04</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/how-to-file-form-b/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/cara-isi-borang-b/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/how-to-file-form-b/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/how-to-file-form-b/"/>
+  </url>
+  <url>
+    <loc>https://invoisapp.com/ms/guides/cara-isi-borang-b/</loc>
+    <lastmod>2026-11-04</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/how-to-file-form-b/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/cara-isi-borang-b/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/how-to-file-form-b/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/how-to-file-form-b/"/>
+  </url>
+  <url>
+    <loc>https://invoisapp.com/zh/guides/how-to-file-form-b/</loc>
+    <lastmod>2026-11-04</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/how-to-file-form-b/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/cara-isi-borang-b/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/how-to-file-form-b/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/how-to-file-form-b/"/>
+  </url>
+  <url>
     <loc>https://invoisapp.com/guides/business-expenses-form-b/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/business-expenses-form-b/"/>
     <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/perbelanjaan-dibenarkan-borang-b/"/>
@@ -253,7 +280,7 @@
   </url>
   <url>
     <loc>https://invoisapp.com/ms/guides/perbelanjaan-dibenarkan-borang-b/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/business-expenses-form-b/"/>
     <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/perbelanjaan-dibenarkan-borang-b/"/>
@@ -262,7 +289,7 @@
   </url>
   <url>
     <loc>https://invoisapp.com/zh/guides/business-expenses-form-b/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/business-expenses-form-b/"/>
     <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/perbelanjaan-dibenarkan-borang-b/"/>

@@ -367,3 +367,34 @@ html:lang(zh-Hans) .story .cc-h { font-size: 15px; line-height: 1.4; letter-spac
 .story .table-wrap:has(+ .table-wrap) tbody tr:last-child > * { border-bottom: 0; }
 .story .table-wrap + .table-wrap { margin-top: 32px; }
 
+/* how-to-file-form-b pilot (design agent, 2026-11-04): scoped to <article class="... pilot-formb">, as flat-tables was */
+.story.pilot-formb { --story-soft: #595959; }   /* dek, byline, captions, table labels: 7:1 (site default #6b6b6b, 5.3:1) */
+.story.pilot-formb h1 .keep, .story.pilot-formb .keep { white-space: nowrap; }
+.story.pilot-formb .timeline + p.plain { font-size: 20px; color: var(--story-ink); }
+@media (max-width: 640px) { .story.pilot-formb .timeline + p.plain { font-size: 18px; } }
+.story.pilot-formb .ledger { max-width: 520px; }
+.story.pilot-formb .ledger .ledger-detail { padding-left: 16px; font-size: 15.5px; }
+.story.pilot-formb .ledger .ledger-detail dt { color: var(--story-soft); }
+.story.pilot-formb .ledger dt { color: #4a4a4a; }
+.story.pilot-formb .ledger .ledger-sub dt, .story.pilot-formb .ledger .ledger-total dt { color: var(--story-ink); }
+.story.pilot-formb .table-wrap thead th { color: #474747; }
+.story.pilot-formb p.refs { color: var(--story-soft); }
+.story.pilot-formb :is(h2, h3) + :is(p, .table-wrap, .ledger, .timeline, .faq-list) { margin-top: 12px; }
+.story.pilot-formb :is(p, ul, ol) + :is(.table-wrap, .ledger, .timeline) { margin-top: 24px; }
+.story.pilot-formb :is(.table-wrap, .ledger, .timeline) + .ledger { margin-top: 16px; }
+.story.pilot-formb :is(.table-wrap, .ledger, .timeline) + p:not(.refs) { margin-top: 20px; }
+.story.pilot-formb :is(.table-wrap, .ledger, .timeline, p, ol, ul) + p.refs { margin-top: 16px; }
+.story.pilot-formb :is(.table-wrap, .ledger, p) + h3 { margin-top: 40px; }
+
+/* click-to-open check under the balance sheet: same quiet row as the FAQ, chevron on the right */
+.story.pilot-formb details.fold { margin-top: 28px; border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5; }
+.story.pilot-formb details.fold summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 16px 0; font-family: var(--story-sans); font-size: 17px; font-weight: 600; color: var(--story-ink); }
+.story.pilot-formb details.fold summary::-webkit-details-marker { display: none; }
+.story.pilot-formb details.fold summary:hover { color: var(--brand-dark); }
+.story.pilot-formb details.fold summary:focus-visible { outline: 2px solid var(--brand); outline-offset: 4px; border-radius: 4px; }
+.story.pilot-formb details.fold summary::after { content: ""; flex: none; width: 18px; height: 18px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%236b6b6b' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center / 18px no-repeat; transition: transform .25s ease; }
+.story.pilot-formb details.fold[open] summary::after { transform: rotate(180deg); }
+.story.pilot-formb details.fold .fold-body { padding: 0 0 24px; }
+.story.pilot-formb details.fold .fold-body > p:first-child { margin-top: 0; }
+.story.pilot-formb details.fold + p { margin-top: 24px; }
+@media (prefers-reduced-motion: reduce) { .story.pilot-formb details.fold summary::after { transition: none; } }
