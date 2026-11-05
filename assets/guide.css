@@ -398,3 +398,122 @@ html:lang(zh-Hans) .story .cc-h { font-size: 15px; line-height: 1.4; letter-spac
 .story.pilot-formb details.fold .fold-body > p:first-child { margin-top: 0; }
 .story.pilot-formb details.fold + p { margin-top: 24px; }
 @media (prefers-reduced-motion: reduce) { .story.pilot-formb details.fold summary::after { transition: none; } }
+
+/* guide review (owner, 2026-11-05): a Play button right after the main example, and all References in 1 fold at the end */
+.story .cta-mid { margin-top: 36px; padding: 24px 26px 26px; background: var(--paper); border-radius: 14px; }
+.story .cta-mid p { margin: 0; font-family: var(--story-sans); font-size: 17px; line-height: 1.55; color: var(--story-ink); }
+.story .cta-mid p + p { margin-top: 8px; }
+.story .cta-mid .cta-mid-h { font-size: 19px; line-height: 1.35; font-weight: 700; }
+.story .cta-mid .cta { margin-top: 18px; }
+@media (max-width: 640px) { .story .cta-mid { padding: 20px 20px 22px; } .story .cta-mid p { font-size: 16px; } .story .cta-mid .cta-mid-h { font-size: 18px; } }
+.story .cta-mid + h2 { margin-top: 48px; }
+html:lang(zh-Hans) .story .cta-mid p { font-size: 17px; line-height: 1.6; letter-spacing: 0; }
+html:lang(zh-Hans) .story .cta-mid .cta-mid-h { font-size: 19px; }
+@media (max-width: 640px) { html:lang(zh-Hans) .story .cta-mid p { font-size: 16px; } html:lang(zh-Hans) .story .cta-mid .cta-mid-h { font-size: 18px; } }
+.story details.sources { margin-top: 40px; border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5; font-family: var(--story-sans); }
+.story details.sources summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 14px 0; font-size: 15px; font-weight: 600; color: var(--story-soft); }
+.story details.sources summary::-webkit-details-marker { display: none; }
+.story details.sources summary::after { content: ""; flex: none; width: 16px; height: 16px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b6b6b' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center / 16px no-repeat; transition: transform .25s ease; }
+.story details.sources[open] summary::after { transform: rotate(180deg); }
+.story details.sources summary:focus-visible { outline: 2px solid var(--brand); outline-offset: 4px; border-radius: 4px; }
+.story details.sources ul { margin: 0 0 16px; padding-left: 1.2em; }
+.story details.sources li { font-size: 14px; line-height: 1.5; color: var(--story-soft); }
+.story details.sources li + li { margin-top: 6px; }
+html:lang(zh-Hans) .story details.sources li { font-size: 14px; line-height: 1.6; letter-spacing: 0; }
+@media (prefers-reduced-motion: reduce) { .story details.sources summary::after { transition: none; } }
+.story code { white-space: nowrap; }   /* invoice numbers such as INV-2611-003 never break at the hyphen */
+.story .promo .promo-note { margin-top: 16px; font-family: var(--story-sans); font-size: 16px; line-height: 1.5; color: var(--story-soft); }
+html:lang(zh-Hans) .story .promo .promo-note { font-size: 16px; line-height: 1.6; letter-spacing: 0; }
+
+/* design agent, 2026-11-05 (second version, invoice guide pilot): mid box tint, closing app card, invoice example, open Sources */
+/* Google Play placement (2026-11-05): one badge only, in the mid-article box right after the worked example,
+   where the reader has just seen the invoice and wants to make one. The closing "Invoices in Invois" note is
+   plain editorial text with a text link (same URL as the old end badge), so the page doesn't end on an ad. */
+/* no rules here: the tables above already draw plenty of lines. A soft tint marks it as an aside instead */
+.story .cta-mid { background: #f7f7f5; border: 0; border-radius: 12px; padding: 22px 24px 24px; }
+.story .cta-mid .cta .badge img { height: 48px; }
+@media (max-width: 640px) { .story .cta-mid { padding: 18px 18px 20px; } }
+.story .promo.promo-quiet { margin: 56px 0 0; padding: 0; background: transparent; border: 0; border-radius: 0; display: grid; grid-template-columns: 48px 1fr; column-gap: 16px; font-family: var(--story-sans); }
+/* closing app card: icon + one sans block, like a publication card at the end of an article */
+.story .promo.promo-quiet .promo-icon { width: 48px; height: 48px; border-radius: 12px; display: block; }
+.story .promo.promo-quiet h2 { margin: 2px 0 0; font-family: var(--story-sans); font-size: 17px; line-height: 1.35; font-weight: 700; letter-spacing: 0; text-transform: none; color: var(--story-ink); }
+.story .promo.promo-quiet .promo-body p { margin: 4px 0 0; font-family: var(--story-sans); font-size: 16px; line-height: 1.55; color: #4a4a4a; }
+.story .promo.promo-quiet .promo-body p a { color: inherit; text-decoration: none; }
+.story .promo.promo-quiet .promo-body .promo-link { margin-top: 10px; }
+.story .promo.promo-quiet .promo-body .promo-link a { font-size: 15px; font-weight: 600; color: var(--brand-dark); text-decoration: none; }
+.story .promo.promo-quiet .promo-link a::after { content: "\00a0\2192"; }
+.story .promo.promo-quiet .promo-link a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.story .promo.promo-quiet .promo-note { grid-column: 2; margin-top: 14px; font-family: var(--story-sans); font-size: 13.5px; line-height: 1.5; color: var(--story-soft); }
+.story .promo.promo-quiet + p { margin-top: 36px; }
+@media (max-width: 640px) {
+  .story .promo.promo-quiet { margin: 48px 0 0; grid-template-columns: 40px 1fr; column-gap: 14px; }
+  .story .promo.promo-quiet .promo-icon { width: 40px; height: 40px; border-radius: 10px; }
+  .story .promo.promo-quiet .promo-body p { font-size: 15.5px; }
+}
+
+/* Sources shown open (owner 2026-11-05): a small label and the list, no toggle, no box lines */
+.story .sources-list { margin-top: 48px; font-family: var(--story-sans); }
+.story .sources-list .src-h { margin: 0; font-family: var(--story-sans); font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--story-ink); }
+.story .sources-list ul { margin: 10px 0 0; padding-left: 1.2em; }
+.story .sources-list li { font-family: var(--story-sans); font-size: 14px; line-height: 1.55; color: var(--story-soft); }
+.story .sources-list li + li { margin-top: 6px; }
+.story .sources-list a { color: var(--story-ink); text-decoration-color: #c4c4c4; }
+.story .sources-list a:hover { color: var(--brand-dark); text-decoration-color: currentColor; }
+
+/* invoice example, tidied: one rule on top for the whole invoice, compact details, tighter item rows, one line above the total */
+.story .inv-example { margin-top: 24px; border-top: 1px solid var(--story-ink); }
+.story .inv-example .table-wrap { border-top: 0; margin-top: 0; }
+.story .inv-example .inv-meta table { width: auto; }
+.story .inv-example .inv-meta th, .story .inv-example .inv-meta td { padding: 7px 0; border-bottom: 0 !important; font-size: 15px; }
+.story .inv-example .inv-meta tbody th { width: auto; padding-right: 28px; white-space: nowrap; }
+.story .inv-example .inv-meta tr:first-child > * { padding-top: 14px; }
+.story .inv-example .inv-items { margin-top: 14px; }
+.story .inv-example .inv-items thead th { padding-top: 10px; padding-bottom: 8px; font-size: 12.5px; border-top: 1px solid #d4d4d4; border-bottom: 1px solid #e8e8e8; }
+.story .inv-example .inv-items tbody th, .story .inv-example .inv-items tbody td { padding-top: 10px; padding-bottom: 10px; }
+.story .inv-example .inv-items tr.total th, .story .inv-example .inv-items tr.total td { border-top: 1px solid var(--story-ink); border-bottom: 0 !important; padding-top: 12px; }
+.story .inv-example .inv-items tbody tr:nth-last-child(2) > * { border-bottom: 0; }
+.story .inv-example + p { margin-top: 20px; }
+
+/* phones: the qty × price moves under the item name, so names stop breaking into 3–4 lines */
+@media (max-width: 560px) {
+  .story .inv-example .inv-items table, .story .inv-example .inv-items thead, .story .inv-example .inv-items tbody { display: block; width: 100%; }
+  .story .inv-example .inv-items tr { display: grid; grid-template-columns: 1fr auto; column-gap: 16px; border-bottom: 1px solid #e8e8e8; }
+  .story .inv-example .inv-items tr > * { padding: 10px 0 !important; border: 0 !important; font-size: 15px; }
+  .story .inv-example .inv-items thead tr { border-top: 1px solid #d4d4d4; }
+  .story .inv-example .inv-items thead th { padding: 8px 0 !important; font-size: 12.5px; }
+  .story .inv-example .inv-items thead th:nth-child(2) { display: none; }
+  .story .inv-example .inv-items tbody th { grid-column: 1; grid-row: 1; padding-bottom: 0 !important; min-width: 0 !important; }
+  .story .inv-example .inv-items tbody td:nth-child(2) { grid-column: 1; grid-row: 2; padding-top: 2px !important; text-align: left; font-size: 13.5px; color: var(--story-soft); }
+  .story .inv-example .inv-items tbody td:last-child { grid-column: 2; grid-row: 1; }
+  .story .inv-example .inv-items tbody tr:nth-last-child(2) { border-bottom: 0; }
+  .story .inv-example .inv-items tr.total { border-top: 1px solid var(--story-ink); border-bottom: 0; }
+  .story .inv-example .inv-items tr.total td:nth-child(2) { display: none; }
+  .story .inv-example .inv-items tr.total > * { padding-top: 12px !important; }
+}
+
+/* closing app card in a real card (owner 2026-11-05): hairline border, rounded, same corner radius as the mid box */
+.story .promo.promo-quiet { padding: 20px 22px 18px; border: 1px solid #e5e5e5; border-radius: 12px; background: #fff; }
+@media (max-width: 640px) { .story .promo.promo-quiet { padding: 16px 16px 14px; } }
+
+.story .promo.promo-quiet .promo-badge { margin-top: 14px; }
+.story .promo.promo-quiet .promo-badge .badge img { height: 48px; width: auto; display: block; }
+/* a list inside a list item sits close to its parent (owner, 2026-11-05: "子项的空太多了") */
+.story li > ul, .story li > ol { margin-top: 0.4em; }
+.story li li + li { margin-top: 0.2em; }
+html:lang(zh-Hans) .story li li + li { margin-top: 0.2em; }
+
+/* no app icon (owner 2026-11-05): with the badge in the card, the icon was one brand mark too many. Single column. */
+.story .promo.promo-quiet { display: block; }
+.story .promo.promo-quiet .promo-note { margin-top: 14px; }
+
+/* closing card = same family as the mid box (owner: the white bordered card "jumped out"):
+   same grey fill, no border, same radius, padding and type sizes as .cta-mid */
+.story .promo.promo-quiet { background: #f7f7f5; border: 0; border-radius: 12px; padding: 22px 24px 24px; }
+.story .promo.promo-quiet h2 { margin: 0; font-size: 19px; line-height: 1.35; }
+.story .promo.promo-quiet .promo-body p { margin-top: 8px; font-size: 17px; color: var(--story-ink); }
+.story .promo.promo-quiet .promo-badge { margin-top: 18px; }
+@media (max-width: 640px) {
+  .story .promo.promo-quiet { padding: 18px 18px 20px; }
+  .story .promo.promo-quiet h2 { font-size: 18px; }
+  .story .promo.promo-quiet .promo-body p { font-size: 16px; }
+}
