@@ -51,9 +51,14 @@
   .rd-note:not(.foot) { border-bottom: 1px solid var(--rule); }
   .rd-note.foot { padding-top: 6px; padding-bottom: 24px; border-bottom: 1px solid var(--line); border-radius: 0 0 18px 18px; }
 
-  /* how it works and the PDF: skipped on phones. The hero demo and "Why Invois" already show an itemised
-     quotation, and the AI panel covers how it gets built; WhatsApp / invoice / receipt is in the FAQ */
-  #how, .band.night { display: none; }
+  /* the PDF: skipped on phones. The hero demo and "Why Invois" already show an itemised quotation.
+     How it works stays: its three steps, each with a real app screen, are a row you swipe sideways (landing.css, ≤900px) */
+  .band.night { display: none; }
+  .steps { margin: 0 -20px; padding: 0 20px 4px; scroll-padding: 0 20px; }
+  .step { padding: 12px 12px 22px; gap: 12px; }
+  .step h3 { gap: 10px; padding: 6px 8px 0; font-size: 19px; }
+  .step h3::before { width: 28px; height: 28px; font-size: 14px; }
+  .step p { padding: 0 8px; font-size: 15.5px; }
 
   /* features: one calm list instead of a purple box stacked on a white box. The section heading already says AI,
      so the "AI helpers" tag goes; each AI item gets a solid purple icon tile so it still reads as the headline
