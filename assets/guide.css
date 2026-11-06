@@ -517,3 +517,11 @@ html:lang(zh-Hans) .story li li + li { margin-top: 0.2em; }
   .story .promo.promo-quiet h2 { font-size: 18px; }
   .story .promo.promo-quiet .promo-body p { font-size: 16px; }
 }
+/* a 4-column comparison table that fits a phone (guide review, 2026-11-05): no min width, tighter cells at 390 px */
+.story .table-wrap.vs-table tbody th { width: auto; min-width: 0; }
+@media (max-width: 560px) { .story .table-wrap.vs-table th, .story .table-wrap.vs-table td { padding: 10px 6px; font-size: 13.5px; } .story .table-wrap.vs-table tr > :first-child { padding-left: 0; } .story .table-wrap.vs-table tr > :last-child { padding-right: 0; } }
+/* 1 Play box per guide (owner, 2026-11-05: "每一篇都放一个就好"): the closing card is gone. Under the badge, as small
+   print: "Free, with no sign-up needed to start." (owner, 2026-11-06) */
+.story .cta-mid .cta-mid-note { margin-top: 14px; font-size: 13.5px; line-height: 1.5; color: var(--story-soft); }
+html:lang(zh-Hans) .story .cta-mid .cta-mid-note { font-size: 13.5px; line-height: 1.6; }
+.story .cta-mid + p { margin-top: 36px; }
