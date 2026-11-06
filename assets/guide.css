@@ -525,3 +525,12 @@ html:lang(zh-Hans) .story li li + li { margin-top: 0.2em; }
 .story .cta-mid .cta-mid-note { margin-top: 14px; font-size: 13.5px; line-height: 1.5; color: var(--story-soft); }
 html:lang(zh-Hans) .story .cta-mid .cta-mid-note { font-size: 13.5px; line-height: 1.6; }
 .story .cta-mid + p { margin-top: 36px; }
+/* price list tables: side padding, so the text does not touch the edge of the tinted group rows (owner, 2026-11-06:
+   "left right 要一点padding"); the other flat tables stay flush with the text column */
+.story .table-wrap.plist tr > :first-child { padding-left: 12px; }
+.story .table-wrap.plist tr > :last-child { padding-right: 12px; }
+/* zh restatements for the guide review blocks (owner, 2026-11-06: "中文版的资料来源style 不一样"): the zh body rule
+   (html:lang(zh-Hans) .story li) outranked .sources-list li, so the zh Sources list was body size; and the FAQ answers
+   kept the en size and line height, larger and tighter than zh body text */
+html:lang(zh-Hans) .story .sources-list li { font-size: 14px; line-height: 1.6; letter-spacing: 0; }
+html:lang(zh-Hans) .story .faq-list details p { font-size: 17px; line-height: 1.8; }
