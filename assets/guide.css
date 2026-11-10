@@ -375,7 +375,7 @@ html:lang(zh-Hans) .story .cc-h { font-size: 15px; line-height: 1.4; letter-spac
 .story.pilot-formb .ledger { max-width: 520px; }
 .story.pilot-formb .ledger .ledger-detail { padding-left: 16px; font-size: 15.5px; }
 .story.pilot-formb .ledger .ledger-detail dt { color: var(--story-soft); }
-.story.pilot-formb .ledger dt { color: #4a4a4a; }
+.story.pilot-formb .ledger dt { color: #3d3d3d; }
 .story.pilot-formb .ledger .ledger-sub dt, .story.pilot-formb .ledger .ledger-total dt { color: var(--story-ink); }
 .story.pilot-formb .table-wrap thead th { color: #474747; }
 .story.pilot-formb p.refs { color: var(--story-soft); }
@@ -534,3 +534,40 @@ html:lang(zh-Hans) .story .cta-mid .cta-mid-note { font-size: 13.5px; line-heigh
    kept the en size and line height, larger and tighter than zh body text */
 html:lang(zh-Hans) .story .sources-list li { font-size: 14px; line-height: 1.6; letter-spacing: 0; }
 html:lang(zh-Hans) .story .faq-list details p { font-size: 17px; line-height: 1.8; }
+/* ledgers readable (owner's design agent, 2026-11-07, "其他页面的也要帮我改"): labels were the light caption grey (#6b6b6b);
+   now dark grey, still lighter than the amounts. Wider ledger so labels like "Air-conditioner, RM 3,000.00 × 34%" stay on one line. */
+.story .ledger { max-width: 520px; }
+.story .ledger dt { color: #3d3d3d; }
+.story .ledger .ledger-sub dt, .story .ledger .ledger-total dt { color: var(--story-ink); }
+/* money tables with fewer lines (owner's design agent, 2026-11-07, on the P&L preview): no rule between ordinary rows; a subtotal gets a light rule
+   and semibold; only a real total keeps the dark rule. Rows sit tighter so the column still reads as one list. */
+.story .table-wrap.money.steps tbody th, .story .table-wrap.money.steps tbody td { border-bottom: 0; padding-top: 8px; padding-bottom: 8px; }
+.story .table-wrap.money.steps tbody tr:last-child > * { border-bottom: 1px solid #d4d4d4; padding-bottom: 12px; }
+.story .table-wrap.money.steps tr.sub th, .story .table-wrap.money.steps tr.sub td { font-weight: 600; border-top: 1px solid #d4d4d4; padding-top: 10px; }
+.story .table-wrap.money.steps tr.sub + tr:not(.sub):not(.total) > * { padding-top: 14px; }
+.story .table-wrap.money.steps tr.total th, .story .table-wrap.money.steps tr.total td { border-top: 1px solid var(--story-ink); padding-top: 10px; }
+.story .table-wrap.money.steps tr.total + tr.sub > * { border-top: 0; padding-top: 18px; }
+
+/* click-to-open fold, same style as the Form B guide: this article lacks .pilot-formb, so it showed the browser default */
+.story details.fold { margin-top: 28px; border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5; }
+.story details.fold summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 16px 0; font-family: var(--story-sans); font-size: 17px; font-weight: 600; color: var(--story-ink); }
+.story details.fold summary::-webkit-details-marker { display: none; }
+.story details.fold summary:hover { color: var(--brand-dark); }
+.story details.fold summary:focus-visible { outline: 2px solid var(--brand); outline-offset: 4px; border-radius: 4px; }
+.story details.fold summary::after { content: ""; flex: none; width: 18px; height: 18px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%236b6b6b' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center / 18px no-repeat; transition: transform .25s ease; }
+.story details.fold[open] summary::after { transform: rotate(180deg); }
+.story details.fold .fold-body { padding: 0 0 24px; }
+.story details.fold .fold-body > p:first-child { margin-top: 0; }
+.story details.fold .fold-body > :first-child { margin-top: 4px; }   /* content starts right under the title: the ledger's own 1.5em top margin doubled the gap */
+.story details.fold + p { margin-top: 24px; }
+@media (prefers-reduced-motion: reduce) { .story details.fold summary::after { transition: none; } }
+
+/* fold = a light inline aside, not an FAQ row (owner 2026-11-07): purple text toggle under the ledger it explains,
+   no rules; opened content indented on a thin left rule so it reads as part of that ledger */
+.story details.fold { margin-top: 14px; border: 0; }
+.story details.fold summary { display: inline-flex; justify-content: flex-start; align-items: center; gap: 6px; padding: 4px 0; font-size: 15px; font-weight: 600; color: var(--brand-dark); }
+.story details.fold summary:hover { color: var(--story-ink); text-decoration: underline; text-underline-offset: 3px; }
+.story details.fold summary::after { width: 14px; height: 14px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%234b45e0' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center / 14px no-repeat; }
+.story details.fold .fold-body { margin-top: 10px; padding: 2px 0 4px 18px; border-left: 2px solid #e5e5e5; }
+.story details.fold .fold-body > :first-child { margin-top: 0; }
+.story details.fold + p { margin-top: 28px; }

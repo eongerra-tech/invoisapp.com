@@ -244,7 +244,7 @@
   </url>
   <url>
     <loc>https://invoisapp.com/guides/how-to-file-form-b/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/how-to-file-form-b/"/>
     <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/cara-isi-borang-b/"/>
@@ -253,7 +253,7 @@
   </url>
   <url>
     <loc>https://invoisapp.com/ms/guides/cara-isi-borang-b/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/how-to-file-form-b/"/>
     <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/cara-isi-borang-b/"/>
@@ -262,7 +262,7 @@
   </url>
   <url>
     <loc>https://invoisapp.com/zh/guides/how-to-file-form-b/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/how-to-file-form-b/"/>
     <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/cara-isi-borang-b/"/>
@@ -270,8 +270,62 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/how-to-file-form-b/"/>
   </url>
   <url>
+    <loc>https://invoisapp.com/guides/tax-relief-self-employed/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/tax-relief-self-employed/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/pelepasan-cukai-bekerja-sendiri/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/tax-relief-self-employed/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/tax-relief-self-employed/"/>
+  </url>
+  <url>
+    <loc>https://invoisapp.com/ms/guides/pelepasan-cukai-bekerja-sendiri/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/tax-relief-self-employed/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/pelepasan-cukai-bekerja-sendiri/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/tax-relief-self-employed/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/tax-relief-self-employed/"/>
+  </url>
+  <url>
+    <loc>https://invoisapp.com/zh/guides/tax-relief-self-employed/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/tax-relief-self-employed/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/pelepasan-cukai-bekerja-sendiri/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/tax-relief-self-employed/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/tax-relief-self-employed/"/>
+  </url>
+  <url>
+    <loc>https://invoisapp.com/guides/form-b-profit-loss-balance-sheet/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/form-b-profit-loss-balance-sheet/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/untung-rugi-kunci-kira-kira-borang-b/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/form-b-profit-loss-balance-sheet/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/form-b-profit-loss-balance-sheet/"/>
+  </url>
+  <url>
+    <loc>https://invoisapp.com/ms/guides/untung-rugi-kunci-kira-kira-borang-b/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/form-b-profit-loss-balance-sheet/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/untung-rugi-kunci-kira-kira-borang-b/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/form-b-profit-loss-balance-sheet/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/form-b-profit-loss-balance-sheet/"/>
+  </url>
+  <url>
+    <loc>https://invoisapp.com/zh/guides/form-b-profit-loss-balance-sheet/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/form-b-profit-loss-balance-sheet/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/untung-rugi-kunci-kira-kira-borang-b/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/form-b-profit-loss-balance-sheet/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/form-b-profit-loss-balance-sheet/"/>
+  </url>
+  <url>
     <loc>https://invoisapp.com/guides/business-expenses-form-b/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/business-expenses-form-b/"/>
     <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/perbelanjaan-dibenarkan-borang-b/"/>
@@ -280,7 +334,7 @@
   </url>
   <url>
     <loc>https://invoisapp.com/ms/guides/perbelanjaan-dibenarkan-borang-b/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/business-expenses-form-b/"/>
     <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/perbelanjaan-dibenarkan-borang-b/"/>
@@ -289,7 +343,7 @@
   </url>
   <url>
     <loc>https://invoisapp.com/zh/guides/business-expenses-form-b/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/business-expenses-form-b/"/>
     <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/perbelanjaan-dibenarkan-borang-b/"/>

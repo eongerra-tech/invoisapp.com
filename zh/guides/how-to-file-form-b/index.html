@@ -21,7 +21,7 @@
 <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=Figtree:wght@400;500;600;700&amp;display=swap"></noscript>
 <link rel="stylesheet" href="/assets/site.css">
-<link rel="stylesheet" href="/assets/guide.css?v=2026-11-06">
+<link rel="stylesheet" href="/assets/guide.css?v=2026-11-07">
 <link rel="stylesheet" href="/assets/nav.css">
 <meta property="og:site_name" content="Invois">
 <meta property="og:locale" content="zh_CN">
@@ -48,7 +48,7 @@
       "description": "如果你在马来西亚自己做生意，这里一步一步教你用 e-Filing 报 Form B，包括截止日期、要填的生意账目和迟交的罚款。",
       "inLanguage": "zh-Hans-MY",
       "datePublished": "2026-11-04",
-      "dateModified": "2026-11-04",
+      "dateModified": "2026-11-10",
       "author": {
         "@type": "Organization",
         "name": "Invois 团队，EONGERRA TECH",
@@ -104,7 +104,7 @@
       "name": "收入低也要报吗？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "有应课税收入的那一年一定要报。前一年有应课税收入，或前一年有报税的，就算今年没有应课税收入，也要报。生意亏损填在 Part M，可以连续结转最多 10 年。"
+        "text": "有应课税收入的那一年一定要报。前一年有应课税收入或有报税的话，今年就算没有应课税收入，也要报。生意亏损也要填在表格上（Part M）。"
       }
     },
     {
@@ -117,18 +117,10 @@
     },
     {
       "@type": "Question",
-      "name": "报 Form B 需要请会计师吗？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "不需要。你可以自己报 e-B。tax agent 的部分只给替你报税的 agent 填，不过会计师可以帮你处理 Part N 的生意账目。"
-      }
-    },
-    {
-      "@type": "Question",
       "name": "可以跟 LHDN 申请延期吗？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "LHDN 的网上延期服务 e-Lanjutan Masa 只给公司、合作社、LLP 和信托机构，不包括个人。个人的额外时间，就是 LHDN 报税时间表里 e-Filing 的 15 天宽限期。"
+        "text": "不可以。LHDN 的网上延期服务 e-Lanjutan Masa 不包括个人；你多出来的时间，就是 e-Filing 的 15 天宽限期。"
       }
     }
   ]
@@ -163,130 +155,100 @@
     <img src="/assets/favicon-96.png" alt="" width="40" height="40">
     <div>
       <p class="who">Invois 团队，EONGERRA TECH</p>
-      <p>阅读约 9 分钟 · 最后更新：2026年11月4日</p>
+      <p>阅读约 7 分钟 · 最后更新：2026年11月10日</p>
     </div>
   </div>
 
 <section class="keypoints" aria-labelledby="kp-h">
 <div class="kp-h" id="kp-h">重点</div>
 <ul>
-<li>谁报 Form B：马来西亚税务居民，只要有生意收入就要报，包括 freelance 和正职以外的副业。没有生意收入的税务居民报 Form BE。</li>
-<li>什么时候报：截止日期是收入那一年的隔年6月30日。2025年的收入，LHDN 接受 <span class="keep">e-Filing</span> 和缴税到2026年7月15日。</li>
-<li>怎么报：只能在网上报，就是 MyTax 上的 <span class="keep">e-B</span>。第一次报的人，要先用 MyKad 在网上拿 PIN。</li>
+<li>谁报 Form B：有生意收入的马来西亚税务居民，包括 freelance 和副业。没有生意收入的居民报 Form BE。</li>
+<li>什么时候报：最迟在隔年6月30日，所以2026年的收入要在2027年6月30日或之前报。2026年，LHDN 接受 <span class="keep">e-Filing</span> 和缴税到7月15日。</li>
+<li>怎么报：只能在网上报。在 MyTax，选 Perkhidmatan ezHasil，再选 <span class="keep">e-Filing</span>、<span class="keep">e-Borang</span> 和 <span class="keep">e-B</span>。第一次报的人，要先用 MyKad 在网上拿 PIN。</li>
 <li>迟交：罚税额的 15% 到 45%，迟缴的税另加 10%。</li>
 </ul>
 <nav class="kp-jump" aria-label="本页内容"><span class="kp-jump-label">目录：</span><span class="kp-jump-links"><a href="#which-form">Form B 还是 BE</a> <a href="#deadline">截止日期</a> <a href="#prepare">1. 准备</a> <a href="#login">2. 登入</a> <a href="#fill">3. 填 <span class="keep">e-B</span></a> <a href="#accounts">4. 生意账目</a> <a href="#tax">5. 算税</a> <a href="#submit">6. 交表和缴税</a> <a href="#late">迟交或报错</a> <a href="#faq">常见问题</a></span></nav>
 </section>
-<p>这一页跟着<a href="/zh/guides/business-expenses-form-b/">生意开销那篇指南</a>里的 Daniel，看他第一次报 Form B：</p>
-<div class="table-wrap kv"><table>
-<tbody>
-<tr><th scope="row">工作</th><td>Freelance 软件工程师，商号 Kod Daniel Enterprise</td></tr>
-<tr><th scope="row">开始</th><td>2026年1月，以独资生意开始</td></tr>
-<tr><th scope="row">2026年的法定收入（statutory income）</th><td>RM&nbsp;77,546.00，就是扣掉资本津贴（capital allowance）后的利润，算法写在生意开销那篇指南</td></tr>
-<tr><th scope="row">EPF</th><td>2026年自愿存了 RM&nbsp;4,000.00 进 EPF</td></tr>
-<tr><th scope="row">自己的钱</th><td>从储蓄拿了 RM&nbsp;10,000.00 放进生意户口，一整年从生意户口拿了 RM&nbsp;60,000.00 出来自己用</td></tr>
-<tr><th scope="row">报税</th><td>2027年报他的第一份 Form B，报的是2026年的收入</td></tr>
-</tbody>
-</table></div>
+<p>例子是 Daniel，freelance 软件工程师，2027年报第一份 Form B。他2026年的法定收入（statutory income）是 RM&nbsp;77,546.00，即扣掉资本津贴后的利润，见《<a href="/zh/guides/business-expenses-form-b/">自雇报税可以扣什么</a>》。</p>
 <h2 id="which-form">报 Form B 还是 Form BE？</h2>
-<div class="table-wrap kv"><table>
-<thead><tr><th scope="col">你的收入</th><th scope="col">表格</th></tr></thead>
-<tbody>
-<tr><th scope="row">只有薪水</th><td>BE</td></tr>
-<tr><th scope="row">Freelance 工作、自己开店或做服务</th><td>B</td></tr>
-<tr><th scope="row">薪水加副业</th><td>B，薪水写在同一份表格</td></tr>
-</tbody>
-</table></div>
-<p class="plain">满 18 岁的公民和永久居民，会自动有税务号码（TIN）。不用为了生意另外开税务档案。</p>
-<p class="refs">参考：1967年所得税法令第 77(1) 条；LHDN，Pendaftaran（TIN 登记），2026年6月15日更新。</p>
+<p>Form B 报的是生意收入，包括 freelance 工作。有薪水又有副业，报 1 份 Form B，两边都写在里面；只有薪水的话，报 Form BE。</p>
+<p class="plain">满 18 岁的公民和永久居民，会自动有税务号码（TIN），不用为了生意另外开税务档案。</p>
 <h2 id="deadline">什么时候报</h2>
 <p>课税年就是赚到收入的那一年，所以 Daniel 2026年的收入属于 2026 课税年。他的重要日期：</p>
-<ol class="timeline" aria-label="Form B 日期"><li><span class="tl-date">2026年12月31日</span><span class="tl-what">要报的这一年最后一天</span></li><li><span class="tl-date">2027年3月起</span><span class="tl-what"><span class="keep">e-B</span> 开放（2026年是3月1日开放）</span></li><li><span class="tl-date">2027年6月30日</span><span class="tl-what">交表和缴税的截止日期</span></li><li class="tl-last"><span class="tl-date">2027年7月15日</span><span class="tl-what"><span class="keep">e-Filing</span> 和缴税宽限期的最后一天，如果 LHDN 像2026年一样给 15 天</span></li></ol>
+<ol class="timeline" aria-label="Form B 日期"><li><span class="tl-date">2027年3月起</span><span class="tl-what"><span class="keep">e-B</span> 开放（2026年是3月1日开放）</span></li><li><span class="tl-date">2027年6月30日</span><span class="tl-what">交表和缴税的截止日期</span></li><li class="tl-last"><span class="tl-date">2027年7月15日</span><span class="tl-what">宽限期的最后一天，如果 LHDN 像2026年一样给 15 天</span></li></ol>
 <p class="plain">宽限期每年写在 LHDN 的报税时间表（Filing Programme）里。过了宽限期才交，从7月1日起算迟交。</p>
-<p class="refs">参考：1967年所得税法令第 77(1)(a) 和 77(1B) 条；LHDN 2026年报税时间表（Return Form Filing Programme，2026年4月1日更新），Guide Note 1 的 (iii) 和 Example 2。</p>
 <h2 id="prepare">第 1 步：先准备好这些</h2>
 <div class="table-wrap kv"><table>
 <thead><tr><th scope="col">你需要</th><th scope="col">在哪里找</th></tr></thead>
 <tbody>
-<tr><th scope="row">MyKad、手机和 email</th><td>第一次登入用</td></tr>
-<tr><th scope="row">商号名称、SSM 号码、生意代码</th><td>SSM 证书；代码在 Form B 说明（Explanatory Notes）的附录 G（Lampiran G）</td></tr>
-<tr><th scope="row">一整年的收入和开销总数</th><td>你的 invoice、receipt 和 bank statement</td></tr>
-<tr><th scope="row">扣掉资本津贴后的利润</th><td><a href="/zh/guides/business-expenses-form-b/">生意开销指南</a> 第 5 步</td></tr>
-<tr><th scope="row">12月31日的户口余额、还没收到钱的 invoice、你放进去和拿出来的钱</th><td>Bank statement 和你的 invoice 清单</td></tr>
+<tr><th scope="row">MyKad 和你报给 LHDN 的 email</th><td>第一次登入用</td></tr>
+<tr><th scope="row">商号名称、SSM 号码（有注册的话）、生意代码</th><td>SSM 证书；代码列表在 <span class="keep">e-B</span> 里</td></tr>
+<tr><th scope="row">扣掉资本津贴后的利润</th><td>《<a href="/zh/guides/business-expenses-form-b/#profit">自雇报税可以扣什么</a>》第 5 步</td></tr>
+<tr><th scope="row">一整年的销售额、开销和还没收到钱的 invoice</th><td>你的 invoice 和 receipt</td></tr>
+<tr><th scope="row">12月31日的户口余额、你放进去和拿出来的钱</th><td>你的银行月结单</td></tr>
 <tr><th scope="row">个人减免的 receipt（EPF、保险、书…）</th><td>自己存的文件</td></tr>
 <tr><th scope="row">那一年缴过的 CP500 分期（如果有）</th><td>MyTax 或你的付款 receipt</td></tr>
 <tr><th scope="row">你的户口号码</th><td>退税用的</td></tr>
 </tbody>
 </table></div>
-<p class="app-note">在 Invois，invoice 自动编号，你记录的每一笔付款都会开出 receipt，所以收入记录都在同一个地方。详情看<a href="#app">Invois 里的记录</a>。</p>
-<p class="refs">参考：LHDN Form B 说明 2025，N1 到 N2a 和 D9 到 D11 项。</p>
+<aside class="cta-mid" id="app" aria-label="用 Invois 存好收入记录">
+<p class="cta-mid-h">用 Android 手机存好下一年的收入记录</p>
+<p>在 Invois，每张 invoice 都有编号，你记录的每一笔付款都会开出一张 receipt。整年的 invoice 可以导出成 PDF 给会计师。</p>
+<div class="cta"><a class="badge" href="https://play.google.com/store/apps/details?id=com.invoisapp&amp;referrer=utm_source%3Dinvoisapp.com%26utm_medium%3Dwebsite%26utm_campaign%3Dguide_formb_zh%26utm_term%3Dmid"><img src="/assets/badge-googleplay.png" alt="在 Google Play 下载" width="168" height="56" loading="lazy"></a></div>
+<p class="cta-mid-note">免费，不用开账号就能开始。</p>
+</aside>
 <h2 id="login">第 2 步：登入 MyTax</h2>
-<p>第一次要在网上拿 PIN，有 2 个方法：</p>
-<div class="table-wrap kv"><table>
-<thead><tr><th scope="col">方法</th><th scope="col">怎么做</th></tr></thead>
-<tbody>
-<tr><th scope="row">e-KYC</th><td>在 MyTax 手机 app 上：用一张自拍，跟 MyKad 上的照片比对</td></tr>
-<tr><th scope="row">e-CP55D</th><td>在 MyTax 网站，用电脑</td></tr>
-</tbody>
-</table></div>
-<p class="plain">有了 PIN，就设密码，再登记数码证书，交表时要用。证书有效 3 年。</p>
+<p>第一次要在 MyTax 网站拿 PIN：</p>
+<ol>
+<li>去 <a href="https://mytax.hasil.gov.my">mytax.hasil.gov.my</a>，ID 类型选 MyKad，输入身份证号码，按 <strong>Hantar</strong>（提交）。</li>
+<li>会弹出一个框，写着 <strong>Sijil Digital tidak wujud</strong>（还没有数码证书）。选 <strong><span class="keep">e-CP55D</span></strong>，如果显示的 email 是你的，就按 <strong>Ya</strong>，然后核对你的名字和 email，按 <strong>Hantar</strong>。</li>
+<li>LHDN 会把启用链接寄到你的 email：2 天内打开。PIN 已经填好了，输入身份证号码，按 <strong>Hantar</strong>。</li>
+<li>设密码（<strong>Kata Laluan</strong>）和安全词（<strong>Frasa Keselamatan</strong>），勾选 <strong>Setuju</strong>，按 <strong>Hantar</strong>。这一步也会登记你的数码证书，有效 3 年。</li>
+</ol>
+<ul>
+<li>LHDN 记录里没有你的 email？先加一个，再上传 MyKad 的彩色副本，让 LHDN 核对。</li>
+<li>用 MyTax 手机 app 的话，改用 <strong>Daftar Kali Pertama</strong>（<span class="keep">e-KYC</span>）：拍 MyKad 正反两面，再自拍一张。</li>
+</ul>
 <p>然后打开 <span class="keep">e-B</span>：</p>
 <ol>
-<li>去 <a href="https://mytax.hasil.gov.my">mytax.hasil.gov.my</a> 登入。</li>
-<li>选 <strong>Perkhidmatan ezHasil</strong>，再选 <strong><span class="keep">e-Filing</span></strong>，再选 <strong>e-Borang</strong>。</li>
+<li>登入时输入身份证号码，按 <strong>Hantar</strong>，确认安全词是你设的那个，再输入密码，按 <strong>Log Masuk</strong>。</li>
+<li>选 <strong>Perkhidmatan ezHasil</strong>，再选 <strong><span class="keep">e-Filing</span></strong>，再选 <strong><span class="keep">e-Borang</span></strong>。</li>
 <li>在 <strong><span class="keep">e-B</span></strong>（“Ada Punca Pendapatan Perniagaan”）旁边，选 <strong>Tahun Taksiran</strong>。Daniel 选 2026。</li>
 </ol>
-<p class="refs">参考：LHDN，e-Perkhidmatan，“Permohonan No. PIN”（2026年9月8日更新）；LHDN 投影片“<span class="keep">e-Filing</span> Borang <span class="keep">e-B</span>”，Tax Education Division（2022年3月29日），数码证书。</p>
+<p class="plain">想看英文版 <span class="keep">e-B</span>，按右上角的 <strong>EN</strong>。</p>
 <h2 id="fill">第 3 步：一部分一部分填 <span class="keep">e-B</span></h2>
-<p><span class="keep">e-B</span> 分 5 个部分，列在画面左边。<span class="keep">e-B</span> 只接受整数 ringgit，所以第 3 步和第 4 步填的数目没有 sen。</p>
+<p><span class="keep">e-B</span> 分 5 个部分，列在画面左边。数目只填整数 ringgit，不填 sen。</p>
 <div class="table-wrap kv"><table>
 <thead><tr><th scope="col">部分</th><th scope="col">填什么</th></tr></thead>
 <tbody>
 <tr><th scope="row">1. Profil Individu</th><td>婚姻状况、评税方式、有没有保存记录。Daniel：单身，有保存记录。</td></tr>
-<tr><th scope="row">2. Profil Lain</th><td>电话、email、生意地址和退税户口。从这里也可以打开生意的页面，填亏损和生意账目（第 4 步）。</td></tr>
-<tr><th scope="row">3. Pendapatan</th><td>生意的法定收入和你有几门生意，有的话还有薪水、租金或股息，以及捐款。Daniel：1 门生意，RM&nbsp;77,546。</td></tr>
-<tr><th scope="row">4. Pelepasan</th><td>个人减免。Daniel：自己 RM&nbsp;9,000，EPF RM&nbsp;4,000。</td></tr>
+<tr><th scope="row">2. Profil Lain</th><td>电话、email、生意地址和退税户口。生意的页面，包括你的账目（第 4 步），从这里打开。</td></tr>
+<tr><th scope="row">3. Pendapatan</th><td>生意的法定收入、薪水、租金或股息，以及捐款。Daniel：1 门生意，RM&nbsp;77,546。</td></tr>
+<tr><th scope="row">4. Pelepasan</th><td>个人减免：看《<a href="/zh/guides/tax-relief-self-employed/">自雇人士的个人减免</a>》。Daniel：自己 RM&nbsp;9,000，EPF RM&nbsp;4,000。</td></tr>
 <tr><th scope="row">5. Rumusan</th><td>税额，系统帮你算（第 5 步）。</td></tr>
 </tbody>
 </table></div>
-<p class="plain">没有的就填 0。大部分自雇人士不用填海外收入、税务优惠和往年未报收入那几页。</p>
-<p class="refs">参考：LHDN Borang B 2025，Part A、B、D、H、M 和 N；LHDN 投影片“<span class="keep">e-Filing</span> Borang <span class="keep">e-B</span>”（2022年3月29日），Halaman 1 到 5。</p>
-<h2 id="accounts">第 4 步：填你的生意账目</h2>
-<p><span class="keep">e-B</span> 要你填主要生意的简单损益表和资产负债表（Part N）。这些是你自己这一年的数目，还没做任何税务调整。</p>
-<h3>例子：Daniel 的损益表</h3>
-<dl class="ledger"><div><dt>N3 销售额，包括那张还没收到钱的 invoice</dt><dd>RM&nbsp;96,000</dd></div><div><dt>N7 销售成本</dt><dd>− RM&nbsp;0</dd></div><div class="ledger-sub"><dt>N8 毛利</dt><dd>RM&nbsp;96,000</dd></div><div class="ledger-detail"><dt>N17 租金</dt><dd>RM&nbsp;7,200</dd></div><div class="ledger-detail"><dt>N18 合约和分包（那位自由设计师）</dt><dd>RM&nbsp;3,000</dd></div><div class="ledger-detail"><dt>N21 旅费和交通</dt><dd>RM&nbsp;1,800</dd></div><div class="ledger-detail"><dt>N24 其他开销（软件 RM&nbsp;2,400、请顾客吃饭 RM&nbsp;640、电话费 RM&nbsp;1,440）</dt><dd>RM&nbsp;4,480</dd></div><div class="ledger-sub"><dt>N25 开销总数</dt><dd>− RM&nbsp;16,480</dd></div><div class="ledger-total"><dt>N26 净利</dt><dd>RM&nbsp;79,520</dd></div></dl>
-<p>接着是 N27，也就是不能扣的开销，从工作表（worksheet）HK-1 算出：</p>
-<dl class="ledger"><div><dt>请顾客吃饭的一半</dt><dd>RM&nbsp;320</dd></div><div><dt>电话费的私人部分</dt><dd>+ RM&nbsp;576</dd></div><div class="ledger-total"><dt>N27 不能扣的开销</dt><dd>RM&nbsp;896</dd></div></dl>
-<p>净利加上不能扣的开销，就是生意开销那篇指南里的调整后收入。再扣资本津贴，就得出 Part 3 要填的数目：</p>
-<dl class="ledger"><div><dt>净利（N26）</dt><dd>RM&nbsp;79,520.00</dd></div><div><dt>不能扣的开销（N27）</dt><dd>+ RM&nbsp;896.00</dd></div><div class="ledger-sub"><dt>调整后收入</dt><dd>RM&nbsp;80,416.00</dd></div><div><dt>资本津贴</dt><dd>− RM&nbsp;2,870.00</dd></div><div class="ledger-total"><dt>生意的法定收入（B1）</dt><dd>RM&nbsp;77,546.00</dd></div></dl>
-<h3>例子：Daniel 2026年12月31日的资产负债表</h3>
-<p>生意拥有的和欠的：</p>
-<dl class="ledger"><div><dt>N31 其他非流动资产（monitor、椅子、冷气）</dt><dd>RM&nbsp;4,850</dd></div><div class="ledger-sub"><dt>N32 非流动资产总数</dt><dd>RM&nbsp;4,850</dd></div><div><dt>N35 应收账款（那张还没收到钱的 invoice）</dt><dd>RM&nbsp;6,000</dd></div><div><dt>N38 银行存款</dt><dd>+ RM&nbsp;18,670</dd></div><div class="ledger-sub"><dt>N40 流动资产总数</dt><dd>RM&nbsp;24,670</dd></div><div class="ledger-sub"><dt>N41 资产总数</dt><dd>RM&nbsp;29,520</dd></div><div class="ledger-sub"><dt>N45 负债总数</dt><dd>RM&nbsp;0</dd></div></dl>
-<p>属于 Daniel 的部分：N46 资本账，就是他放进去的 RM&nbsp;10,000 储蓄。往来账加上今年的利润，再减掉他拿走的钱：</p>
-<dl class="ledger"><div><dt>N47 上期结转的往来账（第一年）</dt><dd>RM&nbsp;0</dd></div><div><dt>N48 今年的利润（N26）</dt><dd>+ RM&nbsp;79,520</dd></div><div><dt>N49 自己拿走的钱（drawings）</dt><dd>− RM&nbsp;60,000</dd></div><div class="ledger-total"><dt>N50 结转下期的往来账（N47 + N48 − N49）</dt><dd>RM&nbsp;19,520</dd></div></dl>
-<details class="fold"><summary>这些数字怎么对得上</summary><div class="fold-body">
-<p>两边一定要对得上。资本账加上结转下期的往来账，等于资产减负债：</p>
-<dl class="ledger"><div><dt>资本账（N46）</dt><dd>RM&nbsp;10,000.00</dd></div><div><dt>结转下期的往来账（N50）</dt><dd>+ RM&nbsp;19,520.00</dd></div><div class="ledger-total"><dt>等于资产减负债（N41 − N45）</dt><dd>RM&nbsp;29,520.00</dd></div></dl>
-<p>银行存款是从这一年进出的钱算出来的：</p>
-<dl class="ledger"><div><dt>放进去的储蓄</dt><dd>RM&nbsp;10,000.00</dd></div><div><dt>已收钱的 invoice</dt><dd>+ RM&nbsp;90,000.00</dd></div><div><dt>付掉的开销</dt><dd>− RM&nbsp;16,480.00</dd></div><div><dt>买的器材</dt><dd>− RM&nbsp;4,850.00</dd></div><div><dt>自己拿走的</dt><dd>− RM&nbsp;60,000.00</dd></div><div class="ledger-total"><dt>银行存款（N38）</dt><dd>RM&nbsp;18,670.00</dd></div></dl>
-</div></details>
-<p class="plain">固定资产按账面净值填。Daniel 没有记折旧，所以照买价填。这 2 份报表可以请会计师帮你做。</p>
-<p class="refs">参考：LHDN Borang B 2025，Part N；LHDN Form B 说明 2025，N3、N27、N28 到 N31 和 N46 到 N50 项。</p>
+<p class="plain">用不到的栏位就留空。大部分自雇人士的海外收入、税务优惠和往年收入那几页都空着。</p>
+<h2 id="accounts">第 4 步：填 P&amp;L 和 balance sheet</h2>
+<p><span class="keep">e-B</span> 还要你填主要生意的 P&amp;L（损益表）和 balance sheet（资产负债表），是还没做税务调整的数目（纸上是 Part N）。可以请会计师帮你做。</p>
+<p>每个栏位的马来文名称和 Daniel 的数目，请看《<a href="/zh/guides/form-b-profit-loss-balance-sheet/"><span class="keep">e-B</span> 的 P&amp;L 和 balance sheet</a>》。第 3 部分填法定收入（Daniel 是 RM&nbsp;77,546），不是 P&amp;L 里的净利（RM&nbsp;79,520）。</p>
 <h2 id="tax">第 5 步：核对 <span class="keep">e-B</span> 算出来的税</h2>
-<p>Part 5 会从收入扣掉减免，再按税率算税。拿你自己算的数目核对一下：</p>
+<p><span class="keep">e-B</span> 会在第 5 部分算税。拿你自己算的数目核对一下：</p>
 <dl class="ledger"><div><dt>生意的法定收入</dt><dd>RM&nbsp;77,546.00</dd></div><div><dt>自己的减免</dt><dd>− RM&nbsp;9,000.00</dd></div><div><dt>EPF 减免</dt><dd>− RM&nbsp;4,000.00</dd></div><div class="ledger-total"><dt>应课税收入</dt><dd>RM&nbsp;64,546.00</dd></div></dl>
-<p>RM&nbsp;64,546 落在 RM&nbsp;50,001 到 RM&nbsp;70,000 那一段：头 RM&nbsp;50,000 的税固定算 RM&nbsp;1,500，剩下的部分算 11%。</p>
-<dl class="ledger"><div><dt>头 RM&nbsp;50,000 的税</dt><dd>RM&nbsp;1,500.00</dd></div><div><dt>11% × RM&nbsp;14,546</dt><dd>+ RM&nbsp;1,600.06</dd></div><div><dt>2026年已缴的 CP500 分期</dt><dd>− RM&nbsp;0.00</dd></div><div class="ledger-total"><dt>要缴的税</dt><dd>RM&nbsp;3,100.06</dd></div></dl>
-<p class="plain">Daniel 2026年没有收到 CP500，所以整年的税在交表时一起缴。之后几年，LHDN 可能会寄 CP500 通知，要你提前缴税，从3月开始每 2 个月缴 1 期，分 6 期。应课税收入 RM&nbsp;35,000 或以下，还可以拿 RM&nbsp;400 回扣（rebate）。</p>
-<p class="refs">参考：LHDN，Kadar Cukai，2023、2024 和 2025 课税年（2026年6月26日更新）；Finance Act 2025（Act 874），税率没有改；1967年所得税法令第 6A(2)(a) 条；LHDN Borang B 2025，B24 到 B39 项；LHDN，Bayaran Pendahuluan Anggaran Cukai（CP500，2026年6月25日更新）。</p>
+<dl class="ledger"><div><dt>头 RM&nbsp;50,000 的税</dt><dd>RM&nbsp;1,500.00</dd></div><div><dt>下一段 RM&nbsp;14,546 算 11%（RM&nbsp;50,001 到 RM&nbsp;70,000 那一段）</dt><dd>+ RM&nbsp;1,600.06</dd></div><div><dt>2026年已缴的 CP500 分期</dt><dd>− RM&nbsp;0.00</dd></div><div class="ledger-total"><dt>要缴的税</dt><dd>RM&nbsp;3,100.06</dd></div></dl>
+<p class="plain">Daniel 2026年没有收到 CP500，所以整年的税在交表时一起缴。之后几年，LHDN 可能会寄 CP500 通知，要你提前缴税，从3月开始每 2 个月缴 1 期，分 6 期。</p>
+<p class="plain">应课税收入 RM&nbsp;35,000 或以下，还可以拿 RM&nbsp;400 回扣（rebate）。</p>
 <h2 id="submit">第 6 步：交表和缴税</h2>
 <ol>
-<li>看一遍 Rumusan，读声明，然后按 <strong>Tandatangan &amp; Hantar</strong>（签名并提交）。</li>
-<li>把收件确认单存好。上面有缴税要用的账单号码（Nombor Bil）。</li>
-<li>在截止日期前缴税：可以用 <a href="https://byrhasil.hasil.gov.my">ByrHASiL</a>、到指定银行，或去 Pos Malaysia 柜台。</li>
+<li>在 <strong>AKUAN</strong>（声明）页面，如果 <span class="keep">e-B</span> 要你确认总收入，就勾选 <strong>Agree</strong>。按 <strong>Tandatangan &amp; hantar</strong>（英文画面是 <strong>Sign and Submit</strong>），输入身份证号码和 MyTax 密码，再按 <strong>Tandatangan</strong>。</li>
+<li>把收件确认单（<strong>Cetak Pengesahan</strong>）存好。上面有你的账单号码（<strong>Nombor Bil</strong>）和要缴的税。</li>
+<li>在截止日期或之前到 <a href="https://byrhasil.hasil.gov.my">ByrHASiL</a> 缴税：选 <strong>Bayaran Menggunakan Nombor Bil</strong>，输入 16 位数的账单号码和安全码，按 <strong>Teruskan</strong>，核对金额后用 FPX 付款。</li>
 </ol>
-<p class="plain">不用附上 receipt 或工作表。全部收好 7 年，LHDN 要看时拿得出来。</p>
-<p class="refs">参考：LHDN Borang B 2025，第 1 页，注 6 和 7；LHDN Form B 说明 2025，第 1 页；1967年所得税法令第 82 条。</p>
+<ul>
+<li>ByrHASiL 只接受网上银行付款（FPX）。你也可以去 Pos Malaysia，或用指定银行的柜台、CDM、ATM 或网上银行缴税。</li>
+<li>账单号码不见了？在 MyTax 打开 Perkhidmatan ezHasil，再选 <span class="keep">e-Billing</span>，然后选 Paparan Bil Pembayar Cukai。</li>
+<li>不用附上 receipt 或工作表。全部收好 7 年，LHDN 要看时拿得出来。</li>
+</ul>
 <h2 id="late">迟交或报错怎么办</h2>
 <div class="table-wrap kv"><table>
 <thead><tr><th scope="col">表格迟了多久</th><th scope="col">罚款（按税额算）</th></tr></thead>
@@ -297,36 +259,26 @@
 </tbody>
 </table></div>
 <p class="plain">宽限期过后还没缴的税，也要加 10%。</p>
-<p>交了之后才发现错？如果改了之后要多缴税，可以在截止日期过后的 6 个月内，在 MyTax 呈交修改后的报税表（amended return，<span class="keep">e-BNT</span>）。只能改一次，补缴的税加 10%。其他错误，打 HASiL Contact Centre：<span class="keep">03-8911 1000</span>。</p>
-<p class="plain">完全不报更糟：LHDN 可以自己估算你的税，再加 45% 罚款，或者告上法庭。</p>
+<p>交了之后才发现错？如果改了之后要多缴税，可以在截止日期过后的 6 个月内，在 MyTax 呈交修改后的报税表（amended return，<span class="keep">e-BNT</span>）。只能改一次，补缴的税加 10%。</p>
+<p>其他错误，打 HASiL Contact Centre：03-8911 1000。</p>
+<p class="plain">完全不报更糟：LHDN 可以自己估算你的税，再加 45% 罚款，或者把你告上法庭。</p>
 <p>这是一般资料，不是税务意见。</p>
-<p class="refs">参考：LHDN 操作指南（Operational Guideline）No. 3/2020，第 3.1.1、3.1.2、4.1 和 4.3 段；LHDN Borang B 2025，第 1 页，注 9；1967年所得税法令第 77B、103(3)、112(1) 和 (3) 条；LHDN，e-Perkhidmatan，<span class="keep">e-BNT</span>。</p>
-<section class="promo" id="app" aria-label="关于 Invois">
-<h2>Invois 里的记录</h2>
-<p><a href="/zh/">Invois</a> 是一个开报价单、invoice 和 receipt 的 Android app。</p>
-<ul>
-<li>Invoice 自动编号，每记录一笔收款，就会出一张 receipt。</li>
-<li>可以把一段日期内的 invoice 导出成 PDF 给会计师，每张 invoice 一个 PDF。</li>
-<li>你的 SSM 号码会印在信头上。</li>
-</ul>
-<p>单据用英文标签（Quotation、Invoice、Receipt），项目名称照你写的。</p>
-<ul>
-<li>免费版：报价单、invoice 和 receipt 数量没有上限，AI 每月 15 次（验证手机号码后 30 次）。免费版的单据底部有一小行“Made with invoisapp.com”。</li>
-<li>Invois Pro：每月 RM&nbsp;19.90 或每年 RM&nbsp;190，AI 提高到每月 300 次，并拿掉那一行。</li>
-</ul>
-<p>不用开账号，下载就能用。Invois 不记录开销，也不会帮你报税。</p>
-<div class="cta"><a class="badge" href="https://play.google.com/store/apps/details?id=com.invoisapp&amp;referrer=utm_source%3Dinvoisapp.com%26utm_medium%3Dwebsite%26utm_campaign%3Dguide_formb_zh"><img src="/assets/badge-googleplay.png" alt="在 Google Play 下载" width="168" height="56" loading="lazy"></a></div>
-</section>
 <p>更多给自己报价、自己收钱的人看的指南：<a href="/zh/guides/">全部指南</a>。</p>
 <hr class="dinkus">
 <section id="faq">
 <h2>常见问题</h2>
 <div class="faq-list">
-<details><summary><h3>收入低也要报吗？</h3></summary><p>有应课税收入的那一年一定要报。前一年有应课税收入，或前一年有报税的，就算今年没有应课税收入，也要报。生意亏损填在 Part M，可以连续结转最多 10 年。</p></details>
+<details><summary><h3>收入低也要报吗？</h3></summary><p>有应课税收入的那一年一定要报。前一年有应课税收入或有报税的话，今年就算没有应课税收入，也要报。生意亏损也要填在表格上（Part M）。</p></details>
 <details><summary><h3>我有工作，又有副业。要报 2 份表格吗？</h3></summary><p>不用。报 1 份 Form B 就好，EA 表的薪水和生意利润都填在里面。雇主每个月从薪水扣的税，最后会从你要缴的税里扣掉。</p></details>
-<details><summary><h3>报 Form B 需要请会计师吗？</h3></summary><p>不需要。你可以自己报 <span class="keep">e-B</span>。tax agent 的部分只给替你报税的 agent 填，不过会计师可以帮你处理 Part N 的生意账目。</p></details>
-<details><summary><h3>可以跟 LHDN 申请延期吗？</h3></summary><p>LHDN 的网上延期服务 <span class="keep">e-Lanjutan</span> Masa 只给公司、合作社、LLP 和信托机构，不包括个人。个人的额外时间，就是 LHDN 报税时间表里 <span class="keep">e-Filing</span> 的 15 天宽限期。</p></details>
+<details><summary><h3>可以跟 LHDN 申请延期吗？</h3></summary><p>不可以。LHDN 的网上延期服务 <span class="keep">e-Lanjutan</span> Masa 不包括个人；你多出来的时间，就是 <span class="keep">e-Filing</span> 的 15 天宽限期。</p></details>
 </div>
+</section>
+<section class="sources-list" aria-labelledby="src-h"><p class="src-h" id="src-h">资料来源</p>
+<ul>
+<li>1967年所得税法令（截至2026年1月1日的文本）：第 6A(2)(a)、46(1)(a)、49(1)(b)、77(1)、(1)(a) 和 (1B)、77B、82、103(3) 及 112(1) 和 (3) 条。2025年财政法令（Finance Act 2025，Act 874）。</li>
+<li>LHDN：2026年报税时间表（Return Form Filing Programme for the Year 2026，2026年4月1日更新），Guide Note 1；Borang B 2025 和 Form B 2025 说明（Explanatory Notes）；操作指南（Operational Guideline）No. 3/2020，第 3.1.1、3.1.2、4.1 和 4.3 段；Pendaftaran（2026年6月15日更新）；Kadar Cukai（2026年6月26日更新）；CP500（2026年6月25日更新）。</li>
+<li>LHDN、MyTax 和缴税：User Manual MyTax 2.0（2022年10月30日）和 MyTax 手机版手册（2022年11月3日）；简报 Peniaga Bijak Cukai <span class="keep">e-B</span> TT2025（2026年4月21日）；ByrHASiL FPX 指南；Kaedah Pembayaran（2026年7月13日更新）；e-Perkhidmatan，Permohonan No. PIN（2026年9月8日更新）和 <span class="keep">e-BNT</span>。</li>
+</ul>
 </section>
 </article>
 </main>
