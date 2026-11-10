@@ -270,6 +270,33 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/how-to-file-form-b/"/>
   </url>
   <url>
+    <loc>https://invoisapp.com/guides/what-is-cp500/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/what-is-cp500/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/apa-itu-cp500/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/what-is-cp500/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/what-is-cp500/"/>
+  </url>
+  <url>
+    <loc>https://invoisapp.com/ms/guides/apa-itu-cp500/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/what-is-cp500/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/apa-itu-cp500/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/what-is-cp500/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/what-is-cp500/"/>
+  </url>
+  <url>
+    <loc>https://invoisapp.com/zh/guides/what-is-cp500/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/what-is-cp500/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/apa-itu-cp500/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/what-is-cp500/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/what-is-cp500/"/>
+  </url>
+  <url>
     <loc>https://invoisapp.com/guides/tax-relief-self-employed/</loc>
     <lastmod>2026-11-10</lastmod>
     <priority>0.7</priority>
