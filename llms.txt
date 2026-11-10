@@ -1,0 +1,87 @@
+# Invois
+
+> Invois is an Android app for Malaysia that makes itemised quotations from your own price list, then turns a quotation into an invoice and a receipt, one tap each, shared as a PDF. It is for anyone who quotes and bills their own jobs, from a plumber or a tutor to a photographer or a programmer. Made by EONGERRA TECH, Subang Jaya. The name is the Malay word for invoice. Invois is not affiliated with LHDN and is not part of MyInvois, LHDN's e-Invoice system.
+
+- Platform: Android, on Google Play (package com.invoisapp), available in Malaysia only. There is no iPhone version yet.
+- Free plan: no sign-up needed to start. Quotations, invoices, customers and the price list are unlimited, with 15 AI actions a month, or 30 a month after phone verification. Free documents carry a small "Made with invoisapp.com" line.
+- Invois Pro: RM 19.90 a month or RM 190 a year, billed by Google Play. Pro gives 300 AI actions a month and removes the footer line; nothing else changes.
+- Languages: the app is in Bahasa Melayu, English and Chinese. Documents sent to customers have English labels (Quotation, Invoice, Receipt).
+- Features: itemised quotations picked from your price list, with a note under each item; voice input in Malay, English or Chinese, mixed in one sentence; deposits, instalments and partial payments, with one receipt per payment; AI reads a photo of a bank-transfer slip; a reminder button on overdue invoices that opens WhatsApp with the message filled in; AI-drafted terms and conditions; SST as its own line and SSM, TIN and SST numbers on the letterhead; invoices exported as PDFs for your accountant.
+- Not in the app: it does not submit e-Invoices to MyInvois or file anything with LHDN. It has no credit or debit notes, and an invoice cannot be cancelled or voided.
+- Contact: support@eongerra.com
+
+## App
+
+- [Invois on Google Play](https://play.google.com/store/apps/details?id=com.invoisapp&referrer=utm_source%3Dinvoisapp.com%26utm_medium%3Dwebsite%26utm_campaign%3Dllms_txt): free download for Android in Malaysia
+- [Homepage, English](https://invoisapp.com/): what the app does, pricing and FAQ
+- [Laman utama, Bahasa Melayu](https://invoisapp.com/ms/)
+- [主页，中文](https://invoisapp.com/zh/)
+
+## Guides in English
+
+- [All guides in English](https://invoisapp.com/guides/): free guides for the self-employed in Malaysia
+
+- [How to Write a Quotation in Malaysia (With Examples)](https://invoisapp.com/guides/how-to-write-a-quotation/): what a quotation needs (SSM number, SST, validity, payment terms), with an example
+- [How to Make a Service Price List: Format and Example (Malaysia)](https://invoisapp.com/guides/how-to-make-a-price-list/): what goes on each line, how to choose the unit, and an example list
+- [Quotation Terms and Conditions: 20 Examples (Malaysia)](https://invoisapp.com/guides/quotation-terms-and-conditions/): clauses to copy for deposits, payment, scope, cancellation and warranty
+- [How to Write an Invoice in Malaysia (With Examples)](https://invoisapp.com/guides/how-to-write-an-invoice/): number, due date, SSM number, SST and payment details, and when e-Invoice applies
+- [How to Write a Receipt in Malaysia (With Examples)](https://invoisapp.com/guides/how-to-write-a-receipt/): receipt number, date paid, amount in words and balance, with a deposit example
+- [Quotation vs Invoice vs Receipt in Malaysia (With Example)](https://invoisapp.com/guides/quotation-vs-invoice-vs-receipt/): one job followed from quotation to deposit, balance and official receipt
+- [Cash Sales vs Invoice: What Is a Cash Bill in Malaysia?](https://invoisapp.com/guides/cash-sales-vs-invoice/): what a cash bill is and when to use one instead of an invoice
+- [Customer Not Paying? What to Do in Malaysia (5 Steps)](https://invoisapp.com/guides/customer-not-paying/): 5 steps from reminders to a letter of demand and small claims for RM 5,000 or less
+- [Do I Need to Register with SSM? Who Must, Cost and How](https://invoisapp.com/guides/do-i-need-to-register-with-ssm/): who must register, who is exempt, the cost from RM 30 a year and how to apply
+- [Do I Need to Charge SST? Guide for Self-Employed in Malaysia](https://invoisapp.com/guides/do-i-need-to-charge-sst/): the RM 500,000 registration threshold, which services are taxed at 8% or 6%, and what the invoice shows
+- [Business Expenses You Can Claim on Form B in Malaysia](https://invoisapp.com/guides/business-expenses-form-b/): what you can and cannot deduct, how equipment is claimed and what records to keep
+- [How to File Form B in Malaysia: Deadline and e-Filing Steps](https://invoisapp.com/guides/how-to-file-form-b/): e-Filing steps, the deadline, the accounts it asks for and the penalties for filing late
+- [Form B P&L and Balance Sheet: Each e-B Field in English](https://invoisapp.com/guides/form-b-profit-loss-balance-sheet/): each Malay e-B field explained in English, with a freelancer's figures
+- [Tax Relief for the Self-Employed in Malaysia (YA 2026)](https://invoisapp.com/guides/tax-relief-self-employed/): personal reliefs on Form B for 2026, including EPF and life insurance up to RM 7,000 together
+- [CP500 LHDN: What It Is, Due Dates and How to Pay](https://invoisapp.com/guides/what-is-cp500/): the notice to pay income tax in 6 instalments, the due dates, paying at ByrHASiL and revising with CP502
+
+## Panduan dalam Bahasa Melayu
+
+- [Semua panduan](https://invoisapp.com/ms/guides/)
+
+- [Cara Buat Sebut Harga (Quotation): Contoh & Format](https://invoisapp.com/ms/guides/cara-buat-sebut-harga/)
+- [Cara Buat Senarai Harga Servis (Price List): Format dan Contoh](https://invoisapp.com/ms/guides/cara-buat-senarai-harga/)
+- [Terma dan Syarat Sebut Harga: 20 Contoh Ayat](https://invoisapp.com/ms/guides/terma-dan-syarat-sebut-harga/)
+- [Cara Buat Invois: Format dan Contoh](https://invoisapp.com/ms/guides/cara-buat-invois/)
+- [Cara Buat Resit: Format dan Contoh](https://invoisapp.com/ms/guides/cara-buat-resit/)
+- [Beza Invois dan Resit: Bila Perlu Keluarkan Resit?](https://invoisapp.com/ms/guides/beza-invois-dan-resit/)
+- [Cash Sales vs Invois: Apa Itu Bil Tunai?](https://invoisapp.com/ms/guides/cash-sales-vs-invois/)
+- [Pelanggan Tidak Bayar? 5 Langkah hingga Tuntutan Kecil](https://invoisapp.com/ms/guides/pelanggan-tidak-bayar/)
+- [Perlu Daftar SSM? Siapa Perlu, Kos dan Cara Daftar](https://invoisapp.com/ms/guides/perlu-daftar-ssm/)
+- [Perlu Caj SST? Panduan untuk Mereka yang Bekerja Sendiri](https://invoisapp.com/ms/guides/perlu-caj-sst/)
+- [Perbelanjaan Dibenarkan Borang B: Apa Boleh Dituntut](https://invoisapp.com/ms/guides/perbelanjaan-dibenarkan-borang-b/)
+- [Cara Isi Borang B: Tarikh Akhir dan Langkah e-Filing](https://invoisapp.com/ms/guides/cara-isi-borang-b/)
+- [P&L dan Balance Sheet Borang B: Maksud Setiap Ruangan e-B](https://invoisapp.com/ms/guides/untung-rugi-kunci-kira-kira-borang-b/)
+- [Pelepasan Cukai 2026 untuk Mereka yang Bekerja Sendiri (Borang B)](https://invoisapp.com/ms/guides/pelepasan-cukai-bekerja-sendiri/)
+- [Apa Itu CP500 LHDN: Tarikh dan Cara Bayaran Ansuran](https://invoisapp.com/ms/guides/apa-itu-cp500/)
+
+## 中文指南
+
+- [全部指南](https://invoisapp.com/zh/guides/)
+
+- [报价单怎么写？马来西亚 quotation 格式与例子](https://invoisapp.com/zh/guides/how-to-write-a-quotation/)
+- [价目表怎么做？服务 price list 写法与例子（马来西亚）](https://invoisapp.com/zh/guides/how-to-make-a-price-list/)
+- [报价单条款怎么写？订金、保修、取消 20 句例子（马来西亚）](https://invoisapp.com/zh/guides/quotation-terms-and-conditions/)
+- [Invoice 怎么写？马来西亚 invoice 格式与例子](https://invoisapp.com/zh/guides/how-to-write-an-invoice/)
+- [收据怎么写？马来西亚 receipt 格式与例子](https://invoisapp.com/zh/guides/how-to-write-a-receipt/)
+- [Invoice 和 receipt 有什么分别？订金收据怎么开](https://invoisapp.com/zh/guides/invoice-vs-receipt/)
+- [Cash sales 和 invoice 有什么分别？Cash bill 怎么开](https://invoisapp.com/zh/guides/cash-sales-vs-invoice/)
+- [顾客不付钱怎么办？从提醒、催款信到小额索偿 5 个步骤](https://invoisapp.com/zh/guides/customer-not-paying/)
+- [要不要注册 SSM？谁要注册、费用和步骤](https://invoisapp.com/zh/guides/do-i-need-to-register-with-ssm/)
+- [要不要收 SST？马来西亚自雇人士 SST 指南](https://invoisapp.com/zh/guides/do-i-need-to-charge-sst/)
+- [自雇报税可以扣什么？Form B 生意开销清单](https://invoisapp.com/zh/guides/business-expenses-form-b/)
+- [自雇人士怎么报 Form B？e-Filing 步骤和截止日期](https://invoisapp.com/zh/guides/how-to-file-form-b/)
+- [Form B 的 P&L 和 balance sheet 怎么填？e-B 马来文栏位的意思](https://invoisapp.com/zh/guides/form-b-profit-loss-balance-sheet/)
+- [2026年个人所得税减免：自雇人士报 Form B 可以扣哪些？](https://invoisapp.com/zh/guides/tax-relief-self-employed/)
+- [CP500 是什么？LHDN 分期缴税：到期日和怎么付](https://invoisapp.com/zh/guides/what-is-cp500/)
+
+## Optional
+
+- [Privacy policy](https://invoisapp.com/privacy/)
+- [Terms of Service](https://invoisapp.com/terms/)
+- [Delete your account](https://invoisapp.com/delete-account/)
+- [Facebook](https://www.facebook.com/invoisapp.official)
+- [Instagram](https://www.instagram.com/invoisapp/)
+- [Threads](https://www.threads.com/@invoisapp)
