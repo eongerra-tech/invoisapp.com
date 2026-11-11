@@ -73,7 +73,7 @@
   </url>
   <url>
     <loc>https://invoisapp.com/guides/how-to-write-a-quotation/</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/how-to-write-a-quotation/"/>
     <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/cara-buat-sebut-harga/"/>
@@ -82,7 +82,7 @@
   </url>
   <url>
     <loc>https://invoisapp.com/ms/guides/cara-buat-sebut-harga/</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/how-to-write-a-quotation/"/>
     <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/cara-buat-sebut-harga/"/>
@@ -91,7 +91,7 @@
   </url>
   <url>
     <loc>https://invoisapp.com/zh/guides/how-to-write-a-quotation/</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/how-to-write-a-quotation/"/>
     <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/cara-buat-sebut-harga/"/>
@@ -190,7 +190,7 @@
   </url>
   <url>
     <loc>https://invoisapp.com/guides/how-to-write-an-invoice/</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/how-to-write-an-invoice/"/>
     <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/cara-buat-invois/"/>
@@ -199,7 +199,7 @@
   </url>
   <url>
     <loc>https://invoisapp.com/ms/guides/cara-buat-invois/</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/how-to-write-an-invoice/"/>
     <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/cara-buat-invois/"/>
@@ -208,7 +208,7 @@
   </url>
   <url>
     <loc>https://invoisapp.com/zh/guides/how-to-write-an-invoice/</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/how-to-write-an-invoice/"/>
     <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/cara-buat-invois/"/>
@@ -268,6 +268,33 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/cara-isi-borang-b/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/how-to-file-form-b/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/how-to-file-form-b/"/>
+  </url>
+  <url>
+    <loc>https://invoisapp.com/guides/what-is-a-purchase-order/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/what-is-a-purchase-order/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/apa-itu-purchase-order/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/what-is-a-purchase-order/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/what-is-a-purchase-order/"/>
+  </url>
+  <url>
+    <loc>https://invoisapp.com/ms/guides/apa-itu-purchase-order/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/what-is-a-purchase-order/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/apa-itu-purchase-order/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/what-is-a-purchase-order/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/what-is-a-purchase-order/"/>
+  </url>
+  <url>
+    <loc>https://invoisapp.com/zh/guides/what-is-a-purchase-order/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/what-is-a-purchase-order/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/apa-itu-purchase-order/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/what-is-a-purchase-order/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/what-is-a-purchase-order/"/>
   </url>
   <url>
     <loc>https://invoisapp.com/guides/what-is-cp500/</loc>

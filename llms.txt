@@ -36,6 +36,7 @@
 - [Form B P&L and Balance Sheet: Each e-B Field in English](https://invoisapp.com/guides/form-b-profit-loss-balance-sheet/): each Malay e-B field explained in English, with a freelancer's figures
 - [Tax Relief for the Self-Employed in Malaysia (YA 2026)](https://invoisapp.com/guides/tax-relief-self-employed/): personal reliefs on Form B for 2026, including EPF and life insurance up to RM 7,000 together
 - [CP500 LHDN: What It Is, Due Dates and How to Pay](https://invoisapp.com/guides/what-is-cp500/): the notice to pay income tax in 6 instalments, the due dates, paying at ByrHASiL and revising with CP502
+- [What Is a Purchase Order (PO)? PO vs Quotation in Malaysia](https://invoisapp.com/guides/what-is-a-purchase-order/): what a PO is, what to check against your quotation, what to do if it differs, and the PO number on your invoice
 
 ## Panduan dalam Bahasa Melayu
 
@@ -56,6 +57,7 @@
 - [P&L dan Balance Sheet Borang B: Maksud Setiap Ruangan e-B](https://invoisapp.com/ms/guides/untung-rugi-kunci-kira-kira-borang-b/)
 - [Pelepasan Cukai 2026 untuk Mereka yang Bekerja Sendiri (Borang B)](https://invoisapp.com/ms/guides/pelepasan-cukai-bekerja-sendiri/)
 - [Apa Itu CP500 LHDN: Tarikh dan Cara Bayaran Ansuran](https://invoisapp.com/ms/guides/apa-itu-cp500/)
+- [Apa Itu Purchase Order (PO)? PO vs Sebut Harga di Malaysia](https://invoisapp.com/ms/guides/apa-itu-purchase-order/)
 
 ## 中文指南
 
@@ -76,6 +78,7 @@
 - [Form B 的 P&L 和 balance sheet 怎么填？e-B 马来文栏位的意思](https://invoisapp.com/zh/guides/form-b-profit-loss-balance-sheet/)
 - [2026年个人所得税减免：自雇人士报 Form B 可以扣哪些？](https://invoisapp.com/zh/guides/tax-relief-self-employed/)
 - [CP500 是什么？LHDN 分期缴税：到期日和怎么付](https://invoisapp.com/zh/guides/what-is-cp500/)
+- [Purchase order（PO）是什么？马来西亚 PO 和报价单的分别](https://invoisapp.com/zh/guides/what-is-a-purchase-order/)
 
 ## Optional
 
