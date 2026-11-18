@@ -270,8 +270,35 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/how-to-file-form-b/"/>
   </url>
   <url>
+    <loc>https://invoisapp.com/guides/what-is-a-delivery-order/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/what-is-a-delivery-order/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/apa-itu-delivery-order/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/what-is-a-delivery-order/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/what-is-a-delivery-order/"/>
+  </url>
+  <url>
+    <loc>https://invoisapp.com/ms/guides/apa-itu-delivery-order/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/what-is-a-delivery-order/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/apa-itu-delivery-order/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/what-is-a-delivery-order/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/what-is-a-delivery-order/"/>
+  </url>
+  <url>
+    <loc>https://invoisapp.com/zh/guides/what-is-a-delivery-order/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/what-is-a-delivery-order/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/apa-itu-delivery-order/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/what-is-a-delivery-order/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/what-is-a-delivery-order/"/>
+  </url>
+  <url>
     <loc>https://invoisapp.com/guides/what-is-a-purchase-order/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/what-is-a-purchase-order/"/>
     <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/apa-itu-purchase-order/"/>
@@ -280,7 +307,7 @@
   </url>
   <url>
     <loc>https://invoisapp.com/ms/guides/apa-itu-purchase-order/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/what-is-a-purchase-order/"/>
     <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/apa-itu-purchase-order/"/>
@@ -289,7 +316,7 @@
   </url>
   <url>
     <loc>https://invoisapp.com/zh/guides/what-is-a-purchase-order/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/what-is-a-purchase-order/"/>
     <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/apa-itu-purchase-order/"/>
