@@ -190,7 +190,7 @@
   </url>
   <url>
     <loc>https://invoisapp.com/guides/how-to-write-an-invoice/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/how-to-write-an-invoice/"/>
     <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/cara-buat-invois/"/>
@@ -199,7 +199,7 @@
   </url>
   <url>
     <loc>https://invoisapp.com/ms/guides/cara-buat-invois/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/how-to-write-an-invoice/"/>
     <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/cara-buat-invois/"/>
@@ -208,7 +208,7 @@
   </url>
   <url>
     <loc>https://invoisapp.com/zh/guides/how-to-write-an-invoice/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/how-to-write-an-invoice/"/>
     <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/cara-buat-invois/"/>
@@ -268,6 +268,33 @@
     <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/cara-isi-borang-b/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/how-to-file-form-b/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/how-to-file-form-b/"/>
+  </url>
+  <url>
+    <loc>https://invoisapp.com/guides/what-is-a-proforma-invoice/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/what-is-a-proforma-invoice/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/apa-itu-proforma-invoice/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/what-is-a-proforma-invoice/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/what-is-a-proforma-invoice/"/>
+  </url>
+  <url>
+    <loc>https://invoisapp.com/ms/guides/apa-itu-proforma-invoice/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/what-is-a-proforma-invoice/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/apa-itu-proforma-invoice/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/what-is-a-proforma-invoice/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/what-is-a-proforma-invoice/"/>
+  </url>
+  <url>
+    <loc>https://invoisapp.com/zh/guides/what-is-a-proforma-invoice/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://invoisapp.com/guides/what-is-a-proforma-invoice/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://invoisapp.com/ms/guides/apa-itu-proforma-invoice/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://invoisapp.com/zh/guides/what-is-a-proforma-invoice/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://invoisapp.com/guides/what-is-a-proforma-invoice/"/>
   </url>
   <url>
     <loc>https://invoisapp.com/guides/what-is-a-delivery-order/</loc>
