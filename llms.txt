@@ -4,7 +4,7 @@
 
 - Platform: Android, on Google Play (package com.invoisapp), available in Malaysia only. There is no iPhone version yet.
 - Free plan: no sign-up needed to start. Quotations, invoices, customers and the price list are unlimited, with 15 AI actions a month, or 30 a month after phone verification. Free documents carry a small "Made with invoisapp.com" line.
-- Invois Pro: RM 19.90 a month or RM 190 a year, billed by Google Play. Pro gives 300 AI actions a month and removes the footer line; nothing else changes.
+- Invois Pro: RM 19.90 a month or RM 190 a year, billed by Google Play. Pro gives 300 AI actions a month, removes the footer line and unlocks every document template (the free plan has two). Once a user has subscribed, the Pro templates stay on their account after the subscription ends; the AI allowance and the missing footer line last only while subscribed.
 - Languages: the app is in Bahasa Melayu, English and Chinese. Documents sent to customers have English labels (Quotation, Invoice, Receipt).
 - Features: itemised quotations picked from your price list, with a note under each item; voice input in Malay, English or Chinese, mixed in one sentence; deposits, instalments and partial payments, with one receipt per payment; AI reads a photo of a bank-transfer slip; a reminder button on overdue invoices that opens WhatsApp with the message filled in; AI-drafted terms and conditions; SST as its own line and SSM, TIN and SST numbers on the letterhead; invoices exported as PDFs for your accountant.
 - Not in the app: it does not submit e-Invoices to MyInvois or file anything with LHDN. It has no credit or debit notes, and an invoice cannot be cancelled or voided.
