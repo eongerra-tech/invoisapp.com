@@ -27,6 +27,12 @@ deploy if any of the four required pages or the CNAME is missing.
 
 Pages settings → Source must be **GitHub Actions** (not "Deploy from a branch").
 
+## Stylesheets and the browser cache
+
+GitHub Pages lets browsers keep a file for 10 minutes. The homepages load `landing.css` and `landing-mobile.css` with a
+`?v=` date: bump it on all three homepages (`index.html`, `ms/index.html`, `zh/index.html`) whenever either file
+changes, or visitors see the new HTML with the old styles (a 2 × 2 grid showed as 3 + 1, 2026-11-19).
+
 ## Writing a guide
 
 Guides use a Medium-style reading layout from `assets/guide.css`. Copy an existing article in the same
