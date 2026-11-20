@@ -71,6 +71,15 @@ html:lang(zh-Hans) .brand-sub { font-family: inherit; letter-spacing: 0; }
 .site-foot .brand img { width: 26px; height: 26px; }
 .site-foot .brand span { font-size: 19px; }
 .foot-brand p { margin: 0; max-width: 340px; font-size: 15px; color: var(--ink-soft); }
+/* social links under the tagline (homepages): official Facebook / Instagram / Threads marks, bare, in one ink colour,
+   each taking its brand colour on hover (Instagram's gradient is defined in its own svg).
+   Each link is a 36px hit area round a 22px mark, pulled left so the first mark lines up with the tagline */
+.social { display: flex; gap: 6px; margin: 4px 0 0 -7px; }
+.site-foot .social a { width: 36px; height: 36px; display: grid; place-items: center; color: var(--ink); transition: color 0.2s; }
+.site-foot .social a[href*="facebook.com"]:hover { color: #0866ff; }
+.site-foot .social a[href*="instagram.com"]:hover svg { fill: url(#ig-grad); }
+.site-foot .social a[href*="threads.com"]:hover { color: #000; }
+.site-foot .social svg { display: block; width: 22px; height: 22px; }
 .foot-col { display: flex; flex-direction: column; gap: 10px; }
 .foot-h { margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); }
 html:lang(zh-Hans) .foot-h { letter-spacing: 0.04em; }
